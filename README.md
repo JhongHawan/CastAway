@@ -3,12 +3,10 @@ Repo for Informatics Capstone 2020, our project is focused on being an accurate 
 
 ## Contact
 
-* [Rahma Kamel](kamelr@uw.edu
-)
-* [Angela Shen](angelashen0607@gmail.com)
-* [Tracy Huynh](thuynh12@uw.edu
-)
-* [Brian Jhong](jhongb@uw.edu)
+* Rahma Kamel: kamelr@uw.edu
+* Angela Shen: angelashen0607@gmail.com
+* Tracy Huynh: thuynh12@uw.edu
+* Brian Jhong: jhongb@uw.edu
 
 ## Getting Started
 
