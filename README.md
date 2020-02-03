@@ -5,7 +5,7 @@ Repo for Informatics Capstone 2020, our project is focused on being an accurate 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+## Prerequisites
 
 What things you need to install the software and how to install them
 
@@ -16,24 +16,38 @@ What things you need to install the software and how to install them
 * MongoDB database 
 ```
 
-### Installing
+## Installing
 
-# Install dependencies for server
+#### Install dependencies for server
+
+```
 npm install
+```
+#### Install dependencies for client
 
-# Install dependencies for client
+```
 npm run client-install
+```
 
-# Run the client & server with concurrently
+#### Run the client & server with concurrently
+
+```
 npm run dev
+```
 
-# Run the Express server only
+#### Run the Express server only
+
+```
 npm run server
+```
 
-# Run the React client only
+#### Run the React client only
+
+```
 npm run client
+```
 
-# Server runs on http://localhost:5000 and client on http://localhost:3000
+#### Server runs on http://localhost:5000 and client on http://localhost:3000
 
 ## Deployment
 
