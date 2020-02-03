@@ -14,36 +14,36 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Installing
 
-#### Install dependencies for server
+#### Install dependencies for backend
 
 ```
 npm install
 ```
-#### Install dependencies for client
+#### Install dependencies for frontend
 
 ```
-npm run client-install
+npm run frontend-install
 ```
 
-#### Run the client & server with concurrently
+#### Run the client & backend with concurrently
 
 ```
 npm run dev
 ```
 
-#### Run the Express server only
+#### Run the Express backend only
 
 ```
-npm run server
+npm run backend
 ```
 
 #### Run the React client only
 
 ```
-npm run client
+npm run frontend
 ```
 
-#### Server runs on http://localhost:5000 and client on http://localhost:3000
+#### backend runs on http://localhost:5000 and frontend on http://localhost:3000
 
 ## Deployment
 
