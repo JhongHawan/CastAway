@@ -15,9 +15,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "bcrypt": "^3.0.7",
     "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "joi-password-complexity": "^4.0.0",
     "mongoose": "^5.8.11"
   },
   "devDependencies": {

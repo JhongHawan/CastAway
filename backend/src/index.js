@@ -11,7 +11,7 @@ if (!process.env.PRIVATE_KEY) {
   process.exit(1);
 }
 
-//connect to mongodb
+// connect to mongodb
 // we would connect our database here instead of the hardcoded string below. 
 // Create an environment variable for the database to connect for mongoose. 
 mongoose
