@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/InfoCapstone2020/index.html/static/css/main.8ab6f918.chunk.css",
-    "main.js": "/InfoCapstone2020/index.html/static/js/main.ad0121ee.chunk.js",
-    "main.js.map": "/InfoCapstone2020/index.html/static/js/main.ad0121ee.chunk.js.map",
-    "runtime-main.js": "/InfoCapstone2020/index.html/static/js/runtime-main.af96d6f6.js",
-    "runtime-main.js.map": "/InfoCapstone2020/index.html/static/js/runtime-main.af96d6f6.js.map",
-    "static/js/2.874bde36.chunk.js": "/InfoCapstone2020/index.html/static/js/2.874bde36.chunk.js",
-    "static/js/2.874bde36.chunk.js.map": "/InfoCapstone2020/index.html/static/js/2.874bde36.chunk.js.map",
-    "index.html": "/InfoCapstone2020/index.html/index.html",
-    "precache-manifest.7d7f56fce5ccea99e43f000100ed29f5.js": "/InfoCapstone2020/index.html/precache-manifest.7d7f56fce5ccea99e43f000100ed29f5.js",
-    "service-worker.js": "/InfoCapstone2020/index.html/service-worker.js",
-    "static/css/main.8ab6f918.chunk.css.map": "/InfoCapstone2020/index.html/static/css/main.8ab6f918.chunk.css.map",
-    "static/js/2.874bde36.chunk.js.LICENSE.txt": "/InfoCapstone2020/index.html/static/js/2.874bde36.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/InfoCapstone2020/index.html/static/media/logo.ee7cd8ed.svg"
+    "main.css": "/InfoCapstone2020/static/css/main.8ab6f918.chunk.css",
+    "main.js": "/InfoCapstone2020/static/js/main.5af168fa.chunk.js",
+    "main.js.map": "/InfoCapstone2020/static/js/main.5af168fa.chunk.js.map",
+    "runtime-main.js": "/InfoCapstone2020/static/js/runtime-main.ff84cdf5.js",
+    "runtime-main.js.map": "/InfoCapstone2020/static/js/runtime-main.ff84cdf5.js.map",
+    "static/js/2.874bde36.chunk.js": "/InfoCapstone2020/static/js/2.874bde36.chunk.js",
+    "static/js/2.874bde36.chunk.js.map": "/InfoCapstone2020/static/js/2.874bde36.chunk.js.map",
+    "index.html": "/InfoCapstone2020/index.html",
+    "precache-manifest.360e485d7a3c44ddfa20e85bb8c6a6ce.js": "/InfoCapstone2020/precache-manifest.360e485d7a3c44ddfa20e85bb8c6a6ce.js",
+    "service-worker.js": "/InfoCapstone2020/service-worker.js",
+    "static/css/main.8ab6f918.chunk.css.map": "/InfoCapstone2020/static/css/main.8ab6f918.chunk.css.map",
+    "static/js/2.874bde36.chunk.js.LICENSE.txt": "/InfoCapstone2020/static/js/2.874bde36.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/InfoCapstone2020/static/media/logo.ee7cd8ed.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.af96d6f6.js",
+    "static/js/runtime-main.ff84cdf5.js",
     "static/js/2.874bde36.chunk.js",
     "static/css/main.8ab6f918.chunk.css",
-    "static/js/main.ad0121ee.chunk.js"
+    "static/js/main.5af168fa.chunk.js"
   ]
 }
