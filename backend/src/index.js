@@ -11,13 +11,14 @@ if (!process.env.PRIVATE_KEY) {
   process.exit(1);
 }
 
-// connect to mongodb
+//connect to mongodb
 // we would connect our database here instead of the hardcoded string below. 
 // Create an environment variable for the database to connect for mongoose. 
 mongoose
+  .set('useCreateIndex', true)
   .connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB..."))
-  .catch(err => console.error("Could not connect to MongoDB..."));
+  .then(() => console.log("Connected to MongoDB database..."))
+  .catch(err => console.error("Could not connect to MongoDB database..."));
 
 
 app.use(express.json());

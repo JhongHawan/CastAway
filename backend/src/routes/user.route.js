@@ -35,6 +35,19 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get('/logout', function(req, res, next) {
+  if (req.session) {
+    // delete session object
+    req.session.destroy(function(err) {
+      if(err) {
+        return next(err);
+      } else {
+        return res.redirect('/');
+      }
+    });
+  }
+});
+
 router.post("/register", async (req, res) => {
   // validate the request body first
   const { error } = validate(req.body);
@@ -55,7 +68,8 @@ router.post("/register", async (req, res) => {
     await user.save();
     const token = user.generateAuthToken();
     res.header("x-auth-token", token).send({
-      _id: user._id
+      _id: user._id,
+      status: 'Successfully Registered!'
     });
   } catch (err) {
     res.status(400).send(error);

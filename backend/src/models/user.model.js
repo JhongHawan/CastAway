@@ -1,7 +1,7 @@
 const dotenv = require('dotenv')
 const jwt = require('jsonwebtoken');
 const Joi = require('@hapi/joi');
-const PasswordComplexity = require('joi-password-complexity');
+const passwordComplexity = require('joi-password-complexity');
 const mongoose = require('mongoose');
 
 dotenv.config()
@@ -59,7 +59,7 @@ function validateUser(user) {
     requirementCount: 4,
   }
 
-  return schema.validate(user) && new PasswordComplexity(complexityOptions).validate(user.password);
+  return schema.validate(user) && passwordComplexity(complexityOptions).validate(user.password);
 }
 
 exports.User = User; 
