@@ -1,24 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
+import AppNavBar from './components/AppNavBar'; 
+import Template from './components/Template';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Our landing page INFO 2020 Capstone. 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppNavBar></AppNavBar>
+      <Template></Template>
     </div>
   );
 }
