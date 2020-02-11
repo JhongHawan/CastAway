@@ -71,10 +71,23 @@ export default function Album() {
       <CssBaseline />
       <main>
         {/* Hero unit */}
-        <div className={classes.heroContent} align="right">
-            
-            <img className={classes.img} src="hero-image-landing.jpg" width="60%"/>
+        <div className={classes.heroContent} id="wrapper">
+          <div id="landing-image">
+            <Typography variant="h2" id="child">
+              You Can Make An Impact
+            </Typography>
+          </div>
         </div>
+
+
+        {/* <div className={classes.heroContent} align="right">
+          <img className={classes.img} src="hero-image-landing.jpg" width="60%" />
+        </div> */}
+
+
+        {/* <div className={classes.heroContent} align="right"> */}
+        {/* <img className={classes.img} src="hero-image-landing.jpg" width="60%"/> */}
+        {/* </div> */}
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
@@ -106,7 +119,7 @@ export default function Album() {
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           <Link href="https://ischool.uw.edu/capstone" underline="hover">see other projects</Link>
         </Typography>
-   
+
       </footer>
       {/* End footer */}
     </React.Fragment>

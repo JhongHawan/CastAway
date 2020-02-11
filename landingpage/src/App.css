@@ -1,0 +1,32 @@
+#wrapper {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: flex-end;
+  }
+
+  #landing-image {
+      /* width: 800px;
+      height: 500px; */
+    width: 800px;
+    height: 567.5px;
+    background-image: url("./img/hero-image-landing.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* This is the parallax effect */
+    /* background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+
+  #child {
+    position: relative;
+    top: 10%;
+    right: 50%;
+  }
+
+  #child2 {
+    position: relative;
+    top: 13%;
+    right: 50%;  
+  }
