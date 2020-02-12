@@ -14,8 +14,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
-import ButtonBase from '@material-ui/core/ButtonBase';
 import { Paper } from '@material-ui/core';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import Box from '@material-ui/core/Box';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -59,6 +60,23 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+
+  // Testing screen size
+  // root: {
+  //   [theme.breakpoints.down('sm')]: {
+  //     background: 'hero-image-landing.jpg',
+  //     // background: 'hero-image-landing.jpg',
+  //     // backgroundColor: theme.palette.primary.main,
+  //   },
+  //   [theme.breakpoints.up('md')]: {
+  //     // background: 'hero-image-landing.jpg',
+  //     backgroundColor: theme.palette.primary.main,
+  //   },
+  //   [theme.breakpoints.up('lg')]: {
+  //     // background: 'hero-image-landing.jpg',
+  //     backgroundColor: theme.palette.secondary.main,
+  //   },
+  // }
 }));
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -71,13 +89,50 @@ export default function Album() {
       <CssBaseline />
       <main>
         {/* Hero unit */}
-        <div className={classes.heroContent} id="wrapper">
+        <div className={classes.heroContent}>
+          <Container className={classes.heroContent}>
+            <Grid className={classes.heroContent} container spacing={2}>
+              <Grid item md>
+                <Typography variant="h1" className="child">Making An Impact</Typography>
+                <Typography variant="body1" className="padding">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </Typography>
+              </Grid>
+              <Grid item md={6} className="landing-image">
+
+              </Grid>
+            </Grid>
+            <Typography  align="center" variant="h2" className="child">Our Solution</Typography>
+            
+            {/* Grid for solution screenshots */}
+            <Grid className={classes.heroContent} container spacing={2}>
+              <Grid item sm>
+                
+              </Grid>
+            </Grid>
+
+          </Container>
+        </div>
+
+        {/* working unresponsive */}
+        {/* <div className={classes.heroContent} id="wrapper">
           <div id="landing-image">
             <Typography variant="h2" id="child">
               You Can Make An Impact
             </Typography>
+            <Typography variant="body1" id="child2">
+              There are more people on the move than ever before. An unparalleled 70.8 million people around the world have been forced from their home. Among them are nearly 25.9 million refugees, over half of whom are children under the age of 18. The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference.
+            </Typography>
           </div>
-        </div>
+        </div> */}
+        {/* <div className={classes.heroContent}>
+          <Typography variant="h3" align="center">Solution</Typography>
+          <Container className={classes.cardGrid} maxWidth="md">
+            <Grid container>
+
+            </Grid>
+          </Container>
+        </div> */}
 
 
         {/* <div className={classes.heroContent} align="right">
