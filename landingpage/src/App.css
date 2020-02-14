@@ -3,7 +3,8 @@
       height: 500px; */
     width: 800px;
     height: 567.5px;
-    background-image: url("./img/hero-image-landing.jpg");
+    background-image: url("./img/landing.jpeg");
+    /* background-image: url("./img/hero-image-landing.jpg"); */
     background-size: contain;
     background-repeat: no-repeat;
     
@@ -15,10 +16,12 @@
     background-size: cover; */
 }
 
-.tempscreen {
-    width: 100px;
-    height: 100px;
-    background-image: url("./img/screen.jpg");
+
+.landing {
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .wrap {
@@ -30,6 +33,12 @@
     padding: 20px;
 }
 
+.text-padding {
+    padding-top: 2em;
+    /* padding-bottom: 5em; */
+    padding-right: 10em;
+    padding-left: 10em;
+}
 
 .padding {
     padding-top: 2em;

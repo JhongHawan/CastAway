@@ -16,6 +16,7 @@ import Link from '@material-ui/core/Link';
 
 
 import Box from '@material-ui/core/Box';
+import { Paper } from '@material-ui/core';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -35,14 +36,15 @@ const useStyles = makeStyles(theme => ({
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    // padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(3, 5, 0),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
   },
   cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5),
   },
   card: {
     height: '100%',
@@ -56,10 +58,31 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   footer: {
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#C9D6DF',
     padding: theme.spacing(6),
   },
-
+  landingCard: {
+    position: 'relative'
+  },
+  landingImg: {
+    height: 0,
+    paddingTop: '56.25%',
+    marginTop: '30',
+    opacity: '80%',
+    position: 'relative',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
+  },
+  textOverlay: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    color: '#F16841'
+  }
   // Testing screen size
   // root: {
   //   [theme.breakpoints.down('sm')]: {
@@ -87,66 +110,75 @@ export default function Album() {
     <React.Fragment>
       <CssBaseline />
       <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container className={classes.heroContent}>
-            <Grid className={classes.heroContent} container spacing={2}>
-              <Grid item md>
-                <Typography variant="h1" className="child">Making An Impact</Typography>
-                <Typography variant="body1" className="padding">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </Typography>
-              </Grid>
-              <Grid item md={6} className="landing-image">
-
-              </Grid>
-            </Grid>
-            <Typography align="center" variant="h2" className="child">Our Solution</Typography>
-            <Grid container justify={'center'} spacing={10}>
-              <Grid item justify={'center'}>
-                {/* <CardMedia className="media" compoent={'img'} */}
-                <CardMedia>
-                  <img src="https://via.placeholder.com/220x150.png?text=TEMP"/>
-                </CardMedia>
-              </Grid>
-              <Grid item>
-                <Typography variant="body1">This is a temp for the solution screenshots</Typography>
-              </Grid>
-            </Grid>
-          </Container>
-          {/* Grid for solution screenshots */}
-        </div>
-
-        {/* working unresponsive */}
-        {/* <div className={classes.heroContent} id="wrapper">
-          <div id="landing-image">
-            <Typography variant="h2" id="child">
-              You Can Make An Impact
-            </Typography>
-            <Typography variant="body1" id="child2">
+        <Card className={classes.landingCard}>
+          <CardMedia className={classes.landingImg} image={'landing.jpeg'} />
+          <div className={classes.textOverlay}>
+            {/* TODO fix to make reactive in mobile better */}
+            <Typography variant="h2">Make An Impact</Typography>
+          </div>
+        </Card>
+        <Container className={classes.heroContent}>
+          <Box className={classes.heroContent}>
+            <Typography variant="h2" align="center">Purpose</Typography>
+          </Box>
+          <Box className={classes.heroContent}>
+            <Typography variant="body1">
               There are more people on the move than ever before. An unparalleled 70.8 million people around the world have been forced from their home. Among them are nearly 25.9 million refugees, over half of whom are children under the age of 18. The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference.
             </Typography>
-          </div>
-        </div> */}
-        {/* <div className={classes.heroContent}>
-          <Typography variant="h3" align="center">Solution</Typography>
-          <Container className={classes.cardGrid} maxWidth="md">
-            <Grid container>
-
+          </Box>
+          <Box className={classes.heroContent}>
+            <Typography variant="body1">
+              The biggest obstacle and the first step in making a difference is getting educated.The issue at hand comes from a lack of information and knowledge and often the spread of misinformation. The refugee crisis is adding fuel to the fire of racism, xenophobia and Islamophobia. The attempted US travel bans have been characterized as a response to a ‘phantom menace’. Pointing the Islamophobic or xenophobic finger at refugees and immigrants only hieghtens the conditions and completely disregards the real reasons they are in the host countries to begin with.
+            </Typography>
+          </Box>
+          <Box className={classes.heroContent}>
+            <Typography variant="body1">
+              Immigrants helped build our nation and make it what it is now. We should do everything in our power to embrace them and not exclude them.
+            </Typography>
+          </Box>
+        </Container>
+        <Container className={classes.heroContent}>
+          <Box className={classes.heroContent}>
+            <Typography variant="h2" align="center">Our Solution</Typography>
+          </Box>
+          <Grid container justify={'center'} spacing={10} className={classes.cardGrid}>
+            <Grid item justify={'center'}>
+              <CardMedia>
+                <img src="https://via.placeholder.com/220x150.png?text=TEMP" />
+              </CardMedia>
             </Grid>
-          </Container>
-        </div> */}
-
-
-        {/* <div className={classes.heroContent} align="right">
-          <img className={classes.img} src="hero-image-landing.jpg" width="60%" />
-        </div> */}
-
-
-        {/* <div className={classes.heroContent} align="right"> */}
-        {/* <img className={classes.img} src="hero-image-landing.jpg" width="60%"/> */}
-        {/* </div> */}
+            <Grid item>
+              <Typography variant="body1">This is a temp for the solution screenshots</Typography>
+            </Grid>
+          </Grid>
+          <Grid container justify={'center'} spacing={10} className={classes.cardGrid}>
+            <Grid item justify={'center'}>
+              <CardMedia>
+                <img src="https://via.placeholder.com/220x150.png?text=TEMP" />
+              </CardMedia>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1">This is a temp for the solution screenshots</Typography>
+            </Grid>
+          </Grid>
+          <Grid container justify={'center'} spacing={10} className={classes.cardGrid}>
+            <Grid item justify={'center'}>
+              <CardMedia>
+                <img src="https://via.placeholder.com/220x150.png?text=TEMP" />
+              </CardMedia>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1">This is a temp for the solution screenshots</Typography>
+            </Grid>
+          </Grid>
+        </Container>
       </main>
+
+
+
+
+
+
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
