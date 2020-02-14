@@ -14,8 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
-import { Paper } from '@material-ui/core';
-import ButtonBase from '@material-ui/core/ButtonBase';
+
 import Box from '@material-ui/core/Box';
 function Copyright() {
   return (
@@ -102,16 +101,20 @@ export default function Album() {
 
               </Grid>
             </Grid>
-            <Typography  align="center" variant="h2" className="child">Our Solution</Typography>
-            
-            {/* Grid for solution screenshots */}
-            <Grid className={classes.heroContent} container spacing={2}>
-              <Grid item sm>
-                
+            <Typography align="center" variant="h2" className="child">Our Solution</Typography>
+            <Grid container justify={'center'} spacing={10}>
+              <Grid item justify={'center'}>
+                {/* <CardMedia className="media" compoent={'img'} */}
+                <CardMedia>
+                  <img src="https://via.placeholder.com/220x150.png?text=TEMP"/>
+                </CardMedia>
+              </Grid>
+              <Grid item>
+                <Typography variant="body1">This is a temp for the solution screenshots</Typography>
               </Grid>
             </Grid>
-
           </Container>
+          {/* Grid for solution screenshots */}
         </div>
 
         {/* working unresponsive */}
