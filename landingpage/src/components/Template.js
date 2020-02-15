@@ -15,8 +15,8 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
 
+import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
-import { Paper } from '@material-ui/core';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -71,10 +71,10 @@ const useStyles = makeStyles(theme => ({
     marginTop: '30',
     opacity: '80%',
     position: 'relative',
-    backgroundAttachment: 'fixed',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
+    // backgroundAttachment: 'fixed',
+    // backgroundPosition: 'center',
+    // backgroundRepeat: 'no-repeat',
+    // backgroundSize: 'cover'
   },
   textOverlay: {
     position: 'absolute',
@@ -83,22 +83,7 @@ const useStyles = makeStyles(theme => ({
     transform: 'translate(-50%, -50%)',
     color: '#F16841'
   }
-  // Testing screen size
-  // root: {
-  //   [theme.breakpoints.down('sm')]: {
-  //     background: 'hero-image-landing.jpg',
-  //     // background: 'hero-image-landing.jpg',
-  //     // backgroundColor: theme.palette.primary.main,
-  //   },
-  //   [theme.breakpoints.up('md')]: {
-  //     // background: 'hero-image-landing.jpg',
-  //     backgroundColor: theme.palette.primary.main,
-  //   },
-  //   [theme.breakpoints.up('lg')]: {
-  //     // background: 'hero-image-landing.jpg',
-  //     backgroundColor: theme.palette.secondary.main,
-  //   },
-  // }
+
 }));
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -117,6 +102,8 @@ export default function Album() {
             <Typography variant="h2">Make An Impact</Typography>
           </div>
         </Card>
+
+        {/* Section about the purpose */}
         <Container className={classes.heroContent}>
           <Box className={classes.heroContent}>
             <Typography variant="h2" align="center">Purpose</Typography>
@@ -124,19 +111,13 @@ export default function Album() {
           <Box className={classes.heroContent}>
             <Typography variant="body1">
               There are more people on the move than ever before. An unparalleled 70.8 million people around the world have been forced from their home. Among them are nearly 25.9 million refugees, over half of whom are children under the age of 18. The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference.
-            </Typography>
-          </Box>
-          <Box className={classes.heroContent}>
-            <Typography variant="body1">
-              The biggest obstacle and the first step in making a difference is getting educated.The issue at hand comes from a lack of information and knowledge and often the spread of misinformation. The refugee crisis is adding fuel to the fire of racism, xenophobia and Islamophobia. The attempted US travel bans have been characterized as a response to a ‘phantom menace’. Pointing the Islamophobic or xenophobic finger at refugees and immigrants only hieghtens the conditions and completely disregards the real reasons they are in the host countries to begin with.
-            </Typography>
-          </Box>
-          <Box className={classes.heroContent}>
-            <Typography variant="body1">
               Immigrants helped build our nation and make it what it is now. We should do everything in our power to embrace them and not exclude them.
             </Typography>
           </Box>
+    
         </Container>
+
+        {/* Container for screenshots of the solution */}
         <Container className={classes.heroContent}>
           <Box className={classes.heroContent}>
             <Typography variant="h2" align="center">Our Solution</Typography>
@@ -172,6 +153,16 @@ export default function Album() {
             </Grid>
           </Grid>
         </Container>
+
+        {/* Creating a seciton for team */}
+        <Container className={classes.heroContent}>
+          <Typography variant="h2" align="center">Meet the Team</Typography>
+          <Grid container justify={'center'} spacing={10} className={classes.cardGrid}>
+            <Grid item>
+              {/* <Avatar alt="Remy Sharp" src="screen.jpg" className={classes.large} /> */}
+            </Grid>
+          </Grid>
+        </Container>
       </main>
 
 
@@ -181,7 +172,8 @@ export default function Album() {
 
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
+
+        {/* <Typography variant="h6" align="center" gutterBottom>
           Contact
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
@@ -190,28 +182,23 @@ export default function Album() {
         <Grid container direction="row" justify="center" alignItems="flex-start" spacing={6}>
           <Grid item>
             <Link href="mailto:jhongb@uw.edu" color="textSecondary" underline="none">jhongb@uw.edu</Link>
-            {/* <Typography variant="subtitle1" color="textSecondary">jhongb@uw.edu</Typography> */}
           </Grid>
           <Grid item>
             <Link href="mailto:angelashen0607@gmail.com" color="textSecondary" underline="none">angelashen0607@gmail.com</Link>
-            {/* <Typography variant="subtitle1" color="textSecondary">angelashen0607@gmail.com</Typography> */}
           </Grid>
           <Grid item>
             <Link href="mailto:kamelr@uw.edu" color="textSecondary" underline="none">kamelr@uw.edu</Link>
-            {/* <Typography variant="subtitle1" color="textSecondary">kamelr@uw.edu</Typography> */}
           </Grid>
           <Grid item>
             <Link href="mailto:thuynh12@uw.edu" color="textSecondary" underline="none">thuynh12@uw.edu</Link>
-            {/* <Typography variant="subtitle1" color="textSecondary">thuynh12@uw.edu</Typography> */}
           </Grid>
         </Grid>
         <span></span>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           <Link href="https://ischool.uw.edu/capstone" underline="hover">see other projects</Link>
-        </Typography>
+        </Typography> */}
 
       </footer>
-      {/* End footer */}
     </React.Fragment>
   );
 }
