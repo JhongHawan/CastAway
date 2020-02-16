@@ -14,9 +14,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
-
+import IconButton from '@material-ui/core/IconButton';
+import LaunchOutlinedIcon from '@material-ui/icons/LaunchOutlined';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 import Landing from '../img/landing.jpeg';
-import Avatar from '@material-ui/core/Avatar';
+// import Card from '@material-ui/core/Card';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Box from '@material-ui/core/Box';
 import { Divider } from '@material-ui/core';
 function Copyright() {
@@ -45,7 +50,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(4),
   },
   mainContent: {
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(5, 5, 5),
   },
   cardGrid: {
@@ -75,7 +80,7 @@ const useStyles = makeStyles(theme => ({
     height: 0,
     paddingTop: '56.25%',
     marginTop: '30',
-    opacity: '80%',
+    opacity: '85%',
     position: 'relative',
     // backgroundAttachment: 'fixed',
     // backgroundPosition: 'center',
@@ -99,7 +104,7 @@ const useStyles = makeStyles(theme => ({
     // backgroundRepeat: 'no-repeat',
     position: 'relative',
     backgroundSize: 'cover',
-    opacity: '80%',
+    opacity: '85%',
     [theme.breakpoints.down('sm')]: {
       backgroundImage: `url(${Landing})`,
       height: '400px'
@@ -124,8 +129,26 @@ const useStyles = makeStyles(theme => ({
   specialBox: {
     boxShadow:
       '0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12)',
-
-  }
+  },
+  gridListBasic: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    flexWrap: 'nowrap',
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: 'translateZ(0)',
+  },
+  title: {
+    color: theme.palette.primary.light,
+  },
+  titleBar: {
+    background:
+      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+  },
 
 }));
 
@@ -145,15 +168,7 @@ export default function Album() {
             <Typography variant="h2">Holistic, Accurate & Trustworthy</Typography>
           </Box>
         </Box>
-        {/* older hero image */}
-        {/* <Card className={classes.landingCard}>
-          <CardMedia className={classes.landingImg} image={'landing.jpeg'} />
-          <div className={classes.textOverlay}>
-            <Typography variant="h2">Make An Impact</Typography>
-          </div>
-        </Card> */}
 
-        {/* Purpose Section */}
         <Container className={classes.mainContent}>
           <Grid container justify="center" alignItems="center" className={classes.mainContent} spacing={3}>
             <Grid item xs={12} sm={3} align="center">
@@ -169,6 +184,62 @@ export default function Album() {
           </Grid>
         </Container>
 
+        {/* Section for news, added for more pictures */}
+        <Container className={classes.mainContent}>
+          <div className={classes.gridListBasic}>
+            <GridList className={classes.gridList} cols={3}>
+              <GridListTile>
+                <img src="rescue_org.jpg" alt="Refugee Crisis" />
+                <GridListTileBar
+                  title="Millions On The Move: Refugee Crisis"
+                  classes={{
+                    root: classes.titleBar,
+                    title: classes.title,
+                  }}
+                  actionIcon={
+                    <IconButton onClick={() => { window.open('https://www.rescue.org/topic/refugee-crisis') }}>
+                      <LaunchOutlinedIcon className={classes.title} />
+                    </IconButton>
+                  }
+                />
+              </GridListTile>
+
+              <GridListTile>
+                <img src="syrian_refugees.jpg" alt="Syrian children refugees" />
+                <GridListTileBar
+                  title="Syria Refugee Crisis Explained"
+                  classes={{
+                    root: classes.titleBar,
+                    title: classes.title,
+                  }}
+                  actionIcon={
+                    <IconButton onClick={() => { window.open('https://www.unrefugees.org/news/syria-refugee-crisis-explained/') }}>
+                      <LaunchOutlinedIcon className={classes.title} />
+                    </IconButton>
+                  }
+                />
+              </GridListTile>
+
+              <GridListTile>
+                <img src="burkina_fasco.jpg" alt="Burkina Fasco" />
+                <GridListTileBar
+                  title="Burkina Fasco And The Sahel's New Frontline"
+                  classes={{
+                    root: classes.titleBar,
+                    title: classes.title,
+                  }}
+                  actionIcon={
+                    <IconButton onClick={() => { window.open('https://www.refugeesinternational.org/reports/2020/2/11/burkina-faso-and-the-sahels-new-frontline/') }}>
+                      <LaunchOutlinedIcon className={classes.title} />
+                    </IconButton>
+                  }
+                />
+              </GridListTile>
+            </GridList>
+          </div>
+        </Container>
+
+
 
         {/* Solution section */}
         <Container>
@@ -177,7 +248,7 @@ export default function Album() {
           </Box>
           <Grid container justify="center" alignItems="center" className={classes.mainContent} spacing={10}>
             <Grid item xs={12} sm={5} align="center">
-              <img className={classes.specialBox} src="https://via.placeholder.com/250x167.png?text=TEMP" />
+              <img className={classes.specialBox} src="https://via.placeholder.com/250x167.png?text=TEMP" title="placeholder" />
             </Grid>
             <Grid item xs={12} sm={6}>
               <Typography variant="h6">Example #1</Typography>
@@ -186,7 +257,7 @@ export default function Album() {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={5} align="center">
-              <img className={classes.specialBox} src="https://via.placeholder.com/250x167.png?text=TEMP" />
+              <img className={classes.specialBox} src="https://via.placeholder.com/250x167.png?text=TEMP" title="placeholder" />
             </Grid>
             <Grid item xs={12} sm={6}>
               <Typography variant="h6">Example #2</Typography>
@@ -195,7 +266,7 @@ export default function Album() {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={5} align="center">
-              <img className={classes.specialBox} src="https://via.placeholder.com/250x167.png?text=TEMP" />
+              <img className={classes.specialBox} src="https://via.placeholder.com/250x167.png?text=TEMP" title="placeholder" />
             </Grid>
             <Grid item xs={12} sm={6}>
               <Typography variant="h6">Example #3</Typography>
@@ -207,7 +278,8 @@ export default function Album() {
         </Container>
 
 
-        <Container>
+        {/* Complete section for Team */}
+        {/* <Container>
           <Box align="center" className={classes.mainContent}>
             <Typography variant="h3">Meet the Team</Typography>
           </Box>
@@ -233,55 +305,81 @@ export default function Album() {
               <Typography variant="body1">Project Manager</Typography>
             </Grid>
           </Grid>
-        </Container>
-        {/* <Container className={classes.heroContent}>
-          <Box className={classes.heroContent}>
-            <Typography variant="h2" align="center">Purpose</Typography>
-          </Box>
-          <Box className={classes.heroContent}>
-            <Typography variant="body1">
-              There are more people on the move than ever before. An unparalleled 70.8 million people around the world have been forced from their home. Among them are nearly 25.9 million refugees, over half of whom are children under the age of 18. The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference.
-              Immigrants helped build our nation and make it what it is now. We should do everything in our power to embrace them and not exclude them.
-            </Typography>
-          </Box>
-        </Container> */}
-
-        {/* Container for screenshots of the solution */}
-        {/* <Container className={classes.heroContent}>
-          <Box className={classes.heroContent}>
-            <Typography variant="h2" align="center">Our Solution</Typography>
-          </Box>
-          <Grid container justify={'center'} spacing={10} className={classes.cardGrid}>
-            <Grid item justify={'center'}>
-              <CardMedia>
-                <img src="https://via.placeholder.com/220x150.png?text=TEMP" />
-              </CardMedia>
-            </Grid>
-            <Grid item>
-              <Typography variant="body1">This is a temp for the solution screenshots</Typography>
-            </Grid>
-          </Grid>
-        </Container> */}
-
-        {/* Creating a seciton for team */}
-        {/* <Container className={classes.heroContent}>
-          <Typography variant="h2" align="center">Meet the Team</Typography>
-          <Grid container justify={'center'} spacing={10} className={classes.cardGrid}>
-            <Grid item>
-            </Grid>
-          </Grid>
         </Container> */}
       </main>
 
 
-
-
-
-
       {/* Footer */}
       <footer className={classes.footer}>
+        <Container>
+          <Box align="center">
+            <Typography variant="h3">Meet the Team</Typography>
+          </Box>
+          <Grid container justify="center" alignItems="center" className={classes.mainContent} spacing={4}>
+            <Grid item xs={12} sm={3} align="center">
+              <img src="brian.jpg" width="150px" title="Brian Jhong" />
+              <Typography variant="h6">Brian Jhong</Typography>
+              <Typography variant="body1">Developer</Typography>
+              <Link href="mailto:jhongb@uw.edu" underline="none">jhongb@uw.edu</Link>
+            </Grid>
+            <Grid item xs={12} sm={3} align="center">
+              <img src="angela.png" width="150px" title="Angela Shen" />
+              <Typography variant="h6">Angela Shen</Typography>
+              <Typography variant="body1">UX Designer</Typography>
+              <Link href="mailto:angelashen0607@gmail.com" underline="none">angelashen0607@gmail.com</Link>
+            </Grid>
+            <Grid item xs={12} sm={3} align="center">
+              <img src="rahma.jpg" width="150px" title="Rahma Kamel" />
+              <Typography variant="h6">Rahma Kamel</Typography>
+              <Typography variant="body1">Data Scientist/UX Designer</Typography>
+              <Link href="mailto:kamelr@uw.edu" underline="none">kamelr@uw.edu</Link>
+            </Grid>
+            <Grid item xs={12} sm={3} align="center">
+              <img src="tracy.jpeg" width="150px" title="Tracy Huynh" />
+              <Typography variant="h6">Tracy Huynh</Typography>
+              <Typography variant="body1">Project Manager</Typography>
+              <Link href="mailto:thuynh12@uw.edu" underline="none">thuynh12@uw.edu</Link>
+            </Grid>
+            <Grid item xs={12} align="center">
+              <Typography variant="subtitle1" align="center" color="textSecondary">
+                This project is a part of the&nbsp;
+                <Link href="https://ischool.uw.edu/capstone" underline="none">Capstone Project</Link>
+                &nbsp;course at the University of Washington Information School
+              </Typography>
+            </Grid>
+          </Grid>
+        </Container>
 
-        <Typography variant="h6" align="center" gutterBottom>
+        {/* No images */}
+        {/* <Container>
+          <Grid container justify="center" alignItems="center" spacing={4}>
+            <Grid item xs={12} align="center">
+              <Typography variant="h5">Contact</Typography>
+            </Grid>
+            <Grid item xs={12} align="center">
+              <Typography variant="subtitle1" align="center" color="textSecondary">
+                This project is a part of the&nbsp;
+                <Link href="https://ischool.uw.edu/capstone" underline="none">Capstone Project</Link>
+                &nbsp;course at the University of Washington Information School
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Link href="mailto:jhongb@uw.edu" color="textSecondary" underline="none">jhongb@uw.edu</Link>
+            </Grid>
+            <Grid item>
+              <Link href="mailto:angelashen0607@gmail.com" color="textSecondary" underline="none">angelashen0607@gmail.com</Link>
+            </Grid>
+            <Grid item>
+              <Link href="mailto:kamelr@uw.edu" color="textSecondary" underline="none">kamelr@uw.edu</Link>
+            </Grid>
+            <Grid item>
+              <Link href="mailto:thuynh12@uw.edu" color="textSecondary" underline="none">thuynh12@uw.edu</Link>
+            </Grid>
+          </Grid>
+        </Container> */}
+
+        {/* old footer */}
+        {/* <Typography variant="h6" align="center" gutterBottom>
           Contact
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
@@ -304,7 +402,7 @@ export default function Album() {
         <span></span>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           <Link href="https://ischool.uw.edu/capstone" underline="hover">see other projects</Link>
-        </Typography>
+        </Typography> */}
 
       </footer>
     </React.Fragment>
