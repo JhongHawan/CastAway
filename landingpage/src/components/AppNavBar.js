@@ -7,10 +7,10 @@ import Link from '@material-ui/core/Link';
 function AppNavBar() {
   return (
     <div className="AppNavBar">
-      <AppBar position="relative">
+      <AppBar position="relative" color="transparent" style={{boxShadow: 'none'}}>
         <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            LOGO
+          <Typography variant="h6" color="primary" noWrap>
+            REFUGEE NAME PLACEHOLDER
           </Typography>
         </Toolbar>
       </AppBar>
