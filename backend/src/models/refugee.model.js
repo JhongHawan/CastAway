@@ -5,23 +5,24 @@ dotenv.config()
 
 //simple schema
 const RefugeeSchema = new mongoose.Schema({
-  population: {
-    type: Number,
+  destination: {
+    type: String,
     required: true
-  }, 
-  country: {
-     type: Number,
+  },
+  origin: {
+     type: String,
      required: true
+  }, 
+  year: {
+     type: Date,
+     required: true
+  },
+  value: {
+     type: Number,
+     required: false
   }
 });
 
-
-//custom method to generate authToken 
-UserSchema.methods.generateAuthToken = function() { 
-  const token = jwt.sign({ _id: this._id, isAdmin: this.isAdmin }, process.env.PRIVATE_KEY, { expiresIn: '30s'}); //get the private key from the config file -> environment variable
-  return token;
-}
-
-const Refugee = mongoose.model('User', RefugeeSchema);
+const Refugee = mongoose.model('Refugee', RefugeeSchema);
 
 exports.Refugee = Refugee; 

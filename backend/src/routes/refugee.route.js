@@ -1,45 +1,62 @@
 const auth = require("../middleware/auth");
 const bcrypt = require("bcrypt");
-const { User, validate } = require("../models/user.model");
 const { Refugee } = require("../models/refugee.model");
 const express = require("express");
 const router = express.Router();
 
-// auth middleware checks for valid jwt authtoken. 
-router.get("/current", auth, async (req, res) => {
-  const user = await User.findById(req.user._id).select("-password");
-  res.send(user);
+// Get the refugee data
+router.get("/refugee", async (req, res) => {
+  const refugee = await Refugee.findById(req.user._id);
+  res.send(refugee);
+});
+
+// Gets all of the information on refugee populations. 
+router.get("/allRefugees", async (req, res) => {
+  const refugee = await Refugee.find();
+  res.send(refugee);
 });
 
 router.post("/upload", async (req, res) => {
-  // validate the request body first
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  // find an existing refugee and no duplicates for database. 
+  let refugee = await Refugee.findOne({ 
+    destination: req.body.destination,
+    origin: req.body.origin,
+    year: req.body.year,
+    value: req.body.value 
+  });
 
-  // check if email exists
-  const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(400).send("Email is not found");
+  if (refugee) return res.status(400).send("Refugee already recorded.");
 
-  // check if password is correct
-  const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) return res.status(400).send("Invalid password");
+  const newRefugee = new Refugee({
+    destination: req.body.destination,
+    origin: req.body.origin,
+    year: req.body.year,
+    value: req.body.value
+  }); 
 
   try {
-    await user.save();
-    const token = user.generateAuthToken();
-    res.header("x-auth-token", token).send({
-      _id: user._id,
-      status: 'Logged in'
+    await newRefugee.save();
+    res.send({
+      _id: newRefugee._id,
+      status: 'Successfully Uploaded New Refugee!'
     });
   } catch (err) {
     res.status(400).send(error);
   }
+
 });
 
-// Get the refugee data
-router.get("/data", async (req, res) => {
-   const refugee = await Refugee.findById(req.user._id).select("-password");
-   res.send(refugee);
+router.post("/uploadMany", async (req, res) => {
+  try {
+    await Refugee.create(req.body.batch);
+    res.send({
+      status: 'Successfully Uploaded Multiple New Refugee!',
+      batch: req.body.batch
+    });
+  } catch (err) {
+    res.status(400).send(error);
+  }
+
 });
 
 module.exports = router;
