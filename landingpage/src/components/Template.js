@@ -316,26 +316,26 @@ export default function Album() {
             <Typography variant="h3">Meet the Team</Typography>
           </Box>
           <Grid container justify="center" alignItems="center" className={classes.mainContent} spacing={4}>
-            <Grid item xs={12} sm={3} align="center">
+            <Grid item xs={12} sm={6} md={6} align="center">
               <img src="brian.jpg" width="150px" title="Brian Jhong" />
               <Typography variant="h6">Brian Jhong</Typography>
               <Typography variant="body1">Developer</Typography>
               <Link href="mailto:jhongb@uw.edu" underline="none">jhongb@uw.edu</Link>
             </Grid>
-            <Grid item xs={12} sm={3} align="center">
+            <Grid item xs={12} sm={6} md={6} align="center">
               <img src="angela.png" width="150px" title="Angela Shen" />
               <Typography variant="h6">Angela Shen</Typography>
               <Typography variant="body1">UX Designer</Typography>
               <Link href="mailto:angelashen0607@gmail.com" underline="none">angelashen0607@gmail.com</Link>
             </Grid>
-            <Grid item xs={12} sm={3} align="center">
+            <Grid item xs={12} sm={6} md={6} align="center">
               <img src="rahma.jpg" width="150px" title="Rahma Kamel" />
               <Typography variant="h6">Rahma Kamel</Typography>
               <Typography variant="body1">Data Scientist/UX Designer</Typography>
               <Link href="mailto:kamelr@uw.edu" underline="none">kamelr@uw.edu</Link>
             </Grid>
-            <Grid item xs={12} sm={3} align="center">
-              <img src="tracy.jpeg" width="150px" title="Tracy Huynh" />
+            <Grid item xs={12} sm={6} md={6} align="center">
+              <img src="tracy.jpg" width="150px" title="Tracy Huynh" />
               <Typography variant="h6">Tracy Huynh</Typography>
               <Typography variant="body1">Project Manager</Typography>
               <Link href="mailto:thuynh12@uw.edu" underline="none">thuynh12@uw.edu</Link>
