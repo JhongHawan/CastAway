@@ -152,10 +152,6 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-
-
 export default function Album() {
   const classes = useStyles();
 
@@ -319,7 +315,7 @@ export default function Album() {
             <Grid item xs={12} sm={6} md={6} align="center">
               <img src="brian.jpg" width="150px" title="Brian Jhong" />
               <Typography variant="h6">Brian Jhong</Typography>
-              <Typography variant="body1">Developer</Typography>
+              <Typography variant="body1">Full-Stack Developer</Typography>
               <Link href="mailto:jhongb@uw.edu" underline="none">jhongb@uw.edu</Link>
             </Grid>
             <Grid item xs={12} sm={6} md={6} align="center">
