@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
   AppNavBar: {
     backgroundColor: '#C9D6DF',
   },
+  bigHeadingColor: {
+    color: '#F16841'
+  },
 }));
 
 function AppNavBar() {
@@ -22,11 +25,11 @@ function AppNavBar() {
     <div className="AppNavBar">
       <AppBar position="relative" className={classes.AppNavBar} color="transparent" style={{ boxShadow: 'none' }}>
         <Toolbar>
-          <Grid container justify="center" alignItems="center">
-            {/* <Typography variant="h6" color="primary" noWrap>
-              (dis)placed
-                </Typography> */}
+          <Grid container justify="left" alignItems="center">
             <img src="logo.png" className={classes.logo} width="100px" title="logo" />
+            <Typography className={classes.bigHeadingColor} variant="h4" color="primary" noWrap>
+              (dis)placed
+                </Typography>
           </Grid>
         </Toolbar>
       </AppBar>
