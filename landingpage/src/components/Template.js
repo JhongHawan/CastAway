@@ -172,7 +172,7 @@ export default function Album() {
         <Container className={classes.mainContent}>
           <Grid container justify="center" alignItems="center" className={classes.mainContent} spacing={3}>
             <Grid item xs={12} sm={3} align="center">
-              <img src="question.jpg" width="150px" />
+              <img src="q_mark.png" width="100px" />
             </Grid>
             <Grid item xs={12} sm={7}>
               <Typography variant="h5">Why does it matter?</Typography>
