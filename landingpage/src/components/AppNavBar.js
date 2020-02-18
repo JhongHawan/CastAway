@@ -26,7 +26,7 @@ function AppNavBar() {
             {/* <Typography variant="h6" color="primary" noWrap>
               (dis)placed
                 </Typography> */}
-            <img src="logo.png" className={classes.logo} width="125px" title="logo" />
+            <img src="logo.png" className={classes.logo} width="100px" title="logo" />
           </Grid>
         </Toolbar>
       </AppBar>
