@@ -1,11 +1,12 @@
 import React from 'react';
-import Navbar from './Navbar';
+import BarGraph from './BarGraph'; 
 
 function Visualization() {
   return(
    <div className="Visualization">
-     <Navbar></Navbar>
      <h1>Visualization Page</h1>
+    <BarGraph/>
+     
    </div>
   );
 }

@@ -1,27 +1,29 @@
 import React from 'react';
 import {
   Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Button
+  Nav
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import Logo from './Logo'; 
 
 function NavBar() {
   return(
-   <Navbar bg="primary" variant="dark">
-    <Navbar.Brand href="#home">Logo</Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#visualization">Visualizations</Nav.Link>
-      <Nav.Link href="#context">Context</Nav.Link>
-      <Nav.Link href="#stories">Stories</Nav.Link>
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-light">Search</Button>
-    </Form>
-  </Navbar>
+    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Brand className="ml-auto" as={Link} to="/">
+          <Logo className="logo" />
+      </Navbar.Brand>
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link as={Link} to="/">Home</Nav.Link>
+          <Nav.Link as={Link} to="/context">Context</Nav.Link>
+          <Nav.Link as={Link} to="/stories">Stories</Nav.Link>
+          <Nav.Link as={Link} to="/visualization">Visualization</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+      
+    </Navbar>
   );
 }
 

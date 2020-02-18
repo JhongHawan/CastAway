@@ -1,26 +1,33 @@
 import React from 'react';
-import Navbar from './components/Navbar';
 import './App.css';
+import AppNavBar from './components/AppNavBar';
+import Context from './components/Context';
+import Stories from './components/Stories';
+import Visualization from './components/Visualization'; 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NavBar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar></Navbar>
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Homepage for our project
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar/>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/context" component={Context} />
+          <Route path="/stories" component={Stories} />
+          <Route path="/visualization" component={Visualization} />
+        </Switch>
+      </div>
+    </Router>
+    
   );
 }
+
+const Home = () => (
+  <div>
+    <h1>Home Page</h1>
+  </div>
+);
 
 export default App;
