@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import AppNavBar from './components/AppNavBar';
 import Context from './components/Context';
 import Stories from './components/Stories';
 import Visualization from './components/Visualization'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NavBar from './components/Navbar';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar></Navbar>
+        <NavBar/>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/context" component={Context} />
