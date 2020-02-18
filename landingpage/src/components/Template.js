@@ -156,7 +156,7 @@ export default function Album() {
       <main>
         <Box className={classes.heroImg}>
           <Box className={classes.textOverlay}>
-            <Typography variant="h2">Holistic, Accurate & Trustworthy</Typography>
+            <Typography variant="h3">An Experience Built To Raise Awareness For Refugees</Typography>
           </Box>
         </Box>
 

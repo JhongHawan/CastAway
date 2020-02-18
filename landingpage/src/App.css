@@ -1,0 +1,25 @@
+/* @import url("https://use.typekit.net/ymr2ixr.css"); */
+
+@font-face {
+    font-family: zeitung-semibold;
+    src: url(./Zeitung/ZeitungPro-Semibold.otf)
+}
+
+@font-face {
+    font-family: zeitung;
+    src: url(./Zeitung/ZeitungPro.otf)
+}
+
+@font-face {
+    font-family: zeitung-light;
+    src: url(./Zeitung/ZeitungPro-Light.otf)
+}
+
+Typography.bigHeadingColor {
+    font-family: 'zeitung-semibold';
+    color: '#F16841';
+}
+
+.smallHeadingColor {
+    color: '#002851';
+}
