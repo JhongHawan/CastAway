@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/InfoCapstone2020/static/css/main.76e27cc9.chunk.css",
-    "main.js": "/InfoCapstone2020/static/js/main.d3f7ae39.chunk.js",
-    "main.js.map": "/InfoCapstone2020/static/js/main.d3f7ae39.chunk.js.map",
+    "main.js": "/InfoCapstone2020/static/js/main.131ed296.chunk.js",
+    "main.js.map": "/InfoCapstone2020/static/js/main.131ed296.chunk.js.map",
     "runtime-main.js": "/InfoCapstone2020/static/js/runtime-main.ff84cdf5.js",
     "runtime-main.js.map": "/InfoCapstone2020/static/js/runtime-main.ff84cdf5.js.map",
-    "static/js/2.a2504ee6.chunk.js": "/InfoCapstone2020/static/js/2.a2504ee6.chunk.js",
-    "static/js/2.a2504ee6.chunk.js.map": "/InfoCapstone2020/static/js/2.a2504ee6.chunk.js.map",
+    "static/js/2.d09aca0a.chunk.js": "/InfoCapstone2020/static/js/2.d09aca0a.chunk.js",
+    "static/js/2.d09aca0a.chunk.js.map": "/InfoCapstone2020/static/js/2.d09aca0a.chunk.js.map",
     "index.html": "/InfoCapstone2020/index.html",
-    "precache-manifest.7a94a9537117f81600d7583bb4546fc6.js": "/InfoCapstone2020/precache-manifest.7a94a9537117f81600d7583bb4546fc6.js",
+    "precache-manifest.2e88f55a1964cc349e736927fb5b3ff1.js": "/InfoCapstone2020/precache-manifest.2e88f55a1964cc349e736927fb5b3ff1.js",
     "service-worker.js": "/InfoCapstone2020/service-worker.js",
     "static/css/main.76e27cc9.chunk.css.map": "/InfoCapstone2020/static/css/main.76e27cc9.chunk.css.map",
-    "static/js/2.a2504ee6.chunk.js.LICENSE.txt": "/InfoCapstone2020/static/js/2.a2504ee6.chunk.js.LICENSE.txt",
+    "static/js/2.d09aca0a.chunk.js.LICENSE.txt": "/InfoCapstone2020/static/js/2.d09aca0a.chunk.js.LICENSE.txt",
     "static/media/landing.jpeg": "/InfoCapstone2020/static/media/landing.4010d615.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.ff84cdf5.js",
-    "static/js/2.a2504ee6.chunk.js",
+    "static/js/2.d09aca0a.chunk.js",
     "static/css/main.76e27cc9.chunk.css",
-    "static/js/main.d3f7ae39.chunk.js"
+    "static/js/main.131ed296.chunk.js"
   ]
 }
