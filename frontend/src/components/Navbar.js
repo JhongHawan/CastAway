@@ -11,7 +11,7 @@ import { Grid, Typography } from '@material-ui/core';
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="transparent">
+    <Navbar collapseOnSelect expand="lg" variant="light" className="">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Brand className="ml-auto" as={Link} to="/">
         {/* <Logo className="logo" /> */}

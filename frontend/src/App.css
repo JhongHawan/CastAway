@@ -1,18 +1,39 @@
-@import url("https://use.typekit.net/ymr2ixr.css");
+/* from tracy's adobe acct */
+@import url("https://use.typekit.net/ymr2ixr.css"); 
 
-h1.lightTest {
+/* color palette */
+.allColors {
+    /* primary */
+    color: #F16841;
+    color: #002851;
+    color: #ffffff;
+    /* secondary */
+    color: #FF8576;
+    color: #FFB238;
+    color: #F0F5F9;
+    color: #c9d6df;
+    color: #52616B;
+}
+
+/* used for body */
+.lightText {
+    text-align: center;
     font-family: zeitung, sans-serif;
     font-weight: 300;
     font-style: normal;
 }
 
-h1.regTest {
+/* used for headings */
+.regText {
+    text-align: center;
     font-family: zeitung, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-h1.boldTest {
+/* used for titles */
+.boldText {
+    text-align: center;
     font-family: zeitung, sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -25,8 +46,6 @@ h1.brand {
     font-style: normal;
 }
 
+
 .logo {}
 
-.quote-section {
-    color: #F16841
-}

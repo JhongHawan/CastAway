@@ -29,10 +29,10 @@ function App() {
 
 const Home = () => (
   // <ReactFullpage
-  <div>
-    <h1>Home Page</h1>
-  </div>
-  // <FullpageQuotes />
+  // <div>
+  //   <h1>Home Page</h1>
+  // </div>
+  <FullpageQuotes />
 );
 
 class FullpageQuotes extends React.Component {
@@ -48,19 +48,17 @@ class FullpageQuotes extends React.Component {
       // <ReactFullpage></ReactFullpage> 
       <ReactFullpage 
         scrollOverflow={true}
-        sectionsColor={['#F0F5F9']}
+        sectionsColor={['#F0F5F9', '#F0F5F9']}
         onLeave={this.onLeave.bind(this)}
         afterLoad={this.afterLoad.bind(this)}
         render={({ state, fullpageApi}) => {
           return(
             <Box id="fullpage-wrapper">
-              <Box className="section quote-section">
-                <h1 className="lightTest">CAST| |AWAY</h1>
-                <h1 className="regTest">CAST| |AWAY</h1>
-                <h1 className="boldTest">CAST| |AWAY</h1>
+              <Box className="section quote">
+                <h2 className="lightText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</h2>
               </Box>
-              <Box className="section">
-                <h1>BOO</h1>
+              <Box className="section quote">
+                <h1 className="boldText">BOO</h1>
               </Box>
             </Box>
           );
