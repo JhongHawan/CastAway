@@ -9,6 +9,8 @@ import Logo from './Logo';
 import '../App.css';
 import { Grid, Typography } from '@material-ui/core';
 
+
+// TODO: change the font of the links in navbar
 function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" className="">
