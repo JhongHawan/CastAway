@@ -16,6 +16,7 @@ import {
 
 class BarGraph extends Component {
   constructor(props) {
+    // Add the data as a prop from mongodb.
     super();
     this.state = {
       clicked: false,
@@ -62,7 +63,7 @@ class BarGraph extends Component {
             }
             style={this.state.style}
             data={[
-              // Add the datat from mongodb here 
+              // Add the data from mongodb here, passed in as a prop
               { x: new Date(1986, 1, 1), y: 2 },
               { x: new Date(1996, 1, 1), y: 3 },
               { x: new Date(2006, 1, 1), y: 5 },
