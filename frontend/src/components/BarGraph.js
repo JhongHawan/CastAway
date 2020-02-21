@@ -24,12 +24,9 @@ class BarGraph extends Component {
       style: {
         data: { fill: props.color }
       },
-      title: props.title
+      title: props.title,
+      data: props.data
     };
-  }
-
-  invertHex = (hex) => {
-    return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase(); 
   }
 
   render() {
@@ -56,19 +53,22 @@ class BarGraph extends Component {
           theme={VictoryTheme.material}
           title={this.state.title}
         >
-          <VictoryLabel text={this.state.title} x={225} y={30} textAnchor="middle"/>
+          <VictoryLabel text={this.state.title} x={200} y={30} textAnchor="middle"/>
           <VictoryBar
             dataComponent={
               <Bar events={{ onMouseOver: handleMouseOver }}/>
             }
             style={this.state.style}
-            data={[
-              // Add the data from mongodb here, passed in as a prop
-              { x: new Date(1986, 1, 1), y: 2 },
-              { x: new Date(1996, 1, 1), y: 3 },
-              { x: new Date(2006, 1, 1), y: 5 },
-              { x: new Date(2016, 1, 1), y: 4 }
-            ]}
+            // data={[
+            //   // Add the data from mongodb here, passed in as a prop
+            //   { x: new Date(1986, 1, 1), y: 2 },
+            //   { x: new Date(1996, 1, 1), y: 3 },
+            //   { x: new Date(2006, 1, 1), y: 5 },
+            //   { x: new Date(2016, 1, 1), y: 4 }
+            // ]}
+            data={
+              this.state.data
+            }
           />
           <VictoryAxis dependentAxis
             label="Population"
