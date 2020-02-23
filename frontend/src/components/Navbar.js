@@ -13,16 +13,28 @@ import { Grid, Typography } from '@material-ui/core';
 // TODO: change the font of the links in navbar
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light" className="">
+    <Navbar collapseOnSelect expand="lg" variant="light" bg="bg-light">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Brand className="ml-auto" as={Link} to="/">
         {/* <Logo className="logo" /> */}
-        <Grid container justify="center" alignItems="center" spacing={1}> 
-          <Grid item align="center">
+        <Grid container justify="center" alignItems="center" spacing={1}>
+          {/* <Grid item align="center">
             <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
+          </Grid> */}
+          <Grid item align="center">
+            <h2 className="brand">CAST|</h2>
+            {/* <img src="castawayLogo.png" width="50px" alt="castaway boat logo" /> */}
+            {/* <h1 className="brand"> |AWAY</h1> */}
           </Grid>
           <Grid item align="center">
-            <h1 className="brand">CAST| |AWAY</h1>
+            {/* <h1 className="brand">CAST|</h1> */}
+            <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
+            {/* <h1 className="brand"> |AWAY</h1> */}
+          </Grid>
+          <Grid item align="center">
+            {/* <h1 className="brand">CAST|</h1> */}
+            {/* <img src="castawayLogo.png" width="50px" alt="castaway boat logo" /> */}
+            <h2 className="brand"> |AWAY</h2>
           </Grid>
         </Grid>
       </Navbar.Brand>
