@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import refugeeReducer from '../slices/refugeeDataSlice'; 
+import refugeeReducer from '../features/visualization/refugeeSlice'; 
 
 const rootReducer = combineReducers({
   // Here we have the other reducers 

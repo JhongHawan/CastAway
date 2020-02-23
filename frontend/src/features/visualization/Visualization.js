@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container'; 
-import BarGraph from './BarGraph'; 
+import BarGraph from '../../components/BarGraph'; 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import { getData } from '../slices/refugeeDataSlice';
+import Button from '@material-ui/core/Button';
+import { useDispatch, useSelector } from 'react-redux'; 
+import { getDataReducer } from './refugeeSlice';
+
+const axios = require('axios').default;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,9 +24,20 @@ const useStyles = makeStyles(theme => ({
 
 function Visualization() {
   const classes = useStyles(); 
+  
+  const dispatch = useDispatch(); 
+  // const refugees = useSelector(state => state.refugeeSlice.refugees); 
 
-  const [ data ] = useState(getData); 
+  // const fetchAllRefugees = () => dispatch => {
+  //   axios.get('api/allRefugees').then(response => {
+  //     // Don't know if this will work since the mock data for the website is just 
+  //     // a bunch of books not in an array. 
+  //     dispatch();
+  //   });
+  // }
 
+  // const [ data ] = useState(fetchAllRefugees); 
+  
   return(
    <div className="Visualization">
      <Container>
@@ -39,9 +54,12 @@ function Visualization() {
       <main>
         <Grid container spacing={2} justify="center">
           <Grid item xs={5}>
-            <BarGraph color="pink" title="Syria" data={data} />
+            <BarGraph color="pink" title="Syria" />
           </Grid>
           <Grid item xs={5}>
+          <Button variant="contained" color="primary" onClick={() => dispatch(getDataReducer())}>
+            Get Data
+          </Button>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat natus animi quia ducimus sunt incidunt fugiat dolorum suscipit quas unde quo qui sequi tempora alias excepturi minus, nihil illum maxime?
               Deleniti adipisci, consectetur aut maxime unde doloremque blanditiis, nostrum quam eaque possimus ducimus consequuntur esse, temporibus sint natus fugiat quas? Quia quis temporibus illo tenetur nostrum suscipit in adipisci recusandae.

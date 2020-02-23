@@ -59,16 +59,16 @@ class BarGraph extends Component {
               <Bar events={{ onMouseOver: handleMouseOver }}/>
             }
             style={this.state.style}
-            // data={[
-            //   // Add the data from mongodb here, passed in as a prop
-            //   { x: new Date(1986, 1, 1), y: 2 },
-            //   { x: new Date(1996, 1, 1), y: 3 },
-            //   { x: new Date(2006, 1, 1), y: 5 },
-            //   { x: new Date(2016, 1, 1), y: 4 }
-            // ]}
-            data={
-              this.state.data
-            }
+            data={[
+              // Add the data from mongodb here, passed in as a prop
+              { x: new Date(1986, 1, 1), y: 2 },
+              { x: new Date(1996, 1, 1), y: 3 },
+              { x: new Date(2006, 1, 1), y: 5 },
+              { x: new Date(2016, 1, 1), y: 4 }
+            ]}
+            // data={
+            //   this.state.data
+            // }
           />
           <VictoryAxis dependentAxis
             label="Population"
