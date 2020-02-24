@@ -12,18 +12,10 @@ const refugeeSlice = createSlice({
   initialState: initialState,
   reducers: {
     getDataReducer: (state, action) => {
-      state.refugees.push(axios.get('api/allRefugees').then(response => { return response.data }))
+      state.refugees = action.payload; 
     }
   }
 });
-
-// Maybe this axios.get call should be somewhere else, like in the Visualization.js
-const fetchAllRefugees = () => dispatch => {
-  axios.get('api/allRefugees').then(response => {
-    dispatch(refugeeSlice.actions.getData(response.data.refugees))
-  });
-}
-
 
 export const { 
   getDataReducer,

@@ -26,17 +26,18 @@ function Visualization() {
   const classes = useStyles(); 
   
   const dispatch = useDispatch(); 
-  // const refugees = useSelector(state => state.refugeeSlice.refugees); 
 
-  // const fetchAllRefugees = () => dispatch => {
-  //   axios.get('api/allRefugees').then(response => {
-  //     // Don't know if this will work since the mock data for the website is just 
-  //     // a bunch of books not in an array. 
-  //     dispatch();
-  //   });
-  // }
-
-  // const [ data ] = useState(fetchAllRefugees); 
+  // Maybe this axios.get call should be somewhere else, like in the Visualization.js
+  const fetchAllRefugees = () => {
+    axios
+      .get('http://localhost:5000/api/refugees/allRefugees')
+      .then(response => {
+        console.log(response.status);
+        // Here we get the response and dispatch with the action and the response.data is our payload. 
+        // This then executes all the functionality of our action that we declared in our slice.  
+        dispatch(getDataReducer(response.data))   
+      });
+  }
   
   return(
    <div className="Visualization">
@@ -57,7 +58,7 @@ function Visualization() {
             <BarGraph color="pink" title="Syria" />
           </Grid>
           <Grid item xs={5}>
-          <Button variant="contained" color="primary" onClick={() => dispatch(getDataReducer())}>
+          <Button variant="contained" color="primary" onClick={fetchAllRefugees()}>
             Get Data
           </Button>
             <p>
