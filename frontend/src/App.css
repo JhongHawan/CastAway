@@ -56,10 +56,29 @@ h2.brand {
     border-style: solid;
 }
 
+.bigTitle {
+    font-size: 100px;
+    font-family: zeitung, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: expanded;
+
+}
+
+.titleCenter {
+    text-align: center;
+    color: #ffffff;
+}
+
 /* everythin 600px */
 
 .heading1 {
     padding: 2em 5em 2em;
+}
+
+.sectionGradient {
+    /* background-image: linear-gradient(#FF8576, rgba(255,0,0,0)); */
+    background-color: #FF8576;
 }
 
 @media screen and (max-width: 600px) {
@@ -83,7 +102,7 @@ h2, h3, h4, h5, h6 {
     font-family: zeitung, sans-serif;
     font-weight: 400;
     font-style: normal;
-    padding-bottom: 1em;
+    /* padding-bottom: 1em; */
 }
 
 p {
