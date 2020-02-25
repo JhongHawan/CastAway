@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container'; 
 import BarGraph from '../../components/BarGraph'; 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import { useDispatch, useSelector } from 'react-redux'; 
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
 import { getDataReducer } from './refugeeSlice';
-
 const axios = require('axios').default;
 
 const useStyles = makeStyles(theme => ({
@@ -27,7 +25,6 @@ function Visualization() {
   
   const dispatch = useDispatch(); 
 
-  // Maybe this axios.get call should be somewhere else, like in the Visualization.js
   const fetchAllRefugees = () => {
     axios
       .get('http://localhost:5000/api/refugees/allRefugees')
@@ -38,7 +35,27 @@ function Visualization() {
         dispatch(getDataReducer(response.data))   
       });
   }
-  
+
+  // May want to put an if case here so that you only fetch data 
+  // if it's not in the store already. 
+  useEffect(() => {
+    if (loading === false) {
+      fetchAllRefugees(); 
+    }
+  }, []);
+
+  const { refugees, loading } = useSelector(
+    (state) => {
+      return {
+        // It has to refer to the state of the reducer which in this case has name
+        // refugee. So it's not state.refugees but state.refugee.refugees
+        refugees: state.refugee.refugees,
+        loading: state.refugee.loading
+      }
+    },
+    shallowEqual
+  ); 
+
   return(
    <div className="Visualization">
      <Container>
@@ -55,12 +72,9 @@ function Visualization() {
       <main>
         <Grid container spacing={2} justify="center">
           <Grid item xs={5}>
-            <BarGraph color="pink" title="Syria" />
+            <BarGraph color="pink" title="Syria" data={refugees}/>
           </Grid>
           <Grid item xs={5}>
-          <Button variant="contained" color="primary" onClick={fetchAllRefugees()}>
-            Get Data
-          </Button>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat natus animi quia ducimus sunt incidunt fugiat dolorum suscipit quas unde quo qui sequi tempora alias excepturi minus, nihil illum maxime?
               Deleniti adipisci, consectetur aut maxime unde doloremque blanditiis, nostrum quam eaque possimus ducimus consequuntur esse, temporibus sint natus fugiat quas? Quia quis temporibus illo tenetur nostrum suscipit in adipisci recusandae.

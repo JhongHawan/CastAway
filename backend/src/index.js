@@ -9,12 +9,7 @@ const app = express();
 
 dotenv.config();
 
-if (!process.env.PRIVATE_KEY) {
-  console.error("FATAL ERROR: private key is not defined.");
-  process.exit(1);
-}
-
-//connect to mongodb
+// connect to mongodb
 // we would connect our database here instead of the hardcoded string below. 
 // Create an environment variable for the database to connect for mongoose. 
 mongoose
