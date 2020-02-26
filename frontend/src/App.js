@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import AppNavBar from './components/AppNavBar';
 import Context from './components/Context';
 import Stories from './components/Stories';
-import Visualization from './components/Visualization';
+import Visualization from './features/visualization/Visualization'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/Navbar';
 

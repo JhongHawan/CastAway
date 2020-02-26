@@ -1,5 +1,15 @@
 import React, { Component } from 'react'; 
-import { VictoryBar, VictoryChart, Bar, VictoryTheme, VictoryAxis } from 'victory'; 
+import { 
+  VictoryContainer,
+  VictoryBar, 
+  VictoryLine, 
+  VictoryChart, 
+  Bar, 
+  VictoryTheme, 
+  VictoryAxis,
+  VictoryLabel
+} from 'victory'; 
+import { useSelector, shallowEqual } from 'react-redux'; 
 
 /*
   Pull data from the database. 
@@ -7,19 +17,37 @@ import { VictoryBar, VictoryChart, Bar, VictoryTheme, VictoryAxis } from 'victor
 */
 
 class BarGraph extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    // Add the data as a prop from mongodb.
+    super(props);
     this.state = {
       clicked: false,
+      color: "#FF30F7",
       style: {
-        data: { fill: "tomato" }
-      }
+        data: { fill: "#FF30F7" }
+      },
+      title: "",
+      data: []
     };
   }
+  // Having a lot of trouble getting the data field to populate with the this.props.data 
+  componentDidMount() {
+    this.setState({
+      clicked: false,
+      color: this.props.color,
+      style: {
+        data: { fill: this.props.color },
+        fontSize: 30
+      },
+      title: this.props.title,
+      data: this.props.data
+    });
+  }
+
 
   render() {
     const handleMouseOver = () => {
-      const fillColor = this.state.clicked ? "blue" : "tomato";
+      const fillColor = this.state.clicked ? "#547BFE" : this.state.color;
       const clicked = !this.state.clicked;
       this.setState({
         clicked,
@@ -29,24 +57,50 @@ class BarGraph extends Component {
       });
     };
 
+    console.log("This is PROPS data: " + this.props.data); 
+    console.log("This is the STATE data: " + this.state.title); 
+
+    const CHART_HEIGHT = 800; 
+    const CHART_WIDTH = 1000; 
+    const FONT_SIZE = 20;
+
     return (
       <div>
-        <VictoryChart height={400} width={400}
+        <VictoryChart height={CHART_HEIGHT} width={CHART_WIDTH}
+          animate={{
+            duration: 1000,
+            onLoad: { duration: 2000 }
+          }}
           domainPadding={{ x: 50, y: [0, 20] }}
-          scale={{ x: "time" }}
+          scale={{ x: "time", y: "linear" }}
           theme={VictoryTheme.material}
+          title={this.state.title}
         >
+          <VictoryLabel 
+            text={`Refugees from ${this.state.title} to the U.S.`} 
+            x={CHART_WIDTH / 2} 
+            y={30} 
+            style={{fontSize: 40}} 
+            textAnchor="middle"
+          />
           <VictoryBar
             dataComponent={
               <Bar events={{ onMouseOver: handleMouseOver }}/>
             }
             style={this.state.style}
-            data={[
-              { x: new Date(1986, 1, 1), y: 2 },
-              { x: new Date(1996, 1, 1), y: 3 },
-              { x: new Date(2006, 1, 1), y: 5 },
-              { x: new Date(2016, 1, 1), y: 4 }
-            ]}
+            data={
+              this.props.data.map(population => (
+                { x: new Date(population.year), y: (population.value / 1000)}
+              ))
+            }
+          />
+          <VictoryAxis dependentAxis
+            label="Population (1000s)"
+            axisLabelComponent={<VictoryLabel style={{fontSize: FONT_SIZE}} dy={-20}/>}
+          />
+          <VictoryAxis
+            label="Time (Years)"
+            axisLabelComponent={<VictoryLabel style={{fontSize: FONT_SIZE}} dy={20}/>}
           />
         </VictoryChart>
       </div>
