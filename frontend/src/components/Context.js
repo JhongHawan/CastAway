@@ -25,7 +25,15 @@ function Context() {
           </Box>
         </Box>
         <Box className="heading1">
-          This is blank. Add to me plz.
+          <Grid container spacing={2}>
+            <Grid item md={4}>
+              <img src="https://via.placeholder.com/300x200.png?text=MAP" />
+            </Grid>
+            <Grid item>
+              <h4>SOMETHING BIG</h4>
+              <p>Somebody once told me...</p>
+            </Grid>
+          </Grid>
         </Box>
         <Box className="sectionGradient">
           <Box className="soloHeading">
@@ -33,15 +41,42 @@ function Context() {
           </Box>
         </Box>
         <Box className="heading1">
-          <Grid container spacing={2}>
+          <Grid container spacing={2}>  
             <Grid item sm={4}>
-              <ContextCard />
+              <ContextCard
+                mythTitle="Myth #1"
+                mythDetails="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              />
             </Grid>
             <Grid item sm={4}>
-              <ContextCard />
+              <ContextCard
+                mythTitle="Myth #2"
+                mythDetails="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              />
             </Grid>
             <Grid item sm={4}>
-              <ContextCard />
+              <ContextCard
+                mythTitle="Myth #3"
+                mythDetails="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              />
+            </Grid>
+            <Grid item sm={4}>
+              <ContextCard
+                mythTitle="Myth #4"
+                mythDetails="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              />
+            </Grid>
+            <Grid item sm={4}>
+              <ContextCard
+                mythTitle="Myth #5"
+                mythDetails="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              />
+            </Grid>
+            <Grid item sm={4}>
+              <ContextCard
+                mythTitle="Myth #6"
+                mythDetails="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              />
             </Grid>
           </Grid>
         </Box>
