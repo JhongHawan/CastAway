@@ -27,7 +27,11 @@ function Visualization() {
 
   const fetchAllRefugees = () => {
     axios
-      .get('http://localhost:5000/api/refugees/allRefugees')
+      .get('http://localhost:5000/api/refugees/refugee/origin', {
+        params: {
+          origin: "Iraq"
+        }
+      })
       .then(response => {
         console.log(response.status);
         // Here we get the response and dispatch with the action and the response.data is our payload. 
@@ -35,14 +39,6 @@ function Visualization() {
         dispatch(getDataReducer(response.data))   
       });
   }
-
-  // May want to put an if case here so that you only fetch data 
-  // if it's not in the store already. 
-  useEffect(() => {
-    if (loading === false) {
-      fetchAllRefugees(); 
-    }
-  }, []);
 
   const { refugees, loading } = useSelector(
     (state) => {
@@ -56,6 +52,16 @@ function Visualization() {
     shallowEqual
   ); 
 
+  // May want to put an if case here so that you only fetch data 
+  // if it's not in the store already. 
+  useEffect(() => {
+    fetchAllRefugees(); 
+    // Need to edit the state here and 
+    // reset loading = false; 
+  }, []);
+
+  console.log(refugees)
+  
   return(
    <div className="Visualization">
      <Container>
@@ -71,15 +77,8 @@ function Visualization() {
       </Typography>
       <main>
         <Grid container spacing={2} justify="center">
-          <Grid item xs={5}>
-            <BarGraph color="pink" title="Syria" data={refugees}/>
-          </Grid>
-          <Grid item xs={5}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat natus animi quia ducimus sunt incidunt fugiat dolorum suscipit quas unde quo qui sequi tempora alias excepturi minus, nihil illum maxime?
-              Deleniti adipisci, consectetur aut maxime unde doloremque blanditiis, nostrum quam eaque possimus ducimus consequuntur esse, temporibus sint natus fugiat quas? Quia quis temporibus illo tenetur nostrum suscipit in adipisci recusandae.
-              Voluptatum, a. Quod recusandae, commodi quis exercitationem assumenda corrupti a inventore molestias doloribus hic blanditiis delectus molestiae, sequi id amet pariatur temporibus ex dolorum nesciunt vitae voluptas cumque maiores maxime.
-            </p>
+          <Grid item xs={8}>
+            <BarGraph color="pink" title="Iraq" data={ refugees } />
           </Grid>
         </Grid>
       </main>

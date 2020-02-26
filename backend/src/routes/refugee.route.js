@@ -5,8 +5,14 @@ const express = require("express");
 const router = express.Router();
 
 // Get the refugee data
-router.get("/refugee", async (req, res) => {
-  const refugee = await Refugee.findById(req.user._id);
+router.get("/refugee/origin", async (req, res) => {
+
+  // First check to see if the origin country exists in the dataset. 
+  // Case sensitive 
+  const origin = await Refugee.findOne({ origin: req.query.origin });
+  if (!origin) return res.status(400).send("Origin is not found");
+
+  const refugee = await Refugee.find({ origin: req.query.origin })
   res.send(refugee);
 });
 
