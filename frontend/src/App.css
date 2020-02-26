@@ -75,6 +75,10 @@ h2.brand {
 .heading1 {
     padding: 2em 5em 2em;
 }
+.soloHeading {
+    padding: 1em 0;
+    text-align: center;
+}
 
 .sectionGradient {
     /* background-image: linear-gradient(#FF8576, rgba(255,0,0,0)); */
