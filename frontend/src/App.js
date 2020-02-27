@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Context from './components/Context';
 import Stories from './components/Stories';
+import About from './components/About'; 
 import Visualization from './features/visualization/Visualization'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/Navbar';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/context" component={Context} />
           <Route path="/stories" component={Stories} />
           <Route path="/visualization" component={Visualization} />
+          <Route path="/about" component={About} />
         </Switch>
       </div>
     </Router>

@@ -32,6 +32,7 @@ function NavBar() {
           <Nav.Link as={Link} to="/context">Context</Nav.Link>
           <Nav.Link as={Link} to="/stories">Stories</Nav.Link>
           <Nav.Link as={Link} to="/visualization">Visualization</Nav.Link>
+          <Nav.Link as={Link} to="/about">About</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
