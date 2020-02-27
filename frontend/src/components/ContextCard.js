@@ -26,7 +26,7 @@ class contextCard extends React.Component {
                 <ExpansionPanelSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <h4>{this.props.mythTitle}</h4>
+                    <h5>{this.props.mythTitle}</h5>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <p>{this.props.mythDetails}</p>
@@ -49,7 +49,7 @@ class contextCard extends React.Component {
             //     </CardContent>
             //     <CardActions>
             //         <IconButton
-            //             onClick={this.handleExpandClick}
+            //             // onClick={this.handleExpandClick}
             //             // aria-expanded={expanded}
             //             aria-label="show more"
             //         >

@@ -103,11 +103,18 @@ h1 {
     padding-bottom: 0.5em;
 }
 
-h2, h3, h4, h5, h6 {
+h2, h3, h4, h5 {
     font-family: zeitung, sans-serif;
     font-weight: 400;
     font-style: normal;
     /* padding-bottom: 1em; */
+}
+
+h6 {
+    font-family: zeitung, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 1em;
 }
 
 p {
@@ -118,6 +125,5 @@ p {
     /* padding-top: 3em; */
 
 }
-
 
 .logo {}
