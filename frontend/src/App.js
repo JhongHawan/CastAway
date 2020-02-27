@@ -69,61 +69,14 @@ const Home = () => (
           <MythCard />
         </Grid>
       </Grid>
-      {/* <MythCard /> */}
     </Box>
-    {/* <h1 className="boldText">HELLO</h1> */}
-    {/* <h1 className="boldText">WORLD</h1> */}
-    {/* <Stories /> */}
-    {/* <Carousel>
-        <CarouselItem>
-          <img src="woman_child.jpg" alt="woman and child" />
-          <CarouselCaption>
-            <h4 className="regText">Testing 123</h4>
-            <p className="lightText">boo</p>
-          </CarouselCaption>
-        </CarouselItem>
-        <CarouselItem>
-          <img src="woman_child.jpg" alt="woman and child" />
-          <CarouselCaption>
-            <h4 className="regText">Testing 234</h4>
-            <p className="lightText">boo</p>
-          </CarouselCaption>
-        </CarouselItem>
-      </Carousel> */}
-    {/* <h1>Home Page</h1> */}
-    {/* {heroCarousel} */}
-    {/* <heroCarousel /> */}
-    {/* <Stories /> */}
-    {/* <cHero /> */}
+
 
   </div>
 
 );
 
 
-
-// class cHero extends React.Component {
-//   render() {
-//     return (
-//       <Carousel>
-//         <CarouselItem>
-//           <img src="woman_child.jpg" alt="woman and child" />
-//           <CarouselCaption>
-//             <h4 className="regText">Testing 123</h4>
-//             <p className="lightText">boo</p>
-//           </CarouselCaption>
-//         </CarouselItem>
-//         <CarouselItem>
-//           <img src="woman_child.jpg" alt="woman and child" />
-//           <CarouselCaption>
-//             <h4 className="regText">Testing 234</h4>
-//             <p className="lightText">boo</p>
-//           </CarouselCaption>
-//         </CarouselItem>
-//       </Carousel>
-//     );
-//   }
-// }
 
 
 export default App;

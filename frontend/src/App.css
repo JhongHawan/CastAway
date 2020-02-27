@@ -45,7 +45,7 @@
     font-style: normal;
 }
 
-h2.brand {
+.brand {
     color: #F16841;
     font-family: zeitung, sans-serif;
     font-weight: 600;
@@ -62,11 +62,12 @@ h2.brand {
     font-weight: 800;
     font-style: normal;
     font-stretch: expanded;
-
 }
 
+
+
 .titleCenter {
-    text-align: center;
+    text-align: center; 
     color: #ffffff;
 }
 
@@ -74,6 +75,10 @@ h2.brand {
 
 .heading1 {
     padding: 2em 5em 2em;
+}
+.soloHeading {
+    padding: 1em 0;
+    text-align: center;
 }
 
 .sectionGradient {
