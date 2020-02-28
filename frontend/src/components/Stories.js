@@ -15,9 +15,8 @@ function Stories() {
       <Box className="sectionGradient">
         <Box className="heading1">
           <h1 className="bigTitle titleCenter">STORIES</h1>
-          <h6 className="titleCenter">Putting the faces to the crisis</h6>
+          <h6 className="titleCenter">Putting a face to the crisis.</h6>
         </Box>
-
       </Box>
       {/* <h1>Stories Page</h1> */}
       <Grid container className="heading1" spacing={2}>

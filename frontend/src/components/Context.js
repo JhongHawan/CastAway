@@ -11,44 +11,52 @@ function Context() {
         <Box className="sectionGradient">
           <Box className="soloHeading">
             <h1 className="bigTitle titleCenter">CONTEXT</h1>
+            <h6 className="titleCenter">Understanding the history of the crisis.</h6>
           </Box>
         </Box>
-        <Box style={{ textAlign: "center" }}>
-          {/* <Box style={{ maxWidth: "800px", margin: "auto"}}> */}
-          <Box>
-            <h5>We should use this space to let people know what the below annimation is/how to use it. 
-              Identify the reason for differentiation and the danger of incorrect language.   
-              But make the text less ugly.</h5>
-            <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" />
+        {/* <Box style={{ textAlign: "center" }}> */}
+        <Box className="sectionColor">
+          <Box className="subHeading">
+            <h2 className="subTitle">| Terminology</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae augue nisi. Quisque vitae commodo tellus, vitae elementum libero. Fusce faucibus euismod semper. Curabitur lobortis neque et enim elementum blandit. Cras eu nisl ac turpis elementum luctus vitae vitae risus. Nullam sodales eros ut diam posuere, eu mattis nulla faucibus. Pellentesque hendrerit rutrum nibh pulvinar ultricies. Maecenas vitae lacinia felis. Integer sagittis risus nisl, id ultricies dui lobortis ac. Curabitur mollis lacus et ligula auctor, eget commodo turpis venenatis.</p>
+          </Box>
+          <Box style={{ maxWidth: "800px", margin: "auto" }}>
+            <Box>
+              <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" />            </Box>
           </Box>
         </Box>
-        <Box className="sectionGradient">
-          <Box className="soloHeading">
-            <h2 className="bigTitle titleCenter">STATE OF THE WORLD</h2>
+        {/* <Box className="sectionGradient"> */}
+        <Box>
+          {/* <Box className="soloHeading"> */}
+          <Box className="subHeading">
+            <h2 className="subTitle">| STATE OF THE WORLD</h2>
           </Box>
         </Box>
         <Box className="heading1">
           <Grid container spacing={2}>
-            <Grid item>
+            <Grid item md={4}>
               <img src="https://via.placeholder.com/300x200.png?text=MAP" />
             </Grid>
-            <Grid item>
+            <Grid item md={4}>
               <h4>WHERE ARE REFUGEES ACTUALLY COMING FROM?</h4>
               <p>A common misconception is that refugees are just coming from the Arab world and Latin America. Although this is true those are not the only places that refugees are being displaced from. </p>
               <p>See more visulizations about refugees here. </p>
             </Grid>
           </Grid>
         </Box>
-        <Box className="sectionGradient">
-          <Box className="soloHeading">
-            <h2 className="bigTitle titleCenter">MYTHS</h2>
+        {/* <Box className="sectionGradient"> */}
+        <Box className="sectionColor">
+          {/* <Box className="soloHeading"> */}
+          {/* <hr></hr> */}
+          <Box className="subHeading">
+            <h2 className="subTitle">| MYTHS</h2>
           </Box>
         </Box>
-        <Box className="heading1">
-          <h5>There are several myths that need ot be debunked when it comes to refugees.</h5>
-          <p>Bellow is a list of common misconceptions about topics concerning refugees. There is extreme danger in perpetuating false information especially when the lives of inncocent people relies on it. To learn more, click on each myth and debunk it.</p>
-          <p></p>
-          <Grid container spacing={2}>  
+        <Box className="heading1 sectionColor">
+          <h5>There are several myths that need to be debunked when it comes to refugees.</h5>
+          <p>Bellow is a list of common misconceptions about topics concerning refugees.
+            There is extreme danger in perpetuating false information especially when the lives of inncocent people relies on it. To learn more, click on each myth and debunk it.</p>
+          <Grid container spacing={2}>
             <Grid item sm={4}>
               <ContextCard
                 mythTitle="MYTH #1: Refugees are not vetted."
@@ -60,7 +68,7 @@ function Context() {
                 mythTitle="MYTH #2: No other countries are taking refugees."
                 mythDetails="Why should all the burden fall on the US? In terms of Arab refugees, Muslim countries are taking the most burden of the refugee crisis. However, it is undeniable that the US is more politically and economically stable than any of the Arab countries combined. Oppression exists in other Arab countries, the same oppression that forced refugees to leave their own countries in the first place. Additionally, several countries in Europe have welcomed refugees to the best of their ability. In 2019 Europe accepted 123, 920 refugees and have taken even more in past years. However, it is undeniable that the US has more means and resources to take in refugees, and if possible should continue to help to the best of their ability. "
               />
-            </Grid>   
+            </Grid>
             <Grid item sm={4}>
               <ContextCard
                 mythTitle="MYTH #3: All the refugees that come are adult men."

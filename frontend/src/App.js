@@ -39,11 +39,9 @@ function App() {
   );
 }
 
-
-
 const Home = () => (
   <div>
-    <Carousel />
+    <Carousel/>
     <Box className="heading1 sep">
       <h1>| WHY IT MATTERS</h1>
       <h6>WHY IT MATTERS TO US & WHY IT SHOULD MATTER TO YOU.</h6>

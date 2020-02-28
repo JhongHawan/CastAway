@@ -63,8 +63,14 @@
     font-style: normal;
     font-stretch: expanded;
 }
-
-
+.subTitle {
+    color: #FF8576;
+    font-size: 60px;
+    font-family: zeitung, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: expanded;
+}
 
 .titleCenter {
     text-align: center; 
@@ -77,8 +83,12 @@
     padding: 2em 5em 2em;
 }
 .soloHeading {
-    padding: 1em 0;
+    padding: .5em 0;
     text-align: center;
+}
+
+.subHeading {
+    padding: 2em 4em 0.5em;
 }
 
 .sectionGradient {
@@ -124,6 +134,17 @@ p {
     /* padding-bottom: 2em; */
     /* padding-top: 3em; */
 
+}   
+
+/* hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+} */
+
+.sectionColor {
+    background-color: #F0F5F9;
 }
 
 .logo {}
