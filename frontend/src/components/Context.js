@@ -1,53 +1,28 @@
 import React from 'react';
-import { Grid, Box } from '@material-ui/core';
+import { Grid, Box, Container } from '@material-ui/core';
 import ReactCompareImage from 'react-compare-image';
 import ContextCard from './ContextCard';
+import VettingContext from './VettingContext';
 
 
 function Context() {
   return (
     <div>
       <Box>
-        <Box className="sectionGradient">
-          <Box className="soloHeading">
-            <h1 className="bigTitle titleCenter">CONTEXT</h1>
-            <h6 className="titleCenter">Understanding the history of the crisis.</h6>
-          </Box>
-        </Box>
-        {/* <Box style={{ textAlign: "center" }}> */}
-        <Box className="sectionColor">
-          <Box className="subHeading">
-            <h2 className="subTitle">| Terminology</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae augue nisi. Quisque vitae commodo tellus, vitae elementum libero. Fusce faucibus euismod semper. Curabitur lobortis neque et enim elementum blandit. Cras eu nisl ac turpis elementum luctus vitae vitae risus. Nullam sodales eros ut diam posuere, eu mattis nulla faucibus. Pellentesque hendrerit rutrum nibh pulvinar ultricies. Maecenas vitae lacinia felis. Integer sagittis risus nisl, id ultricies dui lobortis ac. Curabitur mollis lacus et ligula auctor, eget commodo turpis venenatis.</p>
-          </Box>
-          <Box style={{ maxWidth: "800px", margin: "auto" }}>
+        <Box>
+          <Box style={{ textAlign: "center" }}>
+            {/* <Box style={{ maxWidth: "800px", margin: "auto" }}> */}
             <Box>
               <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" />            </Box>
           </Box>
         </Box>
-        {/* <Box className="sectionGradient"> */}
-        <Box>
-          {/* <Box className="soloHeading"> */}
-          <Box className="subHeading">
-            <h2 className="subTitle">| STATE OF THE WORLD</h2>
-          </Box>
+        <Box className="subHeading">
+          <h2 className="subTitle">| THE VETTING PROCESS</h2>
         </Box>
-        <Box className="heading1">
-          <Grid container spacing={2}>
-            <Grid item md={4}>
-              <img src="https://via.placeholder.com/300x200.png?text=MAP" />
-            </Grid>
-            <Grid item md={4}>
-              <h4>WHERE ARE REFUGEES ACTUALLY COMING FROM?</h4>
-              <p>A common misconception is that refugees are just coming from the Arab world and Latin America. Although this is true those are not the only places that refugees are being displaced from. </p>
-              <p>See more visulizations about refugees here. </p>
-            </Grid>
-          </Grid>
-        </Box>
-        {/* <Box className="sectionGradient"> */}
+        <Grid>
+          <VettingContext />
+        </Grid>
         <Box className="sectionColor">
-          {/* <Box className="soloHeading"> */}
-          {/* <hr></hr> */}
           <Box className="subHeading">
             <h2 className="subTitle">| MYTHS</h2>
           </Box>
