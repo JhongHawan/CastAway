@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Context from './components/Context';
 import Stories from './components/Stories';
-import About from './components/About'; 
+import About from './components/About/About'; 
 import Visualization from './features/visualization/Visualization'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/Navbar';
