@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { Grid, Box } from '@material-ui/core';
 // import StoryCard from './StoryCard';
 import StoryCard from './StoryCard';
+import StoriesList from './StoriesList';
 
 function Stories() {
   return (
@@ -19,7 +20,9 @@ function Stories() {
         </Box>
       </Box>
       {/* <h1>Stories Page</h1> */}
-      <Grid container className="heading1" spacing={2}>
+      <StoriesList />
+
+      {/* <Grid container className="heading1" spacing={2}>
         <Grid item lg={3}>
            <StoryCard imgTitle="prof_2.svg" details="A, 29"/>
         </Grid>
@@ -45,7 +48,7 @@ function Stories() {
            <StoryCard imgTitle="prof_1.svg" details="G, 23"/>
         </Grid>
 
-      </Grid>
+      </Grid> */}
 
     </div>
   );
