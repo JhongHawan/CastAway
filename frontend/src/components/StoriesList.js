@@ -34,8 +34,14 @@ function ImageScroll() {
         {
             name: base.concat(Math.floor(Math.random() * 15) + 1, end)
         }
-    ];
+    ]
 
+    let testClick = () => {
+        console.log("CLICK");
+
+    }
+
+    
 
     for (let i = 1; i < nTiles; i++) {
         arrImg.push({ name: base.concat(Math.floor(Math.random() * 15) + 1, end) })
@@ -46,7 +52,7 @@ function ImageScroll() {
 
                 {
                     arrImg.map(tile => (
-                        <GridListTile>
+                        <GridListTile onClick={testClick}>
                             <img src={tile.name} alt={tile.name} />
                         </GridListTile>
                     ))
