@@ -11,13 +11,33 @@ import StoryCard from './StoryCard';
 import StoriesList from './StoriesList';
 
 import { makeStyles } from '@material-ui/core/styles';
-
+import MenuBookIcon from '@material-ui/icons/MenuBook';
 
 const useStyles = makeStyles(theme => ({
    heroContent: {
       // backgroundColor: theme.palette.background.paper,
       padding: theme.spacing(3, 5, 0),
    },
+   sectionBlock: {
+      backgroundColor: '#002851',
+      padding: theme.spacing(7, 10, 7)
+   },
+   sectionTitle: {
+      color: '#ffffff',
+      fontSize: '80px',
+      fontFamily: 'zeitung, sans-serif',
+      fontWeight: 800,
+      fontStyle: 'normal'
+   },
+   sectionText: {
+      color: '#ffffff',
+   },
+   testSection: {
+      fontSize: '150px',
+      color: '#ffffff',
+
+   }
+
 }))
 
 function Stories() {
@@ -25,21 +45,24 @@ function Stories() {
 
    return (
       <div >
-         {/* NEW HEADING TEST */}
-         {/* <Box className={classes.heroContent}>
-            <Grid container spacing={4}>
-               <Grid item sm={6}>
-                  <h1 className="storiesTitle">STORIES</h1>
+
+
+         <Box className={classes.sectionBlock}>
+            <Box>
+               <Grid container spacing={5} >
+                  <Grid item>
+                     <MenuBookIcon className={classes.testSection} />
+                  </Grid>
+                  <Grid item sm={9}>
+                     <h1 className={classes.sectionTitle}>
+                        THEIR STORIES.
+                     </h1>
+                     <h6 className={classes.sectionText}>
+                        Behind the stories of empty cities, crowded camps and overflowing borders. There are homes abandoned, families separated, lives losts, and unimaginable stories to be told.
+                     </h6>
+                  </Grid>
                </Grid>
-               <Grid item>
-                  <p>Amidst the politics of the crisis, we forget that there are lives behind the articles. Behind the stories of empty cities, crowded camps and overflowing borders. There are homes abandoned, families separated, lives losts, and whole stories revolutionized. </p>
-               </Grid>
-            </Grid>
-         </Box> */}
-         <Box className="sectionGradient">
-            <Box className="heading1">
-               <h1 className="bigTitle titleCenter">STORIES</h1>
-               <h6 className="titleCenter">Putting a face to the crisis.</h6>
+
             </Box>
          </Box>
          {/* NEW STORIES LIST GRID LSIT */}
