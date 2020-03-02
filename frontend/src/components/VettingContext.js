@@ -23,7 +23,6 @@ class vettingContext extends React.Component {
                             et feugiat ipsum odio feugiat dolor. Sed eget neque tristique, porta
                             magna in, egestas justo.</p>
                             <br></br>
-                        <button type="button" class="btn btn-secondary">Learn more</button>
                     </Col>
                     <Col sm="auto" md="8" lg={7}>
                         <Carousel >

@@ -16,13 +16,7 @@ function Context() {
               <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" />            </Box>
           </Box>
         </Box>
-        <Box className="subHeading">
-          <h1 className="subTitle">| THE VETTING PROCESS</h1>
-        </Box>
-        <Grid>
-          <VettingContext />
-          <br></br>
-        </Grid>
+
         <Box className="sectionColor">
           <Box className="subHeading">
             <h1 className="subTitle">| MYTHS</h1>
@@ -71,6 +65,14 @@ function Context() {
             </Grid>
           </Grid>
         </Box>
+
+        <Box className="subHeading">
+          <h1 className="subTitle">| THE VETTING PROCESS</h1>
+        </Box>
+        <Grid>
+          <VettingContext />
+          <br></br>
+        </Grid>
       </Box>
 
     </div>
