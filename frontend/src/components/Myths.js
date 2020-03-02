@@ -5,7 +5,7 @@ import ContextCard from './ContextCard';
 import VettingContext from './VettingContext';
 
 
-function Context() {
+function Myths() {
   return (
     <div>
       <Box>
@@ -65,19 +65,10 @@ function Context() {
             </Grid>
           </Grid>
         </Box>
-
-        <Box className="subHeading">
-          <h1 className="subTitle">THE VETTING PROCESS</h1>
-        </Box>
-        <Grid>
-          <VettingContext />
-          <br></br>
-        </Grid>
-       
       </Box>
 
     </div>
   );
 }
 
-export default Context; 
+export default Myths; 

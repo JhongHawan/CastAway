@@ -5,12 +5,12 @@ import ContextCard from './ContextCard';
 import Timeline from './Timeline';
 
 
-function Context2() {
+function History() {
     return (
         <div>
             <Box className="sectionGradient">
                 <Box className="heading1">
-                    <h1 className="bigTitle titleCenter">Context</h1>
+                    <h1 className="bigTitle titleCenter">HISTORY</h1>
                     <h3 className="titleCenter">To understand the crisis you need to understand the history.</h3>
                 </Box>
             </Box>
@@ -20,4 +20,4 @@ function Context2() {
     );
 }
 
-export default Context2; 
+export default History; 

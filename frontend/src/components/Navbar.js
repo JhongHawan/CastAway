@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Navbar,
+  NavDropdown,
   Nav
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -41,8 +42,10 @@ function NavBar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link as={Link} to="/context">Context</Nav.Link>
-          <Nav.Link as={Link} to="/context2">Context 2</Nav.Link>
+          <NavDropdown title="Context" id="nav-dropdown">
+            <NavDropdown.Item as={Link} to="/history">History</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/myths">Myths</NavDropdown.Item>
+          </NavDropdown>
           <Nav.Link as={Link} to="/stories">Stories</Nav.Link>
           <Nav.Link as={Link} to="/visualization">Visualization</Nav.Link>
         </Nav>
