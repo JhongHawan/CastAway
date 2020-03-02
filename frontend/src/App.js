@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AppNavBar from './components/AppNavBar';
 import Context from './components/Context';
+import Context2 from './components/Context2';
 import Stories from './components/Stories';
 import Visualization from './components/Visualization';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -30,6 +31,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/context" component={Context} />
+          <Route path="/context2" component={Context2} />
           <Route path="/stories" component={Stories} />
           <Route path="/visualization" component={Visualization} />
         </Switch>

@@ -42,6 +42,7 @@ function NavBar() {
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
           <Nav.Link as={Link} to="/context">Context</Nav.Link>
+          <Nav.Link as={Link} to="/context2">Context 2</Nav.Link>
           <Nav.Link as={Link} to="/stories">Stories</Nav.Link>
           <Nav.Link as={Link} to="/visualization">Visualization</Nav.Link>
         </Nav>

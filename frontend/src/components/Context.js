@@ -19,7 +19,7 @@ function Context() {
 
         <Box className="sectionColor">
           <Box className="subHeading">
-            <h1 className="subTitle">| MYTHS</h1>
+            <h1 className="subTitle">MYTHS</h1>
           </Box>
         </Box>
         <Box className="heading1 sectionColor">
@@ -67,12 +67,13 @@ function Context() {
         </Box>
 
         <Box className="subHeading">
-          <h1 className="subTitle">| THE VETTING PROCESS</h1>
+          <h1 className="subTitle">THE VETTING PROCESS</h1>
         </Box>
         <Grid>
           <VettingContext />
           <br></br>
         </Grid>
+       
       </Box>
 
     </div>

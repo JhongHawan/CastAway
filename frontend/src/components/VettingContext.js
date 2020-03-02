@@ -15,7 +15,7 @@ class vettingContext extends React.Component {
             <Container>
                 <Row>
                     <Col sm="auto" md="4" lg={5}>
-                        <h3>What does the vetting proces actually look like?</h3>
+                        <h4>What does the vetting proces actually look like?</h4>
                         <br></br>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Cras venenatis odio libero, at ullamcorper eros aliquam eget.
