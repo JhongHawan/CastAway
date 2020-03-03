@@ -13,6 +13,10 @@ import StoriesList from './StoriesList';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 
+import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Button } from '@material-ui/core';
+
 const useStyles = makeStyles(theme => ({
    heroContent: {
       // backgroundColor: theme.palette.background.paper,
@@ -60,6 +64,7 @@ function Stories() {
                      <h6 className={classes.sectionText}>
                         Behind the stories of empty cities, crowded camps and overflowing borders. There are homes abandoned, families separated, lives losts, and unimaginable stories to be told.
                      </h6>
+                     
                   </Grid>
                </Grid>
 
