@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Context from './components/Context';
+import AppNavBar from './components/AppNavBar';
+import Myths from './components/Myths';
+import History from './components/History';
 import Stories from './components/Stories';
 import Visualization from './features/visualization/Visualization'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -28,7 +30,8 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/context" component={Context} />
+          <Route path="/myths" component={Myths} />
+          <Route path="/history" component={History} />
           <Route path="/stories" component={Stories} />
           <Route path="/visualization" component={Visualization} />
         </Switch>

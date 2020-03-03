@@ -5,7 +5,7 @@ import ContextCard from './ContextCard';
 import VettingContext from './VettingContext';
 
 
-function Context() {
+function Myths() {
   return (
     <div>
       <Box>
@@ -16,15 +16,10 @@ function Context() {
               <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" />            </Box>
           </Box>
         </Box>
-        <Box className="subHeading">
-          <h2 className="subTitle">| THE VETTING PROCESS</h2>
-        </Box>
-        <Grid>
-          <VettingContext />
-        </Grid>
+
         <Box className="sectionColor">
           <Box className="subHeading">
-            <h2 className="subTitle">| MYTHS</h2>
+            <h1 className="subTitle">MYTHS</h1>
           </Box>
         </Box>
         <Box className="heading1 sectionColor">
@@ -76,4 +71,4 @@ function Context() {
   );
 }
 
-export default Context; 
+export default Myths; 
