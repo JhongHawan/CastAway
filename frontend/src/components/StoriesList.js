@@ -138,34 +138,8 @@ function ImageScroll() {
                             <img
                                 src={tile.name}
                                 alt={tile.name}
-                                onMouseEnter={handlePopoverOpen}
-                                onMouseLeave={handlePopoverClose}
                             />
-                            <Popover
-                                id="mouse-over-popover"
-                                className={classes.popover}
-                                classes={{
-                                    paper: classes.paper,
-                                }}
-                                open={open}
-                                anchorEl={anchorEl}
-                                anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'left',
-                                }}
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'left',
-                                }}
-                                onClose={handlePopoverClose}
-                                disableRestoreFocus
-                            >
-                                <Box>
-                                    <h6>John Doe</h6>
-                                </Box>
-                                {/* <h1></h1> */}
-                            </Popover>
-                            {/* <MouseOverPopover /> */}
+                            
                         </GridListTile>
                     ))
                 }
@@ -176,34 +150,7 @@ function ImageScroll() {
                             <img
                                 src={tile.name}
                                 alt={tile.name}
-                                onMouseEnter={handlePopoverOpen}
-                                onMouseLeave={handlePopoverClose}
                             />
-                            <Popover
-                                id="mouse-over-popover"
-                                className={classes.popover}
-                                classes={{
-                                    paper: classes.paper,
-                                }}
-                                open={open}
-                                anchorEl={anchorEl}
-                                anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'left',
-                                }}
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'left',
-                                }}
-                                onClose={handlePopoverClose}
-                                disableRestoreFocus
-                            >
-                                <Box>
-                                    <h6>John Doe</h6>
-                                </Box>
-                                {/* <h1></h1> */}
-                            </Popover>
-                            {/* <MouseOverPopover /> */}
                         </GridListTile>
                     ))
                 }
