@@ -9,12 +9,20 @@ import Logo from './Logo';
 import '../App.css';
 import { Grid, Typography } from '@material-ui/core';
 
+const useStyles = makeStyles(theme => ({
+  hamburgerIcon: {
+    // Customize the navbar hamburger menu later. 
+    borderColor: "#f31baa"
+  }
+}));
 
 // TODO: change the font of the links in navbar
 function NavBar() {
+  const classes = useStyles(); 
+
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light" className="">
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    <Navbar collapseOnSelect expand="lg" className="sticky">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" className={classes.hamburgerIcon}/>
       <Navbar.Brand className="ml-auto" as={Link} to="/">
         {/* <Logo className="logo" /> */}
         <Grid container justify="center" alignItems="center" spacing={1}> 
@@ -22,13 +30,12 @@ function NavBar() {
             <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
           </Grid>
           <Grid item align="center">
-            <h1 className="brand">CAST| |AWAY</h1>
+            <h4 className="brand">CAST| |AWAY</h4>
           </Grid>
         </Grid>
       </Navbar.Brand>
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/">Home</Nav.Link>
           <Nav.Link as={Link} to="/context">Context</Nav.Link>
           <Nav.Link as={Link} to="/stories">Stories</Nav.Link>
           <Nav.Link as={Link} to="/visualization">Visualization</Nav.Link>

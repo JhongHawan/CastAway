@@ -5,18 +5,11 @@ import Grid from '@material-ui/core/Grid';
 import TeamCard from './TeamCard'; 
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  }, 
   bargraph: {
     color: '#white'
   },
   header: {
     margin: theme.spacing(6)
-  },
-  marginTop: {
-     marginTop: theme.spacing(6),
-     paddingTop: theme.spacing(6)
   }
 }));
 
@@ -24,8 +17,7 @@ function TeamSection() {
   const classes = useStyles(); 
 
   return(
-   <div className={classes.root}>
-      {/* Put into Team component  */}
+   <div>
       <Typography
          component="h2"
          variant="h3"
@@ -41,18 +33,7 @@ function TeamSection() {
          direction="row"
          spacing={3}
          align="center"
-         className={classes.marginTop}
       >
-         <Grid item xs={12} sm={3}>
-         <TeamCard 
-            className={classes.TeamCard}
-            imgPath="/brian.jpg"
-            imgTitle="brian"
-            teamName="Brian Jhong"
-            description="Full-Stack Developer"
-            contact="jhongb@uw.edu"
-            />
-         </Grid>
          <Grid item xs={12} sm={3}>
          <TeamCard 
             className={classes.TeamCard}
@@ -61,6 +42,16 @@ function TeamSection() {
             teamName="Angela Shen"
             description="UX Designer"
             contact="angelashen0607@gmail.com"
+            />
+         </Grid>
+         <Grid item xs={12} sm={3}>
+         <TeamCard 
+            className={classes.TeamCard}
+            imgPath="/brian.jpg"
+            imgTitle="brian"
+            teamName="Brian Jhong"
+            description="Full-Stack Developer"
+            contact="jhongb@uw.edu"
             />
          </Grid>
          <Grid item xs={12} sm={3}>

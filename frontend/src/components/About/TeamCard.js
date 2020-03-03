@@ -26,7 +26,7 @@ const TeamCard = (props) => {
       <CardActionArea>
         <CardMedia
           component="img"
-          alt={props.imageTitle}
+          alt={props.imgTitle}
           height="250"
           image={props.imgPath}
           title={props.imgTitle}
@@ -41,7 +41,7 @@ const TeamCard = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button variant="contained" size="small" color="success" className={classes.button}>
+        <Button variant="contained" size="small" href={`mailto:${props.contact}`} className={classes.button}>
           Contact
         </Button>
       </CardActions>

@@ -16,9 +16,17 @@ const useStyles = makeStyles(theme => ({
   header: {
     margin: theme.spacing(6)
   },
-  marginTop: {
-    marginTop: theme.spacing(6),
-    paddingTop: theme.spacing(6)
+  teamSection: {
+    margin: "10%"
+  },
+  missionSection: {
+    background: "#F0F5F9",
+    paddingTop: "2.5%",
+    paddingBottom: "2.5%"
+  },
+  missionParagraph: {
+    margin: "15% auto",
+    marginLeft: "15%"
   }
 }));
 
@@ -27,8 +35,7 @@ function About() {
 
   return(
    <div className={classes.root}>
-    <Container>
-      <Typography
+    <Typography
         component="h2"
         variant="h2"
         color="inherit"
@@ -38,32 +45,28 @@ function About() {
       >
         About Us
       </Typography>
-      <main>
-        {/* Put into Mission statement component */}
-        <Grid
-          container
-          direction="row"
-          spacing={2}
-          align="center"
-          className={classes.marginTop}
-        >
-          <Grid item xs={12} sm={6}>
-            <div align="left">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusamus molestiae officia illum? Eveniet labore officia blanditiis aspernatur ad tempora nihil placeat! Labore consectetur explicabo hic dolore accusamus a commodi?Molestiae vero eveniet eligendi cupiditate voluptatem ratione sed deserunt voluptas reiciendis recusandae tempore vel ipsum, nostrum mollitia incidunt consequatur sequi dicta aliquid officiis repellendus quis odio! Beatae nulla repellendus iste.
-              </p>
-            </div>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <img src="/castawayLogo.png" alt="Logo"/>
-          </Grid>
+      {/* Put into Mission statement component */}
+      <Grid
+        container
+        direction="row"
+        align="center"
+        className={classes.missionSection}
+      >
+        <Grid item xs={3} sm={6}>
+          <div align="left" className={classes.missionParagraph}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusamus molestiae officia illum? Eveniet labore officia blanditiis aspernatur ad tempora nihil placeat! Labore consectetur explicabo hic dolore accusamus a commodi?Molestiae vero eveniet eligendi cupiditate voluptatem ratione sed deserunt voluptas reiciendis recusandae tempore vel ipsum, nostrum mollitia incidunt consequatur sequi dicta aliquid officiis repellendus quis odio! Beatae nulla repellendus iste.
+            </p>
+          </div>
         </Grid>
-        <TeamSection
-          className={classes.marginTop}
-        >
+        <Grid item xs={3} sm={6}>
+          <img src="/castawayLogo.png" alt="Logo"/>
+        </Grid>
+      </Grid>
+      <div className={classes.teamSection}>
+        <TeamSection>
         </TeamSection>
-      </main>
-    </Container>
+      </div>     
     <Footer></Footer>
    </div>
   );

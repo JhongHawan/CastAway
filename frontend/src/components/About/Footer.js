@@ -1,19 +1,39 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography'; 
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import GridItem from '@material-ui/core/GridList';
-import TeamCard from './TeamCard'; 
+import BottomNav from './BottomNav'; 
 
 const useStyles = makeStyles(theme => ({
   footer: {
+    display: "flex",
+    justifyContent: "center",
     color: "#FFFFFF",
     background: "#52616B",
-    marginTop: "15%"
+    marginTop: "5%",
+    fontSize: ".5rem"
   },
   copyright: {
-    color: "#FFFFFF"
+    display: "flex",
+    color: "#FFFFFF",
+    justifyContent: "center",
+    marginTop: "2.5%",
+    marginBottom: "1%",
+    "&:hover": {
+      color: "#F16841",
+      textDecoration: "none"
+    }
+  },
+  bottomNav: {
+    color: "#FFFFFF",
+    marginTop: "0"
+  }, 
+  hr: {
+    background: "#FFFFFF",
+    height: "1px",
+    width: "75%"
+  },
+  container: {
+    marginTop: "2.5%"
   }
 }));
 
@@ -22,22 +42,11 @@ function Footer() {
 
   return(
    <div className={classes.footer}>
-    <Container>
-      <Grid
-        container
-        direction="row"
-        spacing={3}
-        align="center"
-      >
-        <Grid item xs={12} sm={6}>
-           
-        </Grid>
-        <Grid item xs={12} sm={6}>
-        
-        </Grid>
-      </Grid>
-      <div className={classes.copyright}>
-        © 2020 Copyright: <a className={classes.copyright} href="https://jhonghawan.github.io/InfoCapstone2020/">CAST||AWAY</a>
+    <Container className={classes.container}>
+      <BottomNav className={classes.bottomNav}></BottomNav>
+      <hr className={classes.hr}></hr>
+      <div>
+        <a className={classes.copyright} href="https://jhonghawan.github.io/InfoCapstone2020/">© 2020 Copyright: CAST||AWAY</a>
       </div>
     </Container>
    </div>
