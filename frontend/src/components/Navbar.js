@@ -21,13 +21,23 @@ function NavBar() {
   const classes = useStyles(); 
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="sticky">
+    <Navbar collapseOnSelect expand="lg" variant="light" bg="bg-light">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" className={classes.hamburgerIcon}/>
       <Navbar.Brand className="ml-auto" as={Link} to="/">
         {/* <Logo className="logo" /> */}
-        <Grid container justify="center" alignItems="center" spacing={1}> 
-          <Grid item align="center">
+        <Grid container justify="center" alignItems="center" spacing={1}>
+          {/* <Grid item align="center">
             <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
+          </Grid> */}
+          <Grid item align="center">
+            <h2 className="brand">CAST|</h2>
+            {/* <img src="castawayLogo.png" width="50px" alt="castaway boat logo" /> */}
+            {/* <h1 className="brand"> |AWAY</h1> */}
+          </Grid>
+          <Grid item align="center">
+            {/* <h1 className="brand">CAST|</h1> */}
+            <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
+            {/* <h1 className="brand"> |AWAY</h1> */}
           </Grid>
           <Grid item align="center">
             <h4 className="brand">CAST| |AWAY</h4>
