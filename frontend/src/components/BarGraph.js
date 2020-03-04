@@ -96,11 +96,11 @@ class BarGraph extends Component {
           />
           <VictoryAxis dependentAxis
             label="Population (1000s)"
-            axisLabelComponent={<VictoryLabel style={{fontSize: FONT_SIZE}} dy={-20}/>}
+            axisLabelComponent={<VictoryLabel style={{fontSize: FONT_SIZE}} dy={-25}/>}
           />
           <VictoryAxis
             label="Time (Years)"
-            axisLabelComponent={<VictoryLabel style={{fontSize: FONT_SIZE}} dy={20}/>}
+            axisLabelComponent={<VictoryLabel style={{fontSize: FONT_SIZE}} dy={25}/>}
           />
         </VictoryChart>
       </div>

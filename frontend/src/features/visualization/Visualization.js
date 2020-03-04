@@ -77,7 +77,7 @@ function Visualization() {
       </Typography>
       <main>
         <Grid container spacing={2} justify="center">
-          <Grid item xs={8}>
+          <Grid item xs={10}>
             <BarGraph color="pink" title="Iraq" data={ refugees } />
           </Grid>
         </Grid>
