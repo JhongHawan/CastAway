@@ -40,7 +40,7 @@ function NavBar() {
             {/* <h1 className="brand"> |AWAY</h1> */}
           </Grid>
           <Grid item align="center">
-            <h4 className="brand">CAST| |AWAY</h4>
+            <h2 className="brand">|AWAY</h2>
           </Grid>
         </Grid>
       </Navbar.Brand>
