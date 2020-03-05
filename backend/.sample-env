@@ -1,7 +1,0 @@
-// To connect to a database you will need to create a .env file and paste
-// the following variables into it.
-
-// MongoDB database to connect to.
-DB_CONNECT=
-// Private key for the JWT authentication tokens
-PRIVATE_KEY=

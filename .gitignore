@@ -1,4 +1,9 @@
 
+# Ignore the local dependencies on your machine
+
+/node_modules
+/.env
+
 # Markdown Files that might get edited from here. 
 
 CONTRIBUTING.md
