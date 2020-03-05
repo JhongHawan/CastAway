@@ -27,7 +27,7 @@ function Visualization() {
 
   const fetchAllRefugees = () => {
     axios
-      .get('http://localhost:5000/api/refugees/refugee/origin', {
+      .get('/api/refugees/refugee/origin', {
         params: {
           origin: "Iraq"
         }
