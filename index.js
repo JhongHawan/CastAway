@@ -19,14 +19,8 @@ mongoose
   .then(() => console.log("Connected to MongoDB database..."))
   .catch(err => console.error("Could not connect to MongoDB database..."));
 
-// cors origin URL - Allow inbound traffic from origin
-corsOptions = {
-  origin: "https://desolate-basin-46881.herokuapp.com/",
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-
 // CORS Policy 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Set the limit for file sizes and payload size. 
 app.use(bodyParser.json({limit: "50mb"}));
@@ -37,11 +31,13 @@ app.use("/api/users", usersRoute);
 app.use("/api/refugees", refugeeRoute);
 
 // Serve static assets if in production
-app.use(express.static("frontend/build"));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static("frontend/build"));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
-});
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
+  });
+}
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
