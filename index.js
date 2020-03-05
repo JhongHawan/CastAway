@@ -19,8 +19,14 @@ mongoose
   .then(() => console.log("Connected to MongoDB database..."))
   .catch(err => console.error("Could not connect to MongoDB database..."));
 
+// cors origin URL - Allow inbound traffic from origin
+corsOptions = {
+  origin: "https://desolate-basin-46881.herokuapp.com/",
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
 // CORS Policy 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Set the limit for file sizes and payload size. 
 app.use(bodyParser.json({limit: "50mb"}));
