@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require("express");
 const app = express();
+const path = require('path'); 
 
 dotenv.config();
 
@@ -28,6 +29,15 @@ app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit: 50
 // api routes 
 app.use("/api/users", usersRoute);
 app.use("/api/refugees", refugeeRoute);
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static("frontend/build"));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
+  });
+}
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

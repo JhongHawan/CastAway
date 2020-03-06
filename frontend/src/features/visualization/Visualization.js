@@ -27,7 +27,7 @@ function Visualization() {
 
   const fetchAllRefugees = () => {
     axios
-      .get('http://localhost:5000/api/refugees/refugee/origin', {
+      .get('/api/refugees/refugee/origin', {
         params: {
           origin: "Iraq"
         }
@@ -77,7 +77,7 @@ function Visualization() {
       </Typography>
       <main>
         <Grid container spacing={2} justify="center">
-          <Grid item xs={8}>
+          <Grid item xs={10}>
             <BarGraph color="pink" title="Iraq" data={ refugees } />
           </Grid>
         </Grid>
