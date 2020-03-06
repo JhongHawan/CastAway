@@ -55,7 +55,7 @@ function About() {
         <Grid item xs={3} sm={6}>
           <div align="left" className={classes.missionParagraph}>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusamus molestiae officia illum? Eveniet labore officia blanditiis aspernatur ad tempora nihil placeat! Labore consectetur explicabo hic dolore accusamus a commodi?Molestiae vero eveniet eligendi cupiditate voluptatem ratione sed deserunt voluptas reiciendis recusandae tempore vel ipsum, nostrum mollitia incidunt consequatur sequi dicta aliquid officiis repellendus quis odio! Beatae nulla repellendus iste.
+              Hello! We are the team behind CASTAWAY. This project is created for the Informatics Capstone 2020. Our mission is to create a solution to allow the American public and media to attain accurate, reliable information concerning refugees. So that the American public can make informed decisions and the media can report accurately and efficiently.
             </p>
           </div>
         </Grid>
