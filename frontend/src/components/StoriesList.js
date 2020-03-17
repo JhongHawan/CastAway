@@ -2,99 +2,13 @@ import React, { useState } from 'react';
 import GridList from '@material-ui/core/GridList';
 import { makeStyles } from '@material-ui/core/styles';
 import GridListTile from '@material-ui/core/GridListTile';
-import Typography from '@material-ui/core/Typography';
-import Popover from '@material-ui/core/Popover';
 
-import { NavLink } from 'react-router-dom';
-import { Button, Box } from '@material-ui/core';
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        overflow: 'hidden',
-        // backgroundColor: theme.palette.background.paper,
-    },
-    popover: {
-        pointerEvents: 'none'
-    },
-    paper: {
-        padding: theme.spacing(1)
-    }
-
-}));
-
-
-function MouseOverPopover() {
-    const classes = useStyles();
-    const [anchorEl, setAnchorEl] = useState(null);
-
-    const handlePopoverOpen = (event) => {
-        setAnchorEl(event.currentTarget);
-    }
-
-    const handlePopoverClose = (event) => {
-        setAnchorEl(null);
-    }
-
-    const open = Boolean(anchorEl);
-
-    return (
-        <div>
-            <Typography
-                aria-owns={open ? 'mouse-over-popover' : undefined}
-                aria-haspopup="true"
-                onMouseEnter={handlePopoverOpen}
-                onMouseLeave={handlePopoverClose}
-            >
-                Hover with a Popover.
-      </Typography>
-            <Popover
-                id="mouse-over-popover"
-                className={classes.popover}
-                classes={{
-                    paper: classes.paper,
-                }}
-                open={open}
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                }}
-                transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left',
-                }}
-                onClose={handlePopoverClose}
-                disableRestoreFocus
-            >
-                <Typography>I use Popover.</Typography>
-            </Popover>
-        </div>
-    );
-
-}
-
+import { useStyles } from './Theme'
 
 // creates the tiles
 function ImageScroll() {
     const classes = useStyles();
 
-    const [anchorEl, setAnchorEl] = useState(null);
-
-    const handlePopoverOpen = (event) => {
-        setAnchorEl(event.currentTarget);
-    }
-
-    const handlePopoverClose = (event) => {
-        setAnchorEl(null);
-    }
-
-    const open = Boolean(anchorEl);
-
-    // number of pictures to populate
-    const nTiles = 28;
 
 
     // the prefix of the image names
@@ -129,7 +43,7 @@ function ImageScroll() {
     //     arrImg.push({ name: base.concat(Math.floor(Math.random() * 15) + 1, end) })
     // }
     return (
-        <div className={classes.gridListBasic}>
+        <div>
             <GridList cols={5} spacing={0}>
 
                 {

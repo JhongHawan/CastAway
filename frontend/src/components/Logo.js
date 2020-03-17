@@ -1,13 +1,8 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import DirectionsBoat from '@material-ui/icons/DirectionsBoat';
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
-   logo: {
-     marginRight: theme.spacing(2),
-   }
- }));
+import { useStyles } from './Theme';
 
 function Logo() {
   const classes = useStyles(); 
@@ -15,7 +10,7 @@ function Logo() {
   return(
         <IconButton
             edge="middle"
-            className={classes.logo}
+            className={classes.mainLogo}
             color="inherit"
             aria-label="open drawer"
         >

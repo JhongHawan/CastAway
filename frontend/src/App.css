@@ -117,13 +117,12 @@
 }
 
 
-h1 {
-    /* text-align: center; */
+/* h1 {
     font-family: zeitung, sans-serif;
     font-weight: 600;
     font-style: normal;
     color: #002851;
-}
+} */
 
 h2, h3, h4, h5 {
     font-family: zeitung, sans-serif;
@@ -132,21 +131,18 @@ h2, h3, h4, h5 {
     /* padding-bottom: 1em; */
 }
 
-h6 {
+/* h6 {
     font-family: zeitung, sans-serif;
     font-weight: 400;
     font-style: normal;
     padding-bottom: 1em;
-}
+} */
 
-p {
+/* p {
     font-family: zeitung, sans-serif;
     font-weight: 400;
     font-style: normal;
-    /* padding-bottom: 2em; */
-    /* padding-top: 3em; */
-
-}   
+}    */
 
 /* hr {
   margin-top: 1rem;
