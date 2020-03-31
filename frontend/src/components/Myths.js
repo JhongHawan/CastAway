@@ -4,8 +4,11 @@ import ReactCompareImage from 'react-compare-image';
 import ContextCard from './ContextCard';
 import VettingContext from './VettingContext';
 
+import { useStyles } from './Theme';
 
 function Myths() {
+  const classes = useStyles(); 
+
   return (
     <div>
       <Box>
@@ -17,12 +20,12 @@ function Myths() {
           </Box>
         </Box>
 
-        <Box className="sectionColor">
-          <Box className="subHeading">
-            <h1 className="subTitle">MYTHS</h1>
+        <Box className={classes.mythSectionColor}>
+          <Box className={classes.subHeading}>
+            <h1 className={classes.subHeadingTitle}>MYTHS</h1>
           </Box>
         </Box>
-        <Box className="heading1 sectionColor">
+        <Box className={classes.mythSectionColor, classes.heading1spacing}>
           <h5>There are several myths that need to be debunked when it comes to refugees.</h5>
           <p>Bellow is a list of common misconceptions about topics concerning refugees.
             There is extreme danger in perpetuating false information especially when the lives of inncocent people relies on it. To learn more, click on each myth and debunk it.</p>
