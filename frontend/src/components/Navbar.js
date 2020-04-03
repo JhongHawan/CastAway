@@ -5,17 +5,14 @@ import {
   Nav
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
 import Logo from './Logo';
 import '../App.css';
 import { Grid, Typography } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
-  hamburgerIcon: {
-    // Customize the navbar hamburger menu later. 
-    borderColor: "#f31baa"
-  }
-}));
+
+
+import { useStyles } from './Theme';
+
 
 // TODO: change the font of the links in navbar
 function NavBar() {
@@ -31,7 +28,7 @@ function NavBar() {
             <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
           </Grid> */}
           <Grid item align="center">
-            <h2 className="brand">CAST|</h2>
+            <h2 className={classes.navTitle}>CAST|</h2>
             {/* <img src="castawayLogo.png" width="50px" alt="castaway boat logo" /> */}
             {/* <h1 className="brand"> |AWAY</h1> */}
           </Grid>
@@ -41,7 +38,7 @@ function NavBar() {
             {/* <h1 className="brand"> |AWAY</h1> */}
           </Grid>
           <Grid item align="center">
-            <h2 className="brand">|AWAY</h2>
+            <h2 className={classes.navTitle}>|AWAY</h2>
           </Grid>
         </Grid>
       </Navbar.Brand>
