@@ -38,7 +38,16 @@ export const useStyles = makeStyles(theme => ({
         color: '#F16841',
         fontFamily: 'zeitung, sans-serif',
         fontWeight: 600,
-        fontStyle: 'normal'
+        fontStyle: 'normal',
+        textDecoration: 'none'
+    },
+    navLink: {
+        fontFamily: 'zeitung, sans-serif',
+        fontWeight: 400,
+        fontStyle: 'normal',
+        color: '#52616B',
+        // backgroundColor: '#52616B'
+
     },
     // FOR - Used with sectionBlock for white text
     sectionTitle: {
@@ -89,7 +98,6 @@ export const useStyles = makeStyles(theme => ({
     text: {
         fontFamily: 'zeitung, sans-serif',
         fontWeight: 400,
-        // fontFamily: 'ZeitungPro, sans-serif',
         fontStyle: 'normal',
     },
 }))
