@@ -100,6 +100,22 @@ export const useStyles = makeStyles(theme => ({
         fontWeight: 400,
         fontStyle: 'normal',
     },
+    dividerTitle: {
+        width: '100%',
+        textAlign: 'center',
+        borderBottom: '2px solid #F16841',
+        lineHeight: '0.1em',
+        margin: '10px 0 20px',
+        // padding: theme.spacing(0, 0, 0)
+
+    },
+    dividerSpan: {
+        background: '#fff',
+        padding: '0 20px'
+    },
+    dividerWrapper: {
+        padding: theme.spacing(0, 10, 0)
+    }
 }))
 
 // export const useStyles;
