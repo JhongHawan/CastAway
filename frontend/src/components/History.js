@@ -5,7 +5,7 @@ import ContextCard from './ContextCard';
 import Timeline from './Timeline';
 
 
-import { useStyles } from './Theme';
+import { useStyles } from './Styles';
 
 
 function History() {

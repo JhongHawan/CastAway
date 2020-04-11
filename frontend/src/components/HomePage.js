@@ -3,7 +3,7 @@ import { Box, Grid } from '@material-ui/core';
 import Carousel from './Carousel';
 import MythCard from './MythCard';
 
-import { useStyles } from './Theme';
+import { useStyles } from './Styles';
 
 
 function HomePage() {

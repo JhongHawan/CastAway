@@ -11,7 +11,7 @@ import { Grid, Typography } from '@material-ui/core';
 
 
 
-import { useStyles } from './Theme';
+import { useStyles } from './Styles';
 
 
 // TODO: change the font of the links in navbar
