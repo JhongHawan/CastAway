@@ -7,24 +7,24 @@ function Hero() {
     const classes = useStyles();
 
     return (
-            <div className={classes.heroImg}>
-                <Container>
-                    <Row>
-                        <img src="left-quote.svg" />
-                    </Row>
-                    <Row>
-                        <Col className={classes.heroText, classes.homeSectionTitle}>
-                            No one puts their children in a boat unless the water is safer than the land
+        <div className={classes.heroImg}>
+            <Container>
+                <Row>
+                    <img src="left-quote.svg" />
+                </Row>
+                <Row>
+                    <Col className={classes.heroText, classes.homeSectionTitle}>
+                        No one puts their children in a boat unless the water is safer than the land
                     </ Col>
-                    </Row>
-                    <Row>
-                        <img src="left-quote.svg" />
-                    </Row>
-                </Container>
-                <div className={classes.heroChild}>
-                    <p>Hello, I'm working just not pretty</p>
-                </div>
+                </Row>
+                <Row style={{ float: 'right' }}>
+                    <img src="left-quote.svg" style={{ transform: 'scaleX(-1)' }} />
+                </Row>
+            </Container>
+            <div className={classes.heroChild}>
+                <p>Hello, I'm working just not pretty</p>
             </div>
+        </div>
     );
 }
 
