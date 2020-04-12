@@ -161,8 +161,23 @@ export const useStyles = makeStyles(theme => ({
     },
     callToAction: {
         padding: theme.spacing(10, 0, 0)
+    },
+    featureHeading: {
+        color: '#F16841',
+        fontFamily: 'zeitung, sans-serif',
+        fontWeight: 600,
+        fontStyle: 'normal',
+        textDecoration: 'none',
+        padding: theme.spacing(0, 0, 1)
+    },
+    featureSubheading: {
+        color: '#002851',
+        fontFamily: 'zeitung, sans-serif',
+        fontWeight: 400,
+        fontStyle: 'normal',
+        textDecoration: 'none',
+        padding: theme.spacing(0.5, 0, 0)
     }
-
 }))
 
 // export const useStyles;

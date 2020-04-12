@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
-// import { Grid } from '@material-ui/core';
 import { useStyles } from './Theme';
 
 
@@ -15,18 +13,22 @@ function HomeFeatures() {
                     <Col md={8}>
                         <Col>
                             <Row>
-                                Data Visualization
-                        </Row>
+                                <h5 className={classes.featureHeading}>
+                                    DATA VISUALIZATION
+                                </h5>
+                            </Row>
                             <Row>
-                                Subtitle
-                        </Row>
+                                <h6 className={classes.featureSubheading}>
+                                    Subtitle
+                                </h6>
+                            </Row>
                             <Row>
                                 <img src="https://via.placeholder.com/250x167.png?text=TEMP" />
                             </Row>
                             <Row>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sed libero enim sed faucibus turpis in eu mi. Sit amet purus gravida quis blandit. Odio euismod lacinia at quis.
-                            </p>
+                                </p>
                             </Row>
                         </Col>
                     </Col>
@@ -35,23 +37,28 @@ function HomeFeatures() {
                             <Row>
                                 <Col>
                                     <Row>
-                                        Stories
-                                </Row>
+                                        <h5 className={classes.featureHeading}>
+                                            STORIES
+                                        </h5>
+                                    </Row>
                                     <Row>
                                         <img src="https://via.placeholder.com/100x100.png?text=TEMP" />
                                     </Row>
                                     <Row>
-                                        <p>
+                                        <h6 className={classes.featureSubheading}>
                                             Subtitle
-                                    </p>
+                                        </h6>
                                     </Row>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
+                                    
                                     <Row>
-                                        Myths
-                                </Row>
+                                        <h5 className={classes.featureHeading}>
+                                            MYTHS
+                                        </h5>
+                                    </Row>
                                     <Row>
                                         <Col>
                                             <Row>
@@ -61,11 +68,9 @@ function HomeFeatures() {
                                                 <div>BOX 2</div>
                                             </Row>
                                         </Col>
-
                                     </Row>
                                 </Col>
                             </Row>
-
                         </Col>
                     </Col>
                 </Row>
