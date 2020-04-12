@@ -26,7 +26,7 @@ function HomePage() {
             </Box>
             <Divider title="MAKE A DIFFERENCE"/>
                 <Box>
-                    Blurb
+                <h6 className={classes.homeSectionSubtext}>WHY IT MATTERS TO US & WHY IT SHOULD MATTER TO YOU.</h6>
                 </Box>
             <Divider title="CASTAWAY FEATURES"/>
             {/* <Box className={classes.homeSectionSpace}>

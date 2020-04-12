@@ -17,13 +17,13 @@ function Hero() {
                         No one puts their children in a boat unless the water is safer than the land
                     </ Col>
                 </Row>
-                <Row>
-                    <img src="left-quote.svg" />
+                <Row style={{float: 'right' }}>
+                    <img src="left-quote.svg" style={{transform: 'scaleX(-1)'}}/>
                 </Row>
             </Container>
             {/* <Container className={classes.heroText}>
                 <Row>
-                    <Col>
+                    <Col>   
                         <img src="left-quote.svg" />
                     </ Col>
                     <Col sm="auto" md={5} className={classes.homeSectionTitle}>
