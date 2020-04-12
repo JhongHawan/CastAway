@@ -78,7 +78,10 @@ export const useStyles = makeStyles(theme => ({
     },
     // FOR - Home section spacing
     homeSectionSpace: {
-        padding: theme.spacing(3, 10, 0)
+        padding: theme.spacing(10, 10, 0)
+    },
+    homeTopSpace: {
+        padding: theme.spacing(15, 10, 0)
     },
     // FOR - Home section title (h1)
     homeSectionTitle: {
@@ -125,13 +128,41 @@ export const useStyles = makeStyles(theme => ({
         backgroundImage: `url(${heroImage})`,
         position: 'relative',
         backgroundSize: 'cover',
-        height: 500
+        height: 500,
+        justifyContent: 'center',
+        display: 'flex',
         // TODO make reactive
+
+        // spacing below 
     },
     heroText: {
         textAlign: 'center',
     },
-    
+    heroChild: {
+        position: 'absolute',
+        bottom: "-15%",
+        height: '15vw',
+        width: '50vw',
+        background: '#C9D6DF',
+        zIndex: 2,
+        boxShadow: "5px 4px 4px rgba(0, 0, 0, 0.25)"
+        // margin: 'auto',
+        // minHeight: '100vh'
+        // margin: theme.spacing(20, 0, 0)
+    },
+    tabs: {
+        borderRight: `1px solid ${theme.palette.divider}`
+    },
+    tabWrapper: {
+        flexGrow: 1,
+        // backgroundColor: 'green',
+        display: 'flex',
+        // height: 224
+    },
+    callToAction: {
+        padding: theme.spacing(10, 0, 0)
+    }
+
 }))
 
 // export const useStyles;
