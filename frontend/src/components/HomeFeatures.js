@@ -10,7 +10,7 @@ function HomeFeatures() {
         <div>
             <Container>
                 <Row>
-                    <Col md={8}>
+                    <Col md={7}>
                         <Col>
                             <Row>
                                 <h5 className={classes.featureHeading}>

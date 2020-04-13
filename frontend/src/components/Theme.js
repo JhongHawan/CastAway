@@ -89,7 +89,8 @@ export const useStyles = makeStyles(theme => ({
         fontWeight: 600,
         fontStyle: 'normal',
         color: '#002851',
-        fontSize: '30px'
+        fontSize: '30px',
+        textAlign: 'center'
     },
     // FOR - Home section subtext (h6)
 
@@ -136,13 +137,13 @@ export const useStyles = makeStyles(theme => ({
         // spacing below 
     },
     heroText: {
-        textAlign: 'center',
+        // textAlign: 'center',
     },
     heroChild: {
         position: 'absolute',
         bottom: "-15%",
         height: '15vw',
-        width: '50vw',
+        width: '60vw',
         background: '#C9D6DF',
         zIndex: 2,
         boxShadow: "5px 4px 4px rgba(0, 0, 0, 0.25)"
@@ -153,6 +154,13 @@ export const useStyles = makeStyles(theme => ({
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`
     },
+    tabContent: {
+        minWidth: 200,
+        width: 200,
+    },
+    tabAction: {
+        backgroundColor: '#C9D6DF'
+    },
     tabWrapper: {
         flexGrow: 1,
         // backgroundColor: 'green',
@@ -160,7 +168,7 @@ export const useStyles = makeStyles(theme => ({
         // height: 224
     },
     callToAction: {
-        padding: theme.spacing(10, 0, 0)
+        padding: theme.spacing(5, 0, 0)
     },
     featureHeading: {
         color: '#F16841',
@@ -177,6 +185,9 @@ export const useStyles = makeStyles(theme => ({
         fontStyle: 'normal',
         textDecoration: 'none',
         padding: theme.spacing(0.5, 0, 0)
+    },
+    callToActionPadding: {
+        padding: theme.spacing(4, 4, 2)
     }
 }))
 
