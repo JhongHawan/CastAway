@@ -142,9 +142,10 @@ export const useStyles = makeStyles(theme => ({
     heroChild: {
         position: 'absolute',
         bottom: "-15%",
-        height: '15vw',
-        width: '60vw',
+        // height: '15vw',
         background: '#C9D6DF',
+        // width: '60vw',
+        maxWidth: '60vw',
         zIndex: 2,
         boxShadow: "5px 4px 4px rgba(0, 0, 0, 0.25)"
         // margin: 'auto',

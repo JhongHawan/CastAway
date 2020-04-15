@@ -7,8 +7,10 @@ function Hero() {
     const classes = useStyles();
 
     return (
+        <React.Fragment>
+
         <div className={classes.heroImg}>
-            <Container>
+            <Container diableGutters>
                 {/* <Row>
                     <img src="left-quote.svg" />
                 </Row> */}
@@ -23,7 +25,7 @@ function Hero() {
                     <img src="left-quote.svg" style={{ transform: 'scaleX(-1)' }} />
                 </Row> */}
             </Container>
-            <Container className={classes.heroChild}>
+            <Container className={classes.heroChild} style={{display: 'block', overflow: 'auto'}}>
                 <Row>
                     <Col>
                         <h3>
@@ -41,6 +43,8 @@ function Hero() {
 
             </Container>
         </div>
+        </React.Fragment>
+
     );
 }
 

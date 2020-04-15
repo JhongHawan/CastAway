@@ -49,7 +49,7 @@ function CallToAction() {
     };
 
     return (
-        <Container>
+        <Container disableGutters>
 
             <div className={classes.tabWrapper}>
                 <Tabs
