@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
+import heroImage from '../img/home_hero.jpg';
+
 // THIS FILE CONTAINS THE THEME
 
 export const useStyles = makeStyles(theme => ({
@@ -38,7 +40,16 @@ export const useStyles = makeStyles(theme => ({
         color: '#F16841',
         fontFamily: 'zeitung, sans-serif',
         fontWeight: 600,
-        fontStyle: 'normal'
+        fontStyle: 'normal',
+        textDecoration: 'none'
+    },
+    navLink: {
+        fontFamily: 'zeitung, sans-serif',
+        fontWeight: 400,
+        fontStyle: 'normal',
+        color: '#52616B',
+        // backgroundColor: '#52616B'
+
     },
     // FOR - Used with sectionBlock for white text
     sectionTitle: {
@@ -75,23 +86,52 @@ export const useStyles = makeStyles(theme => ({
         fontWeight: 600,
         fontStyle: 'normal',
         color: '#002851',
+        fontSize: '30px'
     },
     // FOR - Home section subtext (h6)
 
     homeSectionSubtext: {
         fontFamily: 'zeitung, sans-serif',
         fontWeight: 400,
-
         fontStyle: 'normal',
-        padding: theme.spacing(1, 0, 1)
+        // padding: theme.spacing(1, 0, 1)
     },
     // FOR - All paragraphs 
     text: {
         fontFamily: 'zeitung, sans-serif',
         fontWeight: 400,
-        // fontFamily: 'ZeitungPro, sans-serif',
         fontStyle: 'normal',
     },
+    dividerTitle: {
+        width: '100%',
+        textAlign: 'center',
+        borderBottom: '2px solid #F16841',
+        lineHeight: '0.1em',
+        margin: '10px 0 20px',
+        color: '#002851',
+    },
+    dividerSpan: {
+        background: '#fff',
+        padding: '0 20px'
+    },
+    dividerWrapper: {
+        padding: theme.spacing(0, 10, 0)
+    },
+    lineBreak: {
+        background: '#F16841',
+        height: '2px'
+    },
+    heroImg: {
+        backgroundImage: `url(${heroImage})`,
+        position: 'relative',
+        backgroundSize: 'cover',
+        height: 500
+        // TODO make reactive
+    },
+    heroText: {
+        textAlign: 'center',
+    },
+    
 }))
 
 // export const useStyles;
