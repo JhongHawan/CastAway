@@ -14,7 +14,7 @@ import { Grid, Typography } from '@material-ui/core';
 
 
 
-import { useStyles } from './Theme';
+import { useStyles } from './Styles';
 
 
 function NavBar() {

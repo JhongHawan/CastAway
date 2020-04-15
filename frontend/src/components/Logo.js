@@ -2,7 +2,7 @@ import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import DirectionsBoat from '@material-ui/icons/DirectionsBoat';
 
-import { useStyles } from './Theme';
+import { useStyles } from './Styles';
 
 function Logo() {
   const classes = useStyles(); 

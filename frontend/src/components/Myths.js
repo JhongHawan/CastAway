@@ -4,7 +4,7 @@ import ReactCompareImage from 'react-compare-image';
 import ContextCard from './ContextCard';
 import VettingContext from './VettingContext';
 
-import { useStyles } from './Theme';
+import { useStyles } from './Styles';
 
 function Myths() {
   const classes = useStyles(); 
