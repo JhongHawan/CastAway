@@ -3,10 +3,9 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container'; 
 import BarGraph from '../../components/BarGraph'; 
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
-import { getDataReducer } from './refugeeSlice';
-const axios = require('axios').default;
+import apiCalls from './apiCalls'; 
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,22 +22,7 @@ const useStyles = makeStyles(theme => ({
 function Visualization() {
   const classes = useStyles(); 
   
-  const dispatch = useDispatch(); 
-
-  const fetchAllRefugees = () => {
-    axios
-      .get('/api/refugees/refugee/origin', {
-        params: {
-          origin: "Iraq"
-        }
-      })
-      .then(response => {
-        console.log(response.status);
-        // Here we get the response and dispatch with the action and the response.data is our payload. 
-        // This then executes all the functionality of our action that we declared in our slice.  
-        dispatch(getDataReducer(response.data))   
-      });
-  }
+  const dispatch = useDispatch();
 
   const { refugees, loading } = useSelector(
     (state) => {
@@ -52,15 +36,15 @@ function Visualization() {
     shallowEqual
   ); 
 
-  // May want to put an if case here so that you only fetch data 
-  // if it's not in the store already. 
+  /**
+    * fetchAllRefugees API Call
+    * ! Remove the useEffect unless you're going to update the data when the page loads. 
+  */
   useEffect(() => {
-    fetchAllRefugees(); 
+    // fetchAllRefugees(); 
     // Need to edit the state here and 
     // reset loading = false; 
   }, []);
-
-  console.log(refugees)
   
   return(
    <div className="Visualization">
@@ -76,8 +60,22 @@ function Visualization() {
         Visualization Page
       </Typography>
       <main>
-        <Grid container spacing={2} justify="center">
-          <Grid item xs={10}>
+        <Button color="primary" variant="contained" onClick={() => {
+          /**
+          * TODO: Add a check whether the store is empty for refugees. If it is then fetch else don't.
+          */
+          apiCalls.fetchAllRefugees(dispatch); 
+        }}>
+          Get Local Refugee Data
+        </Button> 
+        <Button color="secondary" variant="contained" disabled>
+          Get UNHCR Refugee Data
+        </Button> 
+        <Grid container spacing={1} justify="center">
+          <Grid item xs={6}>
+            <BarGraph color="pink" title="Iraq" data={ refugees } />
+          </Grid>
+          <Grid item xs={6}>
             <BarGraph color="pink" title="Iraq" data={ refugees } />
           </Grid>
         </Grid>
