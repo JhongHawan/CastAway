@@ -1,11 +1,9 @@
 import React from 'react';
-import { Box, Grid } from '@material-ui/core';
-import Carousel from './Carousel';
-import MythCard from './MythCard';
+import { Box, Grid, Typography } from '@material-ui/core';
 
 import Divider from './Divider';
 import Hero from './Hero';
-import { useStyles } from './Theme';
+import { useStyles } from './Styles';
 
 
 function HomePage() {
@@ -17,7 +15,6 @@ function HomePage() {
             <Hero />
             <Box className={classes.homeSectionSpace}>
                 {/* TO DO put in class but make the useStyles still function */}
-                
             <Divider title="WHY IT MATTERS"/>
                 {/* <h1 className={classes.homeSectionTitle}>WHY IT MATTERS</h1> */}
                 <h6 className={classes.homeSectionSubtext}>WHY IT MATTERS TO US & WHY IT SHOULD MATTER TO YOU.</h6>
