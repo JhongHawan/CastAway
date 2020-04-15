@@ -3,7 +3,7 @@ import GridList from '@material-ui/core/GridList';
 import { makeStyles } from '@material-ui/core/styles';
 import GridListTile from '@material-ui/core/GridListTile';
 
-import { useStyles } from './Theme'
+import { useStyles } from './Styles'
 
 // creates the tiles
 function ImageScroll() {

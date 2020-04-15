@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 // import Tabs from '@material-ui/core/Tabs'; 
 // import Tab from '@material-ui/core/Tab';
 import { Container, Box, Tabs, Tab, Typography } from '@material-ui/core';
-import { useStyles } from './Theme';
+// import { useStyles } from './Theme';
+import { useStyles } from './Styles';
+
 
 import TabAction from './TabAction';
 

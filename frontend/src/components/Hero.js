@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useStyles } from './Theme';
+import { useStyles } from './Styles';
 
 
 function Hero() {

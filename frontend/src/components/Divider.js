@@ -6,7 +6,7 @@ import {
     Row,
     Col
 } from 'react-bootstrap';
-import { useStyles } from './Theme';
+import { useStyles } from './Styles';
 // import { Container } from '@material-ui/core';
 
 

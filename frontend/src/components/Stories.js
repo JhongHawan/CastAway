@@ -17,7 +17,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
-import { useStyles } from './Theme'
+import { useStyles } from './Styles'
 
 
 function Stories() {

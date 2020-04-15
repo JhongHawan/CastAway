@@ -30,6 +30,7 @@ class BarGraph extends Component {
       data: []
     };
   }
+  
   // Having a lot of trouble getting the data field to populate with the this.props.data 
   componentDidMount() {
     this.setState({
@@ -43,7 +44,6 @@ class BarGraph extends Component {
       data: this.props.data
     });
   }
-
 
   render() {
     const handleMouseOver = () => {
