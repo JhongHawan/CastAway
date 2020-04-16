@@ -4,7 +4,10 @@ const { Refugee } = require("../models/refugee.model");
 const express = require("express");
 const router = express.Router();
 
-// Get the refugee data
+/**
+* * Get the Refugee Route 
+* ! POSSIBLY DEPRECATE THE WHOLE ROUTE IN FAVOR OF UNHCR API
+*/
 router.get("/origin_name", async (req, res) => {
 
   // First check to see if the origin_name country exists in the dataset. 

@@ -5,6 +5,10 @@ import { unhcrDemoReducer } from './unhcrDemoSlice';
 
 const axios = require('axios').default;
 
+/**
+ * ! Possibly remove and have database only hold data for other pages. 
+ * @param {UseDispatch} dispatch is the useDispatch function for the redux store.  
+ */
 const fetchAllRefugees = (dispatch) => {
    axios
    .get('/api/refugees/origin_name', {
