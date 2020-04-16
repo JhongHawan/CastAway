@@ -57,9 +57,6 @@ class BarGraph extends Component {
       });
     };
 
-    console.log("This is PROPS data: " + this.props.data); 
-    console.log("This is the STATE data: " + this.state.title); 
-
     const CHART_HEIGHT = 800; 
     const CHART_WIDTH = 1000; 
     const FONT_SIZE = 20;

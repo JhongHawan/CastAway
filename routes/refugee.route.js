@@ -5,7 +5,7 @@ const express = require("express");
 const router = express.Router();
 
 // Get the refugee data
-router.get("/refugee/origin", async (req, res) => {
+router.get("/origin", async (req, res) => {
 
   // First check to see if the origin country exists in the dataset. 
   // Case sensitive 

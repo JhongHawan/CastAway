@@ -24,12 +24,13 @@ function Visualization() {
   
   const dispatch = useDispatch();
 
-  const { refugees, loading } = useSelector(
+  const { refugees, data, loading } = useSelector(
     (state) => {
       return {
         // It has to refer to the state of the reducer which in this case has name
         // refugee. So it's not state.refugees but state.refugee.refugees
         refugees: state.refugee.refugees,
+        data: state.unhcr.data,
         loading: state.refugee.loading
       }
     },
@@ -46,6 +47,9 @@ function Visualization() {
     // reset loading = false; 
   }, []);
   
+  /** 
+  * TODO: Add a Filter System that will gather user input and pass that on to the graphs as params. 
+  */
   return(
    <div className="Visualization">
      <Container>
@@ -68,7 +72,9 @@ function Visualization() {
         }}>
           Get Local Refugee Data
         </Button> 
-        <Button color="secondary" variant="contained" disabled>
+        <Button color="secondary" variant="contained" onClick={() => {
+          apiCalls.fetchUnhcr(dispatch, "submissions");
+        }}>
           Get UNHCR Refugee Data
         </Button> 
         <Grid container spacing={1} justify="center">
@@ -76,7 +82,7 @@ function Visualization() {
             <BarGraph color="pink" title="Iraq" data={ refugees } />
           </Grid>
           <Grid item xs={6}>
-            <BarGraph color="pink" title="Iraq" data={ refugees } />
+            <BarGraph color="green" title="Iraq" data={ refugees } />
           </Grid>
         </Grid>
       </main>
