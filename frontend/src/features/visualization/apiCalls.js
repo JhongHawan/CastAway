@@ -1,6 +1,7 @@
 import { useDispatch,} from 'react-redux'; 
 import { refugeeDataReducer } from './refugeeSlice';
-import { unhcrDataReducer } from './unhcrSlice'; 
+import { unhcrSubReducer } from './unhcrSubSlice'; 
+import { unhcrDemoReducer } from './unhcrDemoSlice'; 
 
 const axios = require('axios').default;
 
@@ -22,27 +23,50 @@ const fetchAllRefugees = (dispatch) => {
 /**
  * 
  * @param {UseDispatch} dispatch is the useDispatch function for the redux store.  
- * @param {String} endpoint which unhcr endpoint to hit [submission, departure, demographics] 
  */
-const fetchUnhcr = (dispatch, endpoint) => {
+const fetchUnhcrSub = (dispatch, options) => {
+   console.log(options.year)
    axios
    .get('/api/unhcr/submissions', {
       params: {
-         queryType: endpoint
+         year: options.year, 
+         origin: options.origin,
+         resettlement: options.resettlement
       }
    })
    .then(response => {
       console.log(`Success! ${response.status}`);
-      console.log(response.data);
       // Here we get the response and dispatch with the action and the response.data is our payload. 
       // This then executes all the functionality of our action that we declared in our slice.  
-      dispatch(unhcrDataReducer(response.data.results))   
+      dispatch(unhcrSubReducer(response.data.results))   
+   });
+}
+
+/**
+ * TODO: Add another fetch call for the demographics here. 
+ */
+ const fetchUnhcrDemo = (dispatch, options) => {
+   console.log(options.year)
+   axios
+   .get('/api/unhcr/demographics', {
+      params: {
+         year: options.year, 
+         origin: options.origin,
+         resettlement: options.resettlement
+      }
+   })
+   .then(response => {
+      console.log(`Success! ${response.status}`);
+      // Here we get the response and dispatch with the action and the response.data is our payload. 
+      // This then executes all the functionality of our action that we declared in our slice.  
+      dispatch(unhcrDemoReducer(response.data.results))   
    });
 }
 
 const apiCalls = ({
    fetchAllRefugees: fetchAllRefugees, 
-   fetchUnhcr: fetchUnhcr
+   fetchUnhcrSub: fetchUnhcrSub,
+   fetchUnhcrDemo: fetchUnhcrDemo
 });
 
 export default apiCalls; 
