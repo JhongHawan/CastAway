@@ -12,8 +12,9 @@ const unhcrSlice = createSlice({
   initialState: initialState,
   reducers: {
     unhcrDataReducer: (state, action) => {
-      state.data = [...action.payload]; 
       state.loading = true; 
+      state.data = [...action.payload]; 
+      state.loading = false; 
     }
   }
 });

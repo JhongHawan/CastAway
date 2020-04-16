@@ -24,21 +24,24 @@ function Visualization() {
   
   const dispatch = useDispatch();
 
-  const { refugees, data, loading } = useSelector(
+  const { refugeeData, unhcrData, loading } = useSelector(
     (state) => {
       return {
         // It has to refer to the state of the reducer which in this case has name
         // refugee. So it's not state.refugees but state.refugee.refugees
-        refugees: state.refugee.refugees,
-        data: state.unhcr.data,
+        refugeeData: state.refugee.refugees,
+        unhcrData: state.unhcr.data,
         loading: state.refugee.loading
       }
     },
     shallowEqual
   ); 
 
+  console.log(unhcrData); 
+
   /**
     * fetchAllRefugees API Call
+    * * Can use this in the History and Myths page to load data automatically. 
     * ! Remove the useEffect unless you're going to update the data when the page loads. 
   */
   useEffect(() => {
@@ -49,6 +52,8 @@ function Visualization() {
   
   /** 
   * TODO: Add a Filter System that will gather user input and pass that on to the graphs as params. 
+  * TODO: Add source for the api. 
+  * TODO: The BarGraph receiving the data needs to know if it's the local data or unhcr data. 
   */
   return(
    <div className="Visualization">
@@ -79,10 +84,10 @@ function Visualization() {
         </Button> 
         <Grid container spacing={1} justify="center">
           <Grid item xs={6}>
-            <BarGraph color="pink" title="Iraq" data={ refugees } />
+            <BarGraph color="pink" title="Iraq" data={ refugeeData } />
           </Grid>
           <Grid item xs={6}>
-            <BarGraph color="green" title="Iraq" data={ refugees } />
+            <BarGraph color="green" title="Syria" data={ unhcrData } />
           </Grid>
         </Grid>
       </main>

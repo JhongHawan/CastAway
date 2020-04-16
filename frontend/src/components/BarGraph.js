@@ -45,6 +45,7 @@ class BarGraph extends Component {
     });
   }
 
+
   render() {
     const handleMouseOver = () => {
       const fillColor = this.state.clicked ? "#547BFE" : this.state.color;
@@ -60,6 +61,7 @@ class BarGraph extends Component {
     const CHART_HEIGHT = 800; 
     const CHART_WIDTH = 1000; 
     const FONT_SIZE = 20;
+    console.log(`Props Data: ${this.props.data}`)
 
     return (
       <div>
@@ -87,7 +89,7 @@ class BarGraph extends Component {
             style={this.state.style}
             data={
               this.props.data.map(population => (
-                { x: new Date(population.year), y: (population.value / 1000)}
+                { x: new Date(population.year), y: (population.persons / 1000)}
               ))
             }
           />

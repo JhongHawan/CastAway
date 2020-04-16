@@ -12,8 +12,9 @@ const refugeeSlice = createSlice({
   initialState: initialState,
   reducers: {
     refugeeDataReducer: (state, action) => {
-      state.refugees = [...action.payload]; 
       state.loading = true; 
+      state.refugees = [...action.payload];
+      state.loading = false;  
     }
   }
 });

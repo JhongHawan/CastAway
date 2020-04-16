@@ -6,9 +6,9 @@ const axios = require('axios').default;
 
 const fetchAllRefugees = (dispatch) => {
    axios
-   .get('/api/refugees/origin', {
+   .get('/api/refugees/origin_name', {
       params: {
-         origin: "Iraq"
+         origin_name: "Iraq"
       }
    })
    .then(response => {
