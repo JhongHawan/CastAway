@@ -168,6 +168,9 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         // height: 224
     },
+    mobileTabWrapper: {
+        // width: 600
+    },
     callToAction: {
         padding: theme.spacing(5, 0, 0)
     },

@@ -13,13 +13,6 @@ import HomeFeatures from './HomeFeatures';
 function HomePage() {
     const classes = useStyles();
 
-    function MakeADifference() {
-        return(
-            <Box>
-                
-            </Box>
-        )
-    }
 
 
     return (
@@ -31,7 +24,6 @@ function HomePage() {
                 <Divider title="MAKE A DIFFERENCE" />
                 <Box className={classes.callToAction}>
                     <CallToAction />
-
                 </Box>
             </Box>
             
