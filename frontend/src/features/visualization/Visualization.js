@@ -24,20 +24,49 @@ function Visualization() {
   
   const dispatch = useDispatch();
 
-  const { refugeeData, unhcrData, loading } = useSelector(
+  const { refugeeData, unhcrSubData, unhcrDemoData, loading } = useSelector(
     (state) => {
       return {
         // It has to refer to the state of the reducer which in this case has name
         // refugee. So it's not state.refugees but state.refugee.refugees
         refugeeData: state.refugee.refugees,
-        unhcrData: state.unhcr.data,
+        unhcrSubData: state.unhcrSub.data,
+        unhcrDemoData: state.unhcrDemo.data,
         loading: state.refugee.loading
       }
     },
     shallowEqual
   ); 
 
-  console.log(unhcrData); 
+  /**
+   * TODO: Populate with whatever we get from the filter. 
+   */
+  const options = ({
+    year: [2016, 2018],
+    origin: ["SYR", "IRA"],
+    resettlement: ["USA", "NOR"]
+  });
+
+  /** 
+    * * Function to write to json file for user to download.
+    * ! Currently only downloading data from our local database. 
+    * TODO: Based on whichever api is called, download the appropriate data. 
+  */
+  const downloadFile = async () => {
+    const fileName = "data";
+    const json = JSON.stringify(refugeeData);
+    const blob = new Blob([json],{type:'application/json'});
+    const href = await URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = href;
+    link.download = fileName + ".json";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  console.log(unhcrSubData); 
+  console.log(unhcrDemoData); 
 
   /**
     * fetchAllRefugees API Call
@@ -75,19 +104,30 @@ function Visualization() {
           */
           apiCalls.fetchAllRefugees(dispatch); 
         }}>
-          Get Local Refugee Data
+          Get MongoDB Data
         </Button> 
         <Button color="secondary" variant="contained" onClick={() => {
-          apiCalls.fetchUnhcr(dispatch, "submissions");
+          apiCalls.fetchUnhcrSub(dispatch, options);
         }}>
-          Get UNHCR Refugee Data
+          Get UNHCR Sub Data
         </Button> 
+        <Button color="secondary" variant="outlined" onClick={() => {
+          apiCalls.fetchUnhcrDemo(dispatch, options);
+        }}>
+          Get UNHCR Demo Data
+        </Button> 
+        <Button color="primary" variant="outlined" onClick={downloadFile}>
+          Download Data 
+        </Button>
         <Grid container spacing={1} justify="center">
           <Grid item xs={6}>
             <BarGraph color="pink" title="Iraq" data={ refugeeData } />
           </Grid>
           <Grid item xs={6}>
-            <BarGraph color="green" title="Syria" data={ unhcrData } />
+            <BarGraph color="green" title="Syria" data={ unhcrSubData } />
+          </Grid>
+          <Grid item xs={6}>
+            <BarGraph color="green" title="Syria" data={ unhcrDemoData } />
           </Grid>
         </Grid>
       </main>

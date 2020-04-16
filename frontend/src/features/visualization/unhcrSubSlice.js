@@ -7,11 +7,11 @@ const initialState = {
   loading: false
 }
 
-const unhcrSlice = createSlice({
-  name: 'unhcr',
+const unhcrSubSlice = createSlice({
+  name: 'unhcrSub',
   initialState: initialState,
   reducers: {
-    unhcrDataReducer: (state, action) => {
+    unhcrSubReducer: (state, action) => {
       state.loading = true; 
       state.data = [...action.payload]; 
       state.loading = false; 
@@ -20,7 +20,7 @@ const unhcrSlice = createSlice({
 });
 
 export const { 
-   unhcrDataReducer
-} = unhcrSlice.actions;
+   unhcrSubReducer
+} = unhcrSubSlice.actions;
 
-export default unhcrSlice.reducer;
+export default unhcrSubSlice.reducer;
