@@ -34,11 +34,10 @@ function Myths() {
         </Box> */}
         <Hero 
           sectionTitle=
-          "No one puts their children in a boat unless the water is safer than the land"
-          cardTitle="WHY DOES IT MATTER?"
+          "Myths"
+          cardTitle="Title"
           cardSubtitle="Subtitle"
-          cardBody="The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference."
-        
+          cardBody="The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference."    
         />
         <Box className={classes.homeTopSpace}>
           <Divider title="MYTH DEBUNK" />
