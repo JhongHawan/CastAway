@@ -160,7 +160,7 @@ export const useStyles = makeStyles(theme => ({
         width: 200,
     },
     tabAction: {
-        backgroundColor: '#C9D6DF'
+        backgroundColor: '#C9D6DF',
     },
     tabWrapper: {
         flexGrow: 1,
@@ -192,6 +192,41 @@ export const useStyles = makeStyles(theme => ({
     },
     callToActionPadding: {
         padding: theme.spacing(4, 4, 2)
+    },
+    mythImage: {
+        opacity: '1',
+        display: 'block',
+        width: '50%',
+        height: 'auto',
+        transition: '.5s ease',
+        backfaceVisibility: 'hidden',
+        '&:hover': {
+            opacity: '0.3'
+        }
+    },
+    mythMiddle: {
+        transition: '.5s ease',
+        opacity: '0',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        // -ms-transform: 'translate(-50%, -50%)',
+        // textAlign: 'center',
+        '&:hover': {
+            opacity: '1'
+        }
+    },
+    mythText: {
+        backgroundColor: 'green',
+        color: 'white',
+        fontSize: '16px',
+        padding: '16px 32px'
+    },
+    mythContainer: {
+        position: 'relative',
+        width: '50%',
+
     }
 }))
 
