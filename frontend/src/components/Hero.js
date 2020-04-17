@@ -3,11 +3,15 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useStyles } from './Styles';
 
 
-function Hero() {
+// Props
+// sectionTitle - Text for section Title
+// cardTitle -Heading for the div
+// cardSubtitle - Subtitle for the div
+// cardBody - Body for the div
+function Hero(props) {
     const classes = useStyles();
 
     return (
-        <React.Fragment>
 
         <div className={classes.heroImg}>
             <Container diableGutters>
@@ -16,8 +20,9 @@ function Hero() {
                 </Row> */}
                 <Row className="h-100">
                     <Col style={{ marginTop: "auto", marginBottom: "auto" }}>
+
                         <h2 className={classes.homeSectionTitle}>
-                            "No one puts their children in a boat unless the water is safer than the land"
+                            "{props.sectionTitle}"
                         </h2>
                     </ Col>
                 </Row>
@@ -25,25 +30,28 @@ function Hero() {
                     <img src="left-quote.svg" style={{ transform: 'scaleX(-1)' }} />
                 </Row> */}
             </Container>
-            <Container className={classes.heroChild} style={{display: 'block', overflow: 'auto'}}>
+            <Container className={classes.heroChild} style={{ display: 'block', overflow: 'auto' }}>
                 <Row>
                     <Col>
                         <h3>
-                            WHY DOES IT MATTER?
+                            {props.cardTitle}
                         </h3>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h6>Subtitle</h6>
-                        <p>The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference.</p>
+                        <h6>
+                            {props.cardSubtitle}
+                        </h6>
+                        <p>
+                            {props.cardBody}
+                        </p>
                     </Col>
 
                 </Row>
 
             </Container>
         </div>
-        </React.Fragment>
 
     );
 }
