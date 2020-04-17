@@ -19,8 +19,20 @@ const customTheme = createMuiTheme({
   // Put fonts in here for general text. Add different fonts for different headers and edit 
   // their size. 
   typography: {
+     h1: {
+         
+     },
+     h2: {
+
+     },
+     h3: {
+
+     },
+     subtitle1: {
+        fontSize: 12,
+     }, 
      fontFamily: 'zeitung, sans-serif',
-     fontWeight: 400
+     fontWeight: 400,
   }
 });
 
