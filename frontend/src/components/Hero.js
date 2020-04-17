@@ -22,7 +22,7 @@ function Hero(props) {
                     <Col style={{ marginTop: "auto", marginBottom: "auto" }}>
 
                         <h2 className={classes.homeSectionTitle}>
-                            "{props.sectionTitle}"
+                            {props.sectionTitle}
                         </h2>
                     </ Col>
                 </Row>
