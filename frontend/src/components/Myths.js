@@ -35,7 +35,12 @@ function Myths() {
         <Hero />
         <Box className={classes.homeTopSpace}>
           <Divider title="MYTH DEBUNK" />
-        
+          <h5>Are Refugees and Immigrants the same type of person?</h5>
+          <p>blah blah</p>
+          <Box style={{ maxWidth: "650px", margin: "auto", paddingTop: "2em" }}>
+            {/* <Box style={{ textAlign: "center"}}> */}
+            <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" />
+          </Box>
         </Box>
         <Box className={classes.homeTopSpace}>
           <Divider title="FACT CHECK" />
