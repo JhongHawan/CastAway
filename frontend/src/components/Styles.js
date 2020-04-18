@@ -201,8 +201,17 @@ export const useStyles = makeStyles(theme => ({
         textAlign: 'center',
         // color: theme.palette.text.secondary,
         margin: '0.5em'
-      }
-    
+    },
+    testToggle: {
+        backgroundColor: 'green'
+    },
+    redButton: {
+        backgroundColor: 'red'
+    }, 
+    greenButton: {
+        backgroundColor: 'green' 
+    }
+
 }))
 
 // export const useStyles;
