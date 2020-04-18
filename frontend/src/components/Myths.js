@@ -36,7 +36,7 @@ function Myths() {
     // let 
     return (
       <Row>
-        <Paper variant="outlined" className={classes.paper } style={{borderColor: color, borderWidth: width}}>{props.caption}</Paper>
+        <Paper variant="outlined" className={classes.paper } style={{borderColor: color, borderWidth: width, width: '300px'}}>{props.caption}</Paper>
       </Row>
     )
   }
