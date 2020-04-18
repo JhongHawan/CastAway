@@ -17,8 +17,6 @@ function HomePage() {
 
     return (
         <Container disableGutters>
-
-            <Hero />
             {/* Different design for mobile */}
             <Box className={classes.homeTopSpace}>
                 <Divider title="MAKE A DIFFERENCE" />

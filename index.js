@@ -2,6 +2,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const refugeeRoute = require("./routes/refugee.route");
 const usersRoute = require("./routes/user.route");
+const unhcrRoute = require("./routes/unhcr.route");
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require("express");
@@ -29,6 +30,8 @@ app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit: 50
 // api routes 
 app.use("/api/users", usersRoute);
 app.use("/api/refugees", refugeeRoute);
+// external unhcr api
+app.use("/api/unhcr", unhcrRoute); 
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

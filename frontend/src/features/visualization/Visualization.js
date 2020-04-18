@@ -3,10 +3,9 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container'; 
 import BarGraph from '../../components/BarGraph'; 
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
-import { getDataReducer } from './refugeeSlice';
-const axios = require('axios').default;
+import apiCalls from './apiCalls'; 
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,45 +22,68 @@ const useStyles = makeStyles(theme => ({
 function Visualization() {
   const classes = useStyles(); 
   
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
-  const fetchAllRefugees = () => {
-    axios
-      .get('/api/refugees/refugee/origin', {
-        params: {
-          origin: "Iraq"
-        }
-      })
-      .then(response => {
-        console.log(response.status);
-        // Here we get the response and dispatch with the action and the response.data is our payload. 
-        // This then executes all the functionality of our action that we declared in our slice.  
-        dispatch(getDataReducer(response.data))   
-      });
-  }
-
-  const { refugees, loading } = useSelector(
+  const { refugeeData, unhcrSubData, unhcrDemoData, loading } = useSelector(
     (state) => {
       return {
         // It has to refer to the state of the reducer which in this case has name
         // refugee. So it's not state.refugees but state.refugee.refugees
-        refugees: state.refugee.refugees,
+        refugeeData: state.refugee.refugees,
+        unhcrSubData: state.unhcrSub.data,
+        unhcrDemoData: state.unhcrDemo.data,
         loading: state.refugee.loading
       }
     },
     shallowEqual
   ); 
 
-  // May want to put an if case here so that you only fetch data 
-  // if it's not in the store already. 
+  /**
+   * TODO: Populate with whatever we get from the filter. 
+   */
+  const options = ({
+    year: [2016, 2018],
+    origin: ["SYR", "IRA"],
+    resettlement: ["USA", "NOR"]
+  });
+
+  /** 
+    * * Function to write to json file for user to download.
+    * ! Currently only downloading data from our local database. 
+    * TODO: Based on whichever api is called, download the appropriate data. 
+  */
+  const downloadFile = async () => {
+    const fileName = "data";
+    const json = JSON.stringify(refugeeData);
+    const blob = new Blob([json],{type:'application/json'});
+    const href = await URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = href;
+    link.download = fileName + ".json";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  console.log(unhcrSubData); 
+  console.log(unhcrDemoData); 
+
+  /**
+    * fetchAllRefugees API Call
+    * * Can use this in the History and Myths page to load data automatically. 
+    * ! Remove the useEffect unless you're going to update the data when the page loads. 
+  */
   useEffect(() => {
-    fetchAllRefugees(); 
+    // fetchAllRefugees(); 
     // Need to edit the state here and 
     // reset loading = false; 
   }, []);
-
-  console.log(refugees)
   
+  /** 
+  * TODO: Add a Filter System that will gather user input and pass that on to the graphs as params. 
+  * TODO: Add source for the api. 
+  * TODO: The BarGraph receiving the data needs to know if it's the local data or unhcr data. 
+  */
   return(
    <div className="Visualization">
      <Container>
@@ -76,9 +98,36 @@ function Visualization() {
         Visualization Page
       </Typography>
       <main>
-        <Grid container spacing={2} justify="center">
-          <Grid item xs={10}>
-            <BarGraph color="pink" title="Iraq" data={ refugees } />
+        <Button color="primary" variant="contained" onClick={() => {
+          /**
+          * TODO: Add a check whether the store is empty for refugees. If it is then fetch else don't.
+          */
+          apiCalls.fetchAllRefugees(dispatch); 
+        }}>
+          Get MongoDB Data
+        </Button> 
+        <Button color="secondary" variant="contained" onClick={() => {
+          apiCalls.fetchUnhcrSub(dispatch, options);
+        }}>
+          Get UNHCR Sub Data
+        </Button> 
+        <Button color="secondary" variant="outlined" onClick={() => {
+          apiCalls.fetchUnhcrDemo(dispatch, options);
+        }}>
+          Get UNHCR Demo Data
+        </Button> 
+        <Button color="primary" variant="outlined" onClick={downloadFile}>
+          Download Data 
+        </Button>
+        <Grid container spacing={1} justify="center">
+          <Grid item xs={6}>
+            <BarGraph color="pink" title="Iraq" data={ refugeeData } />
+          </Grid>
+          <Grid item xs={6}>
+            <BarGraph color="green" title="Syria" data={ unhcrSubData } />
+          </Grid>
+          <Grid item xs={6}>
+            <BarGraph color="green" title="Syria" data={ unhcrDemoData } />
           </Grid>
         </Grid>
       </main>
