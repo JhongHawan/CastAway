@@ -3,9 +3,10 @@ import { Grid, Box, Container } from '@material-ui/core';
 import { Row, Col } from 'react-bootstrap';
 import ReactCompareImage from 'react-compare-image';
 import ContextCard from './ContextCard';
-import VettingContext from './VettingContext';
 import Hero from './Hero';
 import Divider from './Divider';
+import Paper from '@material-ui/core/Paper';
+import Switch from '@material-ui/core/Switch';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 
@@ -14,6 +15,63 @@ import { useStyles } from './Styles';
 
 function Myths() {
   const classes = useStyles();
+
+  function Card(props) {
+    return (
+      <Paper className={classes.paper}>{props.caption}</Paper>
+    )
+  }
+
+  function CardWrapper() {
+    return (
+      <Container>
+        <Grid container spacing={24}>
+          <Grid item xs>
+            <Card caption='Immigrants and refugees are the same type of person.' />
+          </Grid>
+          <Grid item xs>
+            <Card caption='Refugees go through a 20 step vetting process.' />
+          </Grid>
+          <Grid item xs>
+            <Card caption='The United States is the only country that takes refugees.' />
+          </Grid>
+          <Grid item xs>
+            <Card caption='Refugees are forced to leave their home to escape violence.' />
+          </Grid>
+        </Grid>
+        <Grid container spacing={24}>
+          <Grid item xs>
+            <Card caption='All refugees live in refugee camps.' />
+          </Grid>
+          <Grid item xs>
+            <Card caption='Refugees contribute their talent, skills, and culture.' />
+          </Grid>
+          <Grid item xs>
+            <Card caption='Refugees do not pay taxes, and negatively impact the economy.' />
+          </Grid>
+          <Grid item xs>
+            <Card caption='The refugee crisis is not a new phenomenon in history.' />
+          </Grid>
+        </Grid>
+        <Grid container spacing={24}>
+          <Grid item xs>
+            <Card caption='Refugees steal jobs from US citizens.' />
+          </Grid>
+          <Grid item xs>
+            <Card caption='Refugees come from countries all over the world.' />
+          </Grid>
+          <Grid item xs>
+            <Card caption='All refugees are terrorists with a violent agenda.' />
+          </Grid>
+          <Grid item xs>
+            <Card caption='The refugee crisis is still happening.' />
+          </Grid>
+        </Grid>
+      </Container>
+
+    )
+
+  }
 
   return (
     <div>
@@ -35,14 +93,11 @@ function Myths() {
         <Hero />
         <Box className={classes.homeTopSpace}>
           <Divider title="MYTH DEBUNK" />
-          <h5>Are Refugees and Immigrants the same type of person?</h5>
-          <p>blah blah</p>
-          <Box style={{ maxWidth: "650px", margin: "auto", paddingTop: "2em" }}>
-            {/* <Box style={{ textAlign: "center"}}> */}
-            <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" />
-          </Box>
+          <Container className={classes.callToAction}>
+            <CardWrapper />
+          </Container>
         </Box>
-        <Box className={classes.homeTopSpace}>
+        <Box className={classes.homeSectionSpace}>
           <Divider title="FACT CHECK" />
           <Box className={classes.callToAction}>
             <h5>There are several myths that need to be debunked when it comes to refugees.</h5>
