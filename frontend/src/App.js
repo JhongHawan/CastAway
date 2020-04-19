@@ -5,30 +5,37 @@ import History from './components/History';
 import Stories from './components/Stories';
 import About from './components/About/About';
 import Visualization from './features/visualization/Visualization';
-import customeTheme from './styles/Theme';
+import customTheme from './styles/Theme';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/Navbar';
-
 import HomePage from './components/HomePage';
-
+import Terminology from './components/Terminology';
+import yourRole from './components/TemplatedEmail';
 import Hero from './components/Hero';
+import Context from './components/Context';
+// import VettingProcess from './components/VettingProcess';
+import VettingProcess from './components/VettingProcess';
 import Footer from './components/About/Footer';
 
 // import heroCarousel from './components/Carousel';
 
 function App() {
   return (
-    <ThemeProvider theme={customeTheme}>
+    <ThemeProvider theme={customTheme}>
       <Router>
         <div className="App">
           <NavBar />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/myths" component={Myths} />
+            <Route path="/context" component={Context} />
+            <Route path="/terminology" component={Terminology} />
+            <Route path="/vetting" component={VettingProcess} />
             <Route path="/history" component={History} />
             <Route path="/stories" component={Stories} />
-            <Route path="/visualization" component={Visualization} />
+            <Route path="/data" component={Visualization} />
+            <Route path="/yourRole" component={yourRole} />
             <Route path="/about" component={About} />
           </Switch>
         </div>

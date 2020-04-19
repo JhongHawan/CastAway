@@ -13,18 +13,18 @@ import Hero from './Hero';
 import { useStyles } from './Styles'
 
 
-function YourRole() {
+function VettingProcess() {
    const classes = useStyles();
 
    return (
       <div >
          <Hero
             showCard={false}
-            sectionTitle="Your Role."
+            sectionTitle="Vetting Process."
          />
          <Footer />
       </div>
    );
 }
 
-export default YourRole; 
+export default VettingProcess; 
