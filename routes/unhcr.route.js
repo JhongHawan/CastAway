@@ -25,6 +25,26 @@ router.get('/submissions', async (req, res) => {
    res.send(responseData); 
 });
 
+/** 
+* * Route in our backend that will call the unhcr api. 
+* * Returns the response object in JSON format from unhcr endpoint. 
+* TODO: Put in the correct query parameters and the /:things, . 
+* TODO: Error handling for missing required params.
+* Need to have the two .then() since .json() is also an async method. 
+* @param {int[]} year the year query param.
+* @param {String[]} origin origin country codes.
+* @param {String[]} resettlement resettlement country codes.
+*/
+router.get('/origins/submissions', async (req, res) => {
+   const url = `http://api.unhcr.org/rsq/v1/submissions`;
+   console.log(`QUERY STRING: ${url}`);
+   const responseData = await fetch(url)
+    .then(res => res.json())
+    .then(data => {return data})
+    .catch(error => console.log(`Error: Could not fetch from ${url}`));
+   res.send(responseData); 
+});
+
 /**
 * @param {int[]} year the year query param.
 * @param {String[]} origin origin country codes.

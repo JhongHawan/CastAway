@@ -28,6 +28,22 @@ const fetchAllRefugees = (dispatch) => {
  * 
  * @param {UseDispatch} dispatch is the useDispatch function for the redux store.  
  */
+ const fetchValidCountries = (dispatch, options) => {
+   console.log(options.year)
+   axios
+   .get('/api/unhcr/origins/submissions')
+   .then(response => {
+      console.log(`Success! ${response.status}`);
+      // Here we get the response and dispatch with the action and the response.data is our payload. 
+      // This then executes all the functionality of our action that we declared in our slice.  
+      dispatch(unhcrSubReducer(response.data.results))   
+   });
+}
+
+/**
+ * 
+ * @param {UseDispatch} dispatch is the useDispatch function for the redux store.  
+ */
 const fetchUnhcrSub = (dispatch, options) => {
    console.log(options.year)
    axios
@@ -70,7 +86,8 @@ const fetchUnhcrSub = (dispatch, options) => {
 const apiCalls = ({
    fetchAllRefugees: fetchAllRefugees, 
    fetchUnhcrSub: fetchUnhcrSub,
-   fetchUnhcrDemo: fetchUnhcrDemo
+   fetchUnhcrDemo: fetchUnhcrDemo,
+   fetchValidCountries: fetchValidCountries
 });
 
 export default apiCalls; 
