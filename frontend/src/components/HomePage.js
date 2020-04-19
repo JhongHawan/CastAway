@@ -30,7 +30,6 @@ function HomePage() {
                 <HomeFeatures />
             </Box>
 
-
         </Container>
     );
 }

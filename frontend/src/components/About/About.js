@@ -1,15 +1,17 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography'; 
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import TeamSection from './TeamSection'; 
-import Footer from './Footer'; 
+import TeamSection from './TeamSection';
+import Footer from './Footer';
+
+import Hero from '../Hero';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
-  }, 
+  },
   bargraph: {
     color: '#white'
   },
@@ -31,11 +33,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function About() {
-  const classes = useStyles(); 
+  const classes = useStyles();
 
-  return(
-   <div className={classes.root}>
-    <Typography
+  return (
+    <div className={classes.root}>
+      <Hero
+        showCard={false}
+        sectionTitle="About Us"
+      />
+      {/* <Typography
         component="h2"
         variant="h2"
         color="inherit"
@@ -44,7 +50,7 @@ function About() {
         className={classes.header}
       >
         About Us
-      </Typography>
+      </Typography> */}
       {/* Put into Mission statement component */}
       <Grid
         container
@@ -60,15 +66,15 @@ function About() {
           </div>
         </Grid>
         <Grid item xs={3} sm={6}>
-          <img src="/castawayLogo.png" alt="Logo"/>
+          <img src="/castawayLogo.png" alt="Logo" />
         </Grid>
       </Grid>
       <div className={classes.teamSection}>
         <TeamSection>
         </TeamSection>
-      </div>     
-    <Footer></Footer>
-   </div>
+      </div>
+      <Footer></Footer>
+    </div>
   );
 }
 

@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container'; 
-import BarGraph from '../../components/BarGraph'; 
+import Container from '@material-ui/core/Container';
+import BarGraph from '../../components/BarGraph';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
-import apiCalls from './apiCalls'; 
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import apiCalls from './apiCalls';
+
+import Hero from '../../components/Hero';
+import Footer from '../../components/About/Footer';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
-  }, 
+  },
   bargraph: {
     color: '#white'
   },
@@ -20,8 +24,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function Visualization() {
-  const classes = useStyles(); 
-  
+  const classes = useStyles();
+
   const dispatch = useDispatch();
 
   const { refugeeData, unhcrSubData, unhcrDemoData, loading } = useSelector(
@@ -36,7 +40,7 @@ function Visualization() {
       }
     },
     shallowEqual
-  ); 
+  );
 
   /**
    * TODO: Populate with whatever we get from the filter. 
@@ -55,7 +59,7 @@ function Visualization() {
   const downloadFile = async () => {
     const fileName = "data";
     const json = JSON.stringify(refugeeData);
-    const blob = new Blob([json],{type:'application/json'});
+    const blob = new Blob([json], { type: 'application/json' });
     const href = await URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = href;
@@ -65,8 +69,8 @@ function Visualization() {
     document.body.removeChild(link);
   }
 
-  console.log(unhcrSubData); 
-  console.log(unhcrDemoData); 
+  console.log(unhcrSubData);
+  console.log(unhcrDemoData);
 
   /**
     * fetchAllRefugees API Call
@@ -78,16 +82,20 @@ function Visualization() {
     // Need to edit the state here and 
     // reset loading = false; 
   }, []);
-  
+
   /** 
   * TODO: Add a Filter System that will gather user input and pass that on to the graphs as params. 
   * TODO: Add source for the api. 
   * TODO: The BarGraph receiving the data needs to know if it's the local data or unhcr data. 
   */
-  return(
-   <div className="Visualization">
-     <Container>
-      <Typography
+  return (
+    <div className="Visualization">
+      <Hero
+        showCard={false}
+        sectionTitle="Visualization"
+      />
+      <Container>
+        {/* <Typography
         component="h2"
         variant="h2"
         color="inherit"
@@ -96,43 +104,44 @@ function Visualization() {
         className={classes.header}
       >
         Visualization Page
-      </Typography>
-      <main>
-        <Button color="primary" variant="contained" onClick={() => {
-          /**
-          * TODO: Add a check whether the store is empty for refugees. If it is then fetch else don't.
-          */
-          apiCalls.fetchAllRefugees(dispatch); 
-        }}>
-          Get MongoDB Data
-        </Button> 
-        <Button color="secondary" variant="contained" onClick={() => {
-          apiCalls.fetchUnhcrSub(dispatch, options);
-        }}>
-          Get UNHCR Sub Data
-        </Button> 
-        <Button color="secondary" variant="outlined" onClick={() => {
-          apiCalls.fetchUnhcrDemo(dispatch, options);
-        }}>
-          Get UNHCR Demo Data
-        </Button> 
-        <Button color="primary" variant="outlined" onClick={downloadFile}>
-          Download Data 
+      </Typography> */}
+        <main>
+          <Button color="primary" variant="contained" onClick={() => {
+            /**
+            * TODO: Add a check whether the store is empty for refugees. If it is then fetch else don't.
+            */
+            apiCalls.fetchAllRefugees(dispatch);
+          }}>
+            Get MongoDB Data
         </Button>
-        <Grid container spacing={1} justify="center">
-          <Grid item xs={6}>
-            <BarGraph color="pink" title="Iraq" data={ refugeeData } />
+          <Button color="secondary" variant="contained" onClick={() => {
+            apiCalls.fetchUnhcrSub(dispatch, options);
+          }}>
+            Get UNHCR Sub Data
+        </Button>
+          <Button color="secondary" variant="outlined" onClick={() => {
+            apiCalls.fetchUnhcrDemo(dispatch, options);
+          }}>
+            Get UNHCR Demo Data
+        </Button>
+          <Button color="primary" variant="outlined" onClick={downloadFile}>
+            Download Data
+        </Button>
+          <Grid container spacing={1} justify="center">
+            <Grid item xs={6}>
+              <BarGraph color="pink" title="Iraq" data={refugeeData} />
+            </Grid>
+            <Grid item xs={6}>
+              <BarGraph color="green" title="Syria" data={unhcrSubData} />
+            </Grid>
+            <Grid item xs={6}>
+              <BarGraph color="green" title="Syria" data={unhcrDemoData} />
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <BarGraph color="green" title="Syria" data={ unhcrSubData } />
-          </Grid>
-          <Grid item xs={6}>
-            <BarGraph color="green" title="Syria" data={ unhcrDemoData } />
-          </Grid>
-        </Grid>
-      </main>
-     </Container>
-   </div>
+        </main>
+      </Container>
+      <Footer />
+    </div>
   );
 }
 

@@ -7,17 +7,22 @@ import Timeline from './Timeline';
 
 import { useStyles } from './Styles';
 
+import Hero from './Hero';
+import Footer from './About/Footer';
+
 
 function History() {
     const classes = useStyles();
     return (
         <div>
-            <Box className={classes.sectionBlock}>
+            <Hero
+                showCard={false}
+                sectionTitle="History"
+            />
+            {/* <Box className={classes.sectionBlock}>
                 <Box>
                     <Grid container spacing={5} >
-                        {/* TODO vertically align center */}
                         <Grid item>
-                            {/* <MenuBookIcon className={classes.testSection} /> */}
                             <img className={classes.historyIcon} src="history_icon.png" width="100px"/>
                         </Grid>
                         <Grid item sm={9}>
@@ -31,9 +36,10 @@ function History() {
                     </Grid>
 
                 </Box>
-            </Box>
+            </Box> */}
 
             <Timeline />
+            <Footer />
         </div>
     );
 }

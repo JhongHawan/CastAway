@@ -48,7 +48,10 @@ export const useStyles = makeStyles(theme => ({
         fontWeight: 400,
         fontStyle: 'normal',
         color: '#52616B',
-        // backgroundColor: '#52616B'
+
+        '&:hover': {
+            color: '#F16841',
+        }
 
     },
     // FOR - Used with sectionBlock for white text
@@ -207,9 +210,9 @@ export const useStyles = makeStyles(theme => ({
     },
     redButton: {
         backgroundColor: 'red'
-    }, 
+    },
     greenButton: {
-        backgroundColor: 'green' 
+        backgroundColor: 'green'
     }
 
 }))

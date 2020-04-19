@@ -17,6 +17,9 @@ import Button from '@material-ui/core/Button';
 
 import { useStyles } from './Styles';
 
+import Footer from './About/Footer';
+
+
 function Myths() {
   const classes = useStyles();
 
@@ -48,7 +51,6 @@ function Myths() {
 
     let [active, setActive] = useState(false);
     
-    // TODO interaction for debunk
     function handleDebunk() {
       setActive(active = true);
       console.log('After click: ' + active);
@@ -210,7 +212,7 @@ function Myths() {
           </Box>
         </Box>
       </Box>
-
+      <Footer />
     </div>
   );
 }

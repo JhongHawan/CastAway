@@ -26,19 +26,43 @@ function NavBar() {
       <Navbar.Collapse>
         <Container >
           <Col xs lg="2">
-            <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/stories">Stories</Nav.Link>
+            <Nav.Link
+              className={classes.navLink}
+              id="nav-dropdown"
+              as={Link}
+              to="/stories"
+            >
+              Stories
+            </Nav.Link>
           </Col>
           <Col xs lg="2">
-            <NavDropdown className={classes.navLink} id="nav-dropdown" title="Context" id="nav-dropdown">
-              <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/history">History</NavDropdown.Item>
-              <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/myths">Myths</NavDropdown.Item>
+            <NavDropdown
+              className={classes.navLink}
+              id="nav-dropdown"
+              title="Context"
+              id="nav-dropdown"
+            >
+              <NavDropdown.Item
+                className={classes.navLink}
+                id="nav-dropdown"
+                as={Link}
+                to="/history"
+              >
+                History
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                className={classes.navLink}
+                id="nav-dropdown"
+                as={Link}
+                to="/myths"
+              >
+                Myths
+              </NavDropdown.Item>
             </NavDropdown>
           </Col>
-
-          {/* TODO - Fix hover over on h4 */}
-          <Col className={"text-center"} md="auto" as={Link} to="/" >
+          <Col className={"text-center"} md="auto" as={Link} to="/" style={{ textDecoration: 'none' }} >
             <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
-            <h4 className={classes.navTitle}>CASTAWAY</h4>
+            <h4 className={classes.navTitle}  >CASTAWAY</h4>
           </Col>
           <Col xs lg="2">
             <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/visualization">Visualization</Nav.Link>
