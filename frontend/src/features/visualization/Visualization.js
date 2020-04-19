@@ -5,6 +5,7 @@ import BarGraph from '../../components/BarGraph';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
+import Filter from '../../components/Filter'; 
 import apiCalls from './apiCalls'; 
 
 const useStyles = makeStyles(theme => ({
@@ -48,21 +49,25 @@ function Visualization() {
   });
 
   /** 
-    * * Function to write to json file for user to download.
-    * ! Currently only downloading data from our local database. 
-    * TODO: Based on whichever api is called, download the appropriate data. 
+    * * Function to write to json file for user to download if data has been retrieved from API.
+    * * Otherwise alerts user to fetch data first. 
+    * ! Currently only downloading data from UNHCR API.
   */
   const downloadFile = async () => {
-    const fileName = "data";
-    const json = JSON.stringify(refugeeData);
-    const blob = new Blob([json],{type:'application/json'});
-    const href = await URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = href;
-    link.download = fileName + ".json";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (unhcrSubData.length == 0) {
+      alert("No data has been fetched yet, you'd be downloading an empty file! HINT: Try getting the data first!");
+    } else {
+      const fileName = "data";
+      const json = JSON.stringify(unhcrSubData);
+      const blob = new Blob([json],{type:'application/json'});
+      const href = await URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = href;
+      link.download = fileName + ".json";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   }
 
   console.log(unhcrSubData); 
@@ -98,36 +103,22 @@ function Visualization() {
         Visualization Page
       </Typography>
       <main>
-        <Button color="primary" variant="contained" onClick={() => {
-          /**
-          * TODO: Add a check whether the store is empty for refugees. If it is then fetch else don't.
-          */
-          apiCalls.fetchAllRefugees(dispatch); 
-        }}>
-          Get MongoDB Data
-        </Button> 
-        <Button color="secondary" variant="contained" onClick={() => {
-          apiCalls.fetchUnhcrSub(dispatch, options);
-        }}>
-          Get UNHCR Sub Data
-        </Button> 
-        <Button color="secondary" variant="outlined" onClick={() => {
-          apiCalls.fetchUnhcrDemo(dispatch, options);
-        }}>
-          Get UNHCR Demo Data
-        </Button> 
-        <Button color="primary" variant="outlined" onClick={downloadFile}>
-          Download Data 
-        </Button>
         <Grid container spacing={1} justify="center">
-          <Grid item xs={6}>
-            <BarGraph color="pink" title="Iraq" data={ refugeeData } />
+          <Grid item xs={12}>
+            <Button color="secondary" variant="contained" onClick={() => {
+              apiCalls.fetchUnhcrSub(dispatch, options);
+            }}>
+              Get UNHCR Sub Data
+            </Button>
+            <Button color="primary" variant="contained" onClick={downloadFile}>
+              Download Data 
+            </Button>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12}> 
+            <Filter></Filter>
+          </Grid>
+          <Grid item xs={10}>
             <BarGraph color="green" title="Syria" data={ unhcrSubData } />
-          </Grid>
-          <Grid item xs={6}>
-            <BarGraph color="green" title="Syria" data={ unhcrDemoData } />
           </Grid>
         </Grid>
       </main>
