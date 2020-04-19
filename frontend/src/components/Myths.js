@@ -23,8 +23,6 @@ import Footer from './About/Footer';
 function Myths() {
   const classes = useStyles();
 
-  // TODO interaction for reset
-
   /**
    * @param {String} props.color 
    */
