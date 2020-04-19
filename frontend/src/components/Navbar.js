@@ -22,7 +22,7 @@ function NavBar() {
   const classes = useStyles();
 
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light" bg="light">
+    <Navbar collapseOnSelect expand="lg" variant="light" bg="bg-light">
       <Navbar.Brand as={Link} to="/">
         <Row className="justify-content-center">
           <Col style={{ textAlign:"center"}}>
