@@ -7,9 +7,11 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 
+/**
+ * TODO: Pull the options out from here and give it to the visualization.js file for the API call query params. 
+ */
 function DatePicker(props) {
-  const [selectedDate, setSelectedDate] = React.useState(new Date().getDate());
-
+  const [selectedDate, setSelectedDate] = React.useState(Date.parse(new Date().getFullYear()));
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
@@ -22,9 +24,11 @@ function DatePicker(props) {
           id="date-picker-dialog"
           label={props.label}
           format="yyyy"
-          openTo={selectedDate}
+          maxDate={Date.parse(new Date().getFullYear())}
+          minDate={Date.parse('January 1, 2003')}
           value={selectedDate}
           onChange={handleDateChange}
+          openTo="year"
           views={["year"]}
           KeyboardButtonProps={{
             'aria-label': 'change date',
