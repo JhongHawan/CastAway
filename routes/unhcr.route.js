@@ -25,6 +25,32 @@ router.get('/submissions', async (req, res) => {
    res.send(responseData); 
 });
 
+/** 
+* * Gets the available origin countries the users can select from. 
+*/
+router.get('/origins/submissions', async (req, res) => {
+   const url = `http://api.unhcr.org/rsq/v1/origins/submissions`;
+   console.log(`QUERY STRING: ${url}`);
+   const responseData = await fetch(url)
+    .then(res => res.json())
+    .then(data => {return data})
+    .catch(error => console.log(`Error: Could not fetch from ${url}`));
+   res.send(responseData); 
+});
+
+/** 
+* * Gets the available destination countries the users can select from. 
+*/
+router.get('/destinations', async (req, res) => {
+   const url = `http://api.unhcr.org/rsq/v1/destinations`;
+   console.log(`QUERY STRING: ${url}`);
+   const responseData = await fetch(url)
+    .then(res => res.json())
+    .then(data => {return data})
+    .catch(error => console.log(`Error: Could not fetch from ${url}`));
+   res.send(responseData); 
+});
+
 /**
 * @param {int[]} year the year query param.
 * @param {String[]} origin origin country codes.

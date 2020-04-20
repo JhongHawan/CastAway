@@ -1,69 +1,64 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-   button: {
-     display: 'block',
-     marginTop: theme.spacing(2),
-   },
    formControl: {
      margin: theme.spacing(1),
-     minWidth: 120,
+     minWidth: 120
    },
  }));
 
-function Filter() {
+ /**
+   * Generic drop down button to use for different filter items. 
+   */
+function FilterOpenSelect(props) {
    const classes = useStyles();
-   /**
-    * TODO: Edit the state here and set it to the defaults. 
-    */
-   const [age, setState] = React.useState({
-      age: '',
-      name: 'hai',
-   });
    
    const [open, setOpen] = React.useState(false);
 
+   const [data, setState] = React.useState(props.data); 
+  
+   useEffect(() => {
+      setState(props.data);
+   }, [props.data]);
+  
+
    const handleChange = (event) => {
       setState(event.target.value);
-    };
+   };
   
-    const handleClose = () => {
+   const handleClose = () => {
       setOpen(false);
-    };
+   };
   
-    const handleOpen = () => {
+   const handleOpen = () => {
       setOpen(true);
-    };
+   };
 
-   /**
-   * TODO: Add the available countries from the API. 
-   */
    return (
       <div>
          <FormControl className={classes.formControl}>
-            <InputLabel id="graph-type">Graph Type</InputLabel>
+            <InputLabel id="open-select-label">{props.label}</InputLabel>
             <Select
-               labelId="graph-type"
-               id="graph-type-open-select"
+               labelId="open-select-label"
+               id="open-select"
                open={open}
                onClose={handleClose}
                onOpen={handleOpen}
-               value={age}
+               value={data}
                onChange={handleChange}
             >
-               <MenuItem value="">
-                  <em>None</em>
-               </MenuItem>
-               <MenuItem value={10}>United States</MenuItem>
-               <MenuItem value={20}>Pakistan</MenuItem>
-               <MenuItem value={30}>Thirty</MenuItem>
+            <MenuItem value=''>
+               None
+            </MenuItem>
+            {props.data.map((object) => (
+               <MenuItem value={object.val}>{object.name}</MenuItem>
+            ))}
             </Select>
             <FormHelperText></FormHelperText>
          </FormControl>
@@ -71,4 +66,4 @@ function Filter() {
    );
 }
 
-export default Filter; 
+export default FilterOpenSelect; 

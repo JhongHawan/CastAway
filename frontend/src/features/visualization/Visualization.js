@@ -5,7 +5,7 @@ import BarGraph from '../../components/BarGraph';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
-import Filter from '../../components/Filter'; 
+import Filter from '../../components/Filter/Filter'; 
 import apiCalls from './apiCalls'; 
 
 const useStyles = makeStyles(theme => ({
@@ -25,7 +25,13 @@ function Visualization() {
   
   const dispatch = useDispatch();
 
-  const { refugeeData, unhcrSubData, unhcrDemoData, loading } = useSelector(
+  const { 
+    refugeeData, 
+    unhcrSubData, 
+    unhcrDemoData, 
+    origCountries, 
+    destCountries, 
+    loading } = useSelector(
     (state) => {
       return {
         // It has to refer to the state of the reducer which in this case has name
@@ -33,6 +39,8 @@ function Visualization() {
         refugeeData: state.refugee.refugees,
         unhcrSubData: state.unhcrSub.data,
         unhcrDemoData: state.unhcrDemo.data,
+        origCountries: state.validCountries.origCountries, 
+        destCountries: state.validCountries.destCountries, 
         loading: state.refugee.loading
       }
     },
@@ -70,18 +78,11 @@ function Visualization() {
     }
   }
 
-  console.log(unhcrSubData); 
-  console.log(unhcrDemoData); 
-
   /**
-    * fetchAllRefugees API Call
-    * * Can use this in the History and Myths page to load data automatically. 
-    * ! Remove the useEffect unless you're going to update the data when the page loads. 
+    * * Fetches the available countries on page load. 
   */
   useEffect(() => {
-    // fetchAllRefugees(); 
-    // Need to edit the state here and 
-    // reset loading = false; 
+    apiCalls.fetchValidCountries(dispatch);
   }, []);
   
   /** 
@@ -110,12 +111,17 @@ function Visualization() {
             }}>
               Get UNHCR Sub Data
             </Button>
+            <Button color="secondary" variant="contained" onClick={() => {
+              apiCalls.fetchValidCountries(dispatch);
+            }}>
+              Get valid countries data
+            </Button>
             <Button color="primary" variant="contained" onClick={downloadFile}>
               Download Data 
             </Button>
           </Grid>
           <Grid item xs={12}> 
-            <Filter></Filter>
+            <Filter origCountries={origCountries} destCountries={destCountries}></Filter>
           </Grid>
           <Grid item xs={10}>
             <BarGraph color="green" title="Syria" data={ unhcrSubData } />
