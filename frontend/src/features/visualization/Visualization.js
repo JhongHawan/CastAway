@@ -88,7 +88,6 @@ function Visualization() {
   /** 
   * TODO: Add a Filter System that will gather user input and pass that on to the graphs as params. 
   * TODO: Add source for the api. 
-  * TODO: The BarGraph receiving the data needs to know if it's the local data or unhcr data. 
   */
   return(
    <div className="Visualization">

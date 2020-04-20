@@ -6,14 +6,20 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
+import { dataOptionsReducer } from '../../features/visualization/dataOptionsSlice';
+import { useDispatch } from 'react-redux'; 
 
 /**
  * TODO: Pull the options out from here and give it to the visualization.js file for the API call query params. 
  */
 function DatePicker(props) {
+
+  const dispatch = useDispatch();
+
   const [selectedDate, setSelectedDate] = React.useState(Date.parse(new Date().getFullYear()));
   const handleDateChange = (date) => {
     setSelectedDate(date);
+    dispatch(dataOptionsReducer(date));
   };
 
   return (
