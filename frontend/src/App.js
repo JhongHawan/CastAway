@@ -50,7 +50,7 @@ const Home = () => (
   <div>
     <Hero
       showCard={true}
-      sectionTitle="No one puts their children in a boat unless the water is safer than the land"
+      sectionTitle="&quot;No one puts their children in a boat unless the water is safer than the land&quot;"
       cardTitle="WHY DOES IT MATTER?"
       cardSubtitle="Subtitle Examples"
       cardBody="The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference."

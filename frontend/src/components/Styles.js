@@ -182,7 +182,7 @@ export const useStyles = makeStyles(theme => ({
     },
     // * Used in CallToAction > MobileTabs > MobileContent > Container
     tabAction: {
-        backgroundColor: '#C9D6DF',
+        backgroundColor: '#F0F5F9',
     },
     // * Used in CallToAction > VerticalTab > TabPanel
     tabWrapper: {
@@ -198,7 +198,7 @@ export const useStyles = makeStyles(theme => ({
     },
         // * Used in CallToAction > MobileTabs > MobileContent > Typography h5 & overline
     featureSubheading: {
-        padding: theme.spacing(2, 0, 1)
+        padding: theme.spacing(0, 0, 3)
     },
     callToActionPadding: {
         padding: theme.spacing(4, 4, 2)
@@ -220,6 +220,14 @@ export const useStyles = makeStyles(theme => ({
     },
     greenButton: {
         backgroundColor: 'green'
+    },
+    // * used in Myth.js FactCheck
+    factTitle: {
+        padding: theme.spacing(0, 0, 2)
+    },
+    // * used in Myth.js FactCheck
+    factDetail: {
+        padding: theme.spacing(2, 0, 0)
     }
 
 }))

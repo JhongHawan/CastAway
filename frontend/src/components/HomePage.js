@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Box, Grid } from '@material-ui/core';
+import { Container, Box, Grid, Typography } from '@material-ui/core';
 import Carousel from './Carousel';
 import MythCard from './MythCard';
 
@@ -21,10 +21,11 @@ function HomePage() {
             <Box className={classes.homeTopSpace}>
                 <Divider title="MAKE A DIFFERENCE" />
                 <Box className={classes.callToAction}>
+                    
                     <CallToAction />
                 </Box>
             </Box>
-            
+
             <Box className={classes.homeSectionSpace}>
                 <Divider title="CASTAWAY FEATURES" />
                 <HomeFeatures />

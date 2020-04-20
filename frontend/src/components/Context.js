@@ -71,7 +71,7 @@ function Context() {
             sectionTitle="Context"
          />
          
-         {/* <FontTest /> */}
+         <FontTest />
 
 
          <Footer />

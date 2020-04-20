@@ -14,7 +14,7 @@ import Switch from '@material-ui/core/Switch';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Button from '@material-ui/core/Button';
-
+import { Typography } from '@material-ui/core';
 import { useStyles } from './Styles';
 
 import Footer from './About/Footer';
@@ -30,14 +30,14 @@ function Myths() {
     let color = '#000000';
     let width = '1px'
     if (props.clicked) {
-      color = props.redGreen; 
+      color = props.redGreen;
       width = '3px';
-    } 
+    }
     // 
     // let 
     return (
       <Row>
-        <Paper variant="outlined" className={classes.paper } style={{borderColor: color, borderWidth: width, width: '300px'}}>{props.caption}</Paper>
+        <Paper variant="outlined" className={classes.paper} style={{ borderColor: color, borderWidth: width, width: '300px' }}>{props.caption}</Paper>
       </Row>
     )
   }
@@ -45,10 +45,10 @@ function Myths() {
   function CardWrapper() {
 
     let green = '#72BF7A';
-    let red = '#F79C99'; 
+    let red = '#F79C99';
 
     let [active, setActive] = useState(false);
-    
+
     function handleDebunk() {
       setActive(active = true);
       console.log('After click: ' + active);
@@ -73,24 +73,24 @@ function Myths() {
         </Container>
         <Row>
           <Col md={3}>
-            <Card caption='Immigrants and refugees are the same type of person.' clicked={active} redGreen={red}  />
+            <Card caption='Immigrants and refugees are the same type of person.' clicked={active} redGreen={red} />
             <Card caption='Refugees go through a 20 step vetting process.' clicked={active} redGreen={green} />
-            <Card caption='The United States is the only country that takes refugees.' clicked={active} redGreen={red}/>
+            <Card caption='The United States is the only country that takes refugees.' clicked={active} redGreen={red} />
           </Col>
           <Col md={3}>
-            <Card caption='Refugees are forced to leave their home to escape violence.' clicked={active} redGreen={green}/>
-            <Card caption='All refugees live in refugee camps.' clicked={active} redGreen={red}/>
+            <Card caption='Refugees are forced to leave their home to escape violence.' clicked={active} redGreen={green} />
+            <Card caption='All refugees live in refugee camps.' clicked={active} redGreen={red} />
             <Card caption='Refugees contribute their talent, skills, and culture.' clicked={active} redGreen={green} />
 
           </Col>
           <Col md={3}>
-            <Card caption='Refugees do not pay taxes, and negatively impact the economy.' clicked={active} redGreen={red}/>
+            <Card caption='Refugees do not pay taxes, and negatively impact the economy.' clicked={active} redGreen={red} />
             <Card caption='The refugee crisis is not a new phenomenon in history.' clicked={active} redGreen={green} />
-            <Card caption='Refugees steal jobs from US citizens.' clicked={active} redGreen={red}/>
+            <Card caption='Refugees steal jobs from US citizens.' clicked={active} redGreen={red} />
           </Col>
           <Col md={3}>
             <Card caption='Refugees come from countries all over the world.' clicked={active} redGreen={green} />
-            <Card caption='All refugees are terrorists with a violent agenda.' clicked={active} redGreen={red}/>
+            <Card caption='All refugees are terrorists with a violent agenda.' clicked={active} redGreen={red} />
             <Card caption='The refugee crisis is still happening.' clicked={active} redGreen={green} />
           </Col>
         </Row>
@@ -98,7 +98,7 @@ function Myths() {
     )
   }
 
-// TODO Convert to Typography
+  // TODO Convert to Typography
   function FactCheck() {
 
     function ContextCard(props) {
@@ -110,16 +110,27 @@ function Myths() {
             >
               <Container>
                 <Row>
-                  <h4 style={{ paddingBottom: '0.5em' }}>{props.mythTitle}</h4>
+                  <Typography component='h5' variant='h5' color='primary' className={classes.factTitle}>
+                    {props.mythTitle}
+                  </Typography>
+                  {/* <h4 style={{ paddingBottom: '0.5em' }}>{props.mythTitle}</h4> */}
                 </Row>
                 <Row>
-                  <span style={{ background: "#FF6464", opacity: "0.7" }}>Confrimed FALSE</span>
-                  <p style={{ paddingTop: '1em' }}><strong>Fact Check:</strong>{props.mythSummary}</p>
+                  <Typography style={{ background: "#FF6464", opacity: "0.5" }} component='overline' variant='overline'>
+                    Confirmed FALSE
+                  </Typography>
+                  {/* <span style={{ background: "#FF6464", opacity: "0.7" }}>Confrimed FALSE</span> */}
+                  <Typography component='body1' variant='body1' className={classes.factDetail}>
+                    <strong>Fact Check:</strong>{props.mythSummary}
+                  </Typography>
+                  {/* <p style={{ paddingTop: '1em' }}><strong>Fact Check:</strong>{props.mythSummary}</p> */}
                 </Row>
               </Container>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <p>{props.mythDetails}</p>
+              <Typography component='body1' variant='body1'>
+                {props.mythDetails}
+              </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </Row>
