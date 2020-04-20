@@ -6,6 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
 
+
+// TODO REDO determine if it's usable still
 function StoryCard(props) {
 
 

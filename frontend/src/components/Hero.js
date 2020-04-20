@@ -16,19 +16,27 @@ function HeroCard(props) {
         <Container className={classes.heroChild} style={{ display: 'block', overflow: 'auto' }}>
             <Row>
                 <Col>
-                    <h3>
+                    <Typography component="h4" variant="h4" color="primary">
                         {props.cardTitle}
-                    </h3>
+                    </Typography>
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <h6>
-                        {props.cardSubtitle}
-                    </h6>
-                    <p>
-                        {props.cardBody}
-                    </p>
+                    <Row>
+                        <Col>
+                            <Typography component="subtitle1" variant="subtitle1">
+                                {props.cardSubtitle}
+                            </Typography>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Typography component="body1" variant="body1">
+                                {props.cardBody}
+                            </Typography>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
         </Container>
@@ -40,7 +48,7 @@ function HeroCard(props) {
   * @param {String} props.sectionTitle - displays sectionTitle
   * @param {Boolean} props.showCard - has a div floating or not
   * 
-  * TODO - remove className homeSectionTitle after fixing custom Theming
+  * TODO - remove homeSectionTitle
   */
 function Hero(props) {
     const classes = useStyles();
@@ -57,7 +65,8 @@ function Hero(props) {
                             component="h1"
                             variant="h1"
                             align="center"
-                            className={classes.homeSectionTitle}
+                            color="primary"
+                        // className={classes.homeSectionTitle}
                         >
                             {props.sectionTitle}
                         </Typography>
@@ -74,7 +83,7 @@ function Hero(props) {
             {includeCard ?
                 <HeroCard
                     cardTitle={props.cardTitle}
-                    card={props.cardSubtitle}
+                    cardSubtitle={props.cardSubtitle}
                     cardBody={props.cardBody}
                 /> : null
             }

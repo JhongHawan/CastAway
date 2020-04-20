@@ -41,7 +41,7 @@ export const useStyles = makeStyles(theme => ({
         fontFamily: 'zeitung, sans-serif',
         fontWeight: 600,
         fontStyle: 'normal',
-        textDecoration: 'none'
+        textDecoration: 'none',
     },
     navLink: {
         fontFamily: 'zeitung, sans-serif',
@@ -54,6 +54,22 @@ export const useStyles = makeStyles(theme => ({
         }
 
     },
+    // ! testing delete later
+    // testingDarkTheme: {
+    //     color: theme.palette.main
+    // },
+    testingWarningTheme: {
+        color: theme.palette.warning.main,
+    },
+    testingInfoTheme: {
+        color: theme.palette.info.main
+    },
+    testingSuccessTheme: {
+        color: theme.palette.success.main
+    },
+
+
+    // ! ending theme testing
     // FOR - Used with sectionBlock for white text
     sectionTitle: {
         color: '#ffffff',
@@ -155,43 +171,34 @@ export const useStyles = makeStyles(theme => ({
         // minHeight: '100vh'
         // margin: theme.spacing(20, 0, 0)
     },
+    // * Used in CallToAction > VerticalTab > TabPanel > Tabs
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`
     },
+    // * Used in CallToAction > VerticalTab > TabPanel > Tabs
     tabContent: {
         minWidth: 200,
         width: 200,
     },
+    // * Used in CallToAction > MobileTabs > MobileContent > Container
     tabAction: {
         backgroundColor: '#C9D6DF',
     },
+    // * Used in CallToAction > VerticalTab > TabPanel
     tabWrapper: {
         flexGrow: 1,
-        // backgroundColor: 'green',
         display: 'flex',
-        // height: 224
-    },
-    mobileTabWrapper: {
-        // width: 600
     },
     callToAction: {
         padding: theme.spacing(5, 0, 0)
     },
+    // * Inside HomeFeatures.js
     featureHeading: {
-        color: '#F16841',
-        fontFamily: 'zeitung, sans-serif',
-        fontWeight: 600,
-        fontStyle: 'normal',
-        textDecoration: 'none',
         padding: theme.spacing(0, 0, 1)
     },
+        // * Used in CallToAction > MobileTabs > MobileContent > Typography h5 & overline
     featureSubheading: {
-        color: '#002851',
-        fontFamily: 'zeitung, sans-serif',
-        fontWeight: 400,
-        fontStyle: 'normal',
-        textDecoration: 'none',
-        padding: theme.spacing(0.5, 0, 0)
+        padding: theme.spacing(2, 0, 1)
     },
     callToActionPadding: {
         padding: theme.spacing(4, 4, 2)

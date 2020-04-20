@@ -6,6 +6,8 @@ class timeline extends React.Component {
     //     super(props)
     // }
 
+
+    // TODO Turn fonts to Typography 
     render() {
         return (
             <Timeline lineColor={'#c9d6df'}>

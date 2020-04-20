@@ -29,7 +29,7 @@ function NavBar() {
             <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
           </Col>
           <Col style={{ textAlign:"center"}}>
-            <Typography variant="h4" className={classes.navTitle}>
+            <Typography variant="h3" className={classes.navTitle}>
               CASTAWAY
             </Typography>
           </Col>

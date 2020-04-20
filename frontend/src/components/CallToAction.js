@@ -152,23 +152,23 @@ function MobileTabs() {
                                 <img src={props.img} width="200px" />
                             </Row>
                             <Row>
-                                <h6 className={classes.featureSubheading}>
+                                <Typography component="h5" variant="h5" color="primary" className={classes.featureSubheading}>
                                     {props.caption}
-                                </h6>
+                                </Typography>
                             </Row>
                         </Col>
                     </Col>
                     <Col sm={12}>
                         <Col>
                             <Row>
-                                <p>
+                                <Typography component="body1" variant="body1">
                                     {props.description}
-                                </p>
+                                </Typography>
                             </Row>
                             <Row>
-                                <p>
+                                <Typography component="overline" variant="overline" className={classes.featureSubheading}>
                                     Read More
-                                </p>
+                                </Typography>
                             </Row>
                         </Col>
                     </Col>

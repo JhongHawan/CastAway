@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import CarouselItem from 'react-bootstrap/CarouselItem';
 import CarouselCaption from 'react-bootstrap/CarouselCaption';
 
-
+// TODO Convert to Typography
 class vettingContext extends React.Component {
     // constructor(props) {
     //     super(props)

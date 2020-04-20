@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 // import { useStyles } from './Theme';
 import { useStyles } from './Styles';
+import { Typography } from '@material-ui/core';
 
 
 
@@ -15,22 +16,20 @@ function HomeFeatures() {
                     <Col md={7}>
                         <Col>
                             <Row>
-                                <h5 className={classes.featureHeading}>
+                                <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                     DATA VISUALIZATION
-                                </h5>
+                                </Typography>
                             </Row>
                             <Row>
-                                <h6 className={classes.featureSubheading}>
-                                    Subtitle
-                                </h6>
+                                <Typography component="subtitle1" variant="subtitle1">Subtitle</Typography>
                             </Row>
                             <Row>
                                 <img src="https://via.placeholder.com/250x167.png?text=TEMP" />
                             </Row>
                             <Row>
-                                <p>
+                                <Typography component="body1" variant="body1">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sed libero enim sed faucibus turpis in eu mi. Sit amet purus gravida quis blandit. Odio euismod lacinia at quis.
-                                </p>
+                                </Typography>
                             </Row>
                         </Col>
                     </Col>
@@ -39,27 +38,25 @@ function HomeFeatures() {
                             <Row>
                                 <Col>
                                     <Row>
-                                        <h5 className={classes.featureHeading}>
+                                        <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                             STORIES
-                                        </h5>
+                                        </Typography>
                                     </Row>
                                     <Row>
                                         <img src="https://via.placeholder.com/100x100.png?text=TEMP" />
                                     </Row>
                                     <Row>
-                                        <h6 className={classes.featureSubheading}>
-                                            Subtitle
-                                        </h6>
+                                        <Typography component="subtitle1" variant="subtitle1">Subtitle</Typography>
                                     </Row>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    
+
                                     <Row>
-                                        <h5 className={classes.featureHeading}>
+                                        <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                             MYTHS
-                                        </h5>
+                                        </Typography>
                                     </Row>
                                     <Row>
                                         <Col>
