@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
    formControl: {
      margin: theme.spacing(1),
-     minWidth: 120,
+     minWidth: 120
    },
  }));
 
@@ -18,12 +18,15 @@ const useStyles = makeStyles((theme) => ({
    */
 function FilterOpenSelect(props) {
    const classes = useStyles();
-
-   const [data, setState] = React.useState(
-      props.data
-   );
    
    const [open, setOpen] = React.useState(false);
+
+   const [data, setState] = React.useState(props.data); 
+  
+   useEffect(() => {
+      setState(props.data);
+   }, [props.data]);
+  
 
    const handleChange = (event) => {
       setState(event.target.value);
@@ -40,7 +43,7 @@ function FilterOpenSelect(props) {
    return (
       <div>
          <FormControl className={classes.formControl}>
-         <InputLabel id="open-select-label">{props.label}</InputLabel>
+            <InputLabel id="open-select-label">{props.label}</InputLabel>
             <Select
                labelId="open-select-label"
                id="open-select"
@@ -50,8 +53,11 @@ function FilterOpenSelect(props) {
                value={data}
                onChange={handleChange}
             >
-            {data.map((val, name) => (
-               <MenuItem value={val}>{name}</MenuItem>
+            <MenuItem value=''>
+               None
+            </MenuItem>
+            {props.data.map((object) => (
+               <MenuItem value={object.val}>{object.name}</MenuItem>
             ))}
             </Select>
             <FormHelperText></FormHelperText>

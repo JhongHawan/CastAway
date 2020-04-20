@@ -25,7 +25,13 @@ function Visualization() {
   
   const dispatch = useDispatch();
 
-  const { refugeeData, unhcrSubData, unhcrDemoData, validCountriesData, loading } = useSelector(
+  const { 
+    refugeeData, 
+    unhcrSubData, 
+    unhcrDemoData, 
+    origCountries, 
+    destCountries, 
+    loading } = useSelector(
     (state) => {
       return {
         // It has to refer to the state of the reducer which in this case has name
@@ -33,7 +39,8 @@ function Visualization() {
         refugeeData: state.refugee.refugees,
         unhcrSubData: state.unhcrSub.data,
         unhcrDemoData: state.unhcrDemo.data,
-        validCountriesData: state.validCountries.data, 
+        origCountries: state.validCountries.origCountries, 
+        destCountries: state.validCountries.destCountries, 
         loading: state.refugee.loading
       }
     },
@@ -71,16 +78,11 @@ function Visualization() {
     }
   }
 
-  console.log(unhcrSubData); 
-  console.log(unhcrDemoData); 
-
   /**
     * * Fetches the available countries on page load. 
   */
   useEffect(() => {
-    // fetchAllRefugees(); 
-    // Need to edit the state here and 
-    // reset loading = false; 
+    apiCalls.fetchValidCountries(dispatch);
   }, []);
   
   /** 
@@ -109,12 +111,17 @@ function Visualization() {
             }}>
               Get UNHCR Sub Data
             </Button>
+            <Button color="secondary" variant="contained" onClick={() => {
+              apiCalls.fetchValidCountries(dispatch);
+            }}>
+              Get valid countries data
+            </Button>
             <Button color="primary" variant="contained" onClick={downloadFile}>
               Download Data 
             </Button>
           </Grid>
           <Grid item xs={12}> 
-            <Filter data={ validCountriesData }></Filter>
+            <Filter origCountries={origCountries} destCountries={destCountries}></Filter>
           </Grid>
           <Grid item xs={10}>
             <BarGraph color="green" title="Syria" data={ unhcrSubData } />
