@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
 import Filter from '../../components/Filter/Filter'; 
+import VisualizationForm from '../../components/Filter/VisualizationForm'; 
 import apiCalls from './apiCalls'; 
 
 const useStyles = makeStyles(theme => ({
@@ -46,6 +47,23 @@ function Visualization() {
     },
     shallowEqual
   ); 
+
+  const chartType = [
+    {
+      value: 'bar',
+      label: 'Bar Graph'
+    },
+    {
+      value: 'pie',
+      label: 'Pie Chart'
+    }, 
+    {  
+      value: 'line',
+      label: 'Line Graph'
+    }
+  ]; 
+
+  const years = [2016, 2017, 2018, 2019]
 
   /**
    * TODO: Populate with whatever we get from the filter. 
@@ -120,7 +138,14 @@ function Visualization() {
             </Button>
           </Grid>
           <Grid item xs={12}> 
-            <Filter origCountries={origCountries} destCountries={destCountries}></Filter>
+            <Typography>Dest Countries</Typography>
+            <VisualizationForm 
+              chartType={chartType}
+              orig={origCountries}
+              dest={destCountries}
+              years={years}
+            >
+            </VisualizationForm>
           </Grid>
           <Grid item xs={10}>
             <BarGraph color="green" title="Syria" data={ unhcrSubData } />
