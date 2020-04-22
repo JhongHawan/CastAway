@@ -5,7 +5,6 @@ import BarGraph from '../../components/BarGraph';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
-import Filter from '../../components/Filter/Filter'; 
 import VisualizationForm from '../../components/Filter/VisualizationForm'; 
 import apiCalls from './apiCalls'; 
 
@@ -62,8 +61,6 @@ function Visualization() {
       label: 'Line Graph'
     }
   ]; 
-
-  const years = [2016, 2017, 2018, 2019]
 
   /**
    * TODO: Populate with whatever we get from the filter. 
@@ -128,11 +125,6 @@ function Visualization() {
             }}>
               Get UNHCR Sub Data
             </Button>
-            <Button color="secondary" variant="contained" onClick={() => {
-              apiCalls.fetchValidCountries(dispatch);
-            }}>
-              Get valid countries data
-            </Button>
             <Button color="primary" variant="contained" onClick={downloadFile}>
               Download Data 
             </Button>
@@ -143,7 +135,6 @@ function Visualization() {
               chartType={chartType}
               orig={origCountries}
               dest={destCountries}
-              years={years}
             >
             </VisualizationForm>
           </Grid>

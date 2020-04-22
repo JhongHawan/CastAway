@@ -5,11 +5,14 @@ import DatePicker from './DatePicker';
 import Select from 'react-select';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
+import apiCalls from '../../features/visualization/apiCalls'; 
 
 const ReactSelectAdapter = ({ input, ...rest }) => (
    <Select 
       {...input} 
       {...rest}
+      isMulti
    searchable />
 );
 
@@ -28,6 +31,8 @@ const required = value => (value ? undefined : "Required");
 
 function VisualizationForm(props) {
 
+   const dispatch = useDispatch();
+
    const orig = props.orig; 
    const origFormat = orig.map(({ code:value, region, country_name:label }) => ({
       value,
@@ -42,12 +47,19 @@ function VisualizationForm(props) {
       label,
    }));
 
+   // // Grab all the values from the object. The only things that need filtering are the date. 
+   // const options = ({
+   //    year: [values.startYear.getYear(), values.endYear.getYear()],
+   //    origin: values.orig.map(country => country.value),
+   //    resettlement: values.dest.map(country => country.value)
+   //  });
+
    return(
       <Form
          onSubmit={onSubmit}
          render={({ handleSubmit, reset, submitting, pristine, values }) => (
             <form onSubmit={handleSubmit} noValidate>
-               <Paper style={{ padding: 16 }}>
+               <Paper style={{ padding: 16, background: "primary" }}>
                   <Grid container alignItems="flex-start" spacing={2}>
                      <Grid item xs={12}>
                         <Field
@@ -93,6 +105,20 @@ function VisualizationForm(props) {
                         />
                      </Grid>
                      <Grid item style={{ marginTop: 16 }}>
+                     <Button color="secondary" variant="contained" onClick={() => {
+                        apiCalls.fetchUnhcrSub(
+                           dispatch,
+                           {
+                              year: [2003, 2004, 2005, 2006, 2012],
+                              origin: values.orig.map(country => country.value),
+                              resettlement: values.dest.map(country => country.value)
+                           }  
+                        );
+                     }}>
+                        Get UNHCR Sub Data
+                     </Button>
+                     </Grid>
+                     <Grid item style={{ marginTop: 16 }}>
                         <Button
                         type="button"
                         variant="contained"
@@ -102,19 +128,9 @@ function VisualizationForm(props) {
                         Reset
                         </Button>
                      </Grid>
-                     <Grid item style={{ marginTop: 16 }}>
-                        <Button
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                        disabled={submitting}
-                        >
-                        Submit
-                        </Button>
-                     </Grid>
                   </Grid>
-                  <pre>{JSON.stringify(values, 0, 2)}</pre>
                </Paper>
+               <pre>{JSON.stringify(values, 0, 2)}</pre>
             </form>
          )}
       />
