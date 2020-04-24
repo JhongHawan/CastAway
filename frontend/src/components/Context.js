@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 import { Box, Button, Container, Typography } from '@material-ui/core';
 import Footer from './About/Footer';
 import Hero from './Hero';
+import Divider from './Divider';
+
 import { useStyles } from './Styles'
 
 /**
@@ -70,8 +72,23 @@ function Context() {
             showCard={false}
             sectionTitle="Context"
          />
-         
-         <FontTest />
+
+         <Container disableGutters>
+            <Box className={classes.homeSectionSpace}>
+               <Divider title="HISTORY" />
+            </Box>
+            <Box className={classes.homeSectionSpace}>
+               <Divider title="MYTHS" />
+            </Box>
+            <Box className={classes.homeSectionSpace}>
+               <Divider title="TERMINOLOGY" />
+            </Box>
+            <Box className={classes.homeSectionSpace}>
+               <Divider title="VETTING PROCESS" />
+            </Box>
+         </Container>
+
+         {/* <FontTest /> */}
 
 
          <Footer />
