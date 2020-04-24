@@ -196,7 +196,7 @@ export const useStyles = makeStyles(theme => ({
     featureHeading: {
         padding: theme.spacing(0, 0, 1)
     },
-        // * Used in CallToAction > MobileTabs > MobileContent > Typography h5 & overline
+    // * Used in CallToAction > MobileTabs > MobileContent > Typography h5 & overline
     featureSubheading: {
         padding: theme.spacing(0, 0, 3)
     },
@@ -228,7 +228,35 @@ export const useStyles = makeStyles(theme => ({
     // * used in Myth.js FactCheck
     factDetail: {
         padding: theme.spacing(2, 0, 0)
+    },
+
+    storyWrapper: {
+        textAlign: 'center'
+    },
+    storyCard: {
+        margin: theme.spacing(1, 1, 1),
+    },
+    storyImg: {
+        borderRadius: '10px',
+        filter: 'grayscale(1)',
+        transitionDelay: '0.2s',
+
+        '&:hover': {
+            filter: 'grayscale(0)',
+        },
+        
+        '&:hover + div $storyInfo': {
+            display: 'block'
+        }
+
+    },
+    storyInfo: {
+        display: 'none'
+    },
+    storyIntro: {
+        padding: theme.spacing(3, 0, 3)
     }
+
 
 }))
 
