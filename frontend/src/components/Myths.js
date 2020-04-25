@@ -27,7 +27,7 @@ function Myths() {
    * @param {String} props.color 
    */
   function Card(props) {
-    let color = '#000000';
+    let color = '#c4c4c4';
     let width = '1px'
     if (props.clicked) {
       color = props.redGreen;
