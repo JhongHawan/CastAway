@@ -14,8 +14,17 @@ const router = express.Router();
 */
 router.get('/submissions', async (req, res) => {
    const year = req.query.year.toString();
-   const origin = req.query.origin.toString(); 
-   const resettlement = req.query.resettlement.toString(); 
+   let origin = req.query.origin.toString(); 
+   let resettlement = req.query.resettlement.toString(); 
+   if (year == 'undefined') {
+      year = '2019'
+   }
+   if (origin == 'undefined') {
+      origin = ''; 
+   } 
+   if (resettlement == 'undefined') {
+      resettlement = ''; 
+   }
    const url = `http://api.unhcr.org/rsq/v1/submissions?page=1&year=${year}&origin=${origin}&resettlement=${resettlement}`;
    console.log(`QUERY STRING: ${url}`);
    const responseData = await fetch(url)

@@ -8,6 +8,13 @@ import Paper from '@material-ui/core/Paper';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
 import apiCalls from '../../features/visualization/apiCalls'; 
 
+const ChartTypeAdapter = ({ input, ...rest }) => (
+   <Select 
+      {...input} 
+      {...rest}
+   searchable />
+);
+
 const ReactSelectAdapter = ({ input, ...rest }) => (
    <Select 
       {...input} 
@@ -27,11 +34,58 @@ const onSubmit = async values => {
    window.alert(JSON.stringify(values, 0, 2))
 }
 
-const required = value => (value ? undefined : "Required");
+const required = value => (value ? undefined : 'Required')
+
+const defaultDate = new Date('2020'); 
+
+const defaultOrig = ['']; 
+
+const defaultDest = ['']; 
+
+/**
+ * * Returns an array of years between a given startYear(Inclusive) and endYear(Inclusive).
+ * @param {Number} startYear 
+ * @param {Number} endYear 
+ */
+const getYearRange = (startYear, endYear) => {
+   let years = [];
+   while (startYear <= endYear) {
+      years.push(startYear++); 
+   }
+   console.log(years);
+   return years; 
+}
+
+const mapOrig = (orig) => {
+   if(orig == null) {
+      return [''];  
+   } else {
+      return orig.map(country => country.value);
+   }
+}
+
+const mapDest = (dest) => {
+   if(dest == null) {
+      return ['']; 
+   } else {
+      return dest.map(country => country.value);
+   } 
+}
 
 function VisualizationForm(props) {
 
    const dispatch = useDispatch();
+
+
+   const { unhcrSubData, loading } = useSelector(
+      (state) => {
+         return {
+            unhcrSubData: state.unhcrSub.data,
+            loading: state.refugee.loading
+         }
+      },
+      shallowEqual
+   ); 
 
    const orig = props.orig; 
    const origFormat = orig.map(({ code:value, region, country_name:label }) => ({
@@ -47,33 +101,29 @@ function VisualizationForm(props) {
       label,
    }));
 
-   // // Grab all the values from the object. The only things that need filtering are the date. 
-   // const options = ({
-   //    year: [values.startYear.getYear(), values.endYear.getYear()],
-   //    origin: values.orig.map(country => country.value),
-   //    resettlement: values.dest.map(country => country.value)
-   //  });
-
    return(
       <Form
          onSubmit={onSubmit}
          render={({ handleSubmit, reset, submitting, pristine, values }) => (
-            <form onSubmit={handleSubmit} noValidate>
+            <form onSubmit={handleSubmit}>
                <Paper style={{ padding: 16, background: "primary" }}>
                   <Grid container alignItems="flex-start" spacing={2}>
                      <Grid item xs={12}>
                         <Field
                            name='chartType'
+                           initialValue='bar'
                            placeholder='Chart Type'
-                           validate={required}
-                           component={ReactSelectAdapter}
+                           allowNull={false}
+                           component={ChartTypeAdapter}
                            options={props.chartType}
                         />
                      </Grid>
                      <Grid item xs={6}>
                         <Field
                            name='orig'
+                           initialValue={defaultOrig}
                            placeholder='Origin Country'
+                           allowNull={false}
                            component={ReactSelectAdapter}
                            options={origFormat}
                         />
@@ -81,7 +131,9 @@ function VisualizationForm(props) {
                      <Grid item xs={6}>
                         <Field
                            name='dest'
+                           initialValue={defaultDest}
                            placeholder='Destination Country'
+                           allowNull={false}
                            component={ReactSelectAdapter}
                            options={destFormat}
                         />
@@ -91,6 +143,7 @@ function VisualizationForm(props) {
                         name='startYear'
                         dateFormat="yyyy"
                         validate={required}
+                        initialValue={defaultDate}
                         component={DatePickerAdapter}
                         label='Start Year'
                         />
@@ -100,34 +153,41 @@ function VisualizationForm(props) {
                         name='endYear'
                         dateFormat="yyyy"
                         validate={required}
+                        initialValue={defaultDate}
                         component={DatePickerAdapter}
                         label='End Year'
                         />
                      </Grid>
                      <Grid item style={{ marginTop: 16 }}>
-                     <Button color="secondary" variant="contained" onClick={() => {
-                        apiCalls.fetchUnhcrSub(
-                           dispatch,
-                           {
-                              year: [2003, 2004, 2005, 2006, 2012],
-                              origin: values.orig.map(country => country.value),
-                              resettlement: values.dest.map(country => country.value)
-                           }  
-                        );
-                     }}>
-                        Get UNHCR Sub Data
-                     </Button>
+                        <Button color="secondary" variant="contained" onClick={() => {
+                           apiCalls.fetchUnhcrSub(
+                              dispatch,
+                              {
+                                 year: getYearRange(values.startYear.getFullYear(), values.endYear.getFullYear()),
+                                 origin: mapOrig(values.orig),
+                                 resettlement: mapDest(values.dest)
+                              }  
+                           );
+
+                           // No data was retrieved then the user chose countries which don't share any data. 
+                           // Have to access store data here.  
+                           if (unhcrSubData.length == 0) {
+                              alert('No records were found for the given input. Please try adding or removing countries and expanding the year range.');
+                           }
+                        }}>
+                           Get UNHCR Sub Data
+                        </Button>
                      </Grid>
-                     <Grid item style={{ marginTop: 16 }}>
+                     {/* <Grid item style={{ marginTop: 16 }}>
                         <Button
                         type="button"
                         variant="contained"
-                        onClick={reset}
                         disabled={submitting || pristine}
+                        onClick={reset}
                         >
                         Reset
                         </Button>
-                     </Grid>
+                     </Grid> */}
                   </Grid>
                </Paper>
                <pre>{JSON.stringify(values, 0, 2)}</pre>
