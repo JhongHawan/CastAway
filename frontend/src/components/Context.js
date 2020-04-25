@@ -11,6 +11,7 @@ import { Box, Button, Container, Typography } from '@material-ui/core';
 import Footer from './About/Footer';
 import Hero from './Hero';
 import Divider from './Divider';
+import CallToAction from './CallToAction';
 
 import { useStyles } from './Styles'
 
@@ -85,6 +86,7 @@ function Context() {
             </Box>
             <Box className={classes.homeSectionSpace}>
                <Divider title="VETTING PROCESS" />
+               < CallToAction />
             </Box>
          </Container>
 
