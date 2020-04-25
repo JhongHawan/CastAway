@@ -16,7 +16,7 @@ router.get('/submissions', async (req, res) => {
    const year = req.query.year.toString();
    const origin = req.query.origin.toString(); 
    const resettlement = req.query.resettlement.toString(); 
-   const url = `http://api.unhcr.org/rsq/v1/submissions?page=1&year=${year}&origin=${origin}resettlement=${resettlement}`;
+   const url = `http://api.unhcr.org/rsq/v1/submissions?page=1&year=${year}&origin=${origin}&resettlement=${resettlement}`;
    console.log(`QUERY STRING: ${url}`);
    const responseData = await fetch(url)
     .then(res => res.json())
