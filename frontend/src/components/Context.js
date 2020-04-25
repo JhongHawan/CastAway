@@ -7,13 +7,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { Nav, ThemeProvider } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Box, Button, Container, Typography } from '@material-ui/core';
+import { Box, Button, Typography, Paper } from '@material-ui/core';
+import { Col, Row, Container } from 'react-bootstrap';
 import Footer from './About/Footer';
 import Hero from './Hero';
 import Divider from './Divider';
-import CallToAction from './CallToAction';
-
+import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
 import { useStyles } from './Styles'
+// import { Typography } from '@material-ui/core';
+
 
 /**
  *  ! Not a real component just to see the font types
@@ -64,6 +66,127 @@ function FontTest() {
    )
 }
 
+
+function Event(props) {
+   return (
+      <TimelineItem
+         key={props.key}
+         dateText={props.date}
+         dateInnerStyle={{ background: '#c9d6df', color: '#002851' }}
+         style={{ color: '#F16841' }}
+         bodyContainerStyle={{
+            background: '#F0F5F9',
+            padding: '20px',
+            borderRadius: '8px',
+            // boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+         }}
+      >
+         <Typography style={{ padding: '0.5em' }} component="overline" variant="overline" color="secondary">
+            {props.title}
+         </Typography>
+         {/* <Typography component="body1" variant="body1">
+            {props.detail}
+         </Typography> */}
+      </TimelineItem>
+   )
+}
+
+function ContextTimeline() {
+   return (
+      <Timeline lineColor={'#F0F5F9'}>
+         <Event
+            key="001"
+            date="1891"
+            title="Bureau of Immigration is Established"
+         />
+         <Event
+            key="002"
+            date="2019"
+            title="Final Rule on Public Charge Ground of Inadmissibility"
+         />
+         <Event
+            key="003"
+            date="2019"
+            title="Final Rule on Public Charge Ground of Inadmissibility"
+         />
+         <Event
+            key="004"
+            date="2019"
+            title="Final Rule on Public Charge Ground of Inadmissibility"
+         />
+         <Event
+            key="005"
+            date="2019"
+            title="Final Rule on Public Charge Ground of Inadmissibility"
+         />
+      </Timeline>
+   )
+}
+
+function Myths() {
+   const classes = useStyles();
+
+   function TrueFact(props) {
+      return (
+         <Row >
+            <Col sm={3} md={4} align="center">
+               <img src="green_check.png" width="50px" />
+            </Col>
+            <Col sm={9} md={8}>
+               <Typography component="overline" variant="overline">{props.description}</Typography>
+            </Col>
+         </Row>
+      )
+   }
+
+   function FalseFact(props) {
+      return (
+         <Row>
+            <Col sm={3} md={4} style={{ textAlign: 'center' }}>
+               <img src="red_check.png" width="50px" />
+            </Col>
+            <Col sm={9} md={8}>
+               <Typography component="overline" variant="overline">{props.description}</Typography>
+            </Col>
+         </Row>
+      )
+
+   }
+
+   return (
+      <Container>
+         <Box className={classes.descriptionBox}>
+            <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
+         </Box>
+         <Row>
+            <Col md={6}>
+               <TrueFact
+                  description="Refugees go through a 20 step vetting process."
+               />
+               <TrueFact
+                  description="Refugees are forced to leave their home to escape violence."
+               />
+               <TrueFact
+                  description="The refugee crisis is still happening."
+               />
+            </Col>
+            <Col md={6}>
+               <FalseFact
+                  description="Immigrants and refugees are the same type of person."
+               />
+               <FalseFact
+                  description="All refugees are terrorists with a violent agenda."
+               />
+               <FalseFact
+                  description="Refugees do not pay taxes, and negatively impact the economy."
+               />
+            </Col>
+         </Row >
+      </Container >
+
+   )
+}
+
 function Context() {
    const classes = useStyles();
 
@@ -73,26 +196,26 @@ function Context() {
             showCard={false}
             sectionTitle="Context"
          />
-
-         <Container disableGutters>
-            <Box className={classes.homeSectionSpace}>
+         <Container>
+            <Box>
                <Divider title="HISTORY" />
+               <Box className={classes.descriptionBox}>
+                  <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
+               </Box>
+               <ContextTimeline />
             </Box>
-            <Box className={classes.homeSectionSpace}>
+            <Box>
                <Divider title="MYTHS" />
+               <Myths />
             </Box>
-            <Box className={classes.homeSectionSpace}>
+            <Box>
                <Divider title="TERMINOLOGY" />
             </Box>
-            <Box className={classes.homeSectionSpace}>
+            <Box>
                <Divider title="VETTING PROCESS" />
-               < CallToAction />
             </Box>
          </Container>
-
          {/* <FontTest /> */}
-
-
          <Footer />
       </div>
    );

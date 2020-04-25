@@ -255,6 +255,9 @@ export const useStyles = makeStyles(theme => ({
     },
     storyIntro: {
         padding: theme.spacing(3, 0, 3)
+    },
+    descriptionBox: {
+        padding: theme.spacing(3, 0, 3)
     }
 
 
