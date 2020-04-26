@@ -71,6 +71,11 @@ class PieChart extends Component {
          }}
          theme={VictoryTheme.material}
          colorScale={[
+            "#183140",
+            "#1c485f",
+            "#1c6081",
+            "#167aa4",
+            "#0094c9",
             "#00876c",
             "#3f996f",
             "#65aa71",
@@ -89,6 +94,9 @@ class PieChart extends Component {
             <Slice events={{ onMouseOver: handleMouseOver }}/>
          }
          style={{ labels: { fill: "primary", fontSize: 20, fontWeight: "bold" } }}
+         labels={
+            this.props.data.map(population => `${population.origin_name}: ${population.year}` )
+          }
          data={
             this.props.data.map(population => (
                { x: getNameOrYear(population), y: (population.persons / 1000)}

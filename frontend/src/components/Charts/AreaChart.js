@@ -1,10 +1,9 @@
 import React, { Component } from 'react'; 
 import { 
-  VictoryContainer,
-  VictoryPie, 
+  VictoryStack,
+  VictoryArea, 
   VictoryChart, 
   VictoryTheme, 
-  Slice, 
   VictoryAxis,
   VictoryLabel
 } from 'victory'; 
@@ -17,30 +16,22 @@ const getNameOrYear = (population) => {
    }
 }
 
+/**
+ * TODO: Map props.data so that it is formatted by year. {2016 -> [Bhutan: 200, Afghanistan: 300], 2017 -> [Bhutan: 100, Afghanistan: 500]}
+ * TODO: Then with each of these grouped arrays create a VictoryArea and then stack them on top of each other. 
+ */
 class AreaChart extends Component {
       
    constructor(props) {
-      // Add the data as a prop from mongodb.
       super(props);
-      this.state = {
-         clicked: false,
-         title: "",
-         labels: {},
-         data: []
-      };
-   }
-
-   // Having a lot of trouble getting the data field to populate with the this.props.data 
-   componentDidMount = () => {
-      this.setState({
-         clicked: false,
-         labels: {
-            fontWeight: "bold"
-         },
-         title: this.props.title,
-         data: this.props.data
-      });
-   }
+      this.state = props.data;
+    }
+  
+    componentDidMount() {
+      this.setStateInterval = window.setInterval(() => {
+        this.setState({ data: this.props.data });
+      }, 4000);
+    }
 
 
    render() {
@@ -68,11 +59,11 @@ class AreaChart extends Component {
             <VictoryStack
               colorScale={"blue"}
             >
-              {this.state.data.map((data, i) => {
+              {this.props.data.map((population, i) => {
                 return (
                   <VictoryArea
                     key={i}
-                    data={data}
+                    data={{ x: new Date(population.year), y: (population.persons / 1000)}}
                     interpolation={"basis"}
                   />
                 );

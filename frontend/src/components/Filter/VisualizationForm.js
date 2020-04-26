@@ -4,9 +4,11 @@ import Grid from '@material-ui/core/Grid';
 import DatePicker from './DatePicker'; 
 import Select from 'react-select';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
 import apiCalls from '../../features/visualization/apiCalls'; 
+import Typography from '@material-ui/core/Typography'; 
+import { makeStyles } from '@material-ui/core/styles';
 
 const ChartTypeAdapter = ({ input, ...rest }) => (
    <Select 
@@ -36,10 +38,9 @@ const onSubmit = async values => {
 
 const required = value => (value ? undefined : 'Required')
 
-const defaultDate = new Date('2020'); 
-
+const defaultStartDate = new Date('2003'); 
+const defaultEndDate = new Date('2020'); 
 const defaultOrig = ['']; 
-
 const defaultDest = ['']; 
 
 /**
@@ -74,8 +75,17 @@ const mapDest = (dest) => {
 
 function VisualizationForm(props) {
 
+   const useStyles = makeStyles(theme => ({
+      cardStyle: {
+         padding: 24, 
+         boxShadow: '0 5px 10px rgba(0,0,0,0.19), 0 1px 3px rgba(0,0,0,0.23)',
+         backgroundColor: props.color
+      }
+    }));
+
    const dispatch = useDispatch();
 
+   const classes = useStyles(); 
 
    const { unhcrSubData, loading } = useSelector(
       (state) => {
@@ -128,9 +138,21 @@ function VisualizationForm(props) {
          onSubmit={onSubmit}
          render={({ handleSubmit, reset, submitting, pristine, values }) => (
             <form onSubmit={handleSubmit}>
-               <Paper style={{ padding: 16 }}>
+               <Card className={classes.cardStyle}>
                   <Grid container alignItems="flex-start" spacing={2}>
                      <Grid item xs={12}>
+                        <Typography
+                           variant="h5"
+                        >
+                           Choose different options to change the data of your charts.
+                        </Typography>
+                        <Typography
+                           color="secondary"
+                        > 
+                           NOTICE: If charts remain blank the api does not have the requested data
+                        </Typography>
+                     </Grid>
+                     {/* <Grid item xs={12}>
                         <Field
                            name='chartType'
                            initialValue='bar'
@@ -139,7 +161,7 @@ function VisualizationForm(props) {
                            component={ChartTypeAdapter}
                            options={props.chartType}
                         />
-                     </Grid>
+                     </Grid> */}
                      <Grid item xs={12}>
                         <Field
                            name='orig'
@@ -165,7 +187,8 @@ function VisualizationForm(props) {
                         name='startYear'
                         dateFormat="yyyy"
                         validate={required}
-                        initialValue={defaultDate}
+                        parsedDate={Date.parse('January 1, 2003')}
+                        initialValue={defaultStartDate}
                         component={DatePickerAdapter}
                         label='Start Year'
                         />
@@ -175,7 +198,8 @@ function VisualizationForm(props) {
                         name='endYear'
                         dateFormat="yyyy"
                         validate={required}
-                        initialValue={defaultDate}
+                        parsedDate={Date.parse('January 1, 2019')}
+                        initialValue={defaultEndDate}
                         component={DatePickerAdapter}
                         label='End Year'
                         />
@@ -205,9 +229,14 @@ function VisualizationForm(props) {
                         Download Data 
                      </Button>
                      </Grid>
+                     <Grid item xs={12}>
+                        <Typography component="h2">
+                           Data Source: <a href="https://api.unhcr.org/docs/index.html">UNHCR API</a>
+                        </Typography>
+                     </Grid>
                   </Grid>
-               </Paper>
-               <pre>{JSON.stringify(values, 0, 2)}</pre>
+               </Card>
+               {/* <pre>{JSON.stringify(values, 0, 2)}</pre> */}
             </form>
          )}
       />
