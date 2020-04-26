@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import BarGraph from '../../components/Charts/BarGraph'; 
 import PieChart from '../../components/Charts/PieChart'; 
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Paper } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
 import VisualizationForm from '../../components/Filter/VisualizationForm'; 
 import apiCalls from './apiCalls'; 
@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
   },
   header: {
     margin: theme.spacing(6)
+  }, 
+  paperStyle: {
+    padding: 16
   }
 }));
 
@@ -98,7 +101,7 @@ function Visualization() {
       </Typography>
       <main>
         <Grid container direction="row" spacing={4} justify="center">    
-          <Grid item xs={10} sm={10} md={10} lg={3}> 
+          <Grid item xs={10} sm={10} md={10} lg={12}> 
             <VisualizationForm 
               chartType={chartType}
               orig={origCountries}
@@ -106,11 +109,15 @@ function Visualization() {
             >
             </VisualizationForm>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={9}>
-            <PieChart data={ unhcrSubData } />
+          <Grid item xs={12} sm={12} md={12} lg={6}>
+            <Paper className={classes.paperStyle}>
+              <PieChart data={ unhcrSubData } />
+            </Paper>
           </Grid>   
-          <Grid item xs={12} sm={12} md={12} lg={9}>
-            <BarGraph color="purple" data={ unhcrSubData } />
+          <Grid item xs={12} sm={12} md={12} lg={6}>
+            <Paper className={classes.paperStyle}>
+              <BarGraph color="purple" data={ unhcrSubData } />
+            </Paper> 
           </Grid>        
         </Grid>
       </main>
