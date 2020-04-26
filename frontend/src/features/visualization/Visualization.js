@@ -96,8 +96,8 @@ function Visualization() {
         Visualization Page
       </Typography>
       <main>
-        <Grid container spacing={1} justify="center">            
-          <Grid item xs={3}> 
+        <Grid container direction="row" spacing={4} justify="center">    
+          <Grid item xs={10} sm={10} md={10} lg={3}> 
             <VisualizationForm 
               chartType={chartType}
               orig={origCountries}
@@ -105,13 +105,13 @@ function Visualization() {
             >
             </VisualizationForm>
           </Grid>
-          <Grid item xs={9}>
-            <BarGraph color="green" title="Syria" data={ unhcrSubData } />
-          </Grid>
+          <Grid item xs={12} sm={12} md={12} lg={9}>
+            <BarGraph color="green" data={ unhcrSubData } />
+          </Grid>        
         </Grid>
       </main>
-     </Container>
-   </div>
+    </Container>
+  </div>
   );
 }
 

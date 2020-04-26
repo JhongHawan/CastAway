@@ -128,7 +128,7 @@ function VisualizationForm(props) {
          onSubmit={onSubmit}
          render={({ handleSubmit, reset, submitting, pristine, values }) => (
             <form onSubmit={handleSubmit}>
-               <Paper style={{ padding: 16, background: "primary" }}>
+               <Paper style={{ padding: 16 }}>
                   <Grid container alignItems="flex-start" spacing={2}>
                      <Grid item xs={12}>
                         <Field
@@ -160,7 +160,7 @@ function VisualizationForm(props) {
                            options={destFormat}
                         />
                      </Grid>
-                     <Grid item xs={12}>
+                     <Grid item xs={6}>
                         <Field
                         name='startYear'
                         dateFormat="yyyy"
@@ -170,7 +170,7 @@ function VisualizationForm(props) {
                         label='Start Year'
                         />
                      </Grid>
-                     <Grid item xs={12}>
+                     <Grid item xs={6}>
                         <Field
                         name='endYear'
                         dateFormat="yyyy"
@@ -180,7 +180,7 @@ function VisualizationForm(props) {
                         label='End Year'
                         />
                      </Grid>
-                     <Grid item style={{ marginTop: 16 }}>
+                     <Grid item xs={12} style={{ marginTop: 16 }}>
                         <Button color="secondary" variant="contained" onClick={() => {
                            apiCalls.fetchUnhcrSub(
                               dispatch,
@@ -200,14 +200,14 @@ function VisualizationForm(props) {
                            Create Visualization
                         </Button>
                      </Grid>
-                     <Grid item style={{ marginTop: 16 }}>
+                     <Grid item xs={12} style={{ marginTop: 16 }}>
                      <Button color="primary" variant="contained" onClick={downloadFile}>
                         Download Data 
                      </Button>
                      </Grid>
                   </Grid>
                </Paper>
-               <pre>{JSON.stringify(values, 0, 2)}</pre>
+               {/* <pre>{JSON.stringify(values, 0, 2)}</pre> */}
             </form>
          )}
       />
