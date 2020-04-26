@@ -29,12 +29,12 @@ function Myths() {
   function Card(props) {
     let color = '#c4c4c4';
     let width = '1px'
+    
     if (props.clicked) {
       color = props.redGreen;
       width = '3px';
     }
-    // 
-    // let 
+
     return (
       <Row>
         <Paper variant="outlined" className={classes.paper} style={{ borderColor: color, borderWidth: width, width: '300px' }}>{props.caption}</Paper>
@@ -59,10 +59,11 @@ function Myths() {
       console.log('After click: ' + active);
     }
 
+
     return (
       <Container>
         <Container style={{ textAlign: 'center' }}>
-          <Button style={{ margin: '1em' }} variant="contained" onClick={handleDebunk}>Reveal all Answers</Button>
+          <Button style={{ margin: '1em' }} variant="contained" color="secondary" onClick={handleDebunk}>Reveal all Answers</Button>
           <Button style={{ margin: '1em' }} variant="contained" onClick={handleReset}>Reset</Button>
         </Container>
         <Row>
@@ -225,7 +226,7 @@ function Myths() {
             <ContextCard
               trueFalse="Confirmed TRUE"
               mythTitle="The refugee crisis is still happening."
-              mythSummary=" This statement is completely true. There is still refugee crisis going on in thie world and it needs more attention."
+              mythSummary=" This statement is completely true. There is still refugee crisis going on in the world and it needs more attention."
               mythDetails="When thinking about the refugee crisis we want to find a way to solve it, end it for good. Unfortunately this is not possible. Refugees flee their homes because threats on their life or their safety. Therefore, as long as wars continue people will continue to flee them. "
             />
 

@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { Nav, ThemeProvider } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Box, Button, Typography, Paper } from '@material-ui/core';
+import { Box, Button, Typography, Paper, Step, Stepper, StepButton, Hidden, StepLabel, StepContent, MobileStepper } from '@material-ui/core';
 import { Col, Row, Container } from 'react-bootstrap';
 import Footer from './About/Footer';
 import Hero from './Hero';
@@ -187,9 +187,207 @@ function Myths() {
    )
 }
 
-function Context() {
+function VettingProcess() {
    const classes = useStyles();
 
+   // ! calls for vetting function
+   const [activeStep, setActiveStep] = React.useState(0);
+   const steps = getSteps();
+
+   const handleNext = () => {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+   };
+
+   const handleBack = () => {
+      setActiveStep((prevActiveStep) => prevActiveStep - 1);
+   };
+
+   const handleReset = () => {
+      setActiveStep(0);
+   };
+
+   function getSteps() {
+      return ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4', 'Stage 5', 'Stage 6'];
+   }
+
+   function getStepContent(step) {
+      switch (step) {
+         case 0:
+            return (
+               <Container style={{ paddingBottom: "3em" }}>
+                  <Row>
+                     <Col sm={3} md={5}>
+                        <img src="user_1.png" width="100%"></img>
+                     </Col>
+                     <Col sm={9} md={7}>
+                        <Typography component="h4" variant="h4" color="secondary">United Nations Interview</Typography>
+                        <ol>
+                           <li><Typography component="body1" variant="body1">Registration with the United Nations.</Typography></li>
+                           <li><Typography component="body1" variant="body1">Interview with the United Nations.</Typography></li>
+                           <li><Typography component="body1" variant="body1">Refugee status granted by the United Nations.</Typography></li>
+                           <li><Typography component="body1" variant="body1">Referral for resettlement in the United States.</Typography></li>
+                        </ol>
+                        <Typography component="body1" variant="body1">Less than 1% of refugees globally are referred for third country resettlement. Before being considered for resettlement, most refugees must first register with the UN High Commissioner for Refugees (UNHCR). In making a referral, UNHCR conducts an in-depth assessment and background check. Only those who pass the screenings and have been determined to be among the most vulnerable and not a security risk are referred to the United States.</Typography>
+                     </Col>
+                  </Row>
+               </Container>
+            );
+         case 1:
+            return 'Step 2';
+         case 2:
+            return 'Step 3';
+         case 3:
+            return 'Step 4';
+         case 4:
+            return 'Step 5';
+         case 5:
+            return 'Step 6';
+         default:
+            return 'Unknown step';
+      }
+   }
+
+   return (
+      <div className={classes.stepperRoot}>
+         <Stepper activeStep={activeStep} alternativeLabel>
+            {steps.map((label) => (
+               <Step key={label}>
+                  <StepLabel>{label}</StepLabel>
+               </Step>
+            ))}
+         </Stepper>
+         <div>
+            {activeStep === steps.length ? (
+               <div>
+                  <Typography className={classes.stepperInstructions}>All steps completed</Typography>
+                  <Button onClick={handleReset}>Reset</Button>
+               </div>
+            ) : (
+                  <div>
+                     <Typography className={classes.stepperInstructions}>{getStepContent(activeStep)}</Typography>
+                     <div>
+                        <Button
+                           disabled={activeStep === 0}
+                           onClick={handleBack}
+                           className={classes.stepperBackButton}
+                        >
+                           Back
+              </Button>
+                        <Button variant="contained" color="secondary" onClick={handleNext}>
+                           {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                        </Button>
+                     </div>
+                  </div>
+               )}
+         </div>
+      </div>
+   )
+}
+
+function VettingProcessMobile() {
+   const classes = useStyles();
+
+   function getSteps() {
+      return ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4', 'Stage 5', 'Stage 6'];
+   }
+
+   function getStepContent(step) {
+      switch (step) {
+         case 0:
+            return (
+               <Container style={{ paddingBottom: "3em" }}>
+                  <Row>
+                     <Col sm={3} md={5}>
+                        <img src="user_1.png" width="100%"></img>
+                     </Col>
+                     <Col sm={9} md={7}>
+                        <Typography component="h4" variant="h4" color="secondary">United Nations Interview</Typography>
+                        <ol>
+                           <li><Typography component="body1" variant="body1">Registration with the United Nations.</Typography></li>
+                           <li><Typography component="body1" variant="body1">Interview with the United Nations.</Typography></li>
+                           <li><Typography component="body1" variant="body1">Refugee status granted by the United Nations.</Typography></li>
+                           <li><Typography component="body1" variant="body1">Referral for resettlement in the United States.</Typography></li>
+                        </ol>
+                        <Typography component="body1" variant="body1">Less than 1% of refugees globally are referred for third country resettlement. Before being considered for resettlement, most refugees must first register with the UN High Commissioner for Refugees (UNHCR). In making a referral, UNHCR conducts an in-depth assessment and background check. Only those who pass the screenings and have been determined to be among the most vulnerable and not a security risk are referred to the United States.</Typography>
+                     </Col>
+                  </Row>
+               </Container>
+            );
+         case 1:
+            return 'Step 2';
+         case 2:
+            return 'Step 3';
+         case 3:
+            return 'Step 4';
+         case 4:
+            return 'Step 5';
+         case 5:
+            return 'Step 6';
+         default:
+            return 'Unknown step';
+      }
+   }
+
+   const [activeStep, setActiveStep] = React.useState(0);
+   const steps = getSteps();
+
+   const handleNext = () => {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+   };
+
+   const handleBack = () => {
+      setActiveStep((prevActiveStep) => prevActiveStep - 1);
+   };
+
+   const handleReset = () => {
+      setActiveStep(0);
+   };
+
+   return (
+      <div className={classes.stepperRoot}>
+         <Stepper activeStep={activeStep} orientation="vertical">
+            {steps.map((label, index) => (
+               <Step key={label}>
+                  <StepLabel>{label}</StepLabel>
+                  <StepContent>
+                     <Typography>{getStepContent(index)}</Typography>
+                     <div className={classes.stepperMobileActionContainer}>
+                        <div>
+                           <Button
+                              disabled={activeStep === 0}
+                              onClick={handleBack}
+                              className={classes.stepperInstruction}
+                           >
+                              Back
+                  </Button>
+                           <Button
+                              variant="contained"
+                              color="secondary"
+                              onClick={handleNext}
+                              className={classes.stepperInstruction}
+                           >
+                              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                           </Button>
+                        </div>
+                     </div>
+                  </StepContent>
+               </Step>
+            ))}
+         </Stepper>
+         {activeStep === steps.length && (
+            <Paper square elevation={0} className={classes.stepperMobileResetContainer}>
+               <Typography>All steps completed - you&apos;re finished</Typography>
+               <Button onClick={handleReset} className={classes.stepperInstruction}>
+                  Reset
+          </Button>
+            </Paper>
+         )}
+      </div>
+   )
+}
+
+function Context() {
+   const classes = useStyles();
    return (
       <div >
          <Hero
@@ -203,16 +401,34 @@ function Context() {
                   <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
                </Box>
                <ContextTimeline />
+               <Box style={{ textAlign: 'center', paddingBottom: '30px' }}>
+                  <Button variant="contained" color="secondary" href="/history" >More History</Button>
+               </Box>
             </Box>
             <Box>
                <Divider title="MYTHS" />
                <Myths />
+               <Box style={{ textAlign: 'center', paddingBottom: '30px' }}>
+                  <Button variant="contained" color="secondary" href="/myths" >More Myths</Button>
+               </Box>
             </Box>
             <Box>
                <Divider title="TERMINOLOGY" />
             </Box>
             <Box>
                <Divider title="VETTING PROCESS" />
+               <Box className={classes.descriptionBox}>
+                  <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
+               </Box>
+
+               {/* IN MOBILE */}
+               <Hidden only={['sm', 'md', 'lg', 'xl']}>
+                  <VettingProcessMobile />
+               </Hidden>
+               <Hidden only={['xs']}>
+                  <VettingProcess />
+               </Hidden>
+
             </Box>
          </Container>
          {/* <FontTest /> */}

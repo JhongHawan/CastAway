@@ -301,33 +301,31 @@ export const useStyles = makeStyles(theme => ({
                 opacity: 1,
             }
         }
+    },
 
-
-        // '&::after': {
-        //     content: '""',
-        //     position: 'absolute',
-        //     width: '100%',
-        //     height: '100%',
-        //     top: 0,
-        //     left: 0,
-        //     background: 'rgba(0,0,0,0.4)',
-        //     borderRadius: '10px',
-        //     opacity: 0,
-        //     transition: 'all 0.5s',
-        //     WebkitTransition: 'all 0.5s'
-        // },
-
-        // '&:hover': {
-        //     '& img': {
-        //         filter: 'grayscale(0)',
-        //     },
-        //     '&::after': {
-        //         content: '""',
-        //         opacity: 1,
-
-        //     }
-        // }
+    // ! Stepper Styles
+    stepperRoot: {
+        width: '100%'
+    },
+    stepperButton: {
+        marginRight: theme.spacing(1),
+        
+    },
+    stepperBackButton: {
+        marginRight: theme.spacing(1),
+    },
+    stepperInstruction: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1)
+    },
+    // ! Stepper Mobile
+    stepperMobileActionContainer: {
+        marginBottom: theme.spacing(2)
+    },
+    stepperMobileResetContainer: {
+        padding: theme.spacing(3)
     }
+
 
 
 
