@@ -5,23 +5,29 @@ import BarGraph from '../../components/Charts/BarGraph';
 import PieChart from '../../components/Charts/PieChart';
 import Hero from '../../components/Hero';  
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Paper } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
 import VisualizationForm from '../../components/Filter/VisualizationForm'; 
+import Divider from '../../components/Divider'; 
 import apiCalls from './apiCalls'; 
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
   },
-  bargraph: {
-    color: '#white'
-  },
   header: {
     margin: theme.spacing(6)
   }, 
-  paperStyle: {
-    padding: 16
+  cardStyle: {
+    display: 'flex',
+    flexDirection: "column",
+    padding: 16,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#ffffff"
+  },
+  dividerMargin: {
+    margin: theme.spacing(4)
   }
 }));
 
@@ -31,9 +37,7 @@ function Visualization() {
   const dispatch = useDispatch();
 
   const { 
-    refugeeData, 
     unhcrSubData, 
-    unhcrDemoData, 
     origCountries, 
     destCountries, 
     loading } = useSelector(
@@ -68,25 +72,12 @@ function Visualization() {
   ]; 
 
   /**
-   * TODO: Populate with whatever we get from the filter. 
-   */
-  const options = ({
-    year: [2016, 2018],
-    origin: ["SYR", "IRA"],
-    resettlement: ["USA", "NOR"]
-  });
-
-  /**
     * * Fetches the available countries on page load. 
   */
   useEffect(() => {
     apiCalls.fetchValidCountries(dispatch);
   }, []);
 
-  /** 
-  * TODO: Add a Filter System that will gather user input and pass that on to the graphs as params. 
-  * TODO: Add source for the api. 
-  */
   return (
     <div className="Visualization">
       <Hero
@@ -94,18 +85,11 @@ function Visualization() {
         sectionTitle="Visualization"
       />
       <Container>
-      <Typography
-        component="h2"
-        variant="h2"
-        color="inherit"
-        align="center"
-        noWrap
-        className={classes.header}
-      >
-        Visualization Page
-      </Typography>
       <main>
         <Grid container direction="row" spacing={4} justify="center">    
+          <Grid className={classes.dividerMargin} item xs={12} sm={12} md={12} lg={12}>
+            <Divider title="Chart Options" />
+          </Grid>
           <Grid item xs={10} sm={10} md={10} lg={12}> 
             <VisualizationForm 
               chartType={chartType}
@@ -114,16 +98,39 @@ function Visualization() {
             >
             </VisualizationForm>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={6}>
-            <Paper className={classes.paperStyle}>
-              <PieChart data={ unhcrSubData } />
-            </Paper>
-          </Grid>   
-          <Grid item xs={12} sm={12} md={12} lg={6}>
-            <Paper className={classes.paperStyle}>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Box boxShadow={3} className={classes.cardStyle}>
+              <Typography
+                color="primary"
+                variant="h3"
+              >
+                Bar Graph
+              </Typography>
               <BarGraph color="purple" data={ unhcrSubData } />
-            </Paper> 
-          </Grid>        
+            </Box> 
+          </Grid>    
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Box boxShadow={3} className={classes.cardStyle}>
+              <Typography
+                color="primary"
+                variant="h3"
+              >
+                Pie Chart
+              </Typography>
+              <PieChart data={ unhcrSubData } />
+            </Box>
+          </Grid>   
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Box boxShadow={3} className={classes.cardStyle}>
+              <Typography
+                color="primary"
+                variant="h3"
+              >
+                Line Chart
+              </Typography>
+              <BarGraph color="pink" data={ unhcrSubData } />
+            </Box> 
+          </Grid>         
         </Grid>
       </main>
     </Container>
