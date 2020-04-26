@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container'; 
 import BarGraph from '../../components/Charts/BarGraph'; 
 import PieChart from '../../components/Charts/PieChart';
+import LineChart from '../../components/Charts/LineChart';
 import Hero from '../../components/Hero';  
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Box } from '@material-ui/core';
@@ -138,7 +139,7 @@ function Visualization() {
                 >
                   Line Chart
                 </Typography>
-                <BarGraph color="pink" data={ unhcrSubData } />
+                <LineChart  fill="blue" stroke="orange" data={ unhcrSubData } />
               </Box> 
             </Grid>         
           </Grid>

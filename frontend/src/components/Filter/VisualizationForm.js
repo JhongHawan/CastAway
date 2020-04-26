@@ -38,10 +38,9 @@ const onSubmit = async values => {
 
 const required = value => (value ? undefined : 'Required')
 
-const defaultDate = new Date('2020'); 
-
+const defaultStartDate = new Date('2003'); 
+const defaultEndDate = new Date('2020'); 
 const defaultOrig = ['']; 
-
 const defaultDest = ['']; 
 
 /**
@@ -188,7 +187,8 @@ function VisualizationForm(props) {
                         name='startYear'
                         dateFormat="yyyy"
                         validate={required}
-                        initialValue={defaultDate}
+                        parsedDate={Date.parse('January 1, 2003')}
+                        initialValue={defaultStartDate}
                         component={DatePickerAdapter}
                         label='Start Year'
                         />
@@ -198,7 +198,8 @@ function VisualizationForm(props) {
                         name='endYear'
                         dateFormat="yyyy"
                         validate={required}
-                        initialValue={defaultDate}
+                        parsedDate={Date.parse('January 1, 2019')}
+                        initialValue={defaultEndDate}
                         component={DatePickerAdapter}
                         label='End Year'
                         />

@@ -60,12 +60,14 @@ class BarGraph extends Component {
 
     const CHART_HEIGHT = 1000; 
     const CHART_WIDTH = 1200; 
-    const FONT_SIZE = 18;
+    const FONT_SIZE = 20;
     console.log(`Props Data: ${this.props.data}`)
 
     return (
       <div>
-        <VictoryChart height={CHART_HEIGHT} width={CHART_WIDTH}
+        <VictoryChart 
+          height={CHART_HEIGHT} 
+          width={CHART_WIDTH}
           animate={{
             duration: 1000,
             onLoad: { duration: 2000 }
@@ -87,6 +89,9 @@ class BarGraph extends Component {
               <Bar events={{ onMouseOver: handleMouseOver }}/>
             }
             style={this.state.style}
+            labels={
+              this.props.data.map(population => `Year: ${population.year}` )
+            }
             data={
               this.props.data.map(population => (
                 { x: new Date(population.year), y: (population.persons / 1000)}

@@ -9,7 +9,7 @@ import {
 
 function DatePicker(props) {
 
-  const [selected, setSelectedDate] = React.useState(Date.parse('January 1, 2019'));
+  const [selected, setSelectedDate] = React.useState(props.parsedDate);
   const handleDateChange = (date) => {
     setSelectedDate(date);
     props.onChange(date);
