@@ -5,19 +5,19 @@ dotenv.config()
 
 //simple schema
 const RefugeeSchema = new mongoose.Schema({
-  destination: {
+  destination_name: {
     type: String,
     required: true
   },
-  origin: {
+  origin_name: {
      type: String,
      required: true
   }, 
   year: {
-     type: Date,
+     type: Array,
      required: true
   },
-  value: {
+  persons: {
      type: Number,
      required: false
   }

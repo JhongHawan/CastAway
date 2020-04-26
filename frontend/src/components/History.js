@@ -4,49 +4,26 @@ import ReactCompareImage from 'react-compare-image';
 import ContextCard from './ContextCard';
 import Timeline from './Timeline';
 
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
-    heroContent: {
-        // backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(3, 5, 0),
-    },
-    sectionBlock: {
-        backgroundColor: '#002851',
-        padding: theme.spacing(7, 10, 7)
-    },
-    sectionTitle: {
-        color: '#ffffff',
-        fontSize: '80px',
-        fontFamily: 'zeitung, sans-serif',
-        fontWeight: 800,
-        fontStyle: 'normal'
-    },
-    sectionText: {
-        color: '#ffffff',
-    },
-    testSection: {
-        fontSize: '150px',
-        // makes it white
-        filter: 'brightness(0) invert(1)',
-        
+import { useStyles } from './Styles';
 
+import Hero from './Hero';
+import Footer from './About/Footer';
 
-    }
-
-}))
 
 function History() {
     const classes = useStyles();
     return (
         <div>
-            <Box className={classes.sectionBlock}>
+            <Hero
+                showCard={false}
+                sectionTitle="History"
+            />
+            {/* <Box className={classes.sectionBlock}>
                 <Box>
                     <Grid container spacing={5} >
-                        {/* TODO vertically align center */}
                         <Grid item>
-                            {/* <MenuBookIcon className={classes.testSection} /> */}
-                            <img className={classes.testSection} src="history_icon.png" width="100px"/>
+                            <img className={classes.historyIcon} src="history_icon.png" width="100px"/>
                         </Grid>
                         <Grid item sm={9}>
                             <h1 className={classes.sectionTitle}>
@@ -59,9 +36,10 @@ function History() {
                     </Grid>
 
                 </Box>
-            </Box>
+            </Box> */}
 
             <Timeline />
+            <Footer />
         </div>
     );
 }

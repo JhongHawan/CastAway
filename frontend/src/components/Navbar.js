@@ -2,64 +2,97 @@ import React from 'react';
 import {
   Navbar,
   NavDropdown,
-  Nav
+  Nav,
+  Container,
+  Row,
+  Col,
+  Dropdown
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
 import Logo from './Logo';
 import '../App.css';
 import { Grid, Typography } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
-  hamburgerIcon: {
-    // Customize the navbar hamburger menu later. 
-    borderColor: "#f31baa"
-  }
-}));
 
-// TODO: change the font of the links in navbar
+
+import { useStyles } from './Styles';
+
+
 function NavBar() {
-  const classes = useStyles(); 
+  const classes = useStyles();
 
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" bg="bg-light">
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" className={classes.hamburgerIcon}/>
-      <Navbar.Brand className="ml-auto" as={Link} to="/">
-        {/* <Logo className="logo" /> */}
-        <Grid container justify="center" alignItems="center" spacing={1}>
-          {/* <Grid item align="center">
+      <Navbar.Brand as={Link} to="/">
+        <Row className="justify-content-center">
+          <Col style={{ textAlign:"center"}}>
             <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
-          </Grid> */}
-          <Grid item align="center">
-            <h2 className="brand">CAST|</h2>
-            {/* <img src="castawayLogo.png" width="50px" alt="castaway boat logo" /> */}
-            {/* <h1 className="brand"> |AWAY</h1> */}
-          </Grid>
-          <Grid item align="center">
-            {/* <h1 className="brand">CAST|</h1> */}
-            <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
-            {/* <h1 className="brand"> |AWAY</h1> */}
-          </Grid>
-          <Grid item align="center">
-            <h2 className="brand">|AWAY</h2>
-          </Grid>
-        </Grid>
+          </Col>
+          <Col style={{ textAlign:"center"}}>
+            <Typography variant="h3" className={classes.navTitle}>
+              CASTAWAY
+            </Typography>
+          </Col>
+        </Row>
+
       </Navbar.Brand>
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <NavDropdown title="Context" id="nav-dropdown">
-            <NavDropdown.Item as={Link} to="/history">History</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/myths">Myths</NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link as={Link} to="/stories">Stories</Nav.Link>
-          <Nav.Link as={Link} to="/visualization">Visualization</Nav.Link>
-          <Nav.Link as={Link} to="/about">About</Nav.Link>
-        </Nav>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" className={classes.hamburgerIcon} />
+      <Navbar.Collapse className="justify-content-end">
+
+        <NavDropdown
+          id="basic-nav-dropdown"
+          title={
+            <span style={{ display: 'inline-block' }}>
+              <Nav.Link as={Link} to="/context">
+                <Typography variant="h6" className={classes.navLink}>
+                  Context
+                </Typography>
+              </Nav.Link>
+            </span>
+          }
+        >
+          <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/history">
+            History
+          </NavDropdown.Item>
+          <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/myths">
+            Myths
+          </NavDropdown.Item>
+          <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/terminology">
+            Terminology
+          </NavDropdown.Item>
+          <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/vetting">
+            Vetting Process
+          </NavDropdown.Item>
+        </NavDropdown>
+
+
+        <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/stories">
+          <Typography variant="h6" className={classes.navLink}>
+            Stories
+          </Typography>
+        </Nav.Link>
+        <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/data">
+          <Typography variant="h6" className={classes.navLink}>
+            Data
+          </Typography>
+        </Nav.Link>
+        <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/YourRole">
+          <Typography variant="h6" className={classes.navLink}>
+            Your Role
+          </Typography>
+        </Nav.Link>
+        <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/About">
+          <Typography variant="h6" className={classes.navLink}>
+            About Us
+          </Typography>
+        </Nav.Link>
       </Navbar.Collapse>
-    </Navbar>
+    </Navbar >
   );
 }
+
+
+
 
 
 export default NavBar; 

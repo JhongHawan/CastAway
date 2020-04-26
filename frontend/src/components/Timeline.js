@@ -6,6 +6,8 @@ class timeline extends React.Component {
     //     super(props)
     // }
 
+
+    // TODO Turn fonts to Typography 
     render() {
         return (
             <Timeline lineColor={'#c9d6df'}>
@@ -14,13 +16,9 @@ class timeline extends React.Component {
                     dateText="1891"
                     dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
                     style={{ color: '#FF8576' }}>
-                    <h3>Bureau of Immigration is Estabished</h3>
+                    <h3>Bureau of Immigration is Established</h3>
                     <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
+                    <p> After realizing how much attention immigration needed, Congress authorized an immigration bureau. This Bureau was  responsible for enforcing immigration laws and processing legal immigrants. </p>
                 </TimelineItem>
                 <TimelineItem
                     key="001"
@@ -29,11 +27,7 @@ class timeline extends React.Component {
                     style={{ color: '#e86971' }}>
                     <h3>The Immigration Act of 1917</h3>
                     <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
+                    <p> Also known as the Literacy Act or the Asiatic Barred Zone Act. This act was passed with the goal of restricting immigration by imposing a literacy test on immigrants.This created a new category of inadmissible persons.</p>
                 </TimelineItem>
                 <TimelineItem
                     key="001"
@@ -42,11 +36,7 @@ class timeline extends React.Component {
                     style={{ color: '#e86971' }}>
                     <h3>The Quota Acts</h3>
                     <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
+                    <p> Initially passed in 1921 the Emergency Quota Act limited the number of immigrants who could enter the United States. In 1924 the quotas were made stricter and more permanent. </p>
                 </TimelineItem>
                 <TimelineItem
                     key="001"
@@ -55,11 +45,7 @@ class timeline extends React.Component {
                     style={{ color: '#e86971' }}>
                     <h3>World War II</h3>
                     <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
+                    <p> The persecution of Jews and other minorities during World War II and the Holocaust created a refugee crisis. There were more refugees than nations were able to accept. </p>
                 </TimelineItem>
                 <TimelineItem
                     key="001"
@@ -79,13 +65,9 @@ class timeline extends React.Component {
                     dateText="1945"
                     dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
                     style={{ color: '#e86971' }}>
-                    <h3>Presedential Directive on Displaced Persons</h3>
+                    <h3>Presidential Directive on Displaced Persons</h3>
                     <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
+                    <p> President Truman authorized that any displaced person or refugee receive expedited admission into the United States. This presidential decision also allowed refugees that were already in the United States to achieve lawful resident status.  </p>
                 </TimelineItem>
                 <TimelineItem
                     key="001"

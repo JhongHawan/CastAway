@@ -30,8 +30,9 @@ class BarGraph extends Component {
       data: []
     };
   }
+  
   // Having a lot of trouble getting the data field to populate with the this.props.data 
-  componentDidMount() {
+  componentDidMount = () => {
     this.setState({
       clicked: false,
       color: this.props.color,
@@ -57,12 +58,10 @@ class BarGraph extends Component {
       });
     };
 
-    console.log("This is PROPS data: " + this.props.data); 
-    console.log("This is the STATE data: " + this.state.title); 
-
-    const CHART_HEIGHT = 800; 
-    const CHART_WIDTH = 1000; 
-    const FONT_SIZE = 20;
+    const CHART_HEIGHT = 1000; 
+    const CHART_WIDTH = 1200; 
+    const FONT_SIZE = 18;
+    console.log(`Props Data: ${this.props.data}`)
 
     return (
       <div>
@@ -77,20 +76,20 @@ class BarGraph extends Component {
           title={this.state.title}
         >
           <VictoryLabel 
-            text={`Refugees from ${this.state.title} to the U.S.`} 
             x={CHART_WIDTH / 2} 
             y={30} 
             style={{fontSize: 40}} 
             textAnchor="middle"
           />
           <VictoryBar
+            barRatio={0.8}
             dataComponent={
               <Bar events={{ onMouseOver: handleMouseOver }}/>
             }
             style={this.state.style}
             data={
               this.props.data.map(population => (
-                { x: new Date(population.year), y: (population.value / 1000)}
+                { x: new Date(population.year), y: (population.persons / 1000)}
               ))
             }
           />

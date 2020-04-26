@@ -49,8 +49,7 @@ npm run frontend
 
 ## Deployment
 
-Our MERN stack application can be deployed through various ways such as AWS, Azure, or Heroku. 
-The planned deployment process will involve an AWS build/deploy pipeline which utilizes AWS beanstalk and EC2 servers.  
+Our MERN stack application is currently deployed via Heroku: https://desolate-basin-46881.herokuapp.com/
 
 ## Built With
 
