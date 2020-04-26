@@ -17,6 +17,10 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
+
+import Footer from './About/Footer';
+
+import Hero from './Hero';
 import { useStyles } from './Styles'
 
 
@@ -25,7 +29,13 @@ function Stories() {
 
    return (
       <div >
-         <Box className={classes.sectionBlock}>
+         <Hero
+            showCard={false}
+            sectionTitle="Stories"
+         />
+
+         <StoriesList />
+         {/* <Box className={classes.sectionBlock}>
             <Box>
                <Grid container spacing={5} >
                   <Grid item>
@@ -44,8 +54,8 @@ function Stories() {
 
             </Box>
          </Box>
-         {/* NEW STORIES LIST GRID LSIT */}
-         <StoriesList />
+         <StoriesList /> */}
+         <Footer />
       </div>
    );
 }

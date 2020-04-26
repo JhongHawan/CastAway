@@ -4,8 +4,10 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import { CardHeader } from '@material-ui/core';
 
-
+// ? Does this ever get used ? 
+// TODO convert to Typography
 class mythCard extends React.Component {
     constructor(props) {
         super(props)

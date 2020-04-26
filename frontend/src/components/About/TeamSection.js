@@ -60,7 +60,7 @@ function TeamSection() {
             imgPath="/rahma.jpg"
             imgTitle="rahma"
             teamName="Rahma Kamel"
-            description="Data Scientist/UX Designer"
+            description="Project Manager/Front-end Developer"
             contact="kamelr@uw.edu"
             />
          </Grid>
@@ -70,7 +70,7 @@ function TeamSection() {
             imgPath="/tracy.jpg"
             imgTitle="tracy"
             teamName="Tracy Huynh"
-            description="Project Manager"
+            description="Project Manager/Front-end Developer"
             contact="thuynh12@uw.edu"
             />
          </Grid>

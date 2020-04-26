@@ -12,7 +12,7 @@ import apiCalls from './apiCalls';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
-  }, 
+  },
   bargraph: {
     color: '#white'
   },
@@ -25,8 +25,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function Visualization() {
-  const classes = useStyles(); 
-  
+  const classes = useStyles();
+
   const dispatch = useDispatch();
 
   const { 
@@ -49,7 +49,7 @@ function Visualization() {
       }
     },
     shallowEqual
-  ); 
+  );
 
   const chartType = [
     {
@@ -81,14 +81,18 @@ function Visualization() {
   useEffect(() => {
     apiCalls.fetchValidCountries(dispatch);
   }, []);
-  
+
   /** 
   * TODO: Add a Filter System that will gather user input and pass that on to the graphs as params. 
   * TODO: Add source for the api. 
   */
-  return(
-   <div className="Visualization">
-     <Container>
+  return (
+    <div className="Visualization">
+      <Hero
+        showCard={false}
+        sectionTitle="Visualization"
+      />
+      <Container>
       <Typography
         component="h2"
         variant="h2"
