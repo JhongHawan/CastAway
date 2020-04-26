@@ -94,6 +94,9 @@ class PieChart extends Component {
             <Slice events={{ onMouseOver: handleMouseOver }}/>
          }
          style={{ labels: { fill: "primary", fontSize: 20, fontWeight: "bold" } }}
+         labels={
+            this.props.data.map(population => `${population.origin_name}: ${population.year}` )
+          }
          data={
             this.props.data.map(population => (
                { x: getNameOrYear(population), y: (population.persons / 1000)}

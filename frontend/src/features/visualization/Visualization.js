@@ -90,11 +90,11 @@ function Visualization() {
       />
       <main>
         <Container> 
-          <Grid container direction="row" spacing={4} justify="center">    
+          <Grid container direction="row" spacing={4} justify="center">  
             <Grid className={classes.dividerMargin} item xs={12} sm={12} md={12} lg={12}>
               <Divider title="Options" />
             </Grid>
-            <Grid item xs={10} sm={10} md={10} lg={12}> 
+            <Grid item xs={12} sm={12} md={12} lg={12}> 
               <VisualizationForm 
                 chartType={chartType}
                 orig={origCountries}
@@ -109,7 +109,7 @@ function Visualization() {
             <Grid className={classes.dividerMargin} item xs={12} sm={12} md={12} lg={12}>
               <Divider title="Charts" />
             </Grid>    
-            <Grid item xs={12} sm={12} md={12} lg={10}>
+            <Grid item xs={12} sm={12} md={12} lg={6}>
               <Box boxShadow={3} className={classes.cardStyle}>
                 <Typography
                   color="primary"
@@ -120,7 +120,7 @@ function Visualization() {
                 <BarGraph color="#F16841" data={ unhcrSubData } />
               </Box> 
             </Grid>    
-            <Grid item xs={12} sm={12} md={12} lg={10}>
+            <Grid item xs={12} sm={12} md={12} lg={6}>
               <Box boxShadow={3} className={classes.cardStyle}>
                 <Typography
                   color="primary"
@@ -131,7 +131,7 @@ function Visualization() {
                 <PieChart data={ unhcrSubData } />
               </Box>
             </Grid>   
-            <Grid item xs={12} sm={12} md={12} lg={10}>
+            <Grid item xs={12} sm={12} md={12} lg={9}>
               <Box boxShadow={3} className={classes.cardStyle}>
                 <Typography
                   color="primary"
