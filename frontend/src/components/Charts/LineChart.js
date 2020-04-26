@@ -2,19 +2,22 @@ import React, { Component } from 'react';
 import { 
   VictoryChart,
   VictoryLine,
+  Curve,
+  Point,
   VictoryScatter ,
   VictoryTheme, 
   VictoryAxis,
   VictoryLabel
 } from 'victory'; 
 
-const getNameOrYear = (population) => {
-   if (population.hasOwnProperty('origin_name')) {
-      return population.origin_name;
-   } else {
-      return population.year; 
-   }
-}
+const data = [
+  { x: 0, y: 0 },
+  { x: 1, y: 2 },
+  { x: 2, y: 1 },
+  { x: 3, y: 4 },
+  { x: 4, y: 3 },
+  { x: 5, y: 5 }
+];
 
 const cartesianInterpolations = [
   "basis",
@@ -45,26 +48,30 @@ const InterpolationSelect = ({ currentValue, values, onChange }) => (
   </select>
 );
 
-class AreaChart extends Component {
+class LineChart extends Component {
       
    constructor(props) {
       // Add the data as a prop from mongodb.
       super(props);
       this.state = {
          clicked: false,
+         stroke: "#FF30F7",
+         fill: "#FF3333",
          title: "",
-         labels: {},
-         data: []
+         data: [],
+         smallLabelSize: 15,
+         largeLabelSize: 20,
+         strokeStyle: {
+          labels: { fill: "primary", fontSize: 15, fontWeight: "bold" },
+         }
       };
    }
 
-   // Having a lot of trouble getting the data field to populate with the this.props.data 
    componentDidMount = () => {
       this.setState({
          clicked: false,
-         labels: {
-            fontWeight: "bold"
-         },
+         stroke: this.props.stroke,
+         fill: this.props.fill,
          title: this.props.title,
          data: this.props.data
       });
@@ -72,19 +79,25 @@ class AreaChart extends Component {
 
    render() {
       const handleMouseOver = () => {
-      const fillColor = this.state.clicked ? "#547BFE" : this.state.color;
+      const strokeColor = this.state.clicked ? this.state.fill : this.state.stroke;
+      const fillColor = this.state.clicked ? this.state.stroke : this.state.fill;
+      const labelSize = this.state.clicked ? this.state.smallLabelSize : this.state.largeLabelSize
       const clicked = !this.state.clicked;
       this.setState({
-         clicked,
-         style: {
-            data: { fill: fillColor }
-         }
+        clicked,
+        strokeStyle: {
+          data: { stroke: strokeColor },
+          labels: { fill: "primary", fontSize: labelSize, fontWeight: "bold" }
+        },
+        scatterStyle: {
+          data: { fill: fillColor }
+        }
       });
       };
 
       const CHART_HEIGHT = 1000; 
       const CHART_WIDTH = 1200; 
-      const FONT_SIZE = 24;
+      const FONT_SIZE = 18;
 
       return (
         <div>
@@ -106,14 +119,43 @@ class AreaChart extends Component {
             style={{ marginLeft: 25, marginRight: 5 }}
           />
           <label htmlFor="polar">polar</label>
-          <VictoryChart polar={this.state.polar} height={390}>
+          <VictoryChart 
+            height={CHART_HEIGHT} 
+            width={CHART_WIDTH}
+            animate={{
+              duration: 1000,
+              onLoad: { duration: 2000 }
+            }}
+            domainPadding={{ x: 50, y: [0, 20] }}
+            scale={{ x: "time", y: "linear" }}
+            theme={VictoryTheme.material}
+          >
             <VictoryLine
-              interpolation={this.state.interpolation} data={data}
-              style={{ data: { stroke: "#c43a31" } }}
+              interpolation={this.state.interpolation} 
+              dataComponent={
+                <Curve events={{ onMouseOver: handleMouseOver }} />
+              }
+              labels={
+                this.props.data.map(population => `${population.origin_name}` )
+              }
+              data={
+                this.props.data.map(population => (
+                  { x: new Date(population.year), y: (population.persons / 1000)}
+                ))
+              }
+              style={this.state.strokeStyle}
             />
-            <VictoryScatter data={data}
+            <VictoryScatter 
+              dataComponent={
+                <Point events={{ onMouseOver: handleMouseOver }} />
+              }
+              data={
+                this.props.data.map(population => (
+                  { x: new Date(population.year), y: (population.persons / 1000)}
+                ))
+              }
               size={5}
-              style={{ data: { fill: "#c43a31" } }}
+              style={this.state.scatterStyle}
             />
             <VictoryAxis dependentAxis
               label="Population (1000s)"
