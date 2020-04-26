@@ -117,7 +117,7 @@ function Visualization() {
                 >
                   Bar Graph
                 </Typography>
-                <BarGraph color="purple" data={ unhcrSubData } />
+                <BarGraph color="#F16841" data={ unhcrSubData } />
               </Box> 
             </Grid>    
             <Grid item xs={12} sm={12} md={12} lg={10}>
@@ -139,7 +139,7 @@ function Visualization() {
                 >
                   Line Chart
                 </Typography>
-                <LineChart  fill="blue" stroke="orange" data={ unhcrSubData } />
+                <LineChart  fill="#002851" stroke="#F16841" data={ unhcrSubData } />
               </Box> 
             </Grid>         
           </Grid>

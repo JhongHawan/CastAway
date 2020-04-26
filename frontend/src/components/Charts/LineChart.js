@@ -58,8 +58,12 @@ class LineChart extends Component {
          stroke: "#FF30F7",
          fill: "#FF3333",
          title: "",
-         labels: {},
-         data: []
+         data: [],
+         smallLabelSize: 15,
+         largeLabelSize: 20,
+         strokeStyle: {
+          labels: { fill: "primary", fontSize: 15, fontWeight: "bold" },
+         }
       };
    }
 
@@ -68,9 +72,6 @@ class LineChart extends Component {
          clicked: false,
          stroke: this.props.stroke,
          fill: this.props.fill,
-         labels: {
-            fontWeight: "bold"
-         },
          title: this.props.title,
          data: this.props.data
       });
@@ -80,15 +81,17 @@ class LineChart extends Component {
       const handleMouseOver = () => {
       const strokeColor = this.state.clicked ? this.state.fill : this.state.stroke;
       const fillColor = this.state.clicked ? this.state.stroke : this.state.fill;
+      const labelSize = this.state.clicked ? this.state.smallLabelSize : this.state.largeLabelSize
       const clicked = !this.state.clicked;
       this.setState({
-         clicked,
-         strokeStyle: {
-          data: { stroke: strokeColor }
+        clicked,
+        strokeStyle: {
+          data: { stroke: strokeColor },
+          labels: { fill: "primary", fontSize: labelSize, fontWeight: "bold" }
         },
-         scatterStyle: {
-            data: { fill: fillColor }
-         }
+        scatterStyle: {
+          data: { fill: fillColor }
+        }
       });
       };
 
@@ -115,6 +118,7 @@ class LineChart extends Component {
             }
             style={{ marginLeft: 25, marginRight: 5 }}
           />
+          <label htmlFor="polar">polar</label>
           <VictoryChart 
             height={CHART_HEIGHT} 
             width={CHART_WIDTH}
@@ -132,7 +136,7 @@ class LineChart extends Component {
                 <Curve events={{ onMouseOver: handleMouseOver }} />
               }
               labels={
-                this.props.data.map(population => `Year: ${population.year}` )
+                this.props.data.map(population => `${population.origin_name}` )
               }
               data={
                 this.props.data.map(population => (

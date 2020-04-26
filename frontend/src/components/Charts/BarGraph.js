@@ -23,8 +23,11 @@ class BarGraph extends Component {
     this.state = {
       clicked: false,
       color: "#FF30F7",
+      smallLabelSize: 15,
+      largeLabelSize: 20,
       style: {
-        data: { fill: "#FF30F7" }
+        data: { fill: "#FF30F7" },
+        labels: { fill: "primary", fontSize: 15, fontWeight: "bold" },
       },
       title: "",
       data: []
@@ -38,6 +41,7 @@ class BarGraph extends Component {
       color: this.props.color,
       style: {
         data: { fill: this.props.color },
+        labels: { fill: "primary", fontSize: 15, fontWeight: "bold" },
         fontSize: 30
       },
       title: this.props.title,
@@ -48,12 +52,14 @@ class BarGraph extends Component {
 
   render() {
     const handleMouseOver = () => {
-      const fillColor = this.state.clicked ? "#547BFE" : this.state.color;
+      const fillColor = this.state.clicked ? "#C9D6DF" : this.state.color;
+      const labelSize = this.state.clicked ? this.state.smallLabelSize : this.state.largeLabelSize
       const clicked = !this.state.clicked;
       this.setState({
         clicked,
         style: {
-          data: { fill: fillColor }
+          data: { fill: fillColor },
+          labels: { fill: "primary", fontSize: labelSize, fontWeight: "bold" }
         }
       });
     };
@@ -90,7 +96,7 @@ class BarGraph extends Component {
             }
             style={this.state.style}
             labels={
-              this.props.data.map(population => `Year: ${population.year}` )
+              this.props.data.map(population => `${population.origin_name}` )
             }
             data={
               this.props.data.map(population => (

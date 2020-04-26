@@ -71,6 +71,11 @@ class PieChart extends Component {
          }}
          theme={VictoryTheme.material}
          colorScale={[
+            "#183140",
+            "#1c485f",
+            "#1c6081",
+            "#167aa4",
+            "#0094c9",
             "#00876c",
             "#3f996f",
             "#65aa71",
