@@ -14,9 +14,44 @@ const router = express.Router();
 */
 router.get('/submissions', async (req, res) => {
    const year = req.query.year.toString();
-   const origin = req.query.origin.toString(); 
-   const resettlement = req.query.resettlement.toString(); 
-   const url = `http://api.unhcr.org/rsq/v1/submissions?page=1&year=${year}&origin=${origin}resettlement=${resettlement}`;
+   let origin = ''; 
+   if (req.query.origin !== undefined && req.query.origin.toString() !== 'undefined') {
+      origin = req.query.origin.toString(); 
+   }
+   let resettlement = '';
+   if (req.query.resettlement !== undefined && req.query.resettlement.toString() !== 'undefined') {
+      resettlement = req.query.resettlement.toString(); 
+   }
+   if (year == 'undefined') {
+      year = '2019'
+   }
+   const url = `http://api.unhcr.org/rsq/v1/submissions?page=1&year=${year}&origin=${origin}&resettlement=${resettlement}`;
+   console.log(`QUERY STRING: ${url}`);
+   const responseData = await fetch(url)
+    .then(res => res.json())
+    .then(data => {return data})
+    .catch(error => console.log(`Error: Could not fetch from ${url}`));
+   res.send(responseData); 
+});
+
+/** 
+* * Gets the available origin countries the users can select from. 
+*/
+router.get('/origins/submissions', async (req, res) => {
+   const url = `http://api.unhcr.org/rsq/v1/origins/submissions`;
+   console.log(`QUERY STRING: ${url}`);
+   const responseData = await fetch(url)
+    .then(res => res.json())
+    .then(data => {return data})
+    .catch(error => console.log(`Error: Could not fetch from ${url}`));
+   res.send(responseData); 
+});
+
+/** 
+* * Gets the available destination countries the users can select from. 
+*/
+router.get('/destinations', async (req, res) => {
+   const url = `http://api.unhcr.org/rsq/v1/destinations`;
    console.log(`QUERY STRING: ${url}`);
    const responseData = await fetch(url)
     .then(res => res.json())

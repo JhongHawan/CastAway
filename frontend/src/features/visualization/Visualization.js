@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import BarGraph from '../../components/BarGraph';
+import Container from '@material-ui/core/Container'; 
+import BarGraph from '../../components/Charts/BarGraph'; 
+import PieChart from '../../components/Charts/PieChart'; 
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button } from '@material-ui/core';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import apiCalls from './apiCalls';
-
-import Hero from '../../components/Hero';
-import Footer from '../../components/About/Footer';
-
+import { Typography, Paper } from '@material-ui/core';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
+import VisualizationForm from '../../components/Filter/VisualizationForm'; 
+import apiCalls from './apiCalls'; 
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,6 +18,9 @@ const useStyles = makeStyles(theme => ({
   },
   header: {
     margin: theme.spacing(6)
+  }, 
+  paperStyle: {
+    padding: 16
   }
 }));
 
@@ -28,7 +29,13 @@ function Visualization() {
 
   const dispatch = useDispatch();
 
-  const { refugeeData, unhcrSubData, unhcrDemoData, loading } = useSelector(
+  const { 
+    refugeeData, 
+    unhcrSubData, 
+    unhcrDemoData, 
+    origCountries, 
+    destCountries, 
+    loading } = useSelector(
     (state) => {
       return {
         // It has to refer to the state of the reducer which in this case has name
@@ -36,11 +43,28 @@ function Visualization() {
         refugeeData: state.refugee.refugees,
         unhcrSubData: state.unhcrSub.data,
         unhcrDemoData: state.unhcrDemo.data,
+        origCountries: state.validCountries.origCountries, 
+        destCountries: state.validCountries.destCountries, 
         loading: state.refugee.loading
       }
     },
     shallowEqual
   );
+
+  const chartType = [
+    {
+      value: 'bar',
+      label: 'Bar Graph'
+    },
+    {
+      value: 'pie',
+      label: 'Pie Chart'
+    }, 
+    {  
+      value: 'line',
+      label: 'Line Graph'
+    }
+  ]; 
 
   /**
    * TODO: Populate with whatever we get from the filter. 
@@ -51,42 +75,16 @@ function Visualization() {
     resettlement: ["USA", "NOR"]
   });
 
-  /** 
-    * * Function to write to json file for user to download.
-    * ! Currently only downloading data from our local database. 
-    * TODO: Based on whichever api is called, download the appropriate data. 
-  */
-  const downloadFile = async () => {
-    const fileName = "data";
-    const json = JSON.stringify(refugeeData);
-    const blob = new Blob([json], { type: 'application/json' });
-    const href = await URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = href;
-    link.download = fileName + ".json";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
-  console.log(unhcrSubData);
-  console.log(unhcrDemoData);
-
   /**
-    * fetchAllRefugees API Call
-    * * Can use this in the History and Myths page to load data automatically. 
-    * ! Remove the useEffect unless you're going to update the data when the page loads. 
+    * * Fetches the available countries on page load. 
   */
   useEffect(() => {
-    // fetchAllRefugees(); 
-    // Need to edit the state here and 
-    // reset loading = false; 
+    apiCalls.fetchValidCountries(dispatch);
   }, []);
 
   /** 
   * TODO: Add a Filter System that will gather user input and pass that on to the graphs as params. 
   * TODO: Add source for the api. 
-  * TODO: The BarGraph receiving the data needs to know if it's the local data or unhcr data. 
   */
   return (
     <div className="Visualization">
@@ -95,7 +93,7 @@ function Visualization() {
         sectionTitle="Visualization"
       />
       <Container>
-        {/* <Typography
+      <Typography
         component="h2"
         variant="h2"
         color="inherit"
@@ -104,44 +102,31 @@ function Visualization() {
         className={classes.header}
       >
         Visualization Page
-      </Typography> */}
-        <main>
-          <Button color="primary" variant="contained" onClick={() => {
-            /**
-            * TODO: Add a check whether the store is empty for refugees. If it is then fetch else don't.
-            */
-            apiCalls.fetchAllRefugees(dispatch);
-          }}>
-            Get MongoDB Data
-        </Button>
-          <Button color="secondary" variant="contained" onClick={() => {
-            apiCalls.fetchUnhcrSub(dispatch, options);
-          }}>
-            Get UNHCR Sub Data
-        </Button>
-          <Button color="secondary" variant="outlined" onClick={() => {
-            apiCalls.fetchUnhcrDemo(dispatch, options);
-          }}>
-            Get UNHCR Demo Data
-        </Button>
-          <Button color="primary" variant="outlined" onClick={downloadFile}>
-            Download Data
-        </Button>
-          <Grid container spacing={1} justify="center">
-            <Grid item xs={6}>
-              <BarGraph color="pink" title="Iraq" data={refugeeData} />
-            </Grid>
-            <Grid item xs={6}>
-              <BarGraph color="green" title="Syria" data={unhcrSubData} />
-            </Grid>
-            <Grid item xs={6}>
-              <BarGraph color="green" title="Syria" data={unhcrDemoData} />
-            </Grid>
+      </Typography>
+      <main>
+        <Grid container direction="row" spacing={4} justify="center">    
+          <Grid item xs={10} sm={10} md={10} lg={12}> 
+            <VisualizationForm 
+              chartType={chartType}
+              orig={origCountries}
+              dest={destCountries}
+            >
+            </VisualizationForm>
           </Grid>
-        </main>
-      </Container>
-      <Footer />
-    </div>
+          <Grid item xs={12} sm={12} md={12} lg={6}>
+            <Paper className={classes.paperStyle}>
+              <PieChart data={ unhcrSubData } />
+            </Paper>
+          </Grid>   
+          <Grid item xs={12} sm={12} md={12} lg={6}>
+            <Paper className={classes.paperStyle}>
+              <BarGraph color="purple" data={ unhcrSubData } />
+            </Paper> 
+          </Grid>        
+        </Grid>
+      </main>
+    </Container>
+  </div>
   );
 }
 
