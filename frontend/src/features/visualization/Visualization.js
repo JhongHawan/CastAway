@@ -21,13 +21,16 @@ const useStyles = makeStyles(theme => ({
   cardStyle: {
     display: 'flex',
     flexDirection: "column",
-    padding: 16,
+    padding: 8,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#ffffff"
   },
   dividerMargin: {
     margin: theme.spacing(4)
+  },
+  chartContainer: {
+    maxWidth: '99%'
   }
 }));
 
@@ -84,56 +87,63 @@ function Visualization() {
         showCard={false}
         sectionTitle="Visualization"
       />
-      <Container>
       <main>
-        <Grid container direction="row" spacing={4} justify="center">    
-          <Grid className={classes.dividerMargin} item xs={12} sm={12} md={12} lg={12}>
-            <Divider title="Chart Options" />
+        <Container> 
+          <Grid container direction="row" spacing={4} justify="center">    
+            <Grid className={classes.dividerMargin} item xs={12} sm={12} md={12} lg={12}>
+              <Divider title="Options" />
+            </Grid>
+            <Grid item xs={10} sm={10} md={10} lg={12}> 
+              <VisualizationForm 
+                chartType={chartType}
+                orig={origCountries}
+                dest={destCountries}
+              >
+              </VisualizationForm>
+            </Grid>       
           </Grid>
-          <Grid item xs={10} sm={10} md={10} lg={12}> 
-            <VisualizationForm 
-              chartType={chartType}
-              orig={origCountries}
-              dest={destCountries}
-            >
-            </VisualizationForm>
+        </Container>
+        <Container className={classes.chartContainer}> 
+          <Grid container direction="row" spacing={4} justify="center">
+            <Grid className={classes.dividerMargin} item xs={12} sm={12} md={12} lg={12}>
+              <Divider title="Charts" />
+            </Grid>    
+            <Grid item xs={12} sm={12} md={12} lg={10}>
+              <Box boxShadow={3} className={classes.cardStyle}>
+                <Typography
+                  color="primary"
+                  variant="h5"
+                >
+                  Bar Graph
+                </Typography>
+                <BarGraph color="purple" data={ unhcrSubData } />
+              </Box> 
+            </Grid>    
+            <Grid item xs={12} sm={12} md={12} lg={10}>
+              <Box boxShadow={3} className={classes.cardStyle}>
+                <Typography
+                  color="primary"
+                  variant="h5"
+                >
+                  Pie Chart
+                </Typography>
+                <PieChart data={ unhcrSubData } />
+              </Box>
+            </Grid>   
+            <Grid item xs={12} sm={12} md={12} lg={10}>
+              <Box boxShadow={3} className={classes.cardStyle}>
+                <Typography
+                  color="primary"
+                  variant="h5"
+                >
+                  Line Chart
+                </Typography>
+                <BarGraph color="pink" data={ unhcrSubData } />
+              </Box> 
+            </Grid>         
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Box boxShadow={3} className={classes.cardStyle}>
-              <Typography
-                color="primary"
-                variant="h3"
-              >
-                Bar Graph
-              </Typography>
-              <BarGraph color="purple" data={ unhcrSubData } />
-            </Box> 
-          </Grid>    
-          <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Box boxShadow={3} className={classes.cardStyle}>
-              <Typography
-                color="primary"
-                variant="h3"
-              >
-                Pie Chart
-              </Typography>
-              <PieChart data={ unhcrSubData } />
-            </Box>
-          </Grid>   
-          <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Box boxShadow={3} className={classes.cardStyle}>
-              <Typography
-                color="primary"
-                variant="h3"
-              >
-                Line Chart
-              </Typography>
-              <BarGraph color="pink" data={ unhcrSubData } />
-            </Box> 
-          </Grid>         
-        </Grid>
+        </Container>
       </main>
-    </Container>
   </div>
   );
 }
