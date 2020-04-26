@@ -14,14 +14,15 @@ function HomePage() {
     const classes = useStyles();
 
 
-
     return (
         <Container disableGutters>
+            <Box className={classes.homeSectionSpace}>
+                <Divider title="WHY DOES IT MATTER?" />
+            </Box>
             {/* Different design for mobile */}
             <Box className={classes.homeTopSpace}>
                 <Divider title="MAKE A DIFFERENCE" />
                 <Box className={classes.callToAction}>
-                    
                     <CallToAction />
                 </Box>
             </Box>

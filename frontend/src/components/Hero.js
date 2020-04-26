@@ -62,8 +62,8 @@ function Hero(props) {
                 <Row className="h-100">
                     <Col style={{ marginTop: "auto", marginBottom: "auto" }}>
                         <Typography
-                            component="h1"
-                            variant="h1"
+                            component="h3"
+                            variant="h3"
                             align="center"
                             color="primary"
                         // className={classes.homeSectionTitle}

@@ -101,23 +101,23 @@ function ContextTimeline() {
          />
          <Event
             key="002"
-            date="2019"
-            title="Final Rule on Public Charge Ground of Inadmissibility"
+            date="1917"
+            title="The Immigration Act of 1917"
          />
          <Event
             key="003"
-            date="2019"
-            title="Final Rule on Public Charge Ground of Inadmissibility"
+            date="1921-1924"
+            title="The Quota Acts"
          />
          <Event
             key="004"
-            date="2019"
-            title="Final Rule on Public Charge Ground of Inadmissibility"
+            date="1939-1945"
+            title="World War II"
          />
          <Event
             key="005"
-            date="2019"
-            title="Final Rule on Public Charge Ground of Inadmissibility"
+            date="1945"
+            title="The United Nations is Established"
          />
       </Timeline>
    )
@@ -156,7 +156,7 @@ function Myths() {
    return (
       <Container>
          <Box className={classes.descriptionBox}>
-            <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
+            <Typography component="body1" variant="body1">There are many myths and misconceptions about refugees, that continue to spread and hurt refugees. It is extremely important to understand the difference between a refugee and an immigrant, comprehend the complexity of the processes they go through to get into the US, and realize the real reasons that they leave their homes.  </Typography>
          </Box>
          <Row>
             <Col md={6}>

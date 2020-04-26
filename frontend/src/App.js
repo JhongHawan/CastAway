@@ -49,7 +49,7 @@ function App() {
 const Home = () => (
   <div>
     <Hero
-      showCard={true}
+      showCard={false}
       sectionTitle="&quot;No one puts their children in a boat unless the water is safer than the land&quot;"
       cardTitle="WHY DOES IT MATTER?"
       cardSubtitle="Subtitle Examples"
