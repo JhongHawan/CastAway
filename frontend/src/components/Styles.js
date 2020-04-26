@@ -230,35 +230,106 @@ export const useStyles = makeStyles(theme => ({
         padding: theme.spacing(2, 0, 0)
     },
 
+
+    // ! Working section
     storyWrapper: {
         textAlign: 'center'
     },
     storyCard: {
-        margin: theme.spacing(1, 1, 1),
+        padding: theme.spacing(2, 2, 2),
     },
-    storyImg: {
-        borderRadius: '10px',
-        filter: 'grayscale(1)',
-        transitionDelay: '0.2s',
-
-        '&:hover': {
-            filter: 'grayscale(0)',
-        },
-        
-        '&:hover + div $storyInfo': {
-            display: 'block'
-        }
-
-    },
-    storyInfo: {
-        display: 'none'
-    },
-    storyIntro: {
-        padding: theme.spacing(3, 0, 3)
-    },
+    // ! End Working
     descriptionBox: {
         padding: theme.spacing(3, 0, 3)
+    },
+
+    imageStory: {
+        position: 'relative',
+        width: '200px',
+        height: '200px',
+
+        '& img': {
+            width: '100%',
+            verticalAlign: 'top',
+
+            borderRadius: '10px',
+            filter: 'grayscale(1)',
+            // transitionDelay: '0.2s',
+        },
+
+        '&::after, &::before': {
+            content: '""',
+            position: 'absolute',
+            opacity: 0,
+            transition: 'all 0.5s',
+            WebkitTransition: 'all 0.5s'
+        },
+
+        '&::after': {
+            content: '""',
+            borderRadius: '10px',
+            width: '100%',
+            height: '100%',
+            top: 0,
+            left: 0,
+            background: 'rgba(0,0,0,0.4)'
+        },
+
+        '&::before': {
+            content: 'attr(data-content)',
+            width: '100%',
+            color: '#fff',
+            zIndex: 1,
+            bottom: 0,
+            padding: '4px 10px',
+            // textAlign: 'center',
+            // background: 'red',
+            boxSizing: 'border-box',
+            MozBoxSizing: 'border-box'
+        },
+
+        '&:hover': {
+            '& img': {
+                filter: 'grayscale(0)',
+            },
+            '&::before': {
+                // content: '""',
+                opacity: 1,
+            },
+            '&::after': {
+                // content: '""',
+                opacity: 1,
+            }
+        }
+
+
+        // '&::after': {
+        //     content: '""',
+        //     position: 'absolute',
+        //     width: '100%',
+        //     height: '100%',
+        //     top: 0,
+        //     left: 0,
+        //     background: 'rgba(0,0,0,0.4)',
+        //     borderRadius: '10px',
+        //     opacity: 0,
+        //     transition: 'all 0.5s',
+        //     WebkitTransition: 'all 0.5s'
+        // },
+
+        // '&:hover': {
+        //     '& img': {
+        //         filter: 'grayscale(0)',
+        //     },
+        //     '&::after': {
+        //         content: '""',
+        //         opacity: 1,
+
+        //     }
+        // }
     }
+
+
 
 
 }))

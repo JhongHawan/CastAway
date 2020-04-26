@@ -25,44 +25,105 @@ import { useStyles } from './Styles'
 
 
 // TODO find way to show small div cover at the bottom of the img
-function Story(props) {
-   const classes = useStyles();
+// function Story(props) {
+//    // const classes = useStyles();
 
-   return (
+//    // const [includeCard] = React.useState(props.showCard);
 
-      // story card
-      <Col sm={6} md={4} lg={3}>
-         <Box className={classes.storyCard}>
-            <img src={props.img} width="200px" className={classes.storyImg} />
-            <Box>
-               <Typography variant="h6" className={classes.storyInfo}>J Doe</Typography>
-               <Typography variant="body1" className={classes.storyInfo}>There are details</Typography>
-            </Box>
-         </Box>
-      </Col>
-   )
 
-}
+//    function handleClick() {
+//       console.log("Click")
+//    }
+
+
+//    return (
+
+//       // story card
+//       <Col sm={6} md={4} lg={3}>
+//          <Box className={classes.storyCard}>
+
+//             <Box className={classes.imageStory} data-content="HELLO" onClick={handleClick}>
+//                <img src={props.img} width="200px" />
+//             </Box>
+//          </Box>
+//       </Col>
+//    )
+
+// }
+
+
 
 
 function Stories() {
    const classes = useStyles();
 
    let base = "user_"
-   // the suffix of image names
    let end = ".png"
-
-   // an array of objects to map
    let imagesArr = [
       {
          name: base.concat(1, end),
       }
    ]
-
    for (let i = 2; i < 13; i++) {
       imagesArr.push({
          name: base.concat(i, end)
       })
+   }
+
+   let [highlight, setHighlight] = React.useState(false);
+   let [imageState, setImageState] = React.useState("")
+
+
+   
+
+   function Story(props) {
+
+      function handleClick(props) {
+
+         // TODO oddly not setting it at the end until the next?
+         let before = imageState;
+         if(highlight) {
+            setHighlight(highlight = false);
+         } else {
+            setHighlight(highlight = true);
+         }
+         setImageState(props.img)
+         console.log('Before : ' + before);
+         console.log('After  : ' + imageState);
+
+   
+      }
+
+      return (
+         <Col sm={6} md={4} lg={3}>
+            <Box className={classes.storyCard}>
+               <Box className={classes.imageStory} data-content="HELLO" onClick={() => handleClick(props)}>
+                  <img src={props.img} width="200px" />
+               </Box>
+            </Box>
+         </Col>
+      )
+   }
+
+   function Highlight(props) {
+      
+
+      return (
+         <Container>
+            <Row>
+               <Col md={4}>
+                  <img src="user_1.png" width="300px" />
+               </Col>
+               <Col md={8}>
+                  <Typography component="h4" variant="h4">Name</Typography>
+                  <Typography component="h5" variant="h5">Home</Typography>
+                  <Typography component="body1" variant="body1">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Nibh sed pulvinar proin gravida.
+                  </Typography>
+               </Col>
+            </Row>
+         </Container>
+      )
    }
 
    return (
@@ -71,8 +132,11 @@ function Stories() {
             showCard={false}
             sectionTitle="Stories"
          />
+
+         {/* WORKING SECTION */}
          <Container className={classes.storyIntro}>
             <Typography variant="h3" color="secondary">In A Sea of Faces...</Typography>
+            <Highlight />
          </Container>
 
          <Container className={classes.storyWrapper}>
@@ -91,9 +155,6 @@ function Stories() {
                }
             </Row>
          </Container>
-         {/* <Story /> */}
-
-         {/* <StoriesList /> */}
 
          <Footer />
       </div>
