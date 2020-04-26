@@ -15,12 +15,12 @@ const router = express.Router();
 router.get('/submissions', async (req, res) => {
    const year = req.query.year.toString();
    let origin = ''; 
-   if (req.query.origin != undefined) {
+   if (req.query.origin !== undefined && req.query.origin.toString() !== 'undefined') {
       origin = req.query.origin.toString(); 
    }
    let resettlement = '';
-   if (req.query.resettlement != undefined) {
-      origin = req.query.resettlement.toString(); 
+   if (req.query.resettlement !== undefined && req.query.resettlement.toString() !== 'undefined') {
+      resettlement = req.query.resettlement.toString(); 
    }
    if (year == 'undefined') {
       year = '2019'
