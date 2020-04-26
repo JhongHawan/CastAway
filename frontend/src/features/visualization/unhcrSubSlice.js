@@ -12,6 +12,7 @@ const unhcrSubSlice = createSlice({
   initialState: initialState,
   reducers: {
     unhcrSubReducer: (state, action) => {
+      console.log(action.payload)
       state.loading = true; 
       state.data = [...action.payload]; 
       state.loading = false; 

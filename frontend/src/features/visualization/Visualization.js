@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container'; 
 import BarGraph from '../../components/Charts/BarGraph'; 
+import PieChart from '../../components/Charts/PieChart'; 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'; 
@@ -106,7 +107,10 @@ function Visualization() {
             </VisualizationForm>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={9}>
-            <BarGraph color="green" data={ unhcrSubData } />
+            <PieChart data={ unhcrSubData } />
+          </Grid>   
+          <Grid item xs={12} sm={12} md={12} lg={9}>
+            <BarGraph color="purple" data={ unhcrSubData } />
           </Grid>        
         </Grid>
       </main>
