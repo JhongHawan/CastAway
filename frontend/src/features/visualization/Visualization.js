@@ -71,28 +71,6 @@ function Visualization() {
     resettlement: ["USA", "NOR"]
   });
 
-  /** 
-    * * Function to write to json file for user to download if data has been retrieved from API.
-    * * Otherwise alerts user to fetch data first. 
-    * ! Currently only downloading data from UNHCR API.
-  */
-  const downloadFile = async () => {
-    if (unhcrSubData.length == 0) {
-      alert("No data has been fetched yet, you'd be downloading an empty file! HINT: Try getting the data first!");
-    } else {
-      const fileName = "data";
-      const json = JSON.stringify(unhcrSubData);
-      const blob = new Blob([json],{type:'application/json'});
-      const href = await URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = href;
-      link.download = fileName + ".json";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  }
-
   /**
     * * Fetches the available countries on page load. 
   */
@@ -118,19 +96,8 @@ function Visualization() {
         Visualization Page
       </Typography>
       <main>
-        <Grid container spacing={1} justify="center">
-          <Grid item xs={12}>
-            <Button color="secondary" variant="contained" onClick={() => {
-              apiCalls.fetchUnhcrSub(dispatch, options);
-            }}>
-              Get UNHCR Sub Data
-            </Button>
-            <Button color="primary" variant="contained" onClick={downloadFile}>
-              Download Data 
-            </Button>
-          </Grid>
-          <Grid item xs={12}> 
-            <Typography>Dest Countries</Typography>
+        <Grid container spacing={1} justify="center">            
+          <Grid item xs={3}> 
             <VisualizationForm 
               chartType={chartType}
               orig={origCountries}
@@ -138,7 +105,7 @@ function Visualization() {
             >
             </VisualizationForm>
           </Grid>
-          <Grid item xs={10}>
+          <Grid item xs={9}>
             <BarGraph color="green" title="Syria" data={ unhcrSubData } />
           </Grid>
         </Grid>

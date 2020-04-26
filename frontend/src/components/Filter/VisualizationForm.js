@@ -85,7 +85,29 @@ function VisualizationForm(props) {
          }
       },
       shallowEqual
-   ); 
+   );
+   
+   /** 
+    * * Function to write to json file for user to download if data has been retrieved from API.
+    * * Otherwise alerts user to fetch data first. 
+    * ! Currently only downloading data from UNHCR API.
+  */
+  const downloadFile = async () => {
+   if (unhcrSubData.length == 0) {
+     alert("No data has been retrieved yet, you'd be downloading an empty file! HINT: Try getting the data first!");
+   } else {
+     const fileName = "data";
+     const json = JSON.stringify(unhcrSubData);
+     const blob = new Blob([json],{type:'application/json'});
+     const href = await URL.createObjectURL(blob);
+     const link = document.createElement('a');
+     link.href = href;
+     link.download = fileName + ".json";
+     document.body.appendChild(link);
+     link.click();
+     document.body.removeChild(link);
+   }
+ }
 
    const orig = props.orig; 
    const origFormat = orig.map(({ code:value, region, country_name:label }) => ({
@@ -118,7 +140,7 @@ function VisualizationForm(props) {
                            options={props.chartType}
                         />
                      </Grid>
-                     <Grid item xs={6}>
+                     <Grid item xs={12}>
                         <Field
                            name='orig'
                            initialValue={defaultOrig}
@@ -128,7 +150,7 @@ function VisualizationForm(props) {
                            options={origFormat}
                         />
                      </Grid>
-                     <Grid item xs={6}>
+                     <Grid item xs={12}>
                         <Field
                            name='dest'
                            initialValue={defaultDest}
@@ -138,7 +160,7 @@ function VisualizationForm(props) {
                            options={destFormat}
                         />
                      </Grid>
-                     <Grid item xs={6}>
+                     <Grid item xs={12}>
                         <Field
                         name='startYear'
                         dateFormat="yyyy"
@@ -148,7 +170,7 @@ function VisualizationForm(props) {
                         label='Start Year'
                         />
                      </Grid>
-                     <Grid item xs={6}>
+                     <Grid item xs={12}>
                         <Field
                         name='endYear'
                         dateFormat="yyyy"
@@ -171,23 +193,18 @@ function VisualizationForm(props) {
 
                            // No data was retrieved then the user chose countries which don't share any data. 
                            // Have to access store data here.  
-                           if (unhcrSubData.length == 0) {
-                              alert('No records were found for the given input. Please try adding or removing countries and expanding the year range.');
-                           }
+                           // if (unhcrSubData.length == 0) {
+                           //    alert('No records were found for the given input. Please try adding or removing countries and expanding the year range.');
+                           // }
                         }}>
-                           Get UNHCR Sub Data
+                           Create Visualization
                         </Button>
                      </Grid>
-                     {/* <Grid item style={{ marginTop: 16 }}>
-                        <Button
-                        type="button"
-                        variant="contained"
-                        disabled={submitting || pristine}
-                        onClick={reset}
-                        >
-                        Reset
-                        </Button>
-                     </Grid> */}
+                     <Grid item style={{ marginTop: 16 }}>
+                     <Button color="primary" variant="contained" onClick={downloadFile}>
+                        Download Data 
+                     </Button>
+                     </Grid>
                   </Grid>
                </Paper>
                <pre>{JSON.stringify(values, 0, 2)}</pre>
