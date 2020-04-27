@@ -23,23 +23,21 @@ const TeamCard = (props) => {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt={props.imgTitle}
-          height="250"
-          image={props.imgPath}
-          title={props.imgTitle}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {props.teamName}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <CardMedia
+        component="img"
+        alt={props.imgTitle}
+        height="250"
+        image={props.imgPath}
+        title={props.imgTitle}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {props.teamName}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {props.description}
+        </Typography>
+      </CardContent>
       <CardActions>
         <Button variant="contained" size="small" href={`mailto:${props.contact}`} className={classes.button}>
           Contact
