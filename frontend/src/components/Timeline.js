@@ -1,209 +1,168 @@
 import React from 'react';
-import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
+import { Typography } from '@material-ui/core';
 
-class timeline extends React.Component {
+
+/**
+  * @param {Int} props.date - year of the event
+  * @param {String} props.title - title of the event
+  * @param {String} props.detail - description of the event
+  */
+function Event(props) {
+    return (
+        <TimelineItem
+            key={props.key}
+            dateText={props.date}
+            dateInnerStyle={{ background: '#c9d6df', color: '#002851' }}
+            style={{ color: '#F16841' }}
+            bodyContainerStyle={{
+                background: '#F0F5F9',
+                padding: '20px',
+                borderRadius: '8px',
+                // boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+              }}
+        >
+            <Typography style={{ paddingBottom: '0.5em' }} component="h5" variant="h5" color="secondary">
+                {props.title}
+            </Typography>
+            <Typography component="body1" variant="body1">
+                {props.detail}
+            </Typography>
+        </TimelineItem>
+    )
+}
+
+function TimelineFunction() {
     // constructor(props) {
     //     super(props)
     // }
 
-
     // TODO Turn fonts to Typography 
-    render() {
-        return (
-            <Timeline lineColor={'#c9d6df'}>
-                <TimelineItem
-                    key="001"
-                    dateText="1891"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#FF8576' }}>
-                    <h3>Bureau of Immigration is Established</h3>
-                    <h4>Subtitle</h4>
-                    <p> After realizing how much attention immigration needed, Congress authorized an immigration bureau. This Bureau was  responsible for enforcing immigration laws and processing legal immigrants. </p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1917"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>The Immigration Act of 1917</h3>
-                    <h4>Subtitle</h4>
-                    <p> Also known as the Literacy Act or the Asiatic Barred Zone Act. This act was passed with the goal of restricting immigration by imposing a literacy test on immigrants.This created a new category of inadmissible persons.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1921-1924"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>The Quota Acts</h3>
-                    <h4>Subtitle</h4>
-                    <p> Initially passed in 1921 the Emergency Quota Act limited the number of immigrants who could enter the United States. In 1924 the quotas were made stricter and more permanent. </p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1939-1945"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>World War II</h3>
-                    <h4>Subtitle</h4>
-                    <p> The persecution of Jews and other minorities during World War II and the Holocaust created a refugee crisis. There were more refugees than nations were able to accept. </p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1945"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>The United Nations is Established</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1945"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>Presidential Directive on Displaced Persons</h3>
-                    <h4>Subtitle</h4>
-                    <p> President Truman authorized that any displaced person or refugee receive expedited admission into the United States. This presidential decision also allowed refugees that were already in the United States to achieve lawful resident status.  </p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1948"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>Displaced Persons Act of 1948</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1950-1951"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>The United Nations High Commissioner for Refugees</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1952"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>Immigration and Nationality Act</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1953"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>Refugee Relief Act of 1953</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1959-1960"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>Fair Share Act of July 14, 1960</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1962"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>Migration and Refugee Assistance Act of 1962</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1967"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>The 1967 United Nations High Commissioner for Refugees Refugee Protocal</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1980"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>Refugee Act of 1980</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="1990"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>The Lautenburg Amendment</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-                <TimelineItem
-                    key="001"
-                    dateText="2002-2003"
-                    dateInnerStyle={{ background: '#c9d6df', color: '#000' }}
-                    style={{ color: '#e86971' }}>
-                    <h3>Department of Homeland Security Established, USCIS, CBP, and ICE created</h3>
-                    <h4>Subtitle</h4>
-                    <p> Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                        exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                        nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                        reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                        est.</p>
-                </TimelineItem>
-
-            </Timeline>
-        );
-    }
+    return (
+        <Timeline lineColor={'#F0F5F9'}>
+            <Event
+                key="001"
+                date="1891"
+                title="Bureau of Immigration is Established"
+                detail="After realizing how much attention immigration needed, Congress authorized an immigration bureau. This Bureau was  responsible for enforcing immigration laws and processing legal immigrants."
+            />
+            <Event
+                key="002"
+                date="1917"
+                title="The Immigration Act of 1917"
+                detail="Also known as the Literacy Act or the Asiatic Barred Zone Act. This act was passed with the goal of restricting immigration by imposing a literacy test on immigrants.This created a new category of inadmissible persons."
+            />
+            <Event
+                 key="003"               
+                date="1921-1924"
+                title="The Quota Acts"
+                detail="Initially passed in 1921 the Emergency Quota Act limited the number of immigrants who could enter the United States. In 1924 the quotas were made stricter and more permanent."
+            />
+            <Event
+                key="004"           
+                date="1939-1945"
+                title="World War II"
+                detail="The persecution of Jews and other minorities during World War II and the Holocaust created a refugee crisis. There were more refugees than nations were able to accept."
+            />
+            <Event
+                key="005"
+                date="1945"
+                title="The United Nations is Established"
+                detail="The United Nations is a government organization that strives to establish peace, security, friendly relations with other nations, and achieve international cooperation."
+            />
+            <Event 
+                key="006"
+                date="1945"
+                title="Presidential Directive on Displaced Persons"
+                detail="President Truman authorized that any displaced person or refugee receive expedited admission into the United States. This presidential decision also allowed refugees that were already in the United States to achieve lawful resident status."
+            />
+            <Event
+                key="007"
+                date="1948"
+                title="Displaced Persons Act of 1948"
+                detail="This was the first act that was specific to refugees, intended to help the millions of displaced persons that came out of World War II. The Displaced Persons Act expired in 1952, and admitted more than 350,000 people. "
+            />
+            <Event
+                key="008"
+                date="1950-1951"
+                title="The United Nations High Commissioner for Refugees"
+                detail="In response to the refugee crisis that occured after World War II the United Nations established the United Nations High Commissioner for Refugees (UNHCR). In 1951 the Convention Relating to the Status of Refugees was held. This convention defined legal protections for refugees."
+            />
+            <Event
+                key="009"
+                date="1952"
+                title="Immigration and Nationality Act"
+                detail="The Immigration and Nationality Act helped with the reorganization and placement of immigration and nationality laws under the same statute. This Act helped maintain the quota system but was not entirely refugee specific. This caused refugees to be admitted in other programs separate from the quota system. "
+            />
+            <Event
+                key="010"
+                date="1953"
+                title="Refugee Relief Act of 1953"
+                detail="The Refugee Relief Act authorized visas for 200,000 immigrants. These visas were non-quota and helped refugees escape from communist countries. These visas were distributed between 1953 and 1956. "
+            />
+            <Event
+                key="011"
+                date="1959-1960"
+                title="Fair Share Act of July 14, 1960"
+                detail="The United Nations designated the year from 1959-1960 as World Refugee year. This was meant to raise awareness on the global refugee crisis. In response, the Fair Share Act of July 14, 1960 was passed. This act allowed 5,000 refugees to enter the US under the attorney general’s parole authority.  Additionally, refugees were allowed to become lawful residents after two years. "
+            />
+            <Event
+                key="012"
+                date="1962"
+                title="Migration and Refugee Assistance Act of 1962"
+                detail="This act allowed Congress refugees fleeing from the Cold War in a monetary sense. This act also allowed about 20,000 additional refugees to enter the US between the years 1960-1965. "
+            />
+            <Event
+                key="013"
+                date="1967"
+                title="The 1967 United Nations High Commissioner for Refugees Refugee Protocol"
+                detail="In 1967 the UNHCR removed the parameters of the United Nations Convention Relating to the Status of Refugees. The Convention was now available universally."
+            />
+            <Event
+                key="014"
+                date="1980"
+                title="Refugee Act of 1980"
+                detail="After the influx of refugees from both Vietnam and Cambodia following the Vietnam War, Congress passed the Refugee Act of 1980. This act created new protocols to handle refugee admission. For example, the act provided the first statutory basis for asylum, increased the number of refugees that could be admitted each year, created an Office of Refugee Resettlement to oversee resettlement programs, and much more. "
+            />
+            <Event
+                key="015"
+                date="1990"
+                title="The Lautenberg Amendment"
+                detail="In 1990, this Amendment reduced the amount of refugee applications from certain categories of people, including Jews, Christian minorities from the Former Soviet Union, and people from Vietnam, Laos, and Cambodia. Because the language of this Amendment is not permanent it must be extended each fiscal year."
+            />
+            <Event 
+                key="016"
+                date="2002"
+                title="Homeland Security Act"
+                detail="This Act is responsible for creating the Department of Homeland Security. This was done by joining 22 different agencies and bureaus. The creation of the Department of Homeland Security was a response to the terrorist attack on September 11th 2001"
+            />
+            <Event 
+                key="017"
+                date="2012"
+                title="Deferred Action for Childhood Arrivals (DACA)"
+                detail="This executive order was a response to the millions of unauthorized immigrants living in the US. This order gave minor children that had lived in the US since June 2007 protection from deportation."
+            />
+            <Event 
+                key="018"
+                date="2014"
+                title="Deferred​ Action for Parents of Americans and Lawful Permanent Residents (DAPA) and DACA Program expanded"
+                detail="This executive order was issued by Obama during his presidency with the intention of protecting unauthorized immigrants who had children that were American citizens or lawful permanent residents from deportation."
+            />
+            <Event 
+                key="019"
+                date="2017"
+                title="President Trump's Travel Ban/Muslim Travel Ban"
+                detail="On the 27h of January President Donald Trump signed an executive order halting all refugee admissions and temporarily barring people from seven Muslim-majority countries. The seven countries included Iraq, Syria, Iran, Libya, Somalia, Sudan, and Yemen. The ban on Syrian refugees was indefinite. The order also introduced a quota on the number of refugees accepted in that year."
+            />
+            <Event 
+                key="020"
+                date="2019"
+                title="Final Rule on Public Charge Ground of Inadmissibility"
+                detail="Under President Trump's administration the Department of Homeland Security reviewed and finalized the list of benefits and other factors that must be considered when determining whether or not an applicant is likely to become a public charge."
+            />
+        </Timeline>
+    );
 }
 
 
-export default timeline;
+export default TimelineFunction;
