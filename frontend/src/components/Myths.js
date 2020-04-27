@@ -29,7 +29,7 @@ function Myths() {
   function Card(props) {
     let color = '#c4c4c4';
     let width = '1px'
-    
+
     if (props.clicked) {
       color = props.redGreen;
       width = '3px';
@@ -63,8 +63,8 @@ function Myths() {
     return (
       <Container>
         <Container style={{ textAlign: 'center' }}>
-          <Button style={{ margin: '1em' }} variant="contained" color="secondary" onClick={handleDebunk}>Reveal all Answers</Button>
-          <Button style={{ margin: '1em' }} variant="contained" onClick={handleReset}>Reset</Button>
+          <Button style={{ margin: '2em' }} variant="contained" color="secondary" onClick={handleDebunk}>Reveal all Answers</Button>
+          <Button style={{ margin: '2em' }} variant="contained" onClick={handleReset}>Reset</Button>
         </Container>
         <Row>
           <Col md={3}>
@@ -195,7 +195,7 @@ function Myths() {
               trueFalse="Confirmed TRUE"
               mythTitle="Refugees are forced to leave their homes to escape violence."
               mythSummary=" This is true and it is actually the definition of a refugee."
-              mythDetails=""
+              mythDetails="By definition a refugee is “someone who has been forced to leave their country in order to escape war, prosecution, or natural disaster. They fear persecution because of their race, religion, nationality, or political opinion”. No one will voluntarily leave their homes, their jobs, their family, or their people unless it was absolutely necessary, not unless their life depended on it.  Refugees often flee their home countries when there is a war going on because their country becomes unsafe for them to live in, and their only choice is to run."
             />
 
             <ContextCard
@@ -218,7 +218,7 @@ function Myths() {
               trueFalse="Confirmed TRUE"
               mythTitle="Refugees contribute their talent, skills, and culture."
               mythSummary=" Refugees come to their host countries to live a complete and fullfilled life. They do what they can to contribute."
-              mythDetails=""
+              mythDetails="Refugees and immigrants alike contribute to society in a variety of different manners. In fact, history documents that some of the most significant contributions to the US come from refugees and immigrants. They share their talents, skills, cultures, and customs. These contributions include clothing, food, music, and entertainment. "
             />
 
           </Col>
@@ -233,8 +233,8 @@ function Myths() {
             <ContextCard
               trueFalse="Confirmed TRUE"
               mythTitle="The refugee crisis is not a new phenomenon in history."
-              mythSummary="There has been many refugee crisis' over history. As long as there is war there will be refugees."
-              mythDetails=""
+              mythSummary=" There has been many refugee crisis' over history. As long as there is war there will be refugees."
+              mythDetails="The refugee crisis has appeared in history before. For example, The persecution of Jews and other minorities during World War II and the Holocaust created a refugee crisis very similar to the one going on currently around the world. The current conflict in Syria has displaced around 12 million refugees from their homes, which was the largest wave of refugees since World War II. In the last half century, events around the world have pushed even larger numbers of people to flee war and persecution, thus becoming refugees. "
             />
           </Col>
         </Row>
@@ -256,11 +256,9 @@ function Myths() {
           <Divider title="MYTH DEBUNK" />
           <Container className={classes.callToAction}>
             <Container>
-              <h5>There are several myths that need to be debunked when it comes to refugees.</h5>
-              <p>Below is a list of common misconceptions about topics concerning refugees.
-                There is extreme danger in perpetuating false information especially when the lives of inncocent people relies on it. To learn more, click on each myth and debunk it.</p>
+              <Typography component="h6" variant="h6">Can you tell the difference between a myth and a fact?</Typography>
+              <Typography component="body1" variant="body1">Below is a list of refugee myths and facts. Find out which statement is true and which statement is false by clicking the "Reveal All Answers" button or by clicking each individual statement. If there is a <span style={{ color: 'green', fontWeight: "700" }}>GREEN</span> border around the box then that statement is a fact, but if there is a <span style={{ color: 'red', fontWeight: "700" }}>RED</span> border then that statement is a myth. To reset the grid click on the reset button. </Typography>
             </Container>
-
             <CardWrapper />
           </Container>
         </Box>
@@ -268,16 +266,15 @@ function Myths() {
           <Divider title="FACT CHECK" />
           <Box className={classes.callToAction}>
             <Container>
-              <h5>There are several myths that need to be debunked when it comes to refugees.</h5>
-              <p>Below is a list of common misconceptions about topics concerning refugees.
-                There is extreme danger in perpetuating false information especially when the lives of inncocent people relies on it. To learn more, click on each myth and debunk it.</p>
+              <Typography component="h6" variant="h6">There are several myths that need to be debunked when it comes to refugees.</Typography>
+              <Typography component="body1" variant="body1">Below is a list of common misconceptions about topics concerning refugees. There is extreme danger in perpetuating false information especially when the lives of inncocent people relies on it. To learn more, click on each myth and debunk it.</Typography>
             </Container>
             <Container>
-              <Typography component="h5" variant="h5" color="error">CONFIRMED FALSE</Typography>
+              <Typography style={{ padding: '1em 0em 1em' }} component="h4" variant="h4" color="error">CONFIRMED FALSE</Typography>
             </Container>
             <FactCheckFalse />
             <Container>
-              <Typography component="h5" variant="h5" className={classes.testingSuccessTheme}>CONFIRMED TRUE</Typography>
+              <Typography style={{ padding: '1em 0em 1em' }} component="h4" variant="h4" className={classes.testingSuccessTheme}>CONFIRMED TRUE</Typography>
             </Container>
             <FactCheckTrue />
           </Box>
