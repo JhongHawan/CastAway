@@ -38,8 +38,8 @@ function App() {
             <Route path="/yourRole" component={yourRole} />
             <Route path="/about" component={About} />
           </Switch>
+          <Footer></Footer>
         </div>
-        <Footer></Footer>
       </Router>
     </ThemeProvider>
 
