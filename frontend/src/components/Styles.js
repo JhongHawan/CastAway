@@ -209,8 +209,8 @@ export const useStyles = makeStyles(theme => ({
     paper: {
         padding: theme.spacing.unit * 2,
         textAlign: 'center',
-        // color: theme.palette.text.secondary,
-        margin: '0.5em'
+        verticalAlign: 'middle'
+        
     },
     testToggle: {
         backgroundColor: 'green'
