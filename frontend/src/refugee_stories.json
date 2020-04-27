@@ -1,0 +1,87 @@
+[
+    {
+        "name": "Doaa",
+        "home": "Syria",
+        "img": "stories_doaa.jpg",
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.", 
+        "source": "https://www.weforum.org/agenda/2015/12/3-real-stories-from-refugees/"
+    },
+    {
+        "name": "Salim",
+        "home": "Syria",
+        "img": "stories_salim.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "https://www.savethechildren.org/us/what-we-do/emergency-response/refugee-children-crisis/refugee-stories"
+    },
+    {
+        "name": "Kobra",
+        "home": "Afghanistan",
+        "img": "stories_kobra.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "https://www.unhcr.org/en-us/news/stories/2020/4/5ea20be94/couldnt-study-feel-paralyzed.html"
+    },
+    {
+        "name": "Hung",
+        "home": "Vietnam",
+        "img": "stories_hung.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "https://immigrants.mndigital.org/exhibits/show/immigrantstories1975/item/539"
+    },
+    {
+        "name": "Awa",
+        "home": "Niger",
+        "img": "stories_awa.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "http://kora.unhcr.org/fleeing-boko-haram-nigerian-mid-wife-helps-pregnant-girls-niger/"
+    },
+    {
+        "name": "Nadir",
+        "home": "Myanmar",
+        "img": "stories_nadir.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "https://www.cnn.com/interactive/2017/09/world/myanmar-rohingya-refugee-stories/"
+    },
+    {
+        "name": "Moulid",
+        "home": "Somalia",
+        "img": "stories_moulid.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "http://www.thenewhumanitarian.org/report/93527/kenya-somalia-refugees-story"
+    },
+    {
+        "name": "M.I.A.",
+        "home": "Sri Lanka",
+        "img": "stories_mia.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "https://www.nme.com/news/music/mia-191-1194664"
+    },
+    {
+        "name": "Rami",
+        "home": "Syria",
+        "img": "stories_rami.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "https://www.savethechildrenactionnetwork.org/stories-refugee-children/"
+    },
+    {
+        "name": "Gulwali",
+        "home": "Afghanistan",
+        "img": "stories_gulwali.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "https://www.theguardian.com/world/2016/jan/26/didnt-think-might-never-see-parents-again-refugee-children-share-their-stories"
+    },
+    {
+        "name": "Arn",
+        "home": "Cambodia",
+        "img": "stories_chorn.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "https://www.facinghistory.org/resource-library/everyone-has-story"
+    },
+    {
+        "name": "Theresa",
+        "home": "Burma",
+        "img": "stories_theresa.jpeg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "source": "http://refugeewomensnetworkinc.org/success-stories"
+    }
+]
+
