@@ -22,7 +22,6 @@ function YourRole() {
             showCard={false}
             sectionTitle="Your Role."
          />
-         <Footer />
       </div>
    );
 }

@@ -55,7 +55,6 @@ function Stories() {
             </Box>
          </Box>
          <StoriesList /> */}
-         <Footer />
       </div>
    );
 }

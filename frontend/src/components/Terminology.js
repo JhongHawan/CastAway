@@ -22,7 +22,6 @@ function Terminology() {
             showCard={false}
             sectionTitle="Terminology"
          />
-         <Footer />
       </div>
    );
 }

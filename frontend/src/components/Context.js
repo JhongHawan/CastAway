@@ -74,7 +74,6 @@ function Context() {
          {/* <FontTest /> */}
 
 
-         <Footer />
       </div>
    );
 }

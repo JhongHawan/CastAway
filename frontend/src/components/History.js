@@ -39,7 +39,6 @@ function History() {
             </Box> */}
 
             <Timeline />
-            <Footer />
         </div>
     );
 }

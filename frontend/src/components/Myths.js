@@ -210,7 +210,6 @@ function Myths() {
           </Box>
         </Box>
       </Box>
-      <Footer />
     </div>
   );
 }
