@@ -20,7 +20,7 @@ function History() {
                 sectionTitle="History"
             />
             <TimelineFunction />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

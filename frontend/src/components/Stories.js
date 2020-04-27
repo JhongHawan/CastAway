@@ -150,7 +150,7 @@ function Stories() {
             </Row>
          </Container>
 
-         <Footer />
+         {/* <Footer /> */}
       </div>
    );
 }

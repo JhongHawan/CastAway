@@ -606,7 +606,7 @@ function Context() {
             </Box>
          </Container>
          {/* <FontTest /> */}
-         <Footer />
+         {/* <Footer /> */}
       </div>
    );
 }
