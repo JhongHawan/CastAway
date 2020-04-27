@@ -238,7 +238,7 @@ export const useStyles = makeStyles(theme => ({
     storyCard: {
         padding: theme.spacing(2, 2, 2),
     },
-    // ! End Working
+    
     descriptionBox: {
         padding: theme.spacing(3, 0, 3)
     },
@@ -303,7 +303,7 @@ export const useStyles = makeStyles(theme => ({
         }
     },
 
-    // ! Stepper Styles
+    // Stepper Styles
     stepperRoot: {
         width: '100%'
     },
@@ -318,15 +318,19 @@ export const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(1),
         marginBottom: theme.spacing(1)
     },
-    // ! Stepper Mobile
+    // Stepper Mobile
     stepperMobileActionContainer: {
         marginBottom: theme.spacing(2)
     },
     stepperMobileResetContainer: {
         padding: theme.spacing(3)
+    }, 
+    storyHighlightImage : {
+        borderRadius: '10px',
+    },
+    storyHighlightContainer : {
+        padding: theme.spacing(5, 0, 5)
     }
-
-
 
 
 

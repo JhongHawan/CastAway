@@ -1,12 +1,4 @@
 import React from 'react';
-// import React from 'react';
-// import Card from '@material-ui/core/Card';
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
-// import { Grid, Box } from '@material-ui/core';
-// import StoryCard from './StoryCard';
 import StoryCard from './StoryCard';
 import StoriesList from './StoriesList';
 
@@ -24,39 +16,13 @@ import Hero from './Hero';
 import { useStyles } from './Styles'
 
 
-// TODO find way to show small div cover at the bottom of the img
-// function Story(props) {
-//    // const classes = useStyles();
-
-//    // const [includeCard] = React.useState(props.showCard);
-
-
-//    function handleClick() {
-//       console.log("Click")
-//    }
-
-
-//    return (
-
-//       // story card
-//       <Col sm={6} md={4} lg={3}>
-//          <Box className={classes.storyCard}>
-
-//             <Box className={classes.imageStory} data-content="HELLO" onClick={handleClick}>
-//                <img src={props.img} width="200px" />
-//             </Box>
-//          </Box>
-//       </Col>
-//    )
-
-// }
-
-
-
-
+/**  
+ * ! Everything is contained within Stories
+ */
 function Stories() {
    const classes = useStyles();
 
+   // TODO replace with real stories
    let base = "user_"
    let end = ".png"
    let imagesArr = [
@@ -70,52 +36,49 @@ function Stories() {
       })
    }
 
-   let [highlight, setHighlight] = React.useState(false);
-   let [imageState, setImageState] = React.useState("")
+   // * CAN BE USED GLOBALLY
+   let [imageState, setImageState] = React.useState("user_1.png")
 
 
-   
-
+   /**
+    * 
+    * @param {String} props.img name of the image
+    */
    function Story(props) {
 
-      function handleClick(props) {
+      function handleClick() {
 
-         // TODO oddly not setting it at the end until the next?
-         let before = imageState;
-         if(highlight) {
-            setHighlight(highlight = false);
-         } else {
-            setHighlight(highlight = true);
-         }
-         setImageState(props.img)
-         console.log('Before : ' + before);
-         console.log('After  : ' + imageState);
+         console.log("-------------------------");
+         console.log("Image Name   : " + imageState);
+         setImageState(imageState = props.img);
+         console.log("Clicked Name : " + imageState);
 
-   
       }
 
       return (
          <Col sm={6} md={4} lg={3}>
             <Box className={classes.storyCard}>
-               <Box className={classes.imageStory} data-content="HELLO" onClick={() => handleClick(props)}>
-                  <img src={props.img} width="200px" />
+               <Box className={classes.imageStory} data-content="HELLO" onClick={() => handleClick(imageState)}>
+                  <img src={props.img} width="100%" />
                </Box>
             </Box>
          </Col>
       )
    }
 
-   function Highlight(props) {
-      
 
+   /**
+    * * Highlighted Story
+    */
+   function Highlight() {
       return (
-         <Container>
+         <Container className={classes.storyHighlightContainer}>
             <Row>
-               <Col md={4}>
-                  <img src="user_1.png" width="300px" />
+               <Col sm={3} md={4}>
+                  <img className={classes.storyHighlightImage} src={imageState} width="100%" />
                </Col>
-               <Col md={8}>
-                  <Typography component="h4" variant="h4">Name</Typography>
+               <Col sm={9} md={8}>
+                  <Typography component="h4" variant="h4">{imageState}</Typography>
                   <Typography component="h5" variant="h5">Home</Typography>
                   <Typography component="body1" variant="body1">
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Nibh sed pulvinar proin gravida.
@@ -133,7 +96,6 @@ function Stories() {
             sectionTitle="Stories"
          />
 
-         {/* WORKING SECTION */}
          <Container className={classes.storyIntro}>
             <Typography variant="h3" color="secondary">In A Sea of Faces...</Typography>
             <Highlight />
