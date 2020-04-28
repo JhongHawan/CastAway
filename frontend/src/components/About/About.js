@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(6)
   },
   teamSection: {
-    margin: '8% 5%'
+    margin: '5%'
   },
   missionSection: {
     background: "#F0F5F9",
@@ -25,6 +25,9 @@ const useStyles = makeStyles(theme => ({
   missionParagraph: {
     padding: "2.5% 20%"
   }, 
+  dividerMargin: {
+    margin: '5% auto'
+  },
   missionLogo: {
     padding: "2%"
   },
@@ -67,6 +70,9 @@ function About() {
           </Typography>
         </Grid>
       </Grid>
+      <div className={classes.dividerMargin} >
+        <Divider title="Meet the Team" />
+      </div> 
       <div className={classes.teamSection}>
         <TeamSection>
         </TeamSection>
