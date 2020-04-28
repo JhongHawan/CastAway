@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "center",
     color: "#FFFFFF",
-    background: "#52616B",
+    background: theme.palette.primary.main,
     marginTop: "5%",
     fontSize: ".5rem"
   },
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   hr: {
     background: "#FFFFFF",
     height: "1px",
-    width: "75%"
+    width: "50%"
   },
   container: {
     marginTop: "2.5%"

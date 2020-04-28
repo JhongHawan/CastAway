@@ -21,10 +21,11 @@ let customTheme = createMuiTheme({
    typography: {
       fontFamily: 'zeitung, sans-serif',
       fontStyle: 'normal',
+      fontSize: 14,
       h1: {
          fontWeight: 700,
          fontStyle: 'normal',
-         fontSize: '5rem'
+         fontSize: '4.5rem'
       },
       h2: {
          fontWeight: 700,

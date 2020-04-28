@@ -10,20 +10,19 @@ import VisualizationIcon from '@material-ui/icons/InsertChart';
 import AboutIcon from '@material-ui/icons/Info';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
-    color: "#FFFFFF",
-    background: "#52616B"
+    background: theme.palette.primary.main
   },
   navigationLink: {
-    color: "#FFFFFF",
+    color: theme.palette.primary.contrastText,
     "&:hover": {
-      color: "#F16841",
+      color: theme.palette.secondary.main,
       textDecoration: "none"
     }
   }
-});
+}));
 
 function BottomNav() {
   const classes = useStyles(); 
@@ -38,7 +37,7 @@ function BottomNav() {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction 
+      {/* <BottomNavigationAction 
         component={Link}
         to="/"
         label="Home" 
@@ -77,7 +76,7 @@ function BottomNav() {
         icon={<AboutIcon/>}
         className={classes.navigationLink}
         value="about"
-      />
+      /> */}
       <BottomNavigationAction 
         href="https://github.com/JhongHawan/InfoCapstone2020"
         label="GitHub" 

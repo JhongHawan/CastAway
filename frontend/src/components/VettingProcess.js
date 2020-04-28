@@ -22,7 +22,6 @@ function VettingProcess() {
             showCard={false}
             sectionTitle="Vetting Process."
          />
-         <Footer />
       </div>
    );
 }

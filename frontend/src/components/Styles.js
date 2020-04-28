@@ -182,7 +182,7 @@ export const useStyles = makeStyles(theme => ({
     },
     // * Used in CallToAction > MobileTabs > MobileContent > Container
     tabAction: {
-        backgroundColor: '#C9D6DF',
+        backgroundColor: '#F0F5F9',
     },
     // * Used in CallToAction > VerticalTab > TabPanel
     tabWrapper: {
@@ -196,9 +196,9 @@ export const useStyles = makeStyles(theme => ({
     featureHeading: {
         padding: theme.spacing(0, 0, 1)
     },
-        // * Used in CallToAction > MobileTabs > MobileContent > Typography h5 & overline
+    // * Used in CallToAction > MobileTabs > MobileContent > Typography h5 & overline
     featureSubheading: {
-        padding: theme.spacing(2, 0, 1)
+        padding: theme.spacing(0, 0, 3)
     },
     callToActionPadding: {
         padding: theme.spacing(4, 4, 2)
@@ -209,8 +209,8 @@ export const useStyles = makeStyles(theme => ({
     paper: {
         padding: theme.spacing.unit * 2,
         textAlign: 'center',
-        // color: theme.palette.text.secondary,
-        margin: '0.5em'
+        verticalAlign: 'middle'
+        
     },
     testToggle: {
         backgroundColor: 'green'
@@ -220,7 +220,119 @@ export const useStyles = makeStyles(theme => ({
     },
     greenButton: {
         backgroundColor: 'green'
+    },
+    // * used in Myth.js FactCheck
+    factTitle: {
+        padding: theme.spacing(0, 0, 2)
+    },
+    // * used in Myth.js FactCheck
+    factDetail: {
+        padding: theme.spacing(2, 0, 0)
+    },
+
+
+    // ! Working section
+    storyWrapper: {
+        textAlign: 'center'
+    },
+    storyCard: {
+        padding: theme.spacing(2, 2, 2),
+    },
+    
+    descriptionBox: {
+        padding: theme.spacing(3, 0, 3)
+    },
+
+    imageStory: {
+        position: 'relative',
+        width: '200px',
+        height: '200px',
+
+        '& img': {
+            width: '100%',
+            verticalAlign: 'top',
+
+            borderRadius: '10px',
+            filter: 'grayscale(1)',
+            // transitionDelay: '0.2s',
+        },
+
+        '&::after, &::before': {
+            content: '""',
+            position: 'absolute',
+            opacity: 0,
+            transition: 'all 0.5s',
+            WebkitTransition: 'all 0.5s'
+        },
+
+        '&::after': {
+            content: '""',
+            borderRadius: '10px',
+            width: '100%',
+            height: '100%',
+            top: 0,
+            left: 0,
+            background: 'rgba(0,0,0,0.4)'
+        },
+
+        '&::before': {
+            content: 'attr(data-content)',
+            width: '100%',
+            color: '#fff',
+            zIndex: 1,
+            bottom: 0,
+            padding: '4px 10px',
+            // textAlign: 'center',
+            // background: 'red',
+            boxSizing: 'border-box',
+            MozBoxSizing: 'border-box'
+        },
+
+        '&:hover': {
+            '& img': {
+                filter: 'grayscale(0)',
+            },
+            '&::before': {
+                // content: '""',
+                opacity: 1,
+            },
+            '&::after': {
+                // content: '""',
+                opacity: 1,
+            }
+        }
+    },
+
+    // Stepper Styles
+    stepperRoot: {
+        width: '100%'
+    },
+    stepperButton: {
+        marginRight: theme.spacing(1),
+        
+    },
+    stepperBackButton: {
+        marginRight: theme.spacing(1),
+    },
+    stepperInstruction: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1)
+    },
+    // Stepper Mobile
+    stepperMobileActionContainer: {
+        marginBottom: theme.spacing(2)
+    },
+    stepperMobileResetContainer: {
+        padding: theme.spacing(3)
+    }, 
+    storyHighlightImage : {
+        borderRadius: '10px',
+    },
+    storyHighlightContainer : {
+        padding: theme.spacing(5, 0, 5)
     }
+
+
 
 }))
 
