@@ -92,7 +92,7 @@ function Visualization() {
         <Container> 
           <Grid container direction="row" spacing={4} justify="center">  
             <Grid className={classes.dividerMargin} item xs={12} sm={12} md={12} lg={12}>
-              <Divider title="Options" />
+              <Divider title="OPTIONS" />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}> 
               <VisualizationForm 
@@ -107,7 +107,7 @@ function Visualization() {
         <Container className={classes.chartContainer}> 
           <Grid container direction="row" spacing={4} justify="center">
             <Grid className={classes.dividerMargin} item xs={12} sm={12} md={12} lg={12}>
-              <Divider title="Charts" />
+              <Divider title="CHARTS" />
             </Grid>    
             <Grid item xs={12} sm={12} md={12} lg={6}>
               <Box boxShadow={3} className={classes.cardStyle}>
