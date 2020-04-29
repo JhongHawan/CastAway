@@ -42,6 +42,7 @@ export const useStyles = makeStyles(theme => ({
         fontWeight: 600,
         fontStyle: 'normal',
         textDecoration: 'none',
+       
     },
     navLink: {
         fontFamily: 'zeitung, sans-serif',
@@ -330,7 +331,20 @@ export const useStyles = makeStyles(theme => ({
     },
     storyHighlightContainer : {
         padding: theme.spacing(5, 0, 5)
+    },
+    storyHighlight: {
+        '& h4': {
+            padding: theme.spacing(0, 0, 1)
+        },
+        '& h5': {
+            padding: theme.spacing(0, 0, 1)
+        },
+        '& overline': {
+            padding: theme.spacing(0, 0, 1)
+        }
     }
+
+
 
 
 
