@@ -56,8 +56,10 @@ function Stories() {
    let [imageState, setImageState] = React.useState(data[0].img);
    let [highlightName, setHighlightName] = React.useState(data[0].name);
    let [highlightHome, setHighlightHome] = React.useState(data[0].home);
-   let [highlightDesc, setHighlightDesc] = React.useState(data[0].bio)
-   let [highlightLink, setHighlightLink] = React.useState(data[0].source)
+   let [highlightDesc, setHighlightDesc] = React.useState(data[0].bio);
+   let [highlightLink, setHighlightLink] = React.useState(data[0].source);
+   
+
 
    /**
     * 
@@ -67,6 +69,8 @@ function Stories() {
     * @param {String} props.desc bio of refugee
     */
    function Story(props) {
+
+      
 
       function handleClick() {
 
@@ -87,6 +91,7 @@ function Stories() {
          setHighlightLink(highlightLink = props.link);
          console.log("Link          : " + highlightLink);
 
+         window.scrollTo(0, 0);
       }
 
       return (
@@ -150,7 +155,6 @@ function Stories() {
             </Row>
          </Container>
 
-         {/* <Footer /> */}
       </div>
    );
 }
