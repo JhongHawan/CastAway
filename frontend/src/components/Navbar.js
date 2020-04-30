@@ -60,9 +60,6 @@ function NavBar() {
           <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/terminology">
             Terminology
           </NavDropdown.Item>
-          <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/vetting">
-            Vetting Process
-          </NavDropdown.Item>
         </NavDropdown>
 
 

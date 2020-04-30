@@ -14,11 +14,8 @@ import Terminology from './components/Terminology';
 import YourRole from './components/YourRole/YourRole';
 import Hero from './components/Hero';
 import Context from './components/Context';
-// import VettingProcess from './components/VettingProcess';
-import VettingProcess from './components/VettingProcess';
 import Footer from './components/About/Footer';
 
-// import heroCarousel from './components/Carousel';
 
 function App() {
   return (
@@ -31,7 +28,6 @@ function App() {
             <Route path="/myths" component={Myths} />
             <Route path="/context" component={Context} />
             <Route path="/terminology" component={Terminology} />
-            <Route path="/vetting" component={VettingProcess} />
             <Route path="/history" component={History} />
             <Route path="/stories" component={Stories} />
             <Route path="/data" component={Visualization} />

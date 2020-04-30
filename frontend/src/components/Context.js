@@ -561,80 +561,6 @@ function VettingProcessMobile() {
    )
 }
 
-function TerminologyCard(props) {
-
-   const classes = useStyles();
-
-   return (
-      <Col style={{ padding: 10 }}>
-         <ExpansionPanel style={{ background: '#F2F2F2' }}>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-               <Typography component='h5' variant='h5' color='primary' className={classes.factTitle}>
-                  {props.term}
-               </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-               <Typography component='body1' variant='body1'>
-                  {props.defintiion}
-               </Typography>
-            </ExpansionPanelDetails>
-         </ExpansionPanel >
-      </Col >
-   )
-}
-
-function TerminologyGrid() {
-   const classes = useStyles();
-   return (
-      <Container >
-         <Row>
-            <Col md={6} lg={4}>
-               <TerminologyCard
-                  term="Refugee"
-                  defintiion="----"
-               />
-               <TerminologyCard
-                  term="Refugee"
-                  defintiion="----"
-               />
-               <TerminologyCard
-                  term="Refugee"
-                  defintiion="----"
-               />
-            </Col>
-            <Col md={6} lg={4}>
-               <TerminologyCard
-                  term="Refugee"
-                  defintiion="----"
-               />
-               <TerminologyCard
-                  term="Refugee"
-                  defintiion="----"
-               />
-               <TerminologyCard
-                  term="Refugee"
-                  defintiion="----"
-               />
-            </Col>
-            <Col md={6} lg={4}>
-               <TerminologyCard
-                  term="Refugee"
-                  defintiion="----"
-               />
-               <TerminologyCard
-                  term="Refugee"
-                  defintiion="----"
-               />
-               <TerminologyCard
-                  term="Refugee"
-                  defintiion="----"
-               />
-            </Col>
-         </Row>
-      </Container >
-   )
-}
-
 function Context() {
    const classes = useStyles();
    return (
@@ -666,7 +592,6 @@ function Context() {
                <Box className={classes.descriptionBox}>
                   <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
                </Box>
-               <TerminologyGrid />
                <Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
                   <Button variant="contained" color="secondary" href="/myths" >More Myths</Button>
                </Box>

@@ -190,9 +190,6 @@ export const useStyles = makeStyles(theme => ({
         flexGrow: 1,
         display: 'flex',
     },
-    callToAction: {
-        padding: theme.spacing(5, 0, 0)
-    },
     // * Inside HomeFeatures.js
     featureHeading: {
         padding: theme.spacing(0, 0, 1)
@@ -302,6 +299,13 @@ export const useStyles = makeStyles(theme => ({
                 opacity: 1,
             }
         }
+    },
+
+    storyPaper: {
+        padding: theme.spacing.unit * 2,
+    },
+    storyCol: {
+        padding: theme.spacing(1)
     },
 
     // Stepper Styles
