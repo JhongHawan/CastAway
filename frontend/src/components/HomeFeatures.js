@@ -2,12 +2,64 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 // import { useStyles } from './Theme';
 import { useStyles } from './Styles';
-import { Typography } from '@material-ui/core';
+import { 
+    Typography, 
+    Card,
+    CardActionArea,
+    Button
+} from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import BarGraph from './Charts/BarGraph'; 
 
 
 
 function HomeFeatures() {
     const classes = useStyles();
+
+    const DataLink = props => <Link to="/data" {...props} />
+
+    const sampleData = [
+        {
+            year: '2012',
+            origin_name: '',
+            persons: '4'
+        },
+        {
+            year: '2013',
+            origin_name: '',
+            persons: '15'
+        },
+        {
+            year: '2014',
+            origin_name: '',
+            persons: '9'
+        },
+        {
+            year: '2015',
+            origin_name: '',
+            persons: '32'
+        },
+        {
+            year: '2016',
+            origin_name: '',
+            persons: '11'
+        },
+        {
+            year: '2017',
+            origin_name: '',
+            persons: '44'
+        },
+        {
+            year: '2018',
+            origin_name: '',
+            persons: '22'
+        },
+        {
+            year: '2019',
+            origin_name: '',
+            persons: '30'
+        }
+    ];
 
     return (
         <div>
@@ -21,14 +73,21 @@ function HomeFeatures() {
                                 </Typography>
                             </Row>
                             <Row>
-                                <Typography component="subtitle1" variant="subtitle1">Subtitle</Typography>
+                                <Typography component="subtitle1" variant="subtitle1">Sample Chart <a href='/data'>Data Page</a></Typography>
                             </Row>
                             <Row>
-                                <img src="https://via.placeholder.com/250x167.png?text=TEMP" />
+                                <CardActionArea 
+                                        href='/data'
+                                        // component={DataLink}
+                                    >
+                                    <Card style={{ padding: '2.5%'}}>
+                                        <BarGraph color="#F16841" data={sampleData} />
+                                    </Card>
+                                </CardActionArea>
                             </Row>
                             <Row>
                                 <Typography component="body1" variant="body1">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sed libero enim sed faucibus turpis in eu mi. Sit amet purus gravida quis blandit. Odio euismod lacinia at quis.
+                                    The data visualization page allows users to create data visualizations from UNHCR refugee data. You can filter what data you would like to query such as origin country, destination country, and date. 
                                 </Typography>
                             </Row>
                         </Col>
