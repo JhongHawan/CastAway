@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/Navbar';
 import HomePage from './components/HomePage';
 import Terminology from './components/Terminology';
-import YourRole from './components/YourRole';
+import YourRole from './components/YourRole/YourRole';
 import Hero from './components/Hero';
 import Context from './components/Context';
 // import VettingProcess from './components/VettingProcess';

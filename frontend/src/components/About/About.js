@@ -71,7 +71,7 @@ function About() {
         </Grid>
       </Grid>
       <div className={classes.dividerMargin} >
-        <Divider title="Meet the Team" />
+        <Divider title="MEET THE TEAM" />
       </div> 
       <div className={classes.teamSection}>
         <TeamSection>
