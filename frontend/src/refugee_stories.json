@@ -3,85 +3,169 @@
         "name": "Doaa",
         "home": "Syria",
         "img": "stories_doaa.jpg",
-        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.", 
+        "bio": "Like many other Syrians, Doaa was forced out of her home due to war. At first she fled to Egypt, she and her fiance paid smugglers to get them onto an old fishing boat. For days they drifted, her fiance drowned and she was eventually rescued by a Greek merchant boat.", 
         "source": "https://www.weforum.org/agenda/2015/12/3-real-stories-from-refugees/"
     },
     {
         "name": "Salim",
         "home": "Syria",
         "img": "stories_salim.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"Salim and his mother survived a camp near the Syrian border during the cold winter.",
         "source": "https://www.savethechildren.org/us/what-we-do/emergency-response/refugee-children-crisis/refugee-stories"
     },
     {
         "name": "Kobra",
         "home": "Afghanistan",
         "img": "stories_kobra.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"Kobra was born in exile in Iran, and returned to Afghanistan when she was nine-years-old. Only to be forced to flee again to Pakistan.",
         "source": "https://www.unhcr.org/en-us/news/stories/2020/4/5ea20be94/couldnt-study-feel-paralyzed.html"
     },
     {
         "name": "Hung",
         "home": "Vietnam",
         "img": "stories_hung.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"Before the fall of Saigon, Hung served as an officer in the South Vietnamese navy. After the South Vietnamese government surrendered to North Vietnamese forces in 1975, Hung fled to avoid going into labor camps.",
         "source": "https://immigrants.mndigital.org/exhibits/show/immigrantstories1975/item/539"
     },
     {
         "name": "Awa",
-        "home": "Niger",
+        "home": "Nigeria",
         "img": "stories_awa.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"In 2014, Awa was forced to flee north-eastern Nigeria due to a violent attack by Boko Haram insurgents.",
         "source": "http://kora.unhcr.org/fleeing-boko-haram-nigerian-mid-wife-helps-pregnant-girls-niger/"
     },
     {
         "name": "Nadir",
         "home": "Myanmar",
         "img": "stories_nadir.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"Nadir was forced out by Myanmar military and Budhhist civilians. Living without rights in Myanmar, he was forced to flee to Bangladesh.",
         "source": "https://www.cnn.com/interactive/2017/09/world/myanmar-rohingya-refugee-stories/"
     },
     {
         "name": "Moulid",
         "home": "Somalia",
         "img": "stories_moulid.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"Moulid has lived in a refugee camp in north-eastern Kenya for 14 years. He struggles with his identity for most of his life, feeling forced to introduce as a 'Somali refugee living in Kenya'.",
         "source": "http://www.thenewhumanitarian.org/report/93527/kenya-somalia-refugees-story"
     },
     {
         "name": "M.I.A.",
         "home": "Sri Lanka",
         "img": "stories_mia.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"M.I.A. is known to the world as a rapper and activist, but not many know about her experience as a young refugee. At a young age she was forced out of war-torn Sri Lanka.",
         "source": "https://www.nme.com/news/music/mia-191-1194664"
     },
     {
         "name": "Rami",
         "home": "Syria",
         "img": "stories_rami.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"Rami left his home when mortar shells were falling on his house during the Syrian war. He dreams of returning home someday.",
         "source": "https://www.savethechildrenactionnetwork.org/stories-refugee-children/"
     },
     {
         "name": "Gulwali",
         "home": "Afghanistan",
         "img": "stories_gulwali.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"After United States forces killed five members of his family, he was forced to flee by his mother when he was 12.",
         "source": "https://www.theguardian.com/world/2016/jan/26/didnt-think-might-never-see-parents-again-refugee-children-share-their-stories"
     },
     {
         "name": "Arn",
         "home": "Cambodia",
         "img": "stories_chorn.jpg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"A survivor of the Cambodian Genocide, Arn rembers being taken to a Khmer Rouge detention center at the age of nine. Arn was able to save his own life by performing propaganda songs on the Cambodian flute.",
         "source": "https://www.facinghistory.org/resource-library/everyone-has-story"
     },
     {
         "name": "Theresa",
         "home": "Burma",
         "img": "stories_theresa.jpeg",
-        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo.",
+        "bio":"For the past fifty years Burma was ruled by military dictatorship and caught in a brutal civil war. As an ethnic minority, Theresa and her people were victims of human right violations.",
         "source": "http://refugeewomensnetworkinc.org/success-stories"
+    },
+    {
+        "name": "Peace",
+        "home": "Rwanda",
+        "img": "stories_peace.jpg",
+        "bio":"The Rwandan genocide took a million people in 1994. Born to a Tutsi mother and Hutu father, Peace was forced to flee from her home when she was seven years old.",
+        "source": "https://www.refugeesinternational.org/reports/2019/6/17/world-refugee-day-2019-spotlight-5-peace-izabayo"
+    },
+    {
+        "name": "Mariela",
+        "home": "Syria",
+        "img": "stories_mariela.jpg",
+        "bio":"Mariela was pursing a bachelor's in Business Administration at the University of Aleppo. She was forced to flee her hometown of Aleppo when the war consumed her home.",
+        "source": "https://www.refugeesinternational.org/reports/2019/6/17/world-refugee-day-2019-spotlight-1-mariela-shaker"
+    },
+    {
+        "name": "Tsang",
+        "home": "Vietnam",
+        "img": "stories_tsang.jpg",
+        "bio":"Tsang escaped Vietnam in 1969 during the midst of a war. Before fleeing to Hong Kong, Tsang's parents fled from Japanese occupied Guangzhou to Hanoi, Vietnam.",
+        "source": "https://hongkongfp.com/2018/07/15/afraid-vietnamese-boat-person-tells-journey-hong-kong-1969-refugees-still-welcome/"
+    },
+    {
+        "name": "Alia",
+        "home": "Syria",
+        "img": "stories_alia.jpg",
+        "bio":"Alia fled her home of Aleppo, Syria when she was seven years old. She described the roads being full of dead corpses. ",
+        "source": "https://www.globalgiving.org/learn/listicle/13-powerful-refugee-stories/"
+    },
+    {
+        "name": "Miriam",
+        "home": "Burma",
+        "img": "stories_miriam.jpg",
+        "bio":"At a young age her father fled the country in fear for his life. Years later, Miriam's mother understood the risks her children faced staying in Burma. They fled Burma to Malaysia to join their father.",
+        "source": "http://www.refugeeone.org/miriam.html"
+    },
+    {
+        "name": "Cuc",
+        "home": "Vietnam",
+        "img": "stories_cuc.jpg",
+        "bio":"Born in Vietnam, Cuc was going to university during the Vietnam War. After many failed attempts to flee the country after the Fall of Saigon, she and her husband fled to Malaysia on a fishermen's boat in 1978.",
+        "source": "http://refugeeresearchonline.org/cuc/"
+    },
+    {
+        "name": "Didier",
+        "home": "Rwandan",
+        "img": "stories_didier.jpg",
+        "bio":"He and his family fled their home during the Rwandan genocide in 1994, and he spent most of life growing up as a refugee in Kenya.",
+        "source": "https://www.refugepoint.org/our-work/refugee-stories/?storyId=2360"
+    },
+    {
+        "name": "Idiris",
+        "home": "Somalia",
+        "img": "stories_idiris.jpg",
+        "bio":"Originally from Somalia, Idiris and his family fled during the civil war. He grew up in a refugee camp in Kenya. When he was 22 years old, he was chosen to come to the United States and found work as a temp worker for UPS.",
+        "source": "https://www.kentuckyrefugees.org/refugee-stories/"
+    },
+    {
+        "name": "Rahaf",
+        "home": "Syria",
+        "img": "stories_rahaf.jpg",
+        "bio":"Rahaf left Damascus, Syria with her family when her father's life was threatened. They stayed in a Zaatri refugee camp in Jordan. Eventually they moved to Zarqa.",
+        "source": "https://www.caritas.org/2013/02/refugee-helping-refugee-inspiring-stories-from-the-syrian-crisis/"
+    },
+    {
+        "name": "Vejdan",
+        "home": "Iran",
+        "img": "stories_vejdan.jpg",
+        "bio":"Vejdan is from Ahwaz, a region where Iran's Arab minority resides. When he ws fourteen, he was arrested after a protest and was tortured. As someone with a recorded history, he was subsequently subjected to many tortures afterwards. He and some friends fled to Turkey in 2000. During the trip some of his friends were arrested and hung.",
+        "source": "https://www.positive.news/society/moment-i-felt-home-refugees-tell-stories/"
+    },
+    {
+        "name": "Hodan",
+        "home": "Somalia",
+        "img": "stories_hodan.jpg",
+        "bio":"Born in Somalia in the midst of a war. Hodan describes herself to be one of the lucky ones to be able to take her GCSEs. After studying on scholarship in Malaysia, she returned to Somalia. Only to be forced to flee at the age of 25 to escape a forced marriage.",
+        "source": "https://www.positive.news/society/moment-i-felt-home-refugees-tell-stories/"
+    },
+    {
+        "name": "Charles",
+        "home": "Senegal",
+        "img": "stories_charles.jpg",
+        "bio":"Born in Dakar, Charles worked as a consultant in reproductive health, female genital mutilation, gender-based violence and HIV. He created an assocation to cater to the LGBTQ community. Only to be repeatedly assualted for aiding homosexuality in a country where it is illegal.",
+        "source": "https://www.positive.news/society/moment-i-felt-home-refugees-tell-stories/"
     }
 ]
 

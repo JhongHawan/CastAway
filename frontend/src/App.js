@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/Navbar';
 import HomePage from './components/HomePage';
 import Terminology from './components/Terminology';
-import yourRole from './components/TemplatedEmail';
+import YourRole from './components/YourRole/YourRole';
 import Hero from './components/Hero';
 import Context from './components/Context';
 // import VettingProcess from './components/VettingProcess';
@@ -35,11 +35,11 @@ function App() {
             <Route path="/history" component={History} />
             <Route path="/stories" component={Stories} />
             <Route path="/data" component={Visualization} />
-            <Route path="/yourRole" component={yourRole} />
+            <Route path="/yourRole" component={YourRole} />
             <Route path="/about" component={About} />
           </Switch>
+          <Footer></Footer>
         </div>
-        <Footer></Footer>
       </Router>
     </ThemeProvider>
 

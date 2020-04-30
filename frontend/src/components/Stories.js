@@ -56,8 +56,10 @@ function Stories() {
    let [imageState, setImageState] = React.useState(data[0].img);
    let [highlightName, setHighlightName] = React.useState(data[0].name);
    let [highlightHome, setHighlightHome] = React.useState(data[0].home);
-   let [highlightDesc, setHighlightDesc] = React.useState(data[0].bio)
-   let [highlightLink, setHighlightLink] = React.useState(data[0].source)
+   let [highlightDesc, setHighlightDesc] = React.useState(data[0].bio);
+   let [highlightLink, setHighlightLink] = React.useState(data[0].source);
+   
+
 
    /**
     * 
@@ -67,6 +69,9 @@ function Stories() {
     * @param {String} props.desc bio of refugee
     */
    function Story(props) {
+
+      
+      
 
       function handleClick() {
 
@@ -87,11 +92,12 @@ function Stories() {
          setHighlightLink(highlightLink = props.link);
          console.log("Link          : " + highlightLink);
 
+         window.scrollTo(0, 500);
       }
 
       return (
-         <Col sm={6} md={4} lg={3}>
-            <Box className={classes.storyCard}>
+         <Col sm={6} md={4} lg={3} style={{ textAlign: 'center'}}>
+            <Box className={classes.storyCard} style={{ display: 'inline-block'}}>
                <Box className={classes.imageStory} data-content={props.name} onClick={() => handleClick(imageState)}>
                   <img src={props.img} width="100%" />
                </Box>
@@ -111,9 +117,9 @@ function Stories() {
                <Col sm={3} md={4}>
                   <img className={classes.storyHighlightImage} src={imageState} width="100%" />
                </Col>
-               <Col sm={9} md={8}>
+               <Col sm={9} md={8} className={classes.storyHighlight}>
                   <Typography component="h4" variant="h4" color="primary">{highlightName}</Typography>
-                  <Typography component="h5" variant="h5" color="secondary">{highlightHome}</Typography>
+                  <Typography component="h5" variant="h5" color="secondary">My home is {highlightHome}</Typography>
                   <Typography component="body1" variant="body1">
                      {highlightDesc}
                   </Typography>
@@ -150,7 +156,6 @@ function Stories() {
             </Row>
          </Container>
 
-         {/* <Footer /> */}
       </div>
    );
 }
