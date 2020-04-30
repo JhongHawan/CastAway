@@ -60,6 +60,7 @@ function TemplatedEmail() {
     document.execCommand('copy');
     e.target.focus();
     setCopySuccess('Copied!');
+    alert('Copied email template to clipboard!');
   };
 
   return (

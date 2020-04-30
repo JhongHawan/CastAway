@@ -7,6 +7,7 @@ import CallToAction from '../CallToAction';
 import {useStyles} from '../Styles'; 
 import TemplatedEmail from './TemplatedEmail'; 
 import Container from '@material-ui/core/Container'; 
+import Stepper from '../Stepper';
 
 const customStyles = makeStyles(theme => ({
   heroTop: {
@@ -38,6 +39,9 @@ function YourRole() {
             className={customClasses.heroTop}
           >
             <Divider title="HOW CAN YOU HELP" />
+          </Grid>
+          <Grid item xs={12}>
+            <Stepper></Stepper>
           </Grid>
           <Grid item xs={12}>
             <Divider title="MAKE AN ACTION" />
