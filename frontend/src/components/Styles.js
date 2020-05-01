@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import heroImage from '../img/home_hero.jpg';
-import testHero from '../img/hero_test2.jpeg'
 // THIS FILE CONTAINS THE THEME
 
 export const useStyles = makeStyles(theme => ({
