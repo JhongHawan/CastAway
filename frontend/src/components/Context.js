@@ -14,7 +14,8 @@ import Footer from './About/Footer';
 import Hero from './Hero';
 import Divider from './Divider';
 import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
-import { useStyles } from './Styles'
+import { useStyles } from './Styles';
+import ReactCompareImage from 'react-compare-image';
 // import { Typography } from '@material-ui/core';
 
 
@@ -561,7 +562,26 @@ function VettingProcessMobile() {
    )
 }
 
+function ImageComparer() {
+   return (
+      // <Box>
+         <Box style={{ textAlign: "center" }}>
+            <Box style={{ maxWidth: "800px", margin: "auto" }}>
+               {/* <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" /> */}
+               <ReactCompareImage leftImage="refugee1.jpg" rightImage="immigrant2.jpg" />
+            </Box>
+         </Box>
+      // </Box>
+   )
+}
+
+
+
 function Context() {
+
+
+
+
    const classes = useStyles();
    return (
       <div >
@@ -592,8 +612,9 @@ function Context() {
                <Box className={classes.descriptionBox}>
                   <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
                </Box>
+               <ImageComparer />
                <Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
-                  <Button variant="contained" color="secondary" href="/myths" >More Myths</Button>
+                  <Button variant="contained" color="secondary" href="/terminology" >More Definitions</Button>
                </Box>
             </Box>
             <Box>
