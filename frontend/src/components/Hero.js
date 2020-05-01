@@ -1,7 +1,7 @@
-import React from 'react';
+    import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useStyles } from './Styles';
-import { Typography } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
 
 
 /**
@@ -47,6 +47,7 @@ function HeroCard(props) {
 /**
   * @param {String} props.sectionTitle - displays sectionTitle
   * @param {Boolean} props.showCard - has a div floating or not
+  * @param {Boolean} props.showCitation - has a div floating or not
   * 
   * TODO - remove homeSectionTitle
   */
@@ -54,6 +55,17 @@ function Hero(props) {
     const classes = useStyles();
 
     const [includeCard] = React.useState(props.showCard);
+    const [includeCite] = React.useState(props.showCitation);
+
+    function Citation() {
+        return (
+            <Box style={{ textAlign: 'center', paddingTop: '1rem'}}>
+                <Typography component="overline" variant="overline" color="primary" style={{ fontSize: '1.5rem'}} >
+                    - Warsan Shire, "Home"
+                </Typography>
+            </Box>
+        )
+    }
 
     return (
 
@@ -66,10 +78,14 @@ function Hero(props) {
                             variant="h3"
                             align="center"
                             color="primary"
+                        // style={{ color: 'white'}}
                         // className={classes.homeSectionTitle}
                         >
                             {props.sectionTitle}
                         </Typography>
+                        {includeCite ?
+                            <Citation /> : null
+                        }
                         {/* <h1 className={classes.homeSectionTitle}>
                             {props.sectionTitle}
                         </h1> */}

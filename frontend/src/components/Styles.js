@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import heroImage from '../img/home_hero.jpg';
-
+import testHero from '../img/hero_test2.jpeg'
 // THIS FILE CONTAINS THE THEME
 
 export const useStyles = makeStyles(theme => ({
@@ -146,6 +146,7 @@ export const useStyles = makeStyles(theme => ({
         height: '2px'
     },
     heroImg: {
+        // backgroundImage: `url(${testHero})`,
         backgroundImage: `url(${heroImage})`,
         position: 'relative',
         backgroundSize: 'cover',

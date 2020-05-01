@@ -8,7 +8,7 @@ import { Col, Row } from 'react-bootstrap';
 import Divider from './Divider';
 import Hero from './Hero';
 import { useStyles } from './Styles';
-import CallToAction from './CallToAction';
+// import CallToAction from './CallToAction';
 import HomeFeatures from './HomeFeatures';
 
 function HomePage() {
@@ -27,6 +27,50 @@ function HomePage() {
                     </Typography>
                 </Box>
             </Col>
+        )
+    }
+
+    function CallToAction() {
+
+        function SectionCard(props) {
+            return (
+                <Container style={{ paddingBottom: '2rem' }}>
+                    <Row style={{ paddingBottom: '1rem'}}>
+                        <Typography variant="h4" color="secondary">
+                            {props.title}
+                        </Typography>
+                    </Row>
+                    <Row>
+                        <Typography variant="body1">
+                            {props.description}
+                        </Typography>
+                    </Row>
+                </Container>
+            )
+        }
+
+        return (
+            <Container>
+                <Row>
+                    <Col xs={12} sm={3} md={4}>
+                        <img src="arab_girl.jpg" width="100%" />
+                    </Col>
+                    <Col xs={12} sm={9} md={8}>
+                        <SectionCard
+                            title="STAY INFORMED, STAY EMPOWERED"
+                            description="It is important to know what is going on in your community and ultimately your country. Staying up to date with news and policies allows for informed opinions that have more impact. Misinformation and fake news are both extremely dangerous and harmful when it comes to politics, society, and the ability for the public to make knowledgeable decisions."
+                        />
+                        <SectionCard
+                            title="YOUR VOICE, YOUR VOTE"
+                            description="Every citizen has both the right and responsibility to vote, get involved in their communities, and enact the change they wish to see. Voting is a basic action that allows every individual in the United States to express their personal opinion on issues they consider important to them."
+                        />
+                        <SectionCard
+                            title="IT'S YOUR TURN TO TAKE ACTION"
+                            description="Individuals can also make a lot of impact by writing letters to public officials about issues that are important to them. Your congressmen all represent you, allowing you to ignite a conversation with endless possibilities. It is time to stand up and fight for what is right, and give a platform to those who haven’t had access to it in the past."
+                        />
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 
@@ -58,7 +102,11 @@ function HomePage() {
             </Container>
             <Divider title="MAKE A DIFFERENCE" />
             {/* <Box className={classes.callToAction}> */}
+            {/* // TODO REMOVE FROM EVERYWHERE */}
             <CallToAction />
+
+
+
             <Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
                 <Button variant="contained" color="secondary" href="/yourRole" >What's My Role?</Button>
             </Box>
