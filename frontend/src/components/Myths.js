@@ -268,33 +268,27 @@ function Myths() {
           cardSubtitle="Subtitle"
           cardBody="The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference."
         />
-        <Box className={classes.homeTopSpace}>
-          <Divider title="MYTH DEBUNK" />
-          <Container className={classes.callToAction}>
-            <Container>
-              <Typography component="h6" variant="h6">Can you tell the difference between a myth and a fact?</Typography>
-              <Typography component="body1" variant="body1">Below is a list of refugee myths and facts. Find out which statement is true and which statement is false by clicking the "Reveal All Answers" button or by clicking each individual statement. If there is a <span style={{ color: 'green', fontWeight: "700" }}>GREEN</span> border around the box then that statement is a fact, but if there is a <span style={{ color: 'red', fontWeight: "700" }}>RED</span> border then that statement is a myth. To reset the grid click on the reset button. </Typography>
-            </Container>
-            <CardWrapper />
+        <Divider title="MYTH DEBUNK" />
+        <Container className={classes.callToAction}>
+          <Container>
+            <Typography component="h6" variant="h6">Can you tell the difference between a myth and a fact?</Typography>
+            <Typography component="body1" variant="body1">Below is a list of refugee myths and facts. Find out which statement is true and which statement is false by clicking the "Reveal All Answers" button or by clicking each individual statement. If there is a <span style={{ color: 'green', fontWeight: "700" }}>GREEN</span> border around the box then that statement is a fact, but if there is a <span style={{ color: 'red', fontWeight: "700" }}>RED</span> border then that statement is a myth. To reset the grid click on the reset button. </Typography>
           </Container>
-        </Box>
-        <Box className={classes.homeSectionSpace}>
-          <Divider title="FACT CHECK" />
-          <Box className={classes.callToAction}>
-            <Container>
-              <Typography component="h6" variant="h6">There are several myths that need to be debunked when it comes to refugees.</Typography>
-              <Typography component="body1" variant="body1">Below is a list of common misconceptions about topics concerning refugees. There is extreme danger in perpetuating false information especially when the lives of inncocent people relies on it. To learn more, click on each myth and debunk it.</Typography>
-            </Container>
-            <Container>
-              <Typography style={{ padding: '1em 0em 1em' }} component="h4" variant="h4" color="error">CONFIRMED FALSE</Typography>
-            </Container>
-            <FactCheckFalse />
-            <Container>
-              <Typography style={{ padding: '1em 0em 1em' }} component="h4" variant="h4" className={classes.testingSuccessTheme}>CONFIRMED TRUE</Typography>
-            </Container>
-            <FactCheckTrue />
-          </Box>
-        </Box>
+          <CardWrapper />
+        </Container>
+        <Divider title="FACT CHECK" />
+        <Container>
+          <Typography component="h6" variant="h6">There are several myths that need to be debunked when it comes to refugees.</Typography>
+          <Typography component="body1" variant="body1">Below is a list of common misconceptions about topics concerning refugees. There is extreme danger in perpetuating false information especially when the lives of inncocent people relies on it. To learn more, click on each myth and debunk it.</Typography>
+        </Container>
+        <Container>
+          <Typography style={{ padding: '1em 0em 1em' }} component="h4" variant="h4" color="error">CONFIRMED FALSE</Typography>
+        </Container>
+        <FactCheckFalse />
+        <Container>
+          <Typography style={{ padding: '1em 0em 1em' }} component="h4" variant="h4" className={classes.testingSuccessTheme}>CONFIRMED TRUE</Typography>
+        </Container>
+        <FactCheckTrue />
       </Box>
     </div>
   );

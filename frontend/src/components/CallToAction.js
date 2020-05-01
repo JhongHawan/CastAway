@@ -166,11 +166,11 @@ function MobileTabs() {
                                     {props.description}
                                 </Typography>
                             </Row>
-                            <Row>
+                            {/* <Row>
                                 <Typography component="overline" variant="overline" className={classes.featureSubheading}>
                                     Read More
                                 </Typography>
-                            </Row>
+                            </Row> */}
                         </Col>
                     </Col>
                 </Row>

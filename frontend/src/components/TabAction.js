@@ -48,10 +48,9 @@ function TabAction(props) {
                                 </Typography>
                             </Row>
                             <Row>
-                                <Typography component="overline" variant="overline" color="secondary" className={classes.featureSubheading}>
+                                {/* <Typography component="overline" variant="overline" color="secondary" className={classes.featureSubheading}>
                                     Read More
-                                    
-                                </Typography>
+                                </Typography> */}
                             </Row>
                         </Col>
                     </Col>

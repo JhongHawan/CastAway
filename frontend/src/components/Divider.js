@@ -11,7 +11,7 @@ import { Typography } from '@material-ui/core';
 function Divider(props) {
     const classes = useStyles();
     return (
-        <Container className="container-fluid">
+        <Container className="container-fluid" style={{ paddingTop: '3em', paddingBottom: '3em'}}>
             <Row className="justify-content-sm-center">
                 <Col className="col-4">
                     <hr className={classes.lineBreak} />

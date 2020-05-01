@@ -49,7 +49,7 @@ npm run frontend
 
 ## Deployment
 
-Our MERN stack application is currently deployed via Heroku: https://desolate-basin-46881.herokuapp.com/
+Our MERN stack application is currently deployed via Heroku: https://castaway.herokuapp.com/
 
 ## Built With
 

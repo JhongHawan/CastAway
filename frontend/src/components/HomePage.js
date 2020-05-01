@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Box, Grid, Typography, Paper } from '@material-ui/core';
+import { Container, Box, Grid, Typography, Paper, Button } from '@material-ui/core';
 import Carousel from './Carousel';
 import MythCard from './MythCard';
 
@@ -8,91 +8,112 @@ import { Col, Row } from 'react-bootstrap';
 import Divider from './Divider';
 import Hero from './Hero';
 import { useStyles } from './Styles';
-import CallToAction from './CallToAction';
+// import CallToAction from './CallToAction';
 import HomeFeatures from './HomeFeatures';
 
 function HomePage() {
     const classes = useStyles();
+
+    function ReasonCard(props) {
+        return (
+            <Col md={4}>
+                <Box style={{ textAlign: 'center' }}>
+                    <img src={props.img} width="300px" />
+                    <Typography variant="h4" color="secondary" style={{ paddingBottom: "0.5em" }}>
+                        {props.title}
+                    </Typography>
+                    <Typography variant="body1">
+                        {props.description}
+                    </Typography>
+                </Box>
+            </Col>
+        )
+    }
+
+    function CallToAction() {
+
+        function SectionCard(props) {
+            return (
+                <Container style={{ paddingBottom: '2rem' }}>
+                    <Row style={{ paddingBottom: '1rem'}}>
+                        <Typography variant="h4" color="secondary">
+                            {props.title}
+                        </Typography>
+                    </Row>
+                    <Row>
+                        <Typography variant="body1">
+                            {props.description}
+                        </Typography>
+                    </Row>
+                </Container>
+            )
+        }
+
+        return (
+            <Container>
+                <Row>
+                    <Col xs={12} sm={3} md={4}>
+                        <img src="arab_girl.jpg" width="100%" />
+                    </Col>
+                    <Col xs={12} sm={9} md={8}>
+                        <SectionCard
+                            title="STAY INFORMED, STAY EMPOWERED"
+                            description="It is important to know what is going on in your community and ultimately your country. Staying up to date with news and policies allows for informed opinions that have more impact. Misinformation and fake news are both extremely dangerous and harmful when it comes to politics, society, and the ability for the public to make knowledgeable decisions."
+                        />
+                        <SectionCard
+                            title="YOUR VOICE, YOUR VOTE"
+                            description="Every citizen has both the right and responsibility to vote, get involved in their communities, and enact the change they wish to see. Voting is a basic action that allows every individual in the United States to express their personal opinion on issues they consider important to them."
+                        />
+                        <SectionCard
+                            title="IT'S YOUR TURN TO TAKE ACTION"
+                            description="Individuals can also make a lot of impact by writing letters to public officials about issues that are important to them. Your congressmen all represent you, allowing you to ignite a conversation with endless possibilities. It is time to stand up and fight for what is right, and give a platform to those who haven’t had access to it in the past."
+                        />
+                    </Col>
+                </Row>
+            </Container>
+        )
+    }
 
 
     // TODO Move Why Does it Matter to new function
     return (
         <div>
             {/* <Container disableGutters> */}
-            <Box className={classes.homeSectionSpace}>
-                <Divider title="WHY DOES IT MATTER?" />
-                <Container>
-                    <Row>
-                        <Col md={4}>
-                            <Box style={{ textAlign: 'center' }}>
-                                <img src="displaced.png" width="300px" />
-                                <Typography variant="h4" color="secondary">
-                                    Millions Displaced
-                                </Typography>
-                                <Typography variant="body1">
-                                    There are more people on the move than ever before. An unparalleled 70.8 million people around the world have been forced from their home. Among them are nearly 25.9 million refugees, over half of whom are children under the age of 18.
-                                </Typography>
-                            </Box>
-                        </Col>
-                        <Col md={4}>
-                            <Box style={{ textAlign: 'center' }}>
-                                <img src="crisis.png" width="300px" />
-                                <Typography variant="h4" color="secondary">
-                                    Global Crisis
-                                </Typography>
-                                <Typography variant="body1">
-                                    The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference.
-                                </Typography>
-                            </Box>
-                        </Col>
-                        <Col md={4}>
-                            <Box style={{ textAlign: 'center' }}>
-                                <img src="built.png" width="300px" />
-                                <Typography variant="h4" color="secondary">
-                                    Immigrant Built
-                                </Typography>
-                                <Typography variant="body1">
-                                    Immigrants helped build our nation and make it what it is now. We should do everything in our power to embrace them and not exclude them.
-                                </Typography>
-                            </Box>
-                        </Col>
-                    </Row>
-                </Container>
+            {/* <Box className={classes.homeSectionSpace}> */}
+            <Divider title="WHY DOES IT MATTER?" />
+            <Container>
+                <Row>
+                    <ReasonCard
+                        title="Millions Displaced"
+                        description="There are more people on the move than ever before. An unparalleled 70.8 million people around the world have been forced from their home. Among them are nearly 25.9 million refugees, over half of whom are children under the age of 18."
+                        img="displaced.png"
+                    />
+                    <ReasonCard
+                        title="Global Crisis"
+                        description="The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference."
+                        img="crisis.png"
+                    />
+                    <ReasonCard
+                        title="Immigrant Built"
+                        description="Immigrants helped build our nation and make it what it is now. We should do everything in our power to embrace them and not exclude them."
+                        img="built.png"
+                    />
+                </Row>
+            </Container>
+            <Divider title="MAKE A DIFFERENCE" />
+            {/* <Box className={classes.callToAction}> */}
+            {/* // TODO REMOVE FROM EVERYWHERE */}
+            <CallToAction />
+
+
+
+            <Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
+                <Button variant="contained" color="secondary" href="/yourRole" >What's My Role?</Button>
             </Box>
-            {/* Different design for mobile */}
-            <Box className={classes.homeTopSpace}>
-                <Divider title="MAKE A DIFFERENCE" />
-                <Box className={classes.callToAction}>
-                    <CallToAction />
-                </Box>
-            </Box>
+            {/* </Box> */}
             {/* </Container> */}
-            <Box style={{ padding: 50 }}>
-                <Divider title="WHAT IS CASTAWAY?" />
-
-            </Box>
-            <Box style={{ background: '#C9D6DF', padding: 20 }}>
-                <Container disableGutters>
-                    <Row>
-                        <Col lg={{ span: 4, offset: 1}}>
-                            <Typography variant="h4" color="secondary">WHY A PAPER BOAT?</Typography>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col lg={{ span: 4, offset: 1 }} style={{ padding: 20, float: 'right' }}>
-                            <img src="castawayLogo.png" width="50%" />
-                        </Col>
-                        <Col lg={{ offset: 2}}>
-                            <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nulla dictum ligula ultrices sodales. Aliquam vehicula dolor vitae lacus elementum, vel iaculis eros convallis. Cras porttitor ex eu purus finibus cursus. Donec gravida felis vel malesuada faucibus. Vivamus ut ultricies purus, vitae auctor ipsum. Nulla et porta dolor, quis gravida metus. Fusce sollicitudin urna eros, vel dictum diam tempus vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</Typography>
-                        </Col>
-                    </Row>
-                </Container>
-
-            </Box>
-            <Box className={classes.homeSectionSpace}>
-                {/* <Divider title="CASTAWAY FEATURES" /> */}
-                <HomeFeatures />
-            </Box>
+            <Divider title="WHAT IS CASTAWAY?" />
+            <HomeFeatures />
         </div>
     );
 }

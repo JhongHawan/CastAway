@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import heroImage from '../img/home_hero.jpg';
-
 // THIS FILE CONTAINS THE THEME
 
 export const useStyles = makeStyles(theme => ({
@@ -146,6 +145,7 @@ export const useStyles = makeStyles(theme => ({
         height: '2px'
     },
     heroImg: {
+        // backgroundImage: `url(${testHero})`,
         backgroundImage: `url(${heroImage})`,
         position: 'relative',
         backgroundSize: 'cover',
@@ -189,9 +189,6 @@ export const useStyles = makeStyles(theme => ({
     tabWrapper: {
         flexGrow: 1,
         display: 'flex',
-    },
-    callToAction: {
-        padding: theme.spacing(5, 0, 0)
     },
     // * Inside HomeFeatures.js
     featureHeading: {
@@ -302,6 +299,13 @@ export const useStyles = makeStyles(theme => ({
                 opacity: 1,
             }
         }
+    },
+
+    storyPaper: {
+        padding: theme.spacing.unit * 2,
+    },
+    storyCol: {
+        padding: theme.spacing(1)
     },
 
     // Stepper Styles
