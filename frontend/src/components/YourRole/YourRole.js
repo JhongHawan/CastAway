@@ -24,9 +24,9 @@ function YourRole() {
       <Hero
         showCard={false}
         sectionTitle='Your Role'
-        cardTitle="WHY DOES IT MATTER?"
-        cardSubtitle="Subtitle Examples"
-        cardBody="The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference."
+        // cardTitle="WHY DOES IT MATTER?"
+        // cardSubtitle="Subtitle Examples"
+        // cardBody="The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference."
       />
       <Container>
         <Grid
@@ -38,16 +38,16 @@ function YourRole() {
           <Grid item xs={12}           
             className={customClasses.heroTop}
           >
-            <Divider title="HOW CAN YOU HELP" />
+            <Divider title="HOW YOU CAN HELP" />
           </Grid>
           <Grid item xs={12}>
-            <Stepper></Stepper>
+            <Stepper />
           </Grid>
           <Grid item xs={12}>
             <Divider title="MAKE AN ACTION" />
           </Grid>
           <Grid item xs={12}>
-            <TemplatedEmail></TemplatedEmail> 
+            <TemplatedEmail />
           </Grid>
         </Grid>
       </Container>

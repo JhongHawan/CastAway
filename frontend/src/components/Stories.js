@@ -141,7 +141,7 @@ function Stories() {
          />
 
          <Container className={classes.storyIntro}>
-            <Typography variant="h3" color="secondary">In A Sea of Faces...</Typography>
+            <Typography variant="h3" color="secondary" style={{ paddingTop: '2rem'}}>In A Sea of Faces...</Typography>
             <Highlight />
          </Container>
 

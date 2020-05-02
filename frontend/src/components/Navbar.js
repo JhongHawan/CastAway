@@ -43,7 +43,7 @@ function NavBar() {
           id="basic-nav-dropdown"
           title={
             <span style={{ display: 'inline-block' }}>
-              <Nav.Link as={Link} to="/context">
+              <Nav.Link as={Link} to="/context" style={{ paddingLeft: 0}}>
                 <Typography variant="h6" className={classes.navLink}>
                   Context
                 </Typography>
