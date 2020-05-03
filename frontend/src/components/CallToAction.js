@@ -238,7 +238,6 @@ function CallToAction() {
                 <VerticalTab />
             </Hidden>
 
-            {/* Hide component when screen small */}
             <Hidden mdUp>
                 <MobileTabs />
             </Hidden>

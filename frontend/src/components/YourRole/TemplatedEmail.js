@@ -63,6 +63,40 @@ function TemplatedEmail() {
     alert('Copied email template to clipboard!');
   };
 
+  function getToday() {
+    var today = new Date();
+    var date = (today.getMonth()+1) + '-' + today.getDate() + '-' + today.getFullYear() ;
+    return(
+      date + "\n"
+    );
+  }
+  
+  function getEmailAttention() {
+    let specialPlaceholder = "(FIRST NAME) (LAST NAME)"
+    return(
+      "\nThe Honorable " + specialPlaceholder + "\n" + "(CAPITOL ADDRESS)" + "\n"
+    )
+  }
+  
+  function getSubject() {
+    return(
+      "RE: (state the topic or include the bill number, author and subject if you are writing to support or oppose a particular legislative bill) \n"
+    )
+  }
+
+  function getEmailContent() {
+    return(
+      "Dear (ASSEMBLY MEMBER/SENATOR) (LAST NAME) My name is (YOUR FIRST NAME, LAST NAME) and I am a regional center consumer (family member/service provider/advocate/community member) who resides in your district. \n \n(State why you support or oppose the bill or other issue here. Choose up to three of the strongest points that support your position and state them clearly.) \n \n(Include a personal story. Tell your representative why the issue is important to you and how it affects you, your family member and your community.) (Tell your representative how you want her or him to vote on this issue and ask for a response. Be sure to include your name and address on both your letter and envelope.)"
+    )
+  }
+
+  function getClosing() {
+    return(
+      "\n \nSincerely, \n \n" + "(YOUR FIRST AND LAST NAME) \n" + "(STREET ADDRESS) \n(CITY), (STATE), (ZIP CODE)"
+    )
+
+  }
+
   return (
     <Form
         onSubmit={onSubmit}
@@ -89,7 +123,10 @@ function TemplatedEmail() {
                         rowsMin={25}
                         placeholder='Type or edit your email here'
                         defaultValue={
-                          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                          getToday() + 
+                          getEmailAttention() +
+                          getEmailContent() +
+                          getClosing()
                         }
                       />
                     </Grid>
