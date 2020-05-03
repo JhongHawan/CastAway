@@ -7,6 +7,8 @@ import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import {Row, Col} from 'react-bootstrap';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -25,15 +27,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-	return [ 'Resettlement', 'Prescreen', 'Interview', 'Interview', 'Interview' ];
+	return ['Resettlement', 'Prescreen', 'Interview', 'Interview', 'Interview'];
 }
 
 function getStepContent(step) {
 	switch (step) {
 		case 0:
-			return `For each ad campaign that you create, you can control how much
-               you're willing to spend on clicks and conversions, which networks
-               and geographical locations you want your ads to show on, and more.`;
+			return (
+				<Container>
+					<Row>
+						<Col>
+							For each ad campaign that you create, you can control how much
+							you're willing to spend on clicks and conversions, which networks
+							and geographical locations you want your ads to show on, and more.
+						</Col>
+					</Row>
+				</Container>
+			);
 		case 1:
 			return 'An ad group contains one or more ads which target a shared set of keywords.';
 		case 2:
@@ -41,7 +51,7 @@ function getStepContent(step) {
                and learn how to enhance your ads using features like ad extensions.
                If you run into any problems with your ads, find out how to tell if
                they're running and how to resolve approval issues.`;
-         case 3:
+		case 3:
 			return `Try out different ad text to see what brings in the most customers,
                and learn how to enhance your ads using features like ad extensions.
                If you run into any problems with your ads, find out how to tell if
@@ -58,7 +68,7 @@ function getStepContent(step) {
 
 export default function VerticalLinearStepper() {
 	const classes = useStyles();
-	const [ activeStep, setActiveStep ] = React.useState(0);
+	const [activeStep, setActiveStep] = React.useState(0);
 	const steps = getSteps();
 
 	const handleNext = () => {

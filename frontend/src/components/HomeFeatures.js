@@ -98,10 +98,10 @@ function HomeFeatures() {
                         <Typography component='h5' variant='h5' color='primary' gutterBottom>All refugees are terrorists with a violent agenda.</Typography>
                         <Box style={{ paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
 
-                            <Box style={{ backgroundColor: '#F79C99', borderRadius: '10px', padding: '5px', alignText: 'center', }}>
+                            <Box style={{ backgroundColor: '#F79C99', borderRadius: '10px', padding: '5px', alignText: 'center', width: '10rem' }}>
                                 <Typography component="overline" variant="overline" style={{ fontWeight: "700", color: 'white' }}>
                                     CONFIRMED FALSE
-                            </Typography>
+                                </Typography>
                             </Box>
                         </Box>
                         <Typography component='body1' variant='body1' className={classes.factDetail}>

@@ -18,7 +18,7 @@ function HomePage() {
         return (
             <Col md={4}>
                 <Box style={{ textAlign: 'center' }}>
-                    <img src={props.img} width="300px" />
+                    <img src={props.img} width="100%" />
                     <Typography variant="h4" color="secondary" style={{ paddingBottom: "0.5em" }}>
                         {props.title}
                     </Typography>
@@ -35,7 +35,7 @@ function HomePage() {
         function SectionCard(props) {
             return (
                 <Container style={{ paddingBottom: '2rem' }}>
-                    <Row style={{ paddingBottom: '1rem'}}>
+                    <Row style={{ paddingBottom: '1rem' }}>
                         <Typography variant="h4" color="secondary">
                             {props.title}
                         </Typography>
@@ -52,8 +52,8 @@ function HomePage() {
         return (
             <Container>
                 <Row>
-                    <Col xs={12} sm={3} md={4}>
-                        <img src="arab_girl.jpg" width="100%" />
+                    <Col xs={12} sm={3} md={4} style={{ textAlign: 'center'}}>
+                        <img src="arab_girl.jpg" width="100%"/>
                     </Col>
                     <Col xs={12} sm={9} md={8}>
                         <SectionCard
@@ -78,8 +78,6 @@ function HomePage() {
     // TODO Move Why Does it Matter to new function
     return (
         <div>
-            {/* <Container disableGutters> */}
-            {/* <Box className={classes.homeSectionSpace}> */}
             <Divider title="WHY DOES IT MATTER?" />
             <Container>
                 <Row>
@@ -95,7 +93,7 @@ function HomePage() {
                     />
                     <ReasonCard
                         title="Immigrant Built"
-                        description="Immigrants helped build our nation and make it what it is now. We should do everything in our power to embrace them and not exclude them."
+                        description="Immigrants helped build our nation and make it what it is now. They are not a threat now and have not been in the past. We should do everything in our power to embrace them and not exclude them."
                         img="built.png"
                     />
                 </Row>

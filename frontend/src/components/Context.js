@@ -14,7 +14,8 @@ import Footer from './About/Footer';
 import Hero from './Hero';
 import Divider from './Divider';
 import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
-import { useStyles } from './Styles'
+import { useStyles } from './Styles';
+import ReactCompareImage from 'react-compare-image';
 // import { Typography } from '@material-ui/core';
 
 
@@ -156,9 +157,6 @@ function Myths() {
 
    return (
       <Container>
-         <Box className={classes.descriptionBox}>
-            <Typography component="body1" variant="body1">There are many myths and misconceptions about refugees, that continue to spread and hurt refugees. It is extremely important to understand the difference between a refugee and an immigrant, comprehend the complexity of the processes they go through to get into the US, and realize the real reasons that they leave their homes.  </Typography>
-         </Box>
          <Row>
             <Col md={6}>
                <TrueFact
@@ -218,7 +216,8 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_un.jpg" width="100%"></img>
+                        {/* <Typography variant="subtitle1">UN emblem blue.svg. (2020, April 10). Wikimedia Commons, the free media repository.</Typography> */}
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">United Nations Interview</Typography>
@@ -238,7 +237,8 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_usds.jpg" width="100%"></img>
+                        {/* <Typography variant="subtitle1">Flag of the United States Department of State.svg. (2020, March 29). Wikimedia Commons, the free media repository.</Typography> */}
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">State Department Interview</Typography>
@@ -255,7 +255,7 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_magnifying.jpg" width="100%"></img>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">First Round of Background Checks</Typography>
@@ -274,14 +274,14 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_screening.jpg" width="100%"></img>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Fingerprint screenings</Typography>
                         <ol start="9" style={{ paddingTop: "1em" }} >
-                           <li><Typography component="body1" variant="body1">First fingerprint screening; photo taken.</Typography></li>
-                           <li><Typography component="body1" variant="body1">Second fingerprint screening.</Typography></li>
-                           <li><Typography component="body1" variant="body1">Third fingerprint screening.</Typography></li>
+                           <li><Typography component="body1" variant="body1">First fingerprint screening; photo taken (FBI).</Typography></li>
+                           <li><Typography component="body1" variant="body1">Second fingerprint screening (Homeland Security).</Typography></li>
+                           <li><Typography component="body1" variant="body1">Third fingerprint screening (Defense Department).</Typography></li>
                         </ol>
                         <Typography component="body1" variant="body1">The U.S conducts meticulous security screenings, which include: biographic and identity investigations, FBI biometric checks of fingerprints and photographs, medical screenings, other checks by U.S. domestic and international intelligence agencies including the National Counterterrorism Center/Intelligence Community and the FBI, refugees from some countries, such as Iraq and Syria, undergo an additional review through the Security Advisory Opinion process.</Typography>
                      </Col>
@@ -293,7 +293,8 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Seal_of_the_United_States_Department_of_Homeland_Security.svg" width="100%"></img>
+                        {/* <Typography variant="subtitle1">Seal of the United States Department of Homeland Security.svg. (2017, November 2). Wikimedia Commons, the free media repository.</Typography> */}
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Homeland Security</Typography>
@@ -311,7 +312,7 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_travel.jpg" width="100%"></img>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Arrival to the United States</Typography>
@@ -335,6 +336,7 @@ function VettingProcess() {
       }
    }
 
+   // TODO would be interesting to write something for the end of the Vetting Process 
    return (
       <div className={classes.stepperRoot}>
          <Stepper activeStep={activeStep} alternativeLabel>
@@ -347,7 +349,9 @@ function VettingProcess() {
          <div>
             {activeStep === steps.length ? (
                <div>
-                  <Typography className={classes.stepperInstructions}>All steps completed</Typography>
+                  <Typography className={classes.stepperInstructions}>
+                     The Vetting Process for refugees is extensive and not as easy as it seems.
+                  </Typography>
                   <Button onClick={handleReset}>Reset</Button>
                </div>
             ) : (
@@ -386,7 +390,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_un.jpg" width="100%"></img>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">United Nations Interview</Typography>
@@ -406,7 +410,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_usds.jpg" width="100%"></img>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">State Department Interview</Typography>
@@ -423,7 +427,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_magnifying.jpg" width="100%"></img>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">First Round of Background Checks</Typography>
@@ -442,7 +446,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_screening.jpg" width="100%"></img>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Fingerprint screenings</Typography>
@@ -461,7 +465,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Seal_of_the_United_States_Department_of_Homeland_Security.svg" width="100%"></img>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Homeland Security</Typography>
@@ -479,7 +483,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="user_1.png" width="100%"></img>
+                        <img src="vetting_travel.jpg" width="100%"></img>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Arrival to the United States</Typography>
@@ -561,7 +565,30 @@ function VettingProcessMobile() {
    )
 }
 
+function ImageComparer() {
+   return (
+      // <Box>
+      <Box style={{ textAlign: "center" }}>
+         <Box style={{ maxWidth: "800px", margin: "auto" }}>
+            {/* <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" /> */}
+            <ReactCompareImage
+               leftImage="refugee1.jpg"
+               leftImageAlt="AA refugee is  someone a person  who has been forced  to leave their  country in order to  escape war,  persecution, or  natural disaster."
+               rightImage="immigrant2.jpg"
+               rightImageAlt="An immigrant is someone who makes a conscious decision to leave his or her home and move to a foreign country with the intention of settling there."
+               sliderLineWidth="4"
+               hover={true}
+            />
+         </Box>
+      </Box>
+      // </Box>
+   )
+}
+
+
+
 function Context() {
+
    const classes = useStyles();
    return (
       <div >
@@ -573,7 +600,7 @@ function Context() {
             <Box>
                <Divider title="HISTORY" />
                <Box className={classes.descriptionBox}>
-                  <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
+                  <Typography component="body1" variant="body1">To truly understand refugees and their journey one must understand the history and what has shaped their experiences in the past. Below is the beginning of a timeline that outlines the development of policies and major events that have impacted refugees and immigrants for over a century. </Typography>
                </Box>
                <ContextTimeline />
                <Box style={{ textAlign: 'center', paddingBottom: '30px' }}>
@@ -582,6 +609,9 @@ function Context() {
             </Box>
             <Box>
                <Divider title="MYTHS" />
+               <Box className={classes.descriptionBox}>
+                  <Typography component="body1" variant="body1">There are many myths and misconceptions about refugees, that continue to spread and hurt refugees. It is extremely important to understand the difference between a refugee and an immigrant, comprehend the complexity of the processes they go through to get into the US, and realize the real reasons that they leave their homes.  </Typography>
+               </Box>
                <Myths />
                <Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
                   <Button variant="contained" color="secondary" href="/myths" >More Myths</Button>
@@ -590,16 +620,17 @@ function Context() {
             <Box>
                <Divider title="TERMINOLOGY" />
                <Box className={classes.descriptionBox}>
-                  <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
+                  <Typography component="body1" variant="body1">Vocabulary and terminology are super important especially when it comes to politically charged issues because words hold more weight for differing communities. Using the wrong terminology could bring harm to certain groups and impact their way of life. Below is a comparison between the two most commonly misused terms. Hover over the images below to learn the difference. </Typography>
                </Box>
+               <ImageComparer />
                <Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
-                  <Button variant="contained" color="secondary" href="/myths" >More Myths</Button>
+                  <Button variant="contained" color="secondary" href="/terminology">More Definitions</Button>
                </Box>
             </Box>
             <Box>
                <Divider title="VETTING PROCESS" />
                <Box className={classes.descriptionBox}>
-                  <Typography component="body1" variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fringilla dui, quis scelerisque sem. Pellentesque vitae enim ut diam placerat ullamcorper sit amet sed quam. Pellentesque a nisi nisi. Donec elit orci, consectetur et rhoncus id, tincidunt eu neque.</Typography>
+                  <Typography>Refugees are the most vetted individuals in the world, at a minimum the vetting process that they go through includes 6 stages and 20 different steps. Each person’s experience is completely different depending on their network, their home country, and the people they interact with from beginning to end. The process detailed below is required by the U.S. Refugee Admissions Program (USRAP) as well as the refugee resettlement process. </Typography>
                </Box>
 
                {/* IN MOBILE */}

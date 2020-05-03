@@ -150,6 +150,7 @@ export const useStyles = makeStyles(theme => ({
         position: 'relative',
         backgroundSize: 'cover',
         height: 500,
+        // height: 300,
         justifyContent: 'center',
         display: 'flex',
         // TODO make reactive
@@ -238,7 +239,7 @@ export const useStyles = makeStyles(theme => ({
     },
     
     descriptionBox: {
-        padding: theme.spacing(3, 0, 3)
+        padding: theme.spacing(0, 0,4)
     },
 
     imageStory: {
