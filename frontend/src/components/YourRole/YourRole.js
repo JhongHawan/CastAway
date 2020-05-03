@@ -44,7 +44,7 @@ function YourRole() {
             <Stepper />
           </Grid>
           <Grid item xs={12}>
-            <Divider title="MAKE AN ACTION" />
+            <Divider title="TAKE ACTION" />
           </Grid>
           <Grid item xs={12}>
             <TemplatedEmail />

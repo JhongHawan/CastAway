@@ -216,7 +216,7 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_un.jpg" width="100%"></img>
+                        <img src="vetting_un.jpg" width="100" />
                         {/* <Typography variant="subtitle1">UN emblem blue.svg. (2020, April 10). Wikimedia Commons, the free media repository.</Typography> */}
                      </Col>
                      <Col sm={9} md={7}>
@@ -573,7 +573,7 @@ function ImageComparer() {
             {/* <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" /> */}
             <ReactCompareImage
                leftImage="refugee1.jpg"
-               leftImageAlt="AA refugee is  someone a person  who has been forced  to leave their  country in order to  escape war,  persecution, or  natural disaster."
+               leftImageAlt="A refugee is  someone a person  who has been forced  to leave their  country in order to  escape war,  persecution, or  natural disaster."
                rightImage="immigrant2.jpg"
                rightImageAlt="An immigrant is someone who makes a conscious decision to leave his or her home and move to a foreign country with the intention of settling there."
                sliderLineWidth="4"

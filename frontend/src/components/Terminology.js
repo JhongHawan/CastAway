@@ -60,54 +60,55 @@ function Terminology() {
                   <TerminologyCard
                      term="Migrant"
                      pronunciation="/ˈmīɡrənt/"
-                     partOfSpeech=""
-                     definition="----"
+                     partOfSpeech="noun"
+                     definition="A person who moves from one place to another, especially in order to find work or better living conditions."
                   />
                   <TerminologyCard
                      term="Returnee"
                      pronunciation="/rəˌtərˈnē/"
-                     partOfSpeech=""
-                     definition="----"
+                     partOfSpeech="noun"
+                     definition="A person who returns to a place, especially after a prolonged absence. A refugee returning from abroad.
+                     "
                   />
                </Col>
                <Col md={6} lg={4}>
                   <TerminologyCard
                      term="Immigrant"
                      pronunciation="/ˈiməɡrənt/"
-                     partOfSpeech=""
-                     definition="----"
+                     partOfSpeech="noun"
+                     definition="An immigrant is someone who makes a conscious decision to leave his or her home and move to a foreign country with the intention of settling there."
                   />
                   <TerminologyCard
                      term="Protected Person"
                      pronunciation="/prəˈtekted pərs(ə)n/"
-                     partOfSpeech=""
-                     definition="----"
+                     partOfSpeech="noun"
+                     definition="Protected persons is a legal term under international humanitarian law and refers to persons who are under specific protection of the 1949 Geneva Conventions, their 1977 Additional Protocols, and customary international humanitarian law during an armed conflict."
                   />
                   <TerminologyCard
                      term="Stateless Person"
                      pronunciation="/ˈstātləs pərs(ə)n/"
-                     partOfSpeech=""
-                     definition="----"
+                     partOfSpeech="noun"
+                     definition="A stateless person is someone who, under national laws, does not enjoy citizenship – the legal bond between a government and an individual – in any country."
                   />
                </Col>
                <Col md={6} lg={4}>
                   <TerminologyCard
                      term="Internally Displaced Person"
                      pronunciation="/inˈtərnlē disˈplāsed pərs(ə)n/"
-                     partOfSpeech=""
-                     definition="----"
+                     partOfSpeech="noun"
+                     definition="An internally displaced person is someone who is forced to flee his or her home but who remains within his or her country's borders."
                   />
                   <TerminologyCard
                      term="Refugee"
-                     pronunciation="/ˌrefyo͝oˈjē/"
-                     partOfSpeech=""
-                     definition="----"
+                     pronunciation="/refyo͝oˈjē/"
+                     partOfSpeech="noun"
+                     definition="A refugee is someone a person who has been forced to leave their country in order to  escape war, persecution, or natural disaster."
                   />
                   <TerminologyCard
                      term="Temporary Resident"
                      pronunciation="/ˈtempəˌrerē rez(ə)dənt/"
-                     partOfSpeech=""
-                     definition="----"
+                     partOfSpeech="noun"
+                     definition="A temporary resident is a foreign national granted the right to stay in a country for a certain length of time (e.g. with a visa or residency permit), without full citizenship. This may be for study, business, or other reasons."
                   />
                </Col>
             </Row>
