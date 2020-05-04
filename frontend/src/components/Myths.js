@@ -13,6 +13,7 @@ import Paper from '@material-ui/core/Paper';
 import Switch from '@material-ui/core/Switch';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import CardActionArea from '@material-ui/core/CardActionArea'; 
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 import { useStyles } from './Styles';
@@ -36,21 +37,30 @@ function Myths() {
 
 		return (
 			<Col
+				xs={12}
 				sm={6}
 				md={4}
 				lg={3}
 				style={{
 					padding: '0.5em',
 					width: 100,
-					height: '120px',
 					display: 'flex',
 					justifyContent: 'center',
 					alignItem: 'center'
 				}}
 			>
-				<Paper variant="outlined" className={classes.paper} style={{ borderColor: color, borderWidth: width }}>
-					{props.caption}
-				</Paper>
+				<CardActionArea>
+					<Paper 
+						variant="outlined" 
+						className={classes.paper} 
+						style={{ 
+							borderColor: color, 
+							borderWidth: width 
+						}}
+					>
+						{props.caption}
+					</Paper>
+				</CardActionArea>
 			</Col>
 		);
 	}
