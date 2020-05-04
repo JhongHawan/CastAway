@@ -211,10 +211,17 @@ export const useStyles = makeStyles(theme => ({
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100px'
+        height: '100px',
+        fontSize: '0.9rem'
     },
-    testToggle: {
-        backgroundColor: 'green'
+    greenBorder: {
+        fontSize: '100px',
+        borderColor: 'green',
+        borderWidth: '3px'
+    },
+    redBorder: {
+        borderColor: 'red',
+        borderWidth: '3px'
     },
     redButton: {
         backgroundColor: 'red'

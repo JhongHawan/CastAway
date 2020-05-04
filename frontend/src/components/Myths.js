@@ -13,7 +13,7 @@ import Paper from '@material-ui/core/Paper';
 import Switch from '@material-ui/core/Switch';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-import CardActionArea from '@material-ui/core/CardActionArea'; 
+import CardActionArea from '@material-ui/core/CardActionArea';
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 import { useStyles } from './Styles';
@@ -27,41 +27,31 @@ function Myths() {
    * @param {String} props.color 
    */
 	function Card(props) {
-		let color = '#c4c4c4';
-		let width = '1px';
-
-		if (props.clicked) {
-			color = props.redGreen;
-			width = '3px';
-		}
+		const [localActive, setLocalActive] = useState(false);
+		const [borderColor, setBorderColor] = useState('#c4c4c4');
+		const [borderWidth, setBorderWidth] = useState('1px');
 
 		return (
-			<Col
-				xs={12}
-				sm={6}
-				md={4}
-				lg={3}
-				style={{
-					padding: '0.5em',
-					width: 100,
-					display: 'flex',
-					justifyContent: 'center',
-					alignItem: 'center'
+			<CardActionArea
+				onClick={() => {
+					setLocalActive(!localActive); 
+					setBorderColor(props.active ? props.redGreen : '#c4c4c4');
+					setBorderWidth(props.active ? '3px' : '1px');
 				}}
 			>
-				<CardActionArea>
-					<Paper 
-						variant="outlined" 
-						className={classes.paper} 
-						style={{ 
-							borderColor: color, 
-							borderWidth: width 
-						}}
-					>
-						{props.caption}
-					</Paper>
-				</CardActionArea>
-			</Col>
+				<Paper 
+					variant="outlined" 
+					className={
+						`${classes.paper}`
+					}
+					style={{
+						borderColor: (localActive || props.active) ? props.redGreen : '#c4c4c4',
+						borderWidth: (localActive || props.active) ? '3px' : '1px'
+					}}
+				>
+					{props.caption}
+				</Paper>
+			</CardActionArea>
 		);
 	}
 
@@ -91,52 +81,83 @@ function Myths() {
 						Reset
 					</Button>
 				</Container>
-				<Row>
-					<Card
-						caption="Immigrants and refugees are the same type of person."
-						clicked={active}
-						redGreen={red}
-					/>
-					<Card caption="Refugees go through a 20 step vetting process." clicked={active} redGreen={green} />
-					<Card
-						caption="The United States is the only country that takes refugees."
-						clicked={active}
-						redGreen={red}
-					/>
-					<Card
-						caption="Refugees are forced to leave their home to escape violence."
-						clicked={active}
-						redGreen={green}
-					/>
-					<Card caption="It will be easier to send help back home." clicked={active} redGreen={red} />
-					<Card
-						caption="Refugees contribute their talent, skills, and culture."
-						clicked={active}
-						redGreen={green}
-					/>
-					<Card
-						caption="Refugees do not pay taxes, and negatively impact the economy."
-						clicked={active}
-						redGreen={red}
-					/>
-					<Card
-						caption="The refugee crisis has appeared in history before."
-						clicked={active}
-						redGreen={green}
-					/>
-					<Card caption="All the refugees that come are adult men." clicked={active} redGreen={red} />
-					<Card
-						caption="Refugees come from countries all over the world."
-						clicked={active}
-						redGreen={green}
-					/>
-					<Card
-						caption="All refugees are terrorists with a violent agenda."
-						clicked={active}
-						redGreen={red}
-					/>
-					<Card caption="The refugee crisis is still happening." clicked={active} redGreen={green} />
-				</Row>
+				<Grid container spacing={2}>
+					<Grid item xs={12} sm={3}>
+						<Card
+							caption="Immigrants and refugees are the same type of person."
+							active={active}
+							redGreen={red}
+						/>
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Card
+							caption="Refugees go through a 20 step vetting process."
+							active={active}
+							redGreen={green}
+						/>
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Card
+							caption="The United States is the only country that takes refugees."
+							active={active}
+							redGreen={red}
+						/>
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Card
+							caption="Refugees are forced to leave their home to escape violence."
+							active={active}
+							redGreen={green}
+						/>
+					</Grid>
+
+					<Grid item xs={12} sm={3}>
+						<Card caption="It will be easier to send help back home." active={active} redGreen={red} />
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Card
+							caption="Refugees contribute their talent, skills, and culture."
+							active={active}
+							redGreen={green}
+						/>
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Card
+							caption="Refugees do not pay taxes, and negatively impact the economy."
+							active={active}
+							redGreen={red}
+						/>
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Card
+							caption="The refugee crisis has appeared in history before."
+							active={active}
+							redGreen={green}
+						/>
+					</Grid>
+
+					<Grid item xs={12} sm={3}>
+						<Card caption="All the refugees that come are adult men." active={active} redGreen={red} />
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Card
+							caption="Refugees come from countries all over the world."
+							active={active}
+							redGreen={green}
+						/>
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Card
+							caption="All refugees are terrorists with a violent agenda."
+							active={active}
+							redGreen={red}
+						/>
+					</Grid>
+					<Grid item xs={12} sm={3}>
+						<Card caption="The refugee crisis is still happening." active={active} redGreen={green} />
+					</Grid>
+				</Grid>
+				<Row />
 			</Container>
 		);
 	}
