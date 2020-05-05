@@ -63,6 +63,8 @@ Our MERN stack application is currently deployed via Heroku: https://castaway.he
 
 ## Contributing
 
+CASTAWAY will be discontinued as of June 2020 and no further updates will be released. The code is available for public use and please see our [LICENSE.md](LICENSE.md) file for details.
+
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
