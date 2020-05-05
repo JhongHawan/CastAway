@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="/frontend/castawayLogo.png"/>
+    <img src="/frontend/public/castawayLogo.png"/>
     <h1>CASTAWAY</h1>
 </div>
 
