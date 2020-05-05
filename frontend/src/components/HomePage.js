@@ -52,8 +52,8 @@ function HomePage() {
         return (
             <Container>
                 <Row>
-                    <Col xs={12} sm={3} md={4} style={{ textAlign: 'center'}}>
-                        <img src="arab_girl.jpg" width="100%"/>
+                    <Col xs={12} sm={3} md={4} style={{ textAlign: 'center' }}>
+                        <img src="arab_girl.jpg" width="100%" />
                     </Col>
                     <Col xs={12} sm={9} md={8}>
                         <SectionCard
@@ -78,6 +78,11 @@ function HomePage() {
     // TODO Move Why Does it Matter to new function
     return (
         <div>
+            <Hero
+                showCard={false}
+                showCitation={true}
+                sectionTitle="&quot;No one puts their children in a boat unless the water is safer than the land&quot;"
+            />
             <Divider title="WHY DOES IT MATTER?" />
             <Container>
                 <Row>

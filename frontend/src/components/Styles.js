@@ -144,6 +144,19 @@ export const useStyles = makeStyles(theme => ({
         background: '#F16841',
         height: '2px'
     },
+
+    parallaxHero: {
+        backgroundImage: `url(${heroImage})`,
+        backgroundSize: 'cover',
+        height: '80vh',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        textAlign: 'center',
+        display: 'flex',
+        // position: 'relative'
+    },
+
     heroImg: {
         // backgroundImage: `url(${testHero})`,
         backgroundImage: `url(${heroImage})`,
