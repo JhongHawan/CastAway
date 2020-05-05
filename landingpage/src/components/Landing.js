@@ -67,7 +67,7 @@ const useStyles = makeStyles(theme => ({
             '0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12)',
     },
     teamItem: {
-        padding: theme.spacing(10, 20, 10)
+        padding: theme.spacing(10, 7, 10)
     }
 }));
 
@@ -105,17 +105,10 @@ export default function Landing() {
                 {/* Main Slogan? */}
                 <Grid container direction="row" justify="center" alignItems="center" className={classes.blackPadding}>
                     <Grid item>
-                        <Typography variant="h3" color="primary" >
+                        <Typography variant="h3" style={{ color: 'white' }} >
                             {/* An Experience Built to Raise Awareness For Refugees */}
                             DELIVERING ACCURATE AND RELIABLE INFORMATION FOR REFUGEE AWARENESS
                         </Typography>
-                    </Grid>
-                </Grid>
-                {/* // TODO make Reactive  */}
-                <Grid container direction="row" justify="center" alignItems="center" className={classes.blackPadding}>
-                    <Grid item sm={5}>
-                        {/* <Grid item xs={12} sm={6} md={5} lg={4} xl={6}> */}
-                        <img src="home_screenshot.jpg" width="100%" />
                     </Grid>
                 </Grid>
             </Container>
@@ -197,8 +190,12 @@ export default function Landing() {
                     <Grid item xs={12} sm={6}>
                         <Typography variant="h5" color="primary">HISTORY</Typography>
                         <Typography variant="body1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </Typography>
+                            In an effort to build a holistic and independent site addressing the issue of
+                            refugee misinformation, Castaway doesn’t assume that the user has any background
+                            information on the topic. History is an important feature because it educates the
+                            user and gives them background information essential to their understanding of
+                            refugees and their past.
+                        </Typography>
                     </Grid>
 
                     <Grid item xs={12} sm={5} align="center">
@@ -207,7 +204,12 @@ export default function Landing() {
                     <Grid item xs={12} sm={6}>
                         <Typography variant="h5" color="primary">MYTHS</Typography>
                         <Typography variant="body1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            One of the most important features on our site is the Myth page. The myth page
+                            allows us to address the common misconceptions about refugees and explain why
+                            they are false and extremely harmful to spread. Additionally, this page also
+                            addresses and explains the less known facts about refugees that are often overlooked.
+                            The interactivity in the page allows the user to click on different myths and facts
+                            and “debunk” them.
                         </Typography>
                     </Grid>
 
@@ -217,7 +219,12 @@ export default function Landing() {
                     <Grid item xs={12} sm={6}>
                         <Typography variant="h5" color="primary">STORIES</Typography>
                         <Typography variant="body1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Stories give this cause a face. It is easy to look at statistics and read facts all day,
+                            but behind these numbers are people who are fighting for their lives and for the lives
+                            of their loved ones. At the end of the day they are the ones that are being impacted
+                            by the policies and quotas. They are somebody's mother, brother, aunt, grandmother,
+                            or child. They deserve justice and for their stories to be heard. Our stories section
+                            also has the goal of humanizing the crisis and possibly making it more personable.
                         </Typography>
                     </Grid>
 
@@ -227,7 +234,10 @@ export default function Landing() {
                     <Grid item xs={12} sm={6}>
                         <Typography variant="h5" color="primary">DATA</Typography>
                         <Typography variant="body1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Another one of our key features is data. Using an API our site provides users with statistics
+                            about the influx of refugees from different countries, to different host countries, in
+                            different years. Providing factual unbiased data to people allows them to form their own
+                            opinions while having the tools to back them up. The numbers speak to lengths that words cannot.
                         </Typography>
                     </Grid>
 
@@ -237,7 +247,12 @@ export default function Landing() {
                     <Grid item xs={12} sm={6}>
                         <Typography variant="h5" color="primary">VETTING PROCESS</Typography>
                         <Typography variant="body1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            One of the most common misconceptions about refugees is that they are not vetted and that by allowing
+                            refugees into our country we are allowing terrorists and criminals in. This however couldn’t be
+                            further from the truth. Refugees, specifically Syrian refugees, are the most vetted individuals
+                            in the world. Although it varies from case to case, refugees go through a 20 step vetting process
+                            that spans 2 years. Our site allows the user to click through every step and learn the details to
+                            shed light on the complexity of the process.
                         </Typography>
                     </Grid>
 
@@ -247,7 +262,12 @@ export default function Landing() {
                     <Grid item xs={12} sm={6}>
                         <Typography variant="h5" color="primary">TEMPLATED EMAIL</Typography>
                         <Typography variant="body1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Our site has a call to action urging the users to get involved in any way they can. One way that can
+                            truly make a difference is if after they have formed an informed opinion they contact their representatives
+                            about their opinions and concerns. The process can be confusing and hard to follow so our site helps users
+                            understand how to write their representative an effective email, where to find their information, and gives
+                            them a template to help get them started. By completing the research for the user we hope that they would be
+                            more willing to reach out and begin to make a difference.
                         </Typography>
                     </Grid>
 
@@ -262,7 +282,7 @@ export default function Landing() {
                 <Typography variant="h3" style={{ color: 'white', textAlign: 'center' }}>
                     MEET THE TEAM
                 </Typography>
-                <Grid container spacing={5} className={classes.teamItem}>
+                <Grid container spacing={3} className={classes.teamItem}>
                     <Grid item sm={12} sm={6} md={3} >
                         <img src="brian.jpg" width="100%" title="Brian Jhong" />
                         <Typography variant="h6" style={{ color: 'white' }}>Brian Jhong</Typography>
