@@ -22,6 +22,11 @@ If you have issues or concerns please contact one of the following individuals v
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+* There is a .sample-env file that holds the template for enviornment variables needed to connect to your database. 
+* Create a new .env file and copy and paste the contents from .sample-env. 
+* Then add your MONGO_URI to the .env file. 
+* Make sure you set an env var for that and the jwtSecret on deployment
+
 ## Installing
 
 #### Install dependencies for backend
