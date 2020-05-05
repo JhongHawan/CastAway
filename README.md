@@ -3,7 +3,7 @@
     <h1>CASTAWAY</h1>
 </div>
 
-# DISCONTINUED
+# [NOTICE]: DISCONTINUED
 Note that as of June 2020 CASTAWAY will be discontinued and no further updates will be released. The app will still be available via our heroku deployment: https://castaway.herokuapp.com/
 
 ## About CASTAWAY
