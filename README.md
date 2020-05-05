@@ -1,5 +1,10 @@
-# InfoCapstone2020
-Repo for Informatics Capstone 2020, our project is focused on being an accurate source of information about refugees. 
+<div align="center">
+    <img src="/frontend/castawayLogo.png"/>
+    <h1>CASTAWAY</h1>
+</div>
+
+## About CASTAWAY
+Repo for Informatics Capstone 2020, our project is focused on being an accurate source of information about refugees. Our mission is to create a solution to allow the general public and academics to obtain accurate information concerning refugees in one location. We want the general public to use the information to make informed decisions and academics to benefit their own work.
 
 ## Contact
 
