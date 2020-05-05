@@ -102,7 +102,7 @@ function Terminology() {
                      term="Refugee"
                      pronunciation="/refyo͝oˈjē/"
                      partOfSpeech="noun"
-                     definition="A refugee is someone a person who has been forced to leave their country in order to  escape war, persecution, or natural disaster."
+                     definition="A refugee is someone a person who has been forced to leave their country in order to  escape war, persecution, or natural disaster. Within refugees there are multiple distictions. For example political refugees tend to escape because of fear of persecution or because of their political views. Economic refugees escape due to harsh and life threatening econmic conditions. "
                   />
                   <TerminologyCard
                      term="Temporary Resident"
@@ -125,6 +125,14 @@ function Terminology() {
          />
          {/* <span style={{ paddingTop: '10px'}}></span> */}
          <Divider title="Terminology" />
+         <Container style={{ paddingBottom: '2em' }}>
+            <Typography component="body1" variant="body1">
+               There are so many different words used to describe the variety of individuals 
+               that leave their homes and travel to different countries. The choice to leave    
+               can be voluntary or against their will. Regardless, knowing the difference    
+               between these terms is a very important step in providing the required aid.     
+            </Typography>
+         </Container>
          <TerminologyGrid />
       </div>
    );
