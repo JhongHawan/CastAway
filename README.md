@@ -3,6 +3,9 @@
     <h1>CASTAWAY</h1>
 </div>
 
+# DISCONTINUED
+Note that as of June 2020 CASTAWAY will be discontinued and no further updates will be released. The app will still be available via our heroku deployment: https://castaway.herokuapp.com/
+
 ## About CASTAWAY
 Repo for Informatics Capstone 2020, our project is focused on being an accurate source of information about refugees. Our mission is to create a solution to allow the general public and academics to obtain accurate information concerning refugees in one location. We want the general public to use the information to make informed decisions and academics to benefit their own work.
 
