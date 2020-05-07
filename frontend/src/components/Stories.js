@@ -28,38 +28,19 @@ var data = require('../refugee_stories.json');
 function Stories() {
    const classes = useStyles();
 
-   // ! Parse NEW
-   // console.log(data)
-   // let test = data[0].name
-   // console.log(test)
-
-
-   // TODO replace with real stories
-   // let base = "user_"
-   // let end = ".png"
-   // let imagesArr = [
-   //    {
-   //       name: base.concat(1, end),
-   //    }
-   // ]
-   // for (let i = 2; i < 13; i++) {
-   //    imagesArr.push({
-   //       name: base.concat(i, end)
-   //    })
-   // }
-
-
-
-
-
    // * CAN BE USED GLOBALLY
    let [imageState, setImageState] = React.useState(data[0].img);
    let [highlightName, setHighlightName] = React.useState(data[0].name);
    let [highlightHome, setHighlightHome] = React.useState(data[0].home);
    let [highlightDesc, setHighlightDesc] = React.useState(data[0].bio);
    let [highlightLink, setHighlightLink] = React.useState(data[0].source);
-   
 
+
+   let scrollHere = React.createRef();
+   
+   let scrollSmoothHandler = () => {
+      scrollHere.current.scrollIntoView({ behavior: "smooth" })
+   }
 
    /**
     * 
@@ -93,9 +74,8 @@ function Stories() {
          console.log("Link          : " + highlightLink);
 
 
-
-         window.scrollTo(0, 0);
-         // window.scrollTo(0, 500);
+         scrollSmoothHandler();
+      
       }
 
       return (
@@ -115,7 +95,7 @@ function Stories() {
     */
    function Highlight() {
       return (
-         <Container className={classes.storyHighlightContainer}>
+         <Container className={classes.storyHighlightContainer} ref={scrollHere}>
             <Row>
                <Col sm={3} md={4}>
                   <img className={classes.storyHighlightImage} src={imageState} width="100%" />
