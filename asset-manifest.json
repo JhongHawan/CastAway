@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/InfoCapstone2020/static/css/main.74e43625.chunk.css",
-    "main.js": "/InfoCapstone2020/static/js/main.da3c207c.chunk.js",
-    "main.js.map": "/InfoCapstone2020/static/js/main.da3c207c.chunk.js.map",
-    "runtime-main.js": "/InfoCapstone2020/static/js/runtime-main.ff84cdf5.js",
-    "runtime-main.js.map": "/InfoCapstone2020/static/js/runtime-main.ff84cdf5.js.map",
-    "static/js/2.d433cc02.chunk.js": "/InfoCapstone2020/static/js/2.d433cc02.chunk.js",
-    "static/js/2.d433cc02.chunk.js.map": "/InfoCapstone2020/static/js/2.d433cc02.chunk.js.map",
-    "index.html": "/InfoCapstone2020/index.html",
-    "precache-manifest.faf824f9a4f67f164062c97da2d0f035.js": "/InfoCapstone2020/precache-manifest.faf824f9a4f67f164062c97da2d0f035.js",
-    "service-worker.js": "/InfoCapstone2020/service-worker.js",
-    "static/css/main.74e43625.chunk.css.map": "/InfoCapstone2020/static/css/main.74e43625.chunk.css.map",
-    "static/js/2.d433cc02.chunk.js.LICENSE.txt": "/InfoCapstone2020/static/js/2.d433cc02.chunk.js.LICENSE.txt",
-    "static/media/landing.jpeg": "/InfoCapstone2020/static/media/landing.4010d615.jpeg"
+    "main.css": "/CastAway/static/css/main.74e43625.chunk.css",
+    "main.js": "/CastAway/static/js/main.96faac41.chunk.js",
+    "main.js.map": "/CastAway/static/js/main.96faac41.chunk.js.map",
+    "runtime-main.js": "/CastAway/static/js/runtime-main.b1a923ed.js",
+    "runtime-main.js.map": "/CastAway/static/js/runtime-main.b1a923ed.js.map",
+    "static/js/2.d433cc02.chunk.js": "/CastAway/static/js/2.d433cc02.chunk.js",
+    "static/js/2.d433cc02.chunk.js.map": "/CastAway/static/js/2.d433cc02.chunk.js.map",
+    "index.html": "/CastAway/index.html",
+    "precache-manifest.269340c53d38c024d39f1682b1591135.js": "/CastAway/precache-manifest.269340c53d38c024d39f1682b1591135.js",
+    "service-worker.js": "/CastAway/service-worker.js",
+    "static/css/main.74e43625.chunk.css.map": "/CastAway/static/css/main.74e43625.chunk.css.map",
+    "static/js/2.d433cc02.chunk.js.LICENSE.txt": "/CastAway/static/js/2.d433cc02.chunk.js.LICENSE.txt",
+    "static/media/landing.jpeg": "/CastAway/static/media/landing.4010d615.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ff84cdf5.js",
+    "static/js/runtime-main.b1a923ed.js",
     "static/js/2.d433cc02.chunk.js",
     "static/css/main.74e43625.chunk.css",
-    "static/js/main.da3c207c.chunk.js"
+    "static/js/main.96faac41.chunk.js"
   ]
 }
