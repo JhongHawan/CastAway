@@ -92,7 +92,10 @@ function Stories() {
          setHighlightLink(highlightLink = props.link);
          console.log("Link          : " + highlightLink);
 
-         window.scrollTo(0, 500);
+
+
+         window.scrollTo(0, 0);
+         // window.scrollTo(0, 500);
       }
 
       return (
