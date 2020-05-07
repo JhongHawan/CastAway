@@ -4,6 +4,8 @@ import { Container, Typography, Grid, Box, Paper, Link } from '@material-ui/core
 
 import hero from '../img/landing.jpeg';
 import InfoIcon from '@material-ui/icons/Info';
+import AssessmentIcon from '@material-ui/icons/Assessment';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
 
 
 // reminder theme.spacing(top, sides, bottom)
@@ -96,8 +98,9 @@ export default function Landing() {
                 {/* Announcing Open Source */}
                 <Grid container direction="row" justify="center" alignItems="center" className={classes.blackPadding}>
                     <Grid item>
-                        <Typography variant="h5" color="secondary" >
-                            AN OPEN SOURCE PROJECT STARTING MAY 22, 2020
+                        <Typography variant="h4" color="secondary" >
+                            {/* AN OPEN SOURCE PROJECT STARTING MAY 22, 2020 */}
+                            AN OPEN SOURCE PROJECT STARTING JUNE 2020
                         </Typography>
                     </Grid>
                 </Grid>
@@ -151,7 +154,7 @@ export default function Landing() {
                     </Grid>
                     <Grid item sm={12} md={4}>
                         <Paper variant="elevation" elevation={20} className={classes.paper} >
-                            <InfoIcon color="secondary" style={{ fontSize: 75 }} />
+                            <AssessmentIcon color="secondary" style={{ fontSize: 75 }} />
                             <Typography variant="h5">
                                 Concrete Data Visualization
                             </Typography>
@@ -162,7 +165,7 @@ export default function Landing() {
                     </Grid>
                     <Grid item sm={12} md={4}>
                         <Paper variant="elevation" elevation={20} className={classes.paper} >
-                            <InfoIcon color="secondary" style={{ fontSize: 75 }} />
+                            <MenuBookIcon color="secondary" style={{ fontSize: 75 }} />
                             <Typography variant="h5">
                                 Personable and Powerful Stories
                             </Typography>
