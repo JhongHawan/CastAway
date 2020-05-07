@@ -2,7 +2,7 @@
   "name": "landingpage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jhonghawan.github.io/InfoCapstone2020",
+  "homepage": "https://jhonghawan.github.io/CastAway",
   "dependencies": {
     "@material-ui/core": "^4.9.1",
     "@material-ui/icons": "^4.9.1",
