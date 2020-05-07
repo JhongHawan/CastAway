@@ -144,6 +144,19 @@ export const useStyles = makeStyles(theme => ({
         background: '#F16841',
         height: '2px'
     },
+
+    parallaxHero: {
+        backgroundImage: `url(${heroImage})`,
+        backgroundSize: 'cover',
+        height: '80vh',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        textAlign: 'center',
+        display: 'flex',
+        // position: 'relative'
+    },
+
     heroImg: {
         // backgroundImage: `url(${testHero})`,
         backgroundImage: `url(${heroImage})`,
@@ -207,12 +220,21 @@ export const useStyles = makeStyles(theme => ({
     },
     paper: {
         padding: theme.spacing.unit * 2,
+        display: 'flex', 
         textAlign: 'center',
-        verticalAlign: 'middle'
-        
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100px',
+        fontSize: '0.9rem'
     },
-    testToggle: {
-        backgroundColor: 'green'
+    greenBorder: {
+        fontSize: '100px',
+        borderColor: 'green',
+        borderWidth: '3px'
+    },
+    redBorder: {
+        borderColor: 'red',
+        borderWidth: '3px'
     },
     redButton: {
         backgroundColor: 'red'

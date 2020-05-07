@@ -1,7 +1,7 @@
-    import React from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useStyles } from './Styles';
-import { Typography, Box } from '@material-ui/core';
+import { Typography, Box, Grid } from '@material-ui/core';
 
 
 /**
@@ -59,18 +59,18 @@ function Hero(props) {
 
     function Citation() {
         return (
-            <Box style={{ textAlign: 'center', paddingTop: '1rem'}}>
-                <Typography component="overline" variant="overline" color="primary" style={{ fontSize: '1.5rem'}} >
+            <Box style={{ textAlign: 'center', paddingTop: '1rem' }}>
+                <Typography component="overline" variant="overline" color="primary" style={{ fontSize: '1.5rem' }} >
                     - Warsan Shire, "Home"
                 </Typography>
             </Box>
         )
     }
 
-    return (
 
-        <div className={classes.heroImg}>
-            <Container diableGutters>
+    return (
+        <div className={classes.parallaxHero}>
+            <Container disableGutters>
                 <Row className="h-100">
                     <Col style={{ marginTop: "auto", marginBottom: "auto" }}>
                         <Typography
@@ -78,34 +78,45 @@ function Hero(props) {
                             variant="h3"
                             align="center"
                             color="primary"
-                        // style={{ color: 'white'}}
-                        // className={classes.homeSectionTitle}
                         >
                             {props.sectionTitle}
                         </Typography>
+                        
                         {includeCite ?
                             <Citation /> : null
                         }
-                        {/* <h1 className={classes.homeSectionTitle}>
-                            {props.sectionTitle}
-                        </h1> */}
+                        
                     </ Col>
                 </Row>
             </Container>
-
-
-            {/*hide or not to hide */}
-
-            {includeCard ?
-                <HeroCard
-                    cardTitle={props.cardTitle}
-                    cardSubtitle={props.cardSubtitle}
-                    cardBody={props.cardBody}
-                /> : null
-            }
-
-
         </div>
+
+        // <div className={classes.heroImg}>
+        //     <Container diableGutters>
+        //         <Row className="h-100">
+        //             <Col style={{ marginTop: "auto", marginBottom: "auto" }}>
+        //                 <Typography
+        //                     component="h3"
+        //                     variant="h3"
+        //                     align="center"
+        //                     color="primary"
+        //                 >
+        //                     {props.sectionTitle}
+        //                 </Typography>
+        //                 {includeCite ?
+        //                     <Citation /> : null
+        //                 }
+        //             </ Col>
+        //         </Row>
+        //     </Container>
+        //     {includeCard ?
+        //         <HeroCard
+        //             cardTitle={props.cardTitle}
+        //             cardSubtitle={props.cardSubtitle}
+        //             cardBody={props.cardBody}
+        //         /> : null
+        //     }
+        // </div>
 
     );
 }
