@@ -1,6 +1,4 @@
 import React from 'react';
-import StoryCard from './StoryCard';
-import StoriesList from './StoriesList';
 
 
 import { Container, Col, Row } from 'react-bootstrap';

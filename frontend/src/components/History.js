@@ -3,7 +3,6 @@ import { Grid, Box, Container, Typography, Button } from '@material-ui/core';
 import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
 import ReactCompareImage from 'react-compare-image';
 import ContextCard from './ContextCard';
-// import TimelineFunction from './Timeline';
 
 
 import { useStyles } from './Styles';
