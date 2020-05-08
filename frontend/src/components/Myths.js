@@ -27,7 +27,7 @@ function Myths() {
    * @param {String} props.color 
    */
 	function Card(props) {
-		const [ localActive, setLocalActive ] = useState(false);
+		const [localActive, setLocalActive] = useState(false);
 
 		return (
 			<CardActionArea
@@ -53,7 +53,7 @@ function Myths() {
 		const green = '#72BF7A';
 		const red = '#F79C99';
 
-		const [ active, setActive ] = useState(false);
+		const [active, setActive] = useState(false);
 
 		function handleDebunk() {
 			setActive(true);
@@ -92,7 +92,7 @@ function Myths() {
 					</Grid>
 					<Grid item xs={6} sm={3}>
 						<Card
-							caption="The United States is the only country that takes refugees."
+							caption="Refugees do not pay taxes, and negatively impact the economy."
 							active={active}
 							redGreen={red}
 						/>
@@ -104,10 +104,6 @@ function Myths() {
 							redGreen={green}
 						/>
 					</Grid>
-
-					<Grid item xs={6} sm={3}>
-						<Card caption="It will be easier to send help back home." active={active} redGreen={red} />
-					</Grid>
 					<Grid item xs={6} sm={3}>
 						<Card
 							caption="Refugees contribute their talent, skills, and culture."
@@ -117,7 +113,7 @@ function Myths() {
 					</Grid>
 					<Grid item xs={6} sm={3}>
 						<Card
-							caption="Refugees do not pay taxes, and negatively impact the economy."
+							caption="It will be easier to send help back home."
 							active={active}
 							redGreen={red}
 						/>
@@ -129,9 +125,19 @@ function Myths() {
 							redGreen={green}
 						/>
 					</Grid>
+					<Grid item xs={6} sm={3}>
+						<Card
+							caption="The United States is the only country that takes refugees."
+							active={active}
+							redGreen={red}
+						/>
+					</Grid>
 
 					<Grid item xs={6} sm={3}>
-						<Card caption="All the refugees that come are adult men." active={active} redGreen={red} />
+						<Card
+							caption="All the refugees that come are adult men."
+							active={active}
+							redGreen={red} />
 					</Grid>
 					<Grid item xs={6} sm={3}>
 						<Card
@@ -287,7 +293,7 @@ function Myths() {
 							trueFalse={isTrue()}
 							mythTitle="Refugees come from countries all over the world."
 							mythSummary=" Although there is a large number of arab refugees, refugees come from all other the world."
-							mythDetails=""
+							mythDetails="Refugees are most commonly derived from war and destruction. Currently, the cause of the influx of refugees into the United States is the wars that are going on in the Arab countries, most specifically in Syria. The current conflict in Syria has displaced around 12 million refugees. Previously, a refugee crisis appeared of this magnitude occured alongside World War II and the Holocaust. "
 						/>
 					</Grid>
 					<Grid item xs={12} sm={4}>
@@ -357,12 +363,13 @@ function Myths() {
 				<Divider title="FACT CHECK" />
 				<Container>
 					<Typography component="h6" variant="h6">
-						There are several myths that need to be debunked when it comes to refugees.
+						Now let’s explain it.
 					</Typography>
 					<Typography component="body1" variant="body1">
-						Below is a list of common misconceptions about topics concerning refugees. There is extreme
-						danger in perpetuating false information especially when the lives of inncocent people relies on
-						it. To learn more, click on each myth and debunk it.
+						Below is the same list of facts and myths from the above section with explanations
+						and definitions to help support the claims. The list is divided into facts, that
+						are confirmed true, and myths that are confirmed to be false. To learn more,
+						click on each myth or fact.
 					</Typography>
 				</Container>
 				<Container>
