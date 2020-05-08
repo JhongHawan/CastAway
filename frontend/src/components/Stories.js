@@ -5,7 +5,7 @@ import StoriesList from './StoriesList';
 
 import { Container, Col, Row } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
-import { Box, Typography } from '@material-ui/core';
+import { Box, Typography, Button } from '@material-ui/core';
 
 
 import Footer from './About/Footer';

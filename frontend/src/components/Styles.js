@@ -369,7 +369,22 @@ export const useStyles = makeStyles(theme => ({
         '& overline': {
             padding: theme.spacing(0, 0, 1)
         }
-    }
+    },
+    historyScroll: {
+        // backgroundColor: '#333',
+        overflow: 'auto',
+        whiteSpace: 'nowrap',
+        textAlign: 'center',
+        '& div': {
+            display: 'inline-block',
+            // color: 'white',
+            textAlign: 'center',
+            padding: theme.spacing(2),
+            textDecoration: 'none'
+        }
+
+    },
+
 
 
 
