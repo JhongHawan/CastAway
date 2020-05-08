@@ -20,7 +20,7 @@ function Event(props) {
                 padding: '20px',
                 borderRadius: '8px',
                 // boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-              }}
+            }}
         >
             <Typography style={{ paddingBottom: '0.5em' }} component="h5" variant="h5" color="secondary">
                 {props.title}
@@ -53,13 +53,13 @@ function TimelineFunction() {
                 detail="Also known as the Literacy Act or the Asiatic Barred Zone Act. This act was passed with the goal of restricting immigration by imposing a literacy test on immigrants.This created a new category of inadmissible persons."
             />
             <Event
-                 key="003"               
+                key="003"
                 date="1921-1924"
                 title="The Quota Acts"
                 detail="Initially passed in 1921 the Emergency Quota Act limited the number of immigrants who could enter the United States. In 1924 the quotas were made stricter and more permanent."
             />
             <Event
-                key="004"           
+                key="004"
                 date="1939-1945"
                 title="World War II"
                 detail="The persecution of Jews and other minorities during World War II and the Holocaust created a refugee crisis. There were more refugees than nations were able to accept."
@@ -70,7 +70,7 @@ function TimelineFunction() {
                 title="The United Nations is Established"
                 detail="The United Nations is a government organization that strives to establish peace, security, friendly relations with other nations, and achieve international cooperation."
             />
-            <Event 
+            <Event
                 key="006"
                 date="1945"
                 title="Presidential Directive on Displaced Persons"
@@ -130,36 +130,38 @@ function TimelineFunction() {
                 title="The Lautenberg Amendment"
                 detail="In 1990, this Amendment reduced the amount of refugee applications from certain categories of people, including Jews, Christian minorities from the Former Soviet Union, and people from Vietnam, Laos, and Cambodia. Because the language of this Amendment is not permanent it must be extended each fiscal year."
             />
-            <Event 
+            <Event
                 key="016"
                 date="2002"
                 title="Homeland Security Act"
                 detail="This Act is responsible for creating the Department of Homeland Security. This was done by joining 22 different agencies and bureaus. The creation of the Department of Homeland Security was a response to the terrorist attack on September 11th 2001"
             />
-            <Event 
+            <Event
                 key="017"
                 date="2012"
                 title="Deferred Action for Childhood Arrivals (DACA)"
                 detail="This executive order was a response to the millions of unauthorized immigrants living in the US. This order gave minor children that had lived in the US since June 2007 protection from deportation."
             />
-            <Event 
+            <Event
                 key="018"
                 date="2014"
                 title="Deferred​ Action for Parents of Americans and Lawful Permanent Residents (DAPA) and DACA Program expanded"
                 detail="This executive order was issued by Obama during his presidency with the intention of protecting unauthorized immigrants who had children that were American citizens or lawful permanent residents from deportation."
             />
-            <Event 
+            <Event
                 key="019"
                 date="2017"
                 title="President Trump's Travel Ban/Muslim Travel Ban"
                 detail="On the 27h of January President Donald Trump signed an executive order halting all refugee admissions and temporarily barring people from seven Muslim-majority countries. The seven countries included Iraq, Syria, Iran, Libya, Somalia, Sudan, and Yemen. The ban on Syrian refugees was indefinite. The order also introduced a quota on the number of refugees accepted in that year."
             />
-            <Event 
-                key="020"
-                date="2019"
-                title="Final Rule on Public Charge Ground of Inadmissibility"
-                detail="Under President Trump's administration the Department of Homeland Security reviewed and finalized the list of benefits and other factors that must be considered when determining whether or not an applicant is likely to become a public charge."
-            />
+            <Box ref={scrollHere}>
+                <Event
+                    key="020"
+                    date="2019"
+                    title="Final Rule on Public Charge Ground of Inadmissibility"
+                    detail="Under President Trump's administration the Department of Homeland Security reviewed and finalized the list of benefits and other factors that must be considered when determining whether or not an applicant is likely to become a public charge."
+                />
+            </Box>
         </Timeline>
     );
 }
