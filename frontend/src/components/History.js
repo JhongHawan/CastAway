@@ -260,7 +260,7 @@ function History() {
                 showCard={false}
                 sectionTitle="History"
             />
-            <Container>
+            <Container style={{ paddingTop: '2rem', paddingBottom: '2rem'}}>
                 <Container className={classes.historyScroll}>
                     <Box onClick={executeScrollTo1890}>
                         <Typography variant="h6" color="secondary">

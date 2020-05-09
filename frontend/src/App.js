@@ -12,6 +12,7 @@ import NavBar from './components/Navbar';
 import HomePage from './components/HomePage';
 import Terminology from './components/Terminology';
 import YourRole from './components/YourRole/YourRole';
+import VettingProcess from './components/VettingProcess';
 import Hero from './components/Hero';
 import Context from './components/Context';
 import Footer from './components/About/Footer';
@@ -26,8 +27,9 @@ function App() {
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/myths" component={Myths} />
-            <Route path="/context" component={Context} />
+            <Route path="/background" component={Context} />
             <Route path="/terminology" component={Terminology} />
+            <Route path="/vettingProcess" component={VettingProcess} />
             <Route path="/history" component={History} />
             <Route path="/stories" component={Stories} />
             <Route path="/data" component={Visualization} />
@@ -52,7 +54,7 @@ function App() {
 /> */}
 // Homepage
 const Home = () => (
-    <HomePage />
+  <HomePage />
 );
 
 

@@ -380,10 +380,19 @@ export const useStyles = makeStyles(theme => ({
             // color: 'white',
             textAlign: 'center',
             padding: theme.spacing(2),
-            textDecoration: 'none'
-        }
+            // textDecoration: 'none'
+            '& h6:hover': {
+                color: theme.palette.primary.main,
+                cursor: 'pointer'
+            }
+        },
+
+        
 
     },
+    vettingTitle: {
+        padding: theme.spacing(2, 0, 2)
+    }
 
 
 

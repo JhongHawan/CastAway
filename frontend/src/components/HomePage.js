@@ -52,7 +52,7 @@ function HomePage() {
         return (
             <Container>
                 <Row>
-                    <Col xs={12} sm={3} md={4} style={{ textAlign: 'center' }}>
+                    <Col xs={12} sm={3} md={4} style={{ textAlign: 'center', marginTop: "auto", marginBottom: "auto" }}>
                         <img src="arab_girl.jpg" width="100%" />
                     </Col>
                     <Col xs={12} sm={9} md={8}>
@@ -68,6 +68,20 @@ function HomePage() {
                             title="IT'S YOUR TURN TO TAKE ACTION"
                             description="Individuals can also make a lot of impact by writing letters to public officials about issues that are important to them. Your congressmen all represent you, allowing you to ignite a conversation with endless possibilities. It is time to stand up and fight for what is right, and give a platform to those who haven’t had access to it in the past."
                         />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={{ offset: 1, span: 10 }} style={{ textAlign: 'center' }}>
+                        {/* <Typography component="h5" variant="h5" color="primary">
+                            Don't have time or don't know what to say?
+                        </Typography> */}
+                        <Typography component="h5" variant="h5" color="primary">
+                            Use our Templated Email to help ease the process of
+                            contacting your Representative.
+                        </Typography>
+                        <Typography component="h5" variant="h5" color="primary">
+                            Click the button below!
+                        </Typography>
                     </Col>
                 </Row>
             </Container>
