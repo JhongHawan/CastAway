@@ -1,9 +1,7 @@
 import React from 'react';
-import { Grid, Box, Container, Typography, Button } from '@material-ui/core';
+import { Box, Container, Typography, Button } from '@material-ui/core';
 import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
-import ReactCompareImage from 'react-compare-image';
-import ContextCard from './ContextCard';
-
+import Divider from './Divider';
 
 import { useStyles } from './Styles';
 
@@ -260,7 +258,13 @@ function History() {
                 showCard={false}
                 sectionTitle="History"
             />
-            <Container style={{ paddingTop: '2rem', paddingBottom: '2rem'}}>
+            <Container style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
+                <Divider title="EXPLORE THE HISTORY" />
+                <Container>
+                    <Typography variant="body1">
+                        America is a country built by people who have left their home. Explore timeline of the rich history of American policies and major world events that have shaped the lives of millions of immigrants and refugees.
+                    </Typography>
+                </Container>
                 <Container className={classes.historyScroll}>
                     <Box onClick={executeScrollTo1890}>
                         <Typography variant="h6" color="secondary">
@@ -342,8 +346,8 @@ function History() {
                     </Box>
                 </Container>
             </Container>
-           
-           {/*  //TODO ADD Scroll to TOop Button */}
+
+            {/*  //TODO ADD Scroll to TOop Button */}
 
             <TimelineFunction />
             {/* <Footer /> */}
