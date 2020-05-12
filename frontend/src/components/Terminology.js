@@ -64,14 +64,15 @@ function Terminology() {
          <Container maxWidth={false} style={{ paddingBottom: '2.5em', paddingTop: '2.5em' }}>
             <Row>
                <Col sm={{ span: 5 }} style={{ marginTop: "auto", marginBottom: "auto" }}>
-                  <Typography variant="h4" color="primary" style={{ paddingBottom: 15}}>
+                  <Typography variant="h4" color="primary" style={{ paddingBottom: 15 }}>
                      Forced to Leave
                   </Typography>
+                  {/* // TODO UPDATE WRITING */}
                   <Typography component="body1" variant="body1">
-                     There are so many different words used to describe the variety of individuals
-                     that leave their homes and travel to different countries. The choice to leave
-                     can be voluntary or against their will. Regardless, knowing the difference
-                     between these terms is a very important step in providing the required aid.
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                     labore et dolore magna aliqua. Cras adipiscing enim eu turpis egestas pretium aenean pharetra. 
+                     Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Consectetur adipiscing elit 
+                     pellentesque habitant morbi tristique senectus. Turpis egestas pretium aenean pharetra magna ac placerat.
                   </Typography>
                </Col>
                <Col sm={{ span: 6, offset: 1 }}>
@@ -147,14 +148,15 @@ function Terminology() {
                </Col>
                <Col sm={{ span: 5, offset: 1 }} style={{ marginTop: "auto", marginBottom: "auto" }}>
                   {/* <img src="immigrant_explaination.png" width="100%" /> */}
-                  <Typography variant="h4" color="primary" style={{ paddingBottom: 15}}>
+                  <Typography variant="h4" color="primary" style={{ paddingBottom: 15 }}>
                      Leaving Willingly
                   </Typography>
+                  {/* // TODO UPDATE  */}
                   <Typography component="body1" variant="body1">
-                     There are so many different words used to describe the variety of individuals
-                     that leave their homes and travel to different countries. The choice to leave
-                     can be voluntary or against their will. Regardless, knowing the difference
-                     between these terms is a very important step in providing the required aid.
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                     labore et dolore magna aliqua. Cras adipiscing enim eu turpis egestas pretium aenean pharetra.
+                     Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Consectetur adipiscing elit
+                     pellentesque habitant morbi tristique senectus. Turpis egestas pretium aenean pharetra magna ac placerat.
                   </Typography>
                </Col>
             </Row>
