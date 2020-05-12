@@ -17,7 +17,7 @@ function VettingProcess() {
             />
             <Container>
 
-                <Divider title="VETTING PROCESS" />
+                <Divider title="Vetting Process" />
 
                 {/* STEP 1 */}
                 <Container style={{ paddingBottom: "3em" }}>
@@ -40,7 +40,9 @@ function VettingProcess() {
                                 <li><Typography component="body1" variant="body1">Refugee status granted by the United Nations.</Typography></li>
                                 <li><Typography component="body1" variant="body1">Referral for resettlement in the United States.</Typography></li>
                             </ol>
-                            <Typography component="body1" variant="body1">Less than 1% of refugees globally are referred for third country resettlement. Before being considered for resettlement, most refugees must first register with the UN High Commissioner for Refugees (UNHCR). In making a referral, UNHCR conducts an in-depth assessment and background check. Only those who pass the screenings and have been determined to be among the most vulnerable and not a security risk are referred to the United States.</Typography>
+                            <Typography component="body1" variant="body1">
+                                Of the thousands of refugees looking for resettlement less than 1% are referred. The first step of the process includes them registering with the UN High Commissioner for Refugees (UNHCR). Once they have registered, the UNHCR can refer them for resettlement. Part of the process involves an assessment by the UNHCR and a background check. The ones that are given a green light are determined to not pose a security risk to the United States and can move forward with the vetting process.
+                            </Typography>
                         </Col>
                     </Row>
                 </Container>
@@ -61,7 +63,9 @@ function VettingProcess() {
                             <ol start="5" style={{ paddingTop: "1em" }} >
                                 <li><Typography component="body1" variant="body1">Interview with State Department Contractors</Typography></li>
                             </ol>
-                            <Typography component="body1" variant="body1">Resettlement Support Centers, funded by the U.S. government, conduct pre screening of all refugees applying for resettlement. During this phase, case files are created for those being considered.</Typography>
+                            <Typography component="body1" variant="body1">
+                                There are Resettlement Support Centers that conduct background checks and screenings of all refugees that apply for resettlement. This step involves the creation of case files for the refugees that will be moving forward. Getting a case file is hopeful but it doesn't mean that the refugee will be allowed resettlement.
+                            </Typography>
                         </Col>
                         <Col sm={3} md={5}>
                             <img src="vetting_usds.jpg" width="100%"></img>
@@ -90,7 +94,9 @@ function VettingProcess() {
                                 <li><Typography component="body1" variant="body1">Higher-level background check for some.</Typography></li>
                                 <li><Typography component="body1" variant="body1">Another background check.</Typography></li>
                             </ol>
-                            <Typography component="body1" variant="body1">U.S. security agencies screen candidates and conduct biographic security checks, starting with enhanced interagency checks. </Typography>
+                            <Typography component="body1" variant="body1">
+                                Several US security agencies begin to screen candidates by conducting several layers of background checks and assessments. This process also includes interagency checks.
+                            </Typography>
                         </Col>
                     </Row>
                 </Container>
@@ -113,7 +119,9 @@ function VettingProcess() {
                                 <li><Typography component="body1" variant="body1">Second fingerprint screening (Homeland Security).</Typography></li>
                                 <li><Typography component="body1" variant="body1">Third fingerprint screening (Defense Department).</Typography></li>
                             </ol>
-                            <Typography component="body1" variant="body1">The U.S conducts meticulous security screenings, which include: biographic and identity investigations, FBI biometric checks of fingerprints and photographs, medical screenings, other checks by U.S. domestic and international intelligence agencies including the National Counterterrorism Center/Intelligence Community and the FBI, refugees from some countries, such as Iraq and Syria, undergo an additional review through the Security Advisory Opinion process.</Typography>
+                            <Typography component="body1" variant="body1">
+                                Several US security agencies including the FBI, Homeland Security, and the Defense Department begin conducting biographic security checks as well as interagency checks. These agencies take fingerprints, photographs, and conduct medical screenings from the candidates and check for known terrorists, warrants, and affiliations. They will run the candidates' information against the National Counterterrorism Center, Intelligence Communities, and the FBi. If there is even slight uncertainty of the refugees’ motives they will not advance in the process. Certain refugees from known countries are forced to undergo further review before progressing.
+                            </Typography>
                         </Col>
                         <Col sm={3} md={5}>
                             <img src="vetting_screening.jpg" width="100%"></img>
@@ -140,7 +148,9 @@ function VettingProcess() {
                                 <li><Typography component="body1" variant="body1">Extensive In-person interview with Homeland Security.</Typography></li>
                                 <li><Typography component="body1" variant="body1">Homeland Security approval is required.</Typography></li>
                             </ol>
-                            <Typography component="body1" variant="body1">Specially trained officers with the Department of Homeland Security, office of U.S. Citizenship and Immigration Services, conduct in depth, in person interviews and collect fingerprints.</Typography>
+                            <Typography component="body1" variant="body1">
+                                Specially trained interrogation officers from the Department of Homeland Security and the office of Immigration Services will begin to conduct in person interviews as well as collect a second round of fingerprints and other necessary data. The candidate will not progress if Homeland Security does not approve it.
+                            </Typography>
                         </Col>
                     </Row>
                 </Container>
@@ -162,12 +172,16 @@ function VettingProcess() {
                                 <li><Typography component="body1" variant="body1">Cultural orientation classes.</Typography></li>
                                 <li><Typography component="body1" variant="body1">Matched with an American resettlement agency.</Typography></li>
                             </ol>
-                            <Typography component="body1" variant="body1">Applicants attend cultural orientation classes to prepare them for adjusting to life in the United States. All refugees are assigned to a resettlement agency who determines where in the United States they will first arrive and prepares to assist them in their initial transition.</Typography>
+                            <Typography component="body1" variant="body1">
+                                Applicants that reach Stage 6 are the closest to gaining resettlement, Although they are not finished with the process yet they are very close. They are screened for contagious diseases and are required to attend cultural orientation classes to help them adjust to life in the United States. Refugees are also assigned to American resettlement agencies who determine where in America they will land and what their first few months will look like. They also aid in the initial transition.
+                            </Typography>
                             <ol start="17" style={{ paddingTop: "1em" }} >
                                 <li><Typography component="body1" variant="body1">Multi-agency security check before leaving for the United States.</Typography></li>
                                 <li><Typography component="body1" variant="body1">Final security check at American airport.</Typography></li>
                             </ol>
-                            <Typography component="body1" variant="body1">The United States has a proud tradition of welcoming refugees, including survivors of torture, yet the cap for admissions has been greatly reduced beginning in 2017. Today, as forced displacement globally has been rising and the scale and severity of refugee needs increases, the United States can and should continue to be a safe haven.</Typography>
+                            <Typography component="body1" variant="body1">
+                                Once refugees begin their journey they undergo another security check before leaving the United States and one final security check once they arrive at the American airport. Once refugees are in the United States they are safe from the violence back home but are forced to deal with the difficulty of building a new life in a foriegn country.
+                            </Typography>
                         </Col>
                         <Col sm={3} md={5}>
                             <img src="vetting_travel.jpg" width="100%" />
