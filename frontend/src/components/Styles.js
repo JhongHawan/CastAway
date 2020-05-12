@@ -392,7 +392,16 @@ export const useStyles = makeStyles(theme => ({
     },
     vettingTitle: {
         padding: theme.spacing(2, 0, 2)
-    }
+    },
+    termCard: {
+        padding: theme.spacing.unit * 2,
+        display: 'flex', 
+        // textAlign: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        height: '330px',
+        // fontSize: '0.9rem'
+    },
 
 
 
