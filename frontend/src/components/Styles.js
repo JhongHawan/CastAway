@@ -326,6 +326,7 @@ export const useStyles = makeStyles(theme => ({
 
     storyPaper: {
         padding: theme.spacing.unit * 2,
+        // height: '75px'
     },
     storyCol: {
         padding: theme.spacing(1)
@@ -402,7 +403,11 @@ export const useStyles = makeStyles(theme => ({
         height: '330px',
         // fontSize: '0.9rem'
     },
-
+    cardDirect: {
+        '&:hover': {
+            textDecoration: 'none'
+        }
+    }
 
 
 

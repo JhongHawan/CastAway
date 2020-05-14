@@ -348,15 +348,15 @@ function VettingProcess() {
             ) : (
                   <div>
                      <Typography className={classes.stepperInstructions}>{getStepContent(activeStep)}</Typography>
-                     <div>
+                     <div style={{ textAlign: 'center' }}>
                         <Button
                            disabled={activeStep === 0}
                            onClick={handleBack}
                            className={classes.stepperBackButton}
                         >
                            Back
-              </Button>
-                        <Button variant="contained" color="secondary" onClick={handleNext}>
+                        </Button>
+                        <Button variant="contained" color="primary" onClick={handleNext}>
                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                         </Button>
                      </div>
@@ -385,7 +385,7 @@ function VettingProcessMobile() {
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">United Nations Interview</Typography>
-                        
+
                         <ol style={{ paddingTop: "1em" }}>
                            <li><Typography component="body1" variant="body1">Registration with the United Nations.</Typography></li>
                            <li><Typography component="body1" variant="body1">Interview with the United Nations.</Typography></li>
@@ -514,17 +514,17 @@ function VettingProcessMobile() {
                   <StepContent>
                      <Typography>{getStepContent(index)}</Typography>
                      <div className={classes.stepperMobileActionContainer}>
-                        <div>
+                        <div style={{ textAlign: 'center' }}>
                            <Button
                               disabled={activeStep === 0}
                               onClick={handleBack}
                               className={classes.stepperInstruction}
                            >
                               Back
-                  </Button>
+                           </Button>
                            <Button
                               variant="contained"
-                              color="secondary"
+                              color="primary"
                               onClick={handleNext}
                               className={classes.stepperInstruction}
                            >
@@ -623,7 +623,9 @@ function Context() {
                <Hidden only={['xs']}>
                   <VettingProcess />
                </Hidden>
-
+               <Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
+                  <Button variant="contained" color="secondary" href="/vettingProcess">More Details</Button>
+               </Box>
             </Box>
          </Container>
          {/* <FontTest /> */}

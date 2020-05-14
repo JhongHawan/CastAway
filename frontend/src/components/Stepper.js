@@ -146,17 +146,17 @@ function getStepContent(step) {
 					<Row>
 						<Col>
 							<Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
-								<Button variant="contained" color="primary" target="_blank" href="https://donate.unhcr.org/int/general-v1/~my-donation?utm_expid=.pmON8AhjT22N8kt0bns6qg.1&utm_referrer=https:%2F%2Fwww.google.com%2F#">UNHCR</Button>
+								<Button variant="contained" color="secondary" target="_blank" href="https://donate.unhcr.org/int/general-v1/~my-donation?utm_expid=.pmON8AhjT22N8kt0bns6qg.1&utm_referrer=https:%2F%2Fwww.google.com%2F#">UNHCR</Button>
 							</Box>
 						</Col>
 						<Col>
 							<Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
-								<Button variant="contained" color="primary" target="_blank" href="https://help.rescue.org/donate/syria-crisis?ms=gs_ppc_syria19_mc_191011&initialms=gs_ppc_syria19_mc_191011&gclid=Cj0KCQjw17n1BRDEARIsAFDHFewK5C7kyVGrV7Ra88BFZ5MFoNnozUrGP92DCBvfz5xQRhF_XXclUBQaAs8LEALw_wcB">International Rescue Committee</Button>
+								<Button variant="contained" color="secondary" target="_blank" href="https://help.rescue.org/donate/syria-crisis?ms=gs_ppc_syria19_mc_191011&initialms=gs_ppc_syria19_mc_191011&gclid=Cj0KCQjw17n1BRDEARIsAFDHFewK5C7kyVGrV7Ra88BFZ5MFoNnozUrGP92DCBvfz5xQRhF_XXclUBQaAs8LEALw_wcB">International Rescue Committee</Button>
 							</Box>
 						</Col>
 						<Col>
 							<Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
-								<Button variant="contained" color="primary" target="_blank" href="https://www.refugeesinternational.org/donate">Refugee International</Button>
+								<Button variant="contained" color="secondary" target="_blank" href="https://www.refugeesinternational.org/donate">Refugee International</Button>
 							</Box>
 						</Col>
 					</Row>
@@ -199,7 +199,7 @@ export default function VerticalLinearStepper() {
 									</Button>
 									<Button
 										variant="contained"
-										color="secondary"
+										color="primary"
 										onClick={handleNext}
 										className={classes.button}
 									>

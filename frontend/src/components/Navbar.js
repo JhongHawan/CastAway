@@ -26,9 +26,9 @@ function NavBar() {
       <Navbar.Brand as={Link} to="/">
         <Row className={"justify-content-center"} >
           <Col style={{ textAlign: "center" }}>
-            <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
+            <img src="castawayLogo.png" width="75px" alt="castaway boat logo" />
           </Col>
-          <Col style={{ textAlign: "center" }}>
+          <Col style={{ textAlign: "center", marginTop: "auto", marginBottom: "auto" }}>
             <Typography variant="h3" className={classes.navTitle}>
               CASTAWAY
             </Typography>

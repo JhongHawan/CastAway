@@ -115,7 +115,7 @@ function TemplatedEmail() {
       onSubmit={onSubmit}
       render={({ handleSubmit, reset, submitting, pristine, values }) => (
         <form onSubmit={handleSubmit}>
-          <Card variant="outlined">
+          <Card variant="elevation" elevation={10}>
             <CardContent>
               <Typography
                 className={classes.title}

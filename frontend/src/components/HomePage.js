@@ -57,15 +57,17 @@ function HomePage() {
                     </Col>
                     <Col xs={12} sm={9} md={8}>
                         <SectionCard
-                            title="STAY INFORMED, STAY EMPOWERED"
+                            title="Stay Informed, Stay Empowered"
                             description="It is important to know what is going on in your community and ultimately your country. Staying up to date with news and policies allows for informed opinions that have more impact. Misinformation and fake news are both extremely dangerous and harmful when it comes to politics, society, and the ability for the public to make knowledgeable decisions."
                         />
                         <SectionCard
-                            title="YOUR VOICE, YOUR VOTE"
+                            title="Your Voice, Your Vote"
+                            // title="YOUR VOICE, YOUR VOTE"
                             description="Every citizen has both the right and responsibility to vote, get involved in their communities, and enact the change they wish to see. Voting is a basic action that allows every individual in the United States to express their personal opinion on issues they consider important to them."
                         />
                         <SectionCard
-                            title="IT'S YOUR TURN TO TAKE ACTION"
+                            // title="IT'S YOUR TURN TO TAKE ACTION"
+                            title="It's Your Turn To Take Action"
                             description="Individuals can also make a lot of impact by writing letters to public officials about issues that are important to them. Your congressmen all represent you, allowing you to ignite a conversation with endless possibilities. It is time to stand up and fight for what is right, and give a platform to those who haven’t had access to it in the past."
                         />
                     </Col>
@@ -76,12 +78,11 @@ function HomePage() {
                             Don't have time or don't know what to say?
                         </Typography> */}
                         <Typography component="h5" variant="h5" color="primary">
-                            Use our Templated Email to help ease the process of
-                            contacting your Representative.
+                            Use our Templated Email to help contact your Representative
                         </Typography>
-                        <Typography component="h5" variant="h5" color="primary">
+                        {/* <Typography component="h5" variant="h5" color="primary">
                             Click the button below!
-                        </Typography>
+                        </Typography> */}
                     </Col>
                 </Row>
             </Container>
@@ -125,7 +126,7 @@ function HomePage() {
 
 
             <Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
-                <Button variant="contained" color="secondary" href="/yourRole" >What's My Role?</Button>
+                <Button variant="contained" color="secondary" href="/yourRole" >Get Started</Button>
             </Box>
             {/* </Box> */}
             {/* </Container> */}
