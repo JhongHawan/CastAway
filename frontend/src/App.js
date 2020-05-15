@@ -12,6 +12,7 @@ import NavBar from './components/Navbar';
 import HomePage from './components/HomePage';
 import Terminology from './components/Terminology';
 import YourRole from './components/YourRole/YourRole';
+import VettingProcess from './components/VettingProcess';
 import Hero from './components/Hero';
 import Context from './components/Context';
 import Footer from './components/About/Footer';
@@ -26,8 +27,9 @@ function App() {
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/myths" component={Myths} />
-            <Route path="/context" component={Context} />
+            <Route path="/background" component={Context} />
             <Route path="/terminology" component={Terminology} />
+            <Route path="/vettingProcess" component={VettingProcess} />
             <Route path="/history" component={History} />
             <Route path="/stories" component={Stories} />
             <Route path="/data" component={Visualization} />
@@ -42,18 +44,6 @@ function App() {
   );
 }
 
-{/* <Hero
-  showCard={false}
-  showCitation={true}
-  sectionTitle="&quot;No one puts their children in a boat unless the water is safer than the land&quot;"
-  cardTitle="WHY DOES IT MATTER?"
-  cardSubtitle="Subtitle Examples"
-  cardBody="The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference."
-/> */}
-// Homepage
-const Home = () => (
-    <HomePage />
-);
 
 
 

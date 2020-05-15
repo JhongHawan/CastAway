@@ -46,7 +46,7 @@ function Footer() {
       <BottomNav className={classes.bottomNav}></BottomNav>
       <hr className={classes.hr}></hr>
       <div>
-        <a className={classes.copyright} href="https://jhonghawan.github.io/InfoCapstone2020/">© 2020 Copyright: CAST||AWAY</a>
+        <a className={classes.copyright} target="_blank" href="https://jhonghawan.github.io/CastAway/">© 2020 Copyright: CASTAWAY</a>
       </div>
     </Container>
    </div>

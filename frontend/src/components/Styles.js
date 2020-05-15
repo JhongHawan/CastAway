@@ -258,6 +258,9 @@ export const useStyles = makeStyles(theme => ({
     },
     storyCard: {
         padding: theme.spacing(2, 2, 2),
+        '&:hover': {
+            cursor: 'pointer'
+        }
     },
     
     descriptionBox: {
@@ -326,6 +329,7 @@ export const useStyles = makeStyles(theme => ({
 
     storyPaper: {
         padding: theme.spacing.unit * 2,
+        // height: '75px'
     },
     storyCol: {
         padding: theme.spacing(1)
@@ -369,7 +373,44 @@ export const useStyles = makeStyles(theme => ({
         '& overline': {
             padding: theme.spacing(0, 0, 1)
         }
-    }
+    },
+    historyScroll: {
+        // backgroundColor: '#333',
+        overflow: 'auto',
+        whiteSpace: 'nowrap',
+        textAlign: 'center',
+        '& div': {
+            display: 'inline-block',
+            // color: 'white',
+            textAlign: 'center',
+            padding: theme.spacing(2),
+            // textDecoration: 'none'
+            '& h6:hover': {
+                color: theme.palette.primary.main,
+                cursor: 'pointer'
+            }
+        },
+
+        
+
+    },
+    vettingTitle: {
+        padding: theme.spacing(2, 0, 2)
+    },
+    termCard: {
+        padding: theme.spacing.unit * 2,
+        display: 'flex', 
+        // textAlign: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        height: '330px',
+        // fontSize: '0.9rem'
+    },
+    // cardDirect: {
+    //     '&:hover': {
+    //         textDecoration: 'none'
+    //     }
+    // }
 
 
 

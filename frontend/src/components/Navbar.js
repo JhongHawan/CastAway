@@ -25,10 +25,10 @@ function NavBar() {
     <Navbar collapseOnSelect expand="lg" variant="light" bg="bg-light">
       <Navbar.Brand as={Link} to="/">
         <Row className={"justify-content-center"} >
-          <Col style={{ textAlign:"center"}}>
-            <img src="castawayLogo.png" width="50px" alt="castaway boat logo" />
+          <Col style={{ textAlign: "center" }}>
+            <img src="castawayLogo.png" width="75px" alt="castaway boat logo" />
           </Col>
-          <Col style={{ textAlign:"center" }}>
+          <Col style={{ textAlign: "center", marginTop: "auto", marginBottom: "auto" }}>
             <Typography variant="h3" className={classes.navTitle}>
               CASTAWAY
             </Typography>
@@ -43,14 +43,17 @@ function NavBar() {
           id="basic-nav-dropdown"
           title={
             <span style={{ display: 'inline-block' }}>
-              <Nav.Link as={Link} to="/context" style={{ paddingLeft: 0}}>
+              <Nav.Link style={{ paddingLeft: 0 }}>
                 <Typography variant="h6" className={classes.navLink}>
-                  Context
+                  Start Here
                 </Typography>
               </Nav.Link>
             </span>
           }
         >
+          <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/background">
+            Background
+          </NavDropdown.Item>
           <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/history">
             History
           </NavDropdown.Item>
@@ -59,6 +62,9 @@ function NavBar() {
           </NavDropdown.Item>
           <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/terminology">
             Terminology
+          </NavDropdown.Item>
+          <NavDropdown.Item className={classes.navLink} id="nav-dropdown" as={Link} to="/vettingProcess">
+            Vetting Process
           </NavDropdown.Item>
         </NavDropdown>
 
@@ -70,7 +76,7 @@ function NavBar() {
         </Nav.Link>
         <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/data">
           <Typography variant="h6" className={classes.navLink}>
-            Data
+            Data Visualization
           </Typography>
         </Nav.Link>
         <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/YourRole">

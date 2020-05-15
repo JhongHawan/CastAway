@@ -66,7 +66,7 @@ function About() {
           <Typography
             variant="subtitle1"
           >
-            This project is created for the Informatic Capstone 2020. Our mission is to create a solution to allow the general public and academics to obtain accurate information concerning refugees in one location. We want the general public to use the information to make informed decisions and academics to benefit their own work.
+            This project is created for the Informatics Capstone 2020. Our mission is to create a solution to allow the general public and academics to obtain accurate information concerning refugees in one location. We want the general public to use the information to make informed decisions and academics to benefit their own work.
             </Typography>
         </Grid>
       </Grid>
