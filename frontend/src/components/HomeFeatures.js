@@ -72,7 +72,7 @@ function HomeFeatures() {
 
     function StoryCard(props) {
         return (
-            <a href="/data" style={{ textDecoration: 'none' }}>
+            <a href="/stories" style={{ textDecoration: 'none' }}>
                 <Paper className={classes.storyPaper}>
                     <Container>
                         <Row>
@@ -101,7 +101,7 @@ function HomeFeatures() {
                     <Col sm={12} md={6}>
                         <Row>
                             <Col sm={12}>
-                                <a href="/data" style={{ textDecoration: 'none' }}>
+                                <a href="/stories" style={{ textDecoration: 'none' }}>
                                     <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                         STORIES
                                 </Typography>
@@ -119,14 +119,14 @@ function HomeFeatures() {
                         </Row>
                         <Row>
                             <Col sm={12} style={{ paddingTop: '2rem' }}>
-                                <a href="/data" style={{ textDecoration: 'none' }}>
+                                <a href="/myths" style={{ textDecoration: 'none' }}>
                                     <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                         MYTHS
                                     </Typography>
                                 </a>
                             </Col>
                             <Col className={classes.storyCol}>
-                                <a href="/data" style={{ textDecoration: 'none' }}>
+                                <a href="/myths" style={{ textDecoration: 'none' }}>
 
                                     <Card>
                                         <CardContent>
