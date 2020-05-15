@@ -72,7 +72,7 @@ function HomeFeatures() {
 
     function StoryCard(props) {
         return (
-            <Link href="/stories" className={classes.cardDirect} underline="none">
+            <a href="/data" style={{ textDecoration: 'none' }}>
                 <Paper className={classes.storyPaper}>
                     <Container>
                         <Row>
@@ -90,7 +90,7 @@ function HomeFeatures() {
                         </Row>
                     </Container>
                 </Paper>
-            </Link>
+            </a>
         )
     }
 
@@ -101,12 +101,11 @@ function HomeFeatures() {
                     <Col sm={12} md={6}>
                         <Row>
                             <Col sm={12}>
-                                <Link href="/stories" className={classes.cardDirect} underline="none">
-
+                                <a href="/data" style={{ textDecoration: 'none' }}>
                                     <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                         STORIES
                                 </Typography>
-                                </Link>
+                                </a>
                             </Col>
                             <Col className={classes.storyCol} sm={12} lg={4}>
                                 <StoryCard storyNum="1" />
@@ -120,14 +119,15 @@ function HomeFeatures() {
                         </Row>
                         <Row>
                             <Col sm={12} style={{ paddingTop: '2rem' }}>
-                                <Link href="/myths" className={classes.cardDirect} underline="none">
+                                <a href="/data" style={{ textDecoration: 'none' }}>
                                     <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                         MYTHS
                                     </Typography>
-                                </Link>
+                                </a>
                             </Col>
                             <Col className={classes.storyCol}>
-                                <Link href="/myths" className={classes.cardDirect} underline="none">
+                                <a href="/data" style={{ textDecoration: 'none' }}>
+
                                     <Card>
                                         <CardContent>
                                             <Typography component='h5' variant='h5' color='primary' gutterBottom>All refugees are terrorists with a violent agenda.</Typography>
@@ -143,18 +143,20 @@ function HomeFeatures() {
                                          </Typography>
                                         </CardContent>
                                     </Card >
-                                </Link>
+                                </a>
                             </Col>
                         </Row>
                     </Col>
                     <Col sm={12} md={6}>
                         <Row>
                             <Col sm={12} style={{ paddingBottom: '0.5rem' }}>
-                                <Link href="/data" className={classes.cardDirect} underline="none">
+                                {/* <Link href="/data" underline="none" style={{}}> */}
+                                <a href="/data" style={{ textDecoration: 'none' }}>
                                     <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                         DATA VISUALIZATION
                                     </Typography>
-                                </Link>
+                                </a>
+                                {/* </Link> */}
                             </Col>
                             <Col>
                                 <CardActionArea href='/data'>

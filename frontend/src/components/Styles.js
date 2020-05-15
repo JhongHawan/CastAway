@@ -406,11 +406,11 @@ export const useStyles = makeStyles(theme => ({
         height: '330px',
         // fontSize: '0.9rem'
     },
-    cardDirect: {
-        '&:hover': {
-            textDecoration: 'none'
-        }
-    }
+    // cardDirect: {
+    //     '&:hover': {
+    //         textDecoration: 'none'
+    //     }
+    // }
 
 
 
