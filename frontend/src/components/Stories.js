@@ -106,7 +106,7 @@ function Stories() {
                   </Typography>
                   <br />
                   <Typography component="overline" variant="overline" color="secondary">
-                     <a href={highlightLink} target="_blank">READ MORE</a>
+                     <a href={highlightLink} target="_blank" rel="noopener noreferrer">READ MORE</a>
                   </Typography>
                </Col>
             </Row>

@@ -72,7 +72,7 @@ function HomeFeatures() {
 
     function StoryCard(props) {
         return (
-            <Link href="/stories" className={classes.cardDirect}>
+            <Link href="/stories" className={classes.cardDirect} underline="none">
                 <Paper className={classes.storyPaper}>
                     <Container>
                         <Row>
@@ -101,7 +101,7 @@ function HomeFeatures() {
                     <Col sm={12} md={6}>
                         <Row>
                             <Col sm={12}>
-                                <Link href="/stories" className={classes.cardDirect}>
+                                <Link href="/stories" className={classes.cardDirect} underline="none">
 
                                     <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                         STORIES
@@ -120,14 +120,14 @@ function HomeFeatures() {
                         </Row>
                         <Row>
                             <Col sm={12} style={{ paddingTop: '2rem' }}>
-                                <Link href="/myths" className={classes.cardDirect}>
+                                <Link href="/myths" className={classes.cardDirect} underline="none">
                                     <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                         MYTHS
                                     </Typography>
                                 </Link>
                             </Col>
                             <Col className={classes.storyCol}>
-                                <Link href="/myths" className={classes.cardDirect}>
+                                <Link href="/myths" className={classes.cardDirect} underline="none">
                                     <Card>
                                         <CardContent>
                                             <Typography component='h5' variant='h5' color='primary' gutterBottom>All refugees are terrorists with a violent agenda.</Typography>
@@ -150,7 +150,7 @@ function HomeFeatures() {
                     <Col sm={12} md={6}>
                         <Row>
                             <Col sm={12} style={{ paddingBottom: '0.5rem' }}>
-                                <Link href="/data" className={classes.cardDirect}>
+                                <Link href="/data" className={classes.cardDirect} underline="none">
                                     <Typography component="h5" variant="h5" color="secondary" className={classes.featureHeading}>
                                         DATA VISUALIZATION
                                     </Typography>
