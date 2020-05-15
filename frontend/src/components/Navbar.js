@@ -76,7 +76,7 @@ function NavBar() {
         </Nav.Link>
         <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/data">
           <Typography variant="h6" className={classes.navLink}>
-            Data
+            Data Visualization
           </Typography>
         </Nav.Link>
         <Nav.Link className={classes.navLink} id="nav-dropdown" as={Link} to="/YourRole">

@@ -258,6 +258,9 @@ export const useStyles = makeStyles(theme => ({
     },
     storyCard: {
         padding: theme.spacing(2, 2, 2),
+        '&:hover': {
+            cursor: 'pointer'
+        }
     },
     
     descriptionBox: {

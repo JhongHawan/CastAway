@@ -83,6 +83,7 @@ function BottomNav() {
         icon={<GitHubIcon />}
         className={classes.navigationLink} 
         value="github"
+        target="_blank"
       />
     </BottomNavigation>
   );

@@ -67,12 +67,10 @@ function Terminology() {
                   <Typography variant="h4" color="primary" style={{ paddingBottom: 15 }}>
                      Forced to Leave
                   </Typography>
-                  {/* // TODO UPDATE WRITING */}
                   <Typography component="body1" variant="body1">
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                     labore et dolore magna aliqua. Cras adipiscing enim eu turpis egestas pretium aenean pharetra. 
-                     Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Consectetur adipiscing elit 
-                     pellentesque habitant morbi tristique senectus. Turpis egestas pretium aenean pharetra magna ac placerat.
+                     When your home country becomes too threatening to continue to live in, individuals are forced 
+                     to flee. Being forced out means leaving home without certainty of a safe arrival and usually entails 
+                     a dangerous journey to find a new home.
                   </Typography>
                </Col>
                <Col sm={{ span: 6, offset: 1 }}>
@@ -147,16 +145,12 @@ function Terminology() {
                   <img src="immigrant_explaination.png" width="100%" />
                </Col>
                <Col sm={{ span: 5, offset: 1 }} style={{ marginTop: "auto", marginBottom: "auto" }}>
-                  {/* <img src="immigrant_explaination.png" width="100%" /> */}
                   <Typography variant="h4" color="primary" style={{ paddingBottom: 15 }}>
                      Leaving Willingly
                   </Typography>
-                  {/* // TODO UPDATE  */}
                   <Typography component="body1" variant="body1">
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                     labore et dolore magna aliqua. Cras adipiscing enim eu turpis egestas pretium aenean pharetra.
-                     Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Consectetur adipiscing elit
-                     pellentesque habitant morbi tristique senectus. Turpis egestas pretium aenean pharetra magna ac placerat.
+                     On the contrary to individuals forced to flee, those who leave willingly have their destination country
+                     guaranteed. While their intentions may overlap with those forced to leave home, their journeys may look completely different.
                   </Typography>
                </Col>
             </Row>
