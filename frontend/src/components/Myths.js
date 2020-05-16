@@ -1,24 +1,14 @@
-import React, { useState, setState } from 'react';
+import React, { useState } from 'react';
 import { Grid, Box, Container, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
-import { Row, Col } from 'react-bootstrap';
-import { makeStyles } from '@material-ui/core/styles';
-
+import { Row } from 'react-bootstrap';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-import ReactCompareImage from 'react-compare-image';
-// import ContextCard from './ContextCard';
 import Hero from './Hero';
 import Divider from './Divider';
 import Paper from '@material-ui/core/Paper';
-import Switch from '@material-ui/core/Switch';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 import { useStyles } from './Styles';
-
-import Footer from './About/Footer';
 
 function Myths() {
 	const classes = useStyles();
@@ -171,21 +161,13 @@ function Myths() {
 							<Typography component="h5" variant="h5" color="primary" className={classes.factTitle}>
 								{props.mythTitle}
 							</Typography>
-							{/* <h4 style={{ paddingBottom: '0.5em' }}>{props.mythTitle}</h4> */}
 						</Row>
 						<Row>
-							{}
-							{/* <Typography style={{ background: "#FF6464", opacity: "0.5" }} component='overline' variant='overline'>
-					{props.trueFalse}
-					</Typography> */}
-
 							{props.trueFalse}
-							{/* <span style={{ background: "#FF6464", opacity: "0.7" }}>Confrimed FALSE</span> */}
 							<Typography component="body1" variant="body1" className={classes.factDetail}>
 								<strong>Fact Check:</strong>
 								{props.mythSummary}
 							</Typography>
-							{/* <p style={{ paddingTop: '1em' }}><strong>Fact Check:</strong>{props.mythSummary}</p> */}
 						</Row>
 					</Container>
 				</ExpansionPanelSummary>
@@ -198,7 +180,6 @@ function Myths() {
 		);
 	}
 
-	// TODO Convert to Typography
 	function isTrue() {
 		return (
 			<Box style={{ backgroundColor: '#72BF7A', borderRadius: '10px', padding: '5px' }}>
@@ -379,12 +360,7 @@ function Myths() {
 				</Container>
 				<FactCheckFalse />
 				<Container>
-					<Typography
-						style={{ padding: '1em 0em 1em' }}
-						component="h4"
-						variant="h4"
-						className={classes.testingSuccessTheme}
-					>
+					<Typography style={{ padding: '1em 0em 1em' }} component="h4" variant="h4" className={classes.testingSuccessTheme}>
 						CONFIRMED TRUE
 					</Typography>
 				</Container>

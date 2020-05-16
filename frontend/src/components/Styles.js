@@ -254,7 +254,9 @@ export const useStyles = makeStyles(theme => ({
 
     // ! Working section
     storyWrapper: {
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingTop: '2rem'
+        // paddingTop: theme.spacing(, 0, 0)
     },
     storyCard: {
         padding: theme.spacing(2, 2, 2),
@@ -361,7 +363,9 @@ export const useStyles = makeStyles(theme => ({
         borderRadius: '10px',
     },
     storyHighlightContainer : {
-        padding: theme.spacing(5, 0, 5)
+        padding: theme.spacing(5, 0, 5),
+        // backgroundColor: 'yellow',
+        // margin: 0
     },
     storyHighlight: {
         '& h4': {
@@ -406,15 +410,6 @@ export const useStyles = makeStyles(theme => ({
         height: '330px',
         // fontSize: '0.9rem'
     },
-    // cardDirect: {
-    //     '&:hover': {
-    //         textDecoration: 'none'
-    //     }
-    // }
-
-
-
-
 
 }))
 

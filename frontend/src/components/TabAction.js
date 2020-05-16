@@ -27,7 +27,6 @@ function TabAction(props) {
                         <Col>
                             <Row>
                                 <Col>
-                                    {/* <img src={props.img} width="100%"  /> */}
                                     <img src={props.img} width="250px" style={{ filter: 'grayscale(100%)' }} />
                                 </Col>
                             </Row>

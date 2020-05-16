@@ -1,13 +1,9 @@
 import React from 'react';
-import { Box, Container, Typography, Button } from '@material-ui/core';
-import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
+import { Box, Container, Typography, Paper } from '@material-ui/core';
+import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
 import Divider from './Divider';
-
 import { useStyles } from './Styles';
-
 import Hero from './Hero';
-import Footer from './About/Footer';
-
 
 function History() {
     const classes = useStyles();
@@ -66,11 +62,6 @@ function History() {
         scrollTo2010.current.scrollIntoView({ behavior: "smooth" })
     }
 
-    // let scrollHere = React.createRef();
-
-    // let scrollSmoothHandler = () => {
-    //     scrollHere.current.scrollIntoView({ behavior: "smooth" })
-    // }
 
     /**
       * @param {Int} props.date - year of the event
@@ -88,7 +79,6 @@ function History() {
                     background: '#F0F5F9',
                     padding: '20px',
                     borderRadius: '8px',
-                    // boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
                 }}
             >
                 <Typography style={{ paddingBottom: '0.5em' }} component="h5" variant="h5" color="secondary">
@@ -162,7 +152,7 @@ function History() {
                         key="008"
                         date="1950-1951"
                         title="The United Nations High Commissioner for Refugees"
-                        detail="In response to the refugee crisis that occured after World War II the United Nations established the United Nations High Commissioner for Refugees (UNHCR). In 1951 the Convention Relating to the Status of Refugees was held. This convention defined legal protections for refugees."
+                        detail="In response to the refugee crisis that occurred after World War II the United Nations established the United Nations High Commissioner for Refugees (UNHCR). In 1951 the Convention Relating to the Status of Refugees was held. This convention defined legal protections for refugees."
                     />
                 </Box>
                 <Event
@@ -258,99 +248,97 @@ function History() {
                 showCard={false}
                 sectionTitle="History"
             />
-            <Container style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
+            <Container>
                 <Divider title="EXPLORE THE HISTORY" />
                 <Container>
                     <Typography variant="body1">
                         America is a country built by people who have left their home. Explore timeline of the rich history of American policies and major world events that have shaped the lives of millions of immigrants and refugees.
                     </Typography>
                 </Container>
-                <Container className={classes.historyScroll}>
-                    <Box onClick={executeScrollTo1890}>
-                        <Typography variant="h6" color="secondary">
-                            1890
-                        </Typography>
-                    </Box>
 
+                <Paper variant="elevation" elevation={5} style={{ marginTop: '3rem' }}>
 
-                    <Box onClick={executeScrollTo1910}>
-                        <Typography variant="h6" color="secondary">
-                            1900
+                    <Container className={classes.historyScroll}>
+                        <Box onClick={executeScrollTo1890}>
+                            <Typography variant="h6" color="secondary">
+                                1890
                         </Typography>
-                    </Box>
+                        </Box>
+                        <Box onClick={executeScrollTo1910}>
+                            <Typography variant="h6" color="secondary">
+                                1900
+                        </Typography>
+                        </Box>
 
-                    <Box onClick={executeScrollTo1910}>
-                        <Typography variant="h6" color="secondary">
-                            1910
+                        <Box onClick={executeScrollTo1910}>
+                            <Typography variant="h6" color="secondary">
+                                1910
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo1920}>
-                        <Typography variant="h6" color="secondary">
-                            1920
+                        <Box onClick={executeScrollTo1920}>
+                            <Typography variant="h6" color="secondary">
+                                1920
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo1930}>
-                        <Typography variant="h6" color="secondary">
-                            1930
+                        <Box onClick={executeScrollTo1930}>
+                            <Typography variant="h6" color="secondary">
+                                1930
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo1940}>
-                        <Typography variant="h6" color="secondary">
-                            1940
+                        <Box onClick={executeScrollTo1940}>
+                            <Typography variant="h6" color="secondary">
+                                1940
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo1950}>
-                        <Typography variant="h6" color="secondary">
-                            1950
+                        <Box onClick={executeScrollTo1950}>
+                            <Typography variant="h6" color="secondary">
+                                1950
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo1960}>
-                        <Typography variant="h6" color="secondary">
-                            1960
+                        <Box onClick={executeScrollTo1960}>
+                            <Typography variant="h6" color="secondary">
+                                1960
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo1980}>
-                        <Typography variant="h6" color="secondary">
-                            1970
+                        <Box onClick={executeScrollTo1980}>
+                            <Typography variant="h6" color="secondary">
+                                1970
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo1980}>
-                        <Typography variant="h6" color="secondary">
-                            1980
+                        <Box onClick={executeScrollTo1980}>
+                            <Typography variant="h6" color="secondary">
+                                1980
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo1990}>
-                        <Typography variant="h6" color="secondary">
-                            1990
+                        <Box onClick={executeScrollTo1990}>
+                            <Typography variant="h6" color="secondary">
+                                1990
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo2000}>
-                        <Typography variant="h6" color="secondary">
-                            2000
+                        <Box onClick={executeScrollTo2000}>
+                            <Typography variant="h6" color="secondary">
+                                2000
                         </Typography>
-                    </Box>
+                        </Box>
 
-                    <Box onClick={executeScrollTo2010}>
-                        <Typography variant="h6" color="secondary">
-                            2010
+                        <Box onClick={executeScrollTo2010}>
+                            <Typography variant="h6" color="secondary">
+                                2010
                         </Typography>
-                    </Box>
-                </Container>
+                        </Box>
+                    </Container>
+                </Paper>
             </Container>
-
-            {/*  //TODO ADD Scroll to TOop Button */}
-
             <TimelineFunction />
-            {/* <Footer /> */}
         </div>
     );
 }

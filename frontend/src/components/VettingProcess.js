@@ -31,9 +31,8 @@ function VettingProcess() {
                     <Row>
                         <Col sm={3} md={5}>
                             <img src="vetting_un.jpg" width="100%" />
-                            {/* <Typography variant="subtitle1">UN emblem blue.svg. (2020, April 10). Wikimedia Commons, the free media repository.</Typography> */}
                         </Col>
-                        <Col sm={9} md={7} style={{ marginTop: "auto", marginBottom: "auto" }}>
+                        <Col sm={{ span: 8, offset: 1 }} md={{ span: 6, offset: 1 }} style={{ marginTop: "auto", marginBottom: "auto" }}>
                             <ol style={{ paddingTop: "1em" }} >
                                 <li><Typography component="body1" variant="body1">Registration with the United Nations.</Typography></li>
                                 <li><Typography component="body1" variant="body1">Interview with the United Nations.</Typography></li>
@@ -59,7 +58,7 @@ function VettingProcess() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={9} md={7} style={{ marginTop: "auto", marginBottom: "auto" }}>
+                        <Col sm={8} md={6} style={{ marginTop: "auto", marginBottom: "auto" }}>
                             <ol start="5" style={{ paddingTop: "1em" }} >
                                 <li><Typography component="body1" variant="body1">Interview with State Department Contractors</Typography></li>
                             </ol>
@@ -67,7 +66,7 @@ function VettingProcess() {
                                 There are Resettlement Support Centers that conduct background checks and screenings of all refugees that apply for resettlement. This step involves the creation of case files for the refugees that will be moving forward. Getting a case file is hopeful but it doesn't mean that the refugee will be allowed resettlement.
                             </Typography>
                         </Col>
-                        <Col sm={3} md={5}>
+                        <Col sm={{ span: 3, offset: 1 }} md={{ span: 5, offset: 1 }}>
                             <img src="vetting_usds.jpg" width="100%"></img>
                             {/* <Typography variant="subtitle1">Flag of the United States Department of State.svg. (2020, March 29). Wikimedia Commons, the free media repository.</Typography> */}
                         </Col>
@@ -88,7 +87,7 @@ function VettingProcess() {
                         <Col sm={3} md={5}>
                             <img src="vetting_magnifying.jpg" width="100%"></img>
                         </Col>
-                        <Col sm={9} md={7} style={{ marginTop: "auto", marginBottom: "auto" }}>
+                        <Col sm={{ span: 8, offset: 1 }} md={{ span: 6, offset: 1 }} style={{ marginTop: "auto", marginBottom: "auto" }}>
                             <ol start="6" style={{ paddingTop: "1em", }} >
                                 <li><Typography component="body1" variant="body1">First background check.</Typography></li>
                                 <li><Typography component="body1" variant="body1">Higher-level background check for some.</Typography></li>
@@ -112,7 +111,7 @@ function VettingProcess() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={9} md={7} style={{ marginTop: "auto", marginBottom: "auto" }}>
+                        <Col sm={8} md={6} style={{ marginTop: "auto", marginBottom: "auto" }}>
                             {/* <Typography component="h4" variant="h4" color="secondary">Fingerprint screenings</Typography> */}
                             <ol start="9" style={{ paddingTop: "1em" }} >
                                 <li><Typography component="body1" variant="body1">First fingerprint screening; photo taken (FBI).</Typography></li>
@@ -123,7 +122,7 @@ function VettingProcess() {
                                 Several US security agencies including the FBI, Homeland Security, and the Defense Department begin conducting biographic security checks as well as interagency checks. These agencies take fingerprints, photographs, and conduct medical screenings from the candidates and check for known terrorists, warrants, and affiliations. They will run the candidates' information against the National Counterterrorism Center, Intelligence Communities, and the FBi. If there is even slight uncertainty of the refugees’ motives they will not advance in the process. Certain refugees from known countries are forced to undergo further review before progressing.
                             </Typography>
                         </Col>
-                        <Col sm={3} md={5}>
+                        <Col sm={{ span: 2, offset: 1 }} md={{ span: 4, offset: 1 }}>
                             <img src="vetting_screening.jpg" width="100%"></img>
                         </Col>
                     </Row>
@@ -141,9 +140,8 @@ function VettingProcess() {
                     <Row>
                         <Col sm={3} md={5}>
                             <img src="Seal_of_the_United_States_Department_of_Homeland_Security.svg" width="100%" />
-                            {/* <Typography variant="subtitle1">Seal of the United States Department of Homeland Security.svg. (2017, November 2). Wikimedia Commons, the free media repository.</Typography> */}
                         </Col>
-                        <Col sm={9} md={7} style={{ marginTop: "auto", marginBottom: "auto" }}>
+                        <Col sm={{ span: 8, offset: 1 }} md={{ span: 6, offset: 1 }} style={{ marginTop: "auto", marginBottom: "auto" }}>
                             <ol start="12" style={{ paddingTop: "1em" }} >
                                 <li><Typography component="body1" variant="body1">Extensive In-person interview with Homeland Security.</Typography></li>
                                 <li><Typography component="body1" variant="body1">Homeland Security approval is required.</Typography></li>
@@ -165,8 +163,7 @@ function VettingProcess() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={9} md={7} style={{ marginTop: "auto", marginBottom: "auto" }}>
-                            {/* <Typography component="h4" variant="h4" color="secondary">Arrival to the United States</Typography> */}
+                        <Col sm={8} md={6} style={{ marginTop: "auto", marginBottom: "auto" }}>
                             <ol start="14" style={{ paddingTop: "1em" }} >
                                 <li><Typography component="body1" variant="body1">Screening for contagious diseases.</Typography></li>
                                 <li><Typography component="body1" variant="body1">Cultural orientation classes.</Typography></li>
@@ -183,7 +180,7 @@ function VettingProcess() {
                                 Once refugees begin their journey they undergo another security check before leaving the United States and one final security check once they arrive at the American airport. Once refugees are in the United States they are safe from the violence back home but are forced to deal with the difficulty of building a new life in a foriegn country.
                             </Typography>
                         </Col>
-                        <Col sm={3} md={5}>
+                        <Col sm={{ span: 2, offset: 1 }} md={{ span: 4, offset: 1 }}>
                             <img src="vetting_travel.jpg" width="100%" />
                         </Col>
                     </Row>

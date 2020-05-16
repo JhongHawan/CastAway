@@ -1,10 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
-import Footer from './About/Footer';
 import Hero from './Hero';
 import { Grid, Card, CardActions, Box, Typography, Paper, Hidden, CardContent } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Col, Row, Container } from 'react-bootstrap';
 import { useStyles } from './Styles';
 import Divider from './Divider';
@@ -42,7 +38,7 @@ function Terminology() {
             showCard={false}
             sectionTitle="Terminology"
          />
-         <Divider title="THE IMPORTANCE OF THE RIGHT WORDS" />
+         <Divider title="THE IMPORTANCE OF USING THE RIGHT WORDS" />
          <Container>
             <Row>
                <Col xs={12} sm={5} md={5} style={{ textAlign: 'center', marginTop: "auto", marginBottom: "auto" }}>
@@ -68,8 +64,8 @@ function Terminology() {
                      Forced to Leave
                   </Typography>
                   <Typography component="body1" variant="body1">
-                     When your home country becomes too threatening to continue to live in, individuals are forced 
-                     to flee. Being forced out means leaving home without certainty of a safe arrival and usually entails 
+                     When your home country becomes too threatening to continue to live in, individuals are forced
+                     to flee. Being forced out means leaving home without certainty of a safe arrival and usually entails
                      a dangerous journey to find a new home.
                   </Typography>
                </Col>
@@ -172,15 +168,6 @@ function Terminology() {
                </Grid>
             </Container>
          </Container>
-         {/* <Container style={{ paddingBottom: '2em' }}>
-            <Typography component="body1" variant="body1">
-               There are so many different words used to describe the variety of individuals
-               that leave their homes and travel to different countries. The choice to leave
-               can be voluntary or against their will. Regardless, knowing the difference
-               between these terms is a very important step in providing the required aid.
-            </Typography>
-         </Container> */}
-         {/* <TerminologyGrid /> */}
       </React.Fragment>
    );
 }

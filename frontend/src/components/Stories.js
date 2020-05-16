@@ -1,14 +1,8 @@
 import React from 'react';
-
-
 import { Container, Col, Row } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
-import { Box, Typography, Button } from '@material-ui/core';
-
-
-import Footer from './About/Footer';
-
+import { Box, Typography } from '@material-ui/core';
 import Hero from './Hero';
+import Divider from './Divider';
 import { useStyles } from './Styles'
 
 
@@ -35,7 +29,7 @@ function Stories() {
 
 
    let scrollHere = React.createRef();
-   
+
    let scrollSmoothHandler = () => {
       scrollHere.current.scrollIntoView({ behavior: "smooth" })
    }
@@ -49,8 +43,8 @@ function Stories() {
     */
    function Story(props) {
 
-      
-      
+
+
 
       function handleClick() {
 
@@ -67,18 +61,18 @@ function Stories() {
 
          setHighlightDesc(highlightDesc = props.desc);
          console.log("Bio          : " + highlightDesc);
-         
+
          setHighlightLink(highlightLink = props.link);
          console.log("Link          : " + highlightLink);
 
 
          scrollSmoothHandler();
-      
+
       }
 
       return (
-         <Col sm={6} md={4} lg={3} style={{ textAlign: 'center'}}>
-            <Box className={classes.storyCard} style={{ display: 'inline-block'}}>
+         <Col sm={6} md={4} lg={3} style={{ textAlign: 'center' }}>
+            <Box className={classes.storyCard} style={{ display: 'inline-block' }}>
                <Box className={classes.imageStory} data-content={props.name} onClick={() => handleClick(imageState)}>
                   <img src={props.img} width="100%" />
                </Box>
@@ -93,7 +87,7 @@ function Stories() {
     */
    function Highlight() {
       return (
-         <Container className={classes.storyHighlightContainer} ref={scrollHere}>
+         <Container className={classes.storyHighlightContainer} ref={scrollHere} maxWidth={false}>
             <Row>
                <Col sm={3} md={4}>
                   <img className={classes.storyHighlightImage} src={imageState} width="100%" />
@@ -115,16 +109,15 @@ function Stories() {
    }
 
    return (
-      <div >
+      <React.Fragment>
          <Hero
             showCard={false}
             sectionTitle="Stories"
          />
-
-         <Container className={classes.storyIntro}>
-            <Typography variant="h3" color="secondary" style={{ paddingTop: '2rem'}}>In A Sea of Faces...</Typography>
+         <Divider title="IN A SEA OF FACES..." />
+         <div style={{ backgroundColor: '#F0F5F9' }}>
             <Highlight />
-         </Container>
+         </div>
 
          <Container className={classes.storyWrapper}>
 
@@ -137,7 +130,7 @@ function Stories() {
             </Row>
          </Container>
 
-      </div>
+      </React.Fragment>
    );
 }
 

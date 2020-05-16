@@ -30,7 +30,7 @@ const TeamCard = (props) => {
         image={props.imgPath}
         title={props.imgTitle}
       />
-      <CardContent>
+      <CardContent >
         <Typography gutterBottom variant="h5" component="h2">
           {props.teamName}
         </Typography>

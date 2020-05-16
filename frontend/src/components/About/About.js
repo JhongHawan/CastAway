@@ -70,9 +70,7 @@ function About() {
             </Typography>
         </Grid>
       </Grid>
-      <div className={classes.dividerMargin} >
-        <Divider title="MEET THE TEAM" />
-      </div>
+      <Divider title="MEET THE TEAM" />
       <div className={classes.teamSection}>
         <TeamSection>
         </TeamSection>
@@ -88,7 +86,7 @@ function About() {
         </Grid>
         <Grid className={classes.missionParagraph} item sm={12} align="center" alignItems="center" justifyContent="center" >
           <Typography variant="subtitle1" >
-            A paper boat is symbolic of life and the fact that paper can not float forever in the water. A paper boat is also a common symbol of hopes and dreams of a young boy, similar to the hopes and dreams of many refugees to find a safe and welcoming home. Although it is not the only way, many refugees arrived in their host countries on a boat. The <span style={{ color: '#F14841', textWeight:'700'}}>orange</span> heart on the top of the logo symbolizes home, while the path leading to the boat symbolizes journey. Orange is a significant color for refugees because it represents the color of the life vests many of them had to wear on their journey. Similarly, <span style={{ color: '#002851', textWeight:'700' }}>blue</span> is a color of hope and resilience. Lastly, Syrian refugees were given blue passports by the United Nations adding further significance to the color.
+            A paper boat is symbolic of life and the fact that paper can not float forever in the water. A paper boat is also a common symbol of hopes and dreams of a young boy, similar to the hopes and dreams of many refugees to find a safe and welcoming home. Although it is not the only way, many refugees arrived in their host countries on a boat. The <span style={{ color: '#F14841', textWeight: '700' }}>orange</span> heart on the top of the logo symbolizes home, while the path leading to the boat symbolizes journey. Orange is a significant color for refugees because it represents the color of the life vests many of them had to wear on their journey. Similarly, <span style={{ color: '#002851', textWeight: '700' }}>blue</span> is a color of hope and resilience. Lastly, Syrian refugees were given blue passports by the United Nations adding further significance to the color.
           </Typography>
         </Grid>
       </Grid>
