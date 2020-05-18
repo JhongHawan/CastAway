@@ -1,61 +1,21 @@
 import React from 'react';
-import { Box, Button, Typography, Paper, Step, Stepper, StepButton, Hidden, StepLabel, StepContent, MobileStepper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
+import { 
+   Box, 
+   Button, 
+   Typography, 
+   Paper, 
+   Step, 
+   Stepper, 
+   Hidden, 
+   StepLabel, 
+   StepContent
+} from '@material-ui/core';
 import { Col, Row, Container } from 'react-bootstrap';
-import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
+import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
 import ReactCompareImage from 'react-compare-image';
 import Hero from './Hero';
 import Divider from './Divider';
 import { useStyles } from './Styles';
-
-/**
- *  ! Not a real component just to see the font types
- */
-function FontTest() {
-   const classes = useStyles();
-
-   return (
-      <Container>
-         <Box>
-            This is a list of typography
-            </Box>
-         <Typography component="h1" variant="h1">Typography h1</Typography>
-         <Typography component="h2" variant="h2">Typography h2</Typography>
-         <Typography component="h3" variant="h3">Typography h3</Typography>
-         <Typography component="h4" variant="h4">Typography h4</Typography>
-         <Typography component="h5" variant="h5">Typography h5</Typography>
-         <Typography component="h6" variant="h6">Typography h6</Typography>
-         <Box>
-            <Typography component="subtitle1" variant="subtitle1">Typography subtitle1</Typography>
-         </Box>
-         <Box>
-            <Typography component="subtitle2" variant="subtitle2">Typography subtitle2</Typography>
-         </Box>
-         <Box>
-            <Typography component="body1" variant="body1">Typography body1</Typography>
-         </Box>
-         <Box>
-            <Typography component="body2" variant="body2">Typography body2</Typography>
-         </Box>
-         <Box>
-            <Typography component="button" variant="button">Typography button</Typography>
-         </Box>
-         <Box>
-            <Typography component="caption" variant="caption">Typography caption</Typography>
-         </Box>
-         <Box>
-            <Typography component="overline" variant="overline">Typography overline</Typography>
-         </Box>
-
-         <Typography component="h1" variant="h1" color="primary">PRIMARY</Typography>
-         <Typography component="h1" variant="h1" color="secondary">SECONDARY</Typography>
-         <Typography component="h1" variant="h1" color="error">ERROR</Typography>
-         <Typography component="h1" variant="h1" className={classes.testingWarningTheme}>WARNING</Typography>
-         <Typography component="h1" variant="h1" className={classes.testingSuccessTheme}>SUCCESS</Typography>
-         <Typography component="h1" variant="h1" className={classes.testingInfoTheme}>INFO</Typography>
-      </Container>
-   )
-}
-
 
 function Event(props) {
    return (
@@ -68,15 +28,11 @@ function Event(props) {
             background: '#F0F5F9',
             padding: '20px',
             borderRadius: '8px',
-            // boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
          }}
       >
          <Typography style={{ padding: '0.5em' }} component="overline" variant="overline" color="secondary">
             {props.title}
          </Typography>
-         {/* <Typography component="body1" variant="body1">
-            {props.detail}
-         </Typography> */}
       </TimelineItem>
    )
 }
@@ -120,7 +76,7 @@ function Myths() {
       return (
          <Row >
             <Col sm={3} md={4} align="center">
-               <img src="green_check.png" width="50px" />
+               <img src="green_check.png" width="50px" alt="green check mark" />
             </Col>
             <Col sm={9} md={8}>
                <Typography component="overline" variant="overline">{props.description}</Typography>
@@ -133,7 +89,7 @@ function Myths() {
       return (
          <Row>
             <Col sm={3} md={4} style={{ textAlign: 'center' }}>
-               <img src="red_check.png" width="50px" />
+               <img src="red_check.png" width="50px"  alt="red x mark" />
             </Col>
             <Col sm={9} md={8}>
                <Typography component="overline" variant="overline">{props.description}</Typography>
@@ -204,8 +160,7 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_un.jpg" width="100%" />
-                        {/* <Typography variant="subtitle1">UN emblem blue.svg. (2020, April 10). Wikimedia Commons, the free media repository.</Typography> */}
+                        <img src="vetting_un.jpg" width="100%" alt="UN globe logo"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">United Nations Interview</Typography>
@@ -224,8 +179,7 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_usds.jpg" width="100%"></img>
-                        {/* <Typography variant="subtitle1">Flag of the United States Department of State.svg. (2020, March 29). Wikimedia Commons, the free media repository.</Typography> */}
+                        <img src="vetting_usds.jpg" width="100%" alt="flg of the United States Department of State" />
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">State Department Interview</Typography>
@@ -241,7 +195,7 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_magnifying.jpg" width="100%"></img>
+                        <img src="vetting_magnifying.jpg" width="100%" alt="man investigating with magnifying glass" />
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">First Round of Background Checks</Typography>
@@ -259,7 +213,7 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_screening.jpg" width="100%"></img>
+                        <img src="vetting_screening.jpg" width="100%" alt="bio screening"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Fingerprint screenings</Typography>
@@ -277,8 +231,7 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Seal_of_the_United_States_Department_of_Homeland_Security.svg" width="100%"></img>
-                        {/* <Typography variant="subtitle1">Seal of the United States Department of Homeland Security.svg. (2017, November 2). Wikimedia Commons, the free media repository.</Typography> */}
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Seal_of_the_United_States_Department_of_Homeland_Security.svg" width="100%" alt="seal of the united states department of homeland security"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Homeland Security</Typography>
@@ -295,7 +248,7 @@ function VettingProcess() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_travel.jpg" width="100%"></img>
+                        <img src="vetting_travel.jpg" width="100%"  alt="plane flying to america"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Arrival to the United States</Typography>
@@ -369,7 +322,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_un.jpg" width="100%"></img>
+                        <img src="vetting_un.jpg" width="100%" alt="UN globe logo"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">United Nations Interview</Typography>
@@ -389,7 +342,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_usds.jpg" width="100%"></img>
+                        <img src="vetting_usds.jpg" width="100%" alt="Flag of United States Department"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">State Department Interview</Typography>
@@ -405,7 +358,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_magnifying.jpg" width="100%"></img>
+                        <img src="vetting_magnifying.jpg" width="100%" alt="man investigating with magnifying glass"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">First Round of Background Checks</Typography>
@@ -423,7 +376,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_screening.jpg" width="100%"></img>
+                        <img src="vetting_screening.jpg" width="100%" alt="bio screening"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Fingerprint screenings</Typography>
@@ -441,7 +394,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Seal_of_the_United_States_Department_of_Homeland_Security.svg" width="100%"></img>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Seal_of_the_United_States_Department_of_Homeland_Security.svg" width="100%" alt="seal of the united states department of homeland security"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Homeland Security</Typography>
@@ -458,7 +411,7 @@ function VettingProcessMobile() {
                <Container style={{ paddingBottom: "3em" }}>
                   <Row>
                      <Col sm={3} md={5}>
-                        <img src="vetting_travel.jpg" width="100%"></img>
+                        <img src="vetting_travel.jpg" width="100%" alt="plane flying to America"/>
                      </Col>
                      <Col sm={9} md={7}>
                         <Typography component="h4" variant="h4" color="secondary">Arrival to the United States</Typography>
@@ -541,7 +494,6 @@ function ImageComparer() {
       // <Box>
       <Box style={{ textAlign: "center" }}>
          <Box style={{ maxWidth: "800px", margin: "auto" }}>
-            {/* <ReactCompareImage leftImage="refugee-edit.png" rightImage="immigrant-edit.png" /> */}
             <ReactCompareImage
                leftImage="refugee1.jpg"
                leftImageAlt="A refugee is  someone a person  who has been forced  to leave their  country in order to  escape war,  persecution, or  natural disaster."
@@ -616,8 +568,6 @@ function Context() {
                </Box>
             </Box>
          </Container>
-         {/* <FontTest /> */}
-         {/* <Footer /> */}
       </div>
    );
 }

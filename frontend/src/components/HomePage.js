@@ -1,19 +1,17 @@
 import React from 'react';
 import { Container, Box, Typography, Button } from '@material-ui/core';
-import { useStyles } from './Styles';
 import { Col, Row } from 'react-bootstrap';
 import Divider from './Divider';
 import Hero from './Hero';
 import HomeFeatures from './HomeFeatures';
 
 function HomePage() {
-    const classes = useStyles();
 
     function ReasonCard(props) {
         return (
             <Col md={4}>
                 <Box style={{ textAlign: 'center' }}>
-                    <img src={props.img} width="100%" />
+                    <img src={props.img} width="100%" alt={props.alt} />
                     <Typography variant="h4" color="secondary" style={{ paddingBottom: "0.5em" }}>
                         {props.title}
                     </Typography>
@@ -48,7 +46,7 @@ function HomePage() {
             <Container>
                 <Row>
                     <Col xs={12} sm={3} md={4} style={{ textAlign: 'center', marginTop: "auto", marginBottom: "auto" }}>
-                        <img src="arab_girl.jpg" width="100%" />
+                        <img src="arab_girl.jpg" width="100%" alt="cartoon image of girl in hijab" />
                     </Col>
                     <Col xs={12} sm={9} md={8}>
                         <SectionCard
@@ -76,8 +74,6 @@ function HomePage() {
         )
     }
 
-
-    // TODO Move Why Does it Matter to new function
     return (
         <div>
             <Hero
@@ -92,16 +88,19 @@ function HomePage() {
                         title="Millions Displaced"
                         description="There are more people on the move than ever before. An unparalleled 70.8 million people around the world have been forced from their home. Among them are nearly 25.9 million refugees, over half of whom are children under the age of 18."
                         img="displaced.png"
+                        alt="Image of family leaving home in fire"
                     />
                     <ReasonCard
                         title="Global Crisis"
                         description="The only way to describe this situation while emphasizing its urgency is by calling it what it is, a crisis, a refugee crisis. This crisis is an ongoing global issue that requires immediate action from people who care enough to make a difference."
                         img="crisis.png"
+                        alt="image of global crisis"
                     />
                     <ReasonCard
                         title="Immigrant Built"
                         description="Immigrants helped build our nation and make it what it is now. They are not a threat now and have not been in the past. We should do everything in our power to embrace them and not exclude them."
                         img="built.png"
+                        alt="image of home being built"
                     />
                 </Row>
             </Container>

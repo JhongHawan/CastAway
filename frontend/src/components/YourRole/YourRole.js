@@ -1,22 +1,13 @@
 import React from 'react';
 import { Container, Box, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useStyles } from '../Styles';
 import Divider from '../Divider';
 import Hero from '../Hero';
 import TemplatedEmail from './TemplatedEmail';
 import Stepper from '../Stepper';
 
-const customStyles = makeStyles(theme => ({
-  heroTop: {
-    margin: theme.spacing(4)
-  }
-}));
 
 function YourRole() {
-  const customClasses = customStyles();
-  const classes = useStyles();
-
   return (
     <div>
       <Hero

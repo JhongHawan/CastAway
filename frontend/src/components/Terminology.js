@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Card, CardActions, Box, Typography, Paper, Hidden, CardContent } from '@material-ui/core';
+import { Grid, Card, Typography, CardContent } from '@material-ui/core';
 import { Col, Row, Container } from 'react-bootstrap';
 import { useStyles } from './Styles';
 import Hero from './Hero';

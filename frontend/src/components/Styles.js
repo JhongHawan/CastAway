@@ -1,4 +1,3 @@
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import heroImage from '../img/home_hero.jpg';
@@ -219,7 +218,7 @@ export const useStyles = makeStyles(theme => ({
         flex: 'grow'
     },
     paper: {
-        padding: theme.spacing.unit * 2,
+        padding: theme.spacing(2),
         display: 'flex', 
         textAlign: 'center',
         justifyContent: 'center',
@@ -328,10 +327,8 @@ export const useStyles = makeStyles(theme => ({
             }
         }
     },
-
     storyPaper: {
-        padding: theme.spacing.unit * 2,
-        // height: '75px'
+        padding: theme.spacing(2),
     },
     storyCol: {
         padding: theme.spacing(1)
@@ -402,15 +399,9 @@ export const useStyles = makeStyles(theme => ({
         padding: theme.spacing(2, 0, 2)
     },
     termCard: {
-        padding: theme.spacing.unit * 2,
+        padding: theme.spacing(2),
         display: 'flex', 
-        // textAlign: 'center',
-        // justifyContent: 'center',
-        // alignItems: 'center',
         height: '330px',
-        // fontSize: '0.9rem'
     },
 
-}))
-
-// export const useStyles;
+}));

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Myths from './components/Myths';
 import History from './components/History';
@@ -13,7 +13,6 @@ import HomePage from './components/HomePage';
 import Terminology from './components/Terminology';
 import YourRole from './components/YourRole/YourRole';
 import VettingProcess from './components/VettingProcess';
-import Hero from './components/Hero';
 import Context from './components/Context';
 import Footer from './components/About/Footer';
 
@@ -43,9 +42,5 @@ function App() {
 
   );
 }
-
-
-
-
 
 export default App;
