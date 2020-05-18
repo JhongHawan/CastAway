@@ -1,23 +1,11 @@
 import React from 'react';
-// import React from 'react';
-// import StoryCard from './StoryCard';
-import StoryCard from './StoryCard';
-import StoriesList from './StoriesList';
-import { makeStyles } from '@material-ui/core/styles';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
-import { Nav, ThemeProvider } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Box, Button, Typography, Paper, Step, Stepper, StepButton, Hidden, StepLabel, StepContent, MobileStepper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
 import { Col, Row, Container } from 'react-bootstrap';
-import Footer from './About/Footer';
+import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
+import ReactCompareImage from 'react-compare-image';
 import Hero from './Hero';
 import Divider from './Divider';
-import { Timeline, TimelineItem, VerticalTimeline } from 'vertical-timeline-component-for-react';
 import { useStyles } from './Styles';
-import ReactCompareImage from 'react-compare-image';
-// import { Typography } from '@material-ui/core';
-
 
 /**
  *  ! Not a real component just to see the font types

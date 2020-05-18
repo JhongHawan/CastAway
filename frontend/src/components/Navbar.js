@@ -3,15 +3,12 @@ import {
   Navbar,
   NavDropdown,
   Nav,
-  Container,
   Row,
   Col,
-  Dropdown
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Logo from './Logo';
 import '../App.css';
-import { Grid, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 
 

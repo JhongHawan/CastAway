@@ -1,8 +1,8 @@
 import React from 'react';
-import Hero from './Hero';
 import { Grid, Card, CardActions, Box, Typography, Paper, Hidden, CardContent } from '@material-ui/core';
 import { Col, Row, Container } from 'react-bootstrap';
 import { useStyles } from './Styles';
+import Hero from './Hero';
 import Divider from './Divider';
 
 function Terminology() {

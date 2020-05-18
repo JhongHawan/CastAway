@@ -1,15 +1,11 @@
 import React from 'react';
+import { Container, Box, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import { useStyles } from '../Styles';
 import Divider from '../Divider';
 import Hero from '../Hero';
-import CallToAction from '../CallToAction';
-import { useStyles } from '../Styles';
 import TemplatedEmail from './TemplatedEmail';
-import Container from '@material-ui/core/Container';
 import Stepper from '../Stepper';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 
 const customStyles = makeStyles(theme => ({
   heroTop: {

@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-    Container,
-    Row,
-    Col
-} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useStyles } from './Styles';
 import { Typography } from '@material-ui/core';
 

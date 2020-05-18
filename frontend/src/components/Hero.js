@@ -90,34 +90,6 @@ function Hero(props) {
                 </Row>
             </Container>
         </div>
-
-        // <div className={classes.heroImg}>
-        //     <Container diableGutters>
-        //         <Row className="h-100">
-        //             <Col style={{ marginTop: "auto", marginBottom: "auto" }}>
-        //                 <Typography
-        //                     component="h3"
-        //                     variant="h3"
-        //                     align="center"
-        //                     color="primary"
-        //                 >
-        //                     {props.sectionTitle}
-        //                 </Typography>
-        //                 {includeCite ?
-        //                     <Citation /> : null
-        //                 }
-        //             </ Col>
-        //         </Row>
-        //     </Container>
-        //     {includeCard ?
-        //         <HeroCard
-        //             cardTitle={props.cardTitle}
-        //             cardSubtitle={props.cardSubtitle}
-        //             cardBody={props.cardBody}
-        //         /> : null
-        //     }
-        // </div>
-
     );
 }
 

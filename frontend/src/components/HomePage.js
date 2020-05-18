@@ -1,14 +1,9 @@
 import React from 'react';
-import { Container, Box, Grid, Typography, Paper, Button } from '@material-ui/core';
-import Carousel from './Carousel';
-import MythCard from './MythCard';
-
+import { Container, Box, Typography, Button } from '@material-ui/core';
+import { useStyles } from './Styles';
 import { Col, Row } from 'react-bootstrap';
-
 import Divider from './Divider';
 import Hero from './Hero';
-import { useStyles } from './Styles';
-// import CallToAction from './CallToAction';
 import HomeFeatures from './HomeFeatures';
 
 function HomePage() {
@@ -62,11 +57,9 @@ function HomePage() {
                         />
                         <SectionCard
                             title="Your Voice, Your Vote"
-                            // title="YOUR VOICE, YOUR VOTE"
                             description="Every citizen has both the right and responsibility to vote, get involved in their communities, and enact the change they wish to see. Voting is a basic action that allows every individual in the United States to express their personal opinion on issues they consider important to them."
                         />
                         <SectionCard
-                            // title="IT'S YOUR TURN TO TAKE ACTION"
                             title="It's Your Turn To Take Action"
                             description="Individuals can also make a lot of impact by writing letters to public officials about issues that are important to them. Your congressmen all represent you, allowing you to ignite a conversation with endless possibilities. It is time to stand up and fight for what is right, and give a platform to those who haven’t had access to it in the past."
                         />
@@ -74,15 +67,9 @@ function HomePage() {
                 </Row>
                 <Row>
                     <Col sm={{ offset: 1, span: 10 }} style={{ textAlign: 'center' }}>
-                        {/* <Typography component="h5" variant="h5" color="primary">
-                            Don't have time or don't know what to say?
-                        </Typography> */}
                         <Typography component="h5" variant="h5" color="primary">
                             Use our Templated Email to help contact your Representative
                         </Typography>
-                        {/* <Typography component="h5" variant="h5" color="primary">
-                            Click the button below!
-                        </Typography> */}
                     </Col>
                 </Row>
             </Container>
@@ -119,8 +106,6 @@ function HomePage() {
                 </Row>
             </Container>
             <Divider title="MAKE A DIFFERENCE" />
-            {/* <Box className={classes.callToAction}> */}
-            {/* // TODO REMOVE FROM EVERYWHERE */}
             <CallToAction />
 
 
@@ -128,8 +113,6 @@ function HomePage() {
             <Box style={{ textAlign: 'center', paddingBottom: '30px', paddingTop: '2em' }}>
                 <Button variant="contained" color="secondary" href="/yourRole" >Get Started</Button>
             </Box>
-            {/* </Box> */}
-            {/* </Container> */}
             <Divider title="WHAT IS CASTAWAY?" />
             <HomeFeatures />
         </div>

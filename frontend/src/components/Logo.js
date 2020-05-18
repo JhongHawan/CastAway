@@ -1,22 +1,23 @@
-import React from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import DirectionsBoat from '@material-ui/icons/DirectionsBoat';
+// ! DOUBLE CHECK IF NEEDED ! 
+// import React from 'react';
+// import IconButton from '@material-ui/core/IconButton';
+// import DirectionsBoat from '@material-ui/icons/DirectionsBoat';
 
-import { useStyles } from './Styles';
+// import { useStyles } from './Styles';
 
-function Logo() {
-  const classes = useStyles(); 
+// function Logo() {
+//   const classes = useStyles(); 
 
-  return(
-        <IconButton
-            edge="middle"
-            className={classes.mainLogo}
-            color="inherit"
-            aria-label="open drawer"
-        >
-            <DirectionsBoat />
-        </IconButton>
-  );
-}
+//   return(
+//         <IconButton
+//             edge="middle"
+//             className={classes.mainLogo}
+//             color="inherit"
+//             aria-label="open drawer"
+//         >
+//             <DirectionsBoat />
+//         </IconButton>
+//   );
+// }
 
-export default Logo; 
+// export default Logo; 

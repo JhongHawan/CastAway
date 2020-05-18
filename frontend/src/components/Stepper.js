@@ -1,14 +1,6 @@
 import React from 'react';
+import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Container, Box } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepContent from '@material-ui/core/StepContent';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
 import { Row, Col } from 'react-bootstrap';
 
 const useStyles = makeStyles((theme) => ({

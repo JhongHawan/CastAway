@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
-import { Box, Button, Typography, Paper, Step, Stepper, StepButton, Hidden, StepLabel, StepContent, MobileStepper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { useStyles } from './Styles';
 import Divider from './Divider';
 import Hero from './Hero';
@@ -68,7 +68,6 @@ function VettingProcess() {
                         </Col>
                         <Col sm={{ span: 3, offset: 1 }} md={{ span: 5, offset: 1 }}>
                             <img src="vetting_usds.jpg" width="100%"></img>
-                            {/* <Typography variant="subtitle1">Flag of the United States Department of State.svg. (2020, March 29). Wikimedia Commons, the free media repository.</Typography> */}
                         </Col>
                     </Row>
                 </Container>
@@ -101,7 +100,6 @@ function VettingProcess() {
                 </Container>
 
                 {/* STEP 4 */}
-
                 <Container style={{ paddingBottom: "3em" }}>
                     <Row>
                         <Col className={classes.vettingTitle}>
@@ -112,7 +110,6 @@ function VettingProcess() {
                     </Row>
                     <Row>
                         <Col sm={8} md={6} style={{ marginTop: "auto", marginBottom: "auto" }}>
-                            {/* <Typography component="h4" variant="h4" color="secondary">Fingerprint screenings</Typography> */}
                             <ol start="9" style={{ paddingTop: "1em" }} >
                                 <li><Typography component="body1" variant="body1">First fingerprint screening; photo taken (FBI).</Typography></li>
                                 <li><Typography component="body1" variant="body1">Second fingerprint screening (Homeland Security).</Typography></li>
